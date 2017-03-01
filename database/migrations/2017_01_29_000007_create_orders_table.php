@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->integer('apt_id')->unsigned()->nullable();
             $table->integer('ca_id')->unsigned()->nullable();
             $table->string('order_description');
-            $table->dateTime('order_date_created');
+            $table->string('order_date_created');
             $table->string('order_priority');
             $table->string('order_status');
             $table->bigInteger('order_total_cost');
