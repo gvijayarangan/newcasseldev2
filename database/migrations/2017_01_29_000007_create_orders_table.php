@@ -15,10 +15,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
             $table->increments('id');
-            $table->integer('apt_id')->unsigned();
-            $table->integer('ca_id')->unsigned();
+            $table->integer('apt_id')->unsigned()->nullable();
+            $table->integer('ca_id')->unsigned()->nullable();
             $table->string('order_description');
-            $table->string('order_date_created');
+            $table->dateTime('order_date_created');
             $table->string('order_priority');
             $table->string('order_status');
             $table->bigInteger('order_total_cost');
@@ -44,4 +44,5 @@ class CreateOrdersTable extends Migration
     {
         Schema::drop('orders');
     }
+
 }

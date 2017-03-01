@@ -28,8 +28,8 @@
     </div>
 
     <div class="form-group">
-            {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
-        </div>
+        {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+    </div>
     </div>
     {!! Form::close() !!}
 @stop

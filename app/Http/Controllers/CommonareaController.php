@@ -13,6 +13,10 @@ class CommonareaController extends Controller
     public function index()
     {
         $createcomarea = Comarea::all();
+        foreach ($createcomarea as $ca) {
+            $ca -> cntr_id = Center::findOrFail($ca -> cntr_id)->cntr_name;
+        }
+
         return view('CreateComarea.index',compact('createcomarea'));
     }
     public function show($id)
@@ -23,8 +27,9 @@ class CommonareaController extends Controller
 
     public function create()
     {
+        $centers = Center::lists('cntr_name', 'id')->all();
 
-        return view('CreateComarea.create');
+        return view('CreateComarea.create', compact('centers'));
     }
     /**
      * Store a newly created resource in storage.

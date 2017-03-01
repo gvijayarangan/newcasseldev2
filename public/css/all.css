@@ -47,3 +47,78 @@ div.se-highlights {
 /*# sourceMappingURL=app.css.map */
 
 /*# sourceMappingURL=all.css.map */
+img.img-responsive {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 0px;
+  font-size: 18px;
+}
+
+.navbar-default .navbar-brand {
+    color: #23527c;
+}
+.navbar-default {
+  background-color: #C0C0C0;
+  border-color: #191970;
+}
+
+.navtext{
+  padding-left: 20px;
+  padding-top: 5px;
+  font-weight: 600;
+}
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  color: #191970;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: -150px;
+  height: 40px;
+  background-color: #C0C0C0;
+  text-align: center;
+  padding-top: 5px;
+  clear: both;
+}
+.text-muted {
+  color: #191970;
+  font-weight: 600;
+}
+
+body > .container {
+  padding: 20px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
