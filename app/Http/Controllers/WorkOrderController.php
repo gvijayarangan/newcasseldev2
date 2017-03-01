@@ -36,7 +36,7 @@ class WorkOrderController extends Controller
 
         $centers = Center::lists('cntr_name', 'id')->all();
         $issuetypes = Issuetype::lists('issue_typename', 'id')->all();
-        $workers = User::select(DB::raw("CONCAT(`f_name`, ' ',`l_name`) as fullname, id"))->lists('fullname', 'id')->all();
+        $workers = User::select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, id"))->lists('fullname', 'id')->all();
         $toolsdata = Tool::lists('tool_name', 'id')->all();
         $suppliesdata = Supply::lists('sup_name', 'id')->all();
 
@@ -46,23 +46,23 @@ class WorkOrderController extends Controller
 
     public function view()
     {
-/*        $woDetails = DB::table('orders')-> join('users', 'orders.user_id','=','users.id')
-                        ->join('apartments', 'orders.apt_id', '=', 'apartments.id')
-                          ->select('orders.id','users.f_name','orders.order_date_created',
-                             'orders.apt_id','orders.apt_id','orders.ca_id',
-                              'users.f_name', 'orders.issue_type','orders.order_status',
-                             'orders.last_status_modified','orders.last_status_modified_time',
-                             'orders.order_priority', 'orders.order_total_cost','orders.user_id')->get();*/
+        /*        $woDetails = DB::table('orders')-> join('users', 'orders.user_id','=','users.id')
+                                ->join('apartments', 'orders.apt_id', '=', 'apartments.id')
+                                  ->select('orders.id','users.f_name','orders.order_date_created',
+                                     'orders.apt_id','orders.apt_id','orders.ca_id',
+                                      'users.f_name', 'orders.issue_type','orders.order_status',
+                                     'orders.last_status_modified','orders.last_status_modified_time',
+                                     'orders.order_priority', 'orders.order_total_cost','orders.user_id')->get();*/
 
 
         $woDetails = Order::all();
 
         foreach ($woDetails as $wo) {
             $wo -> user_id = User::findOrFail($wo -> user_id)->f_name . " " .User::findOrFail($wo -> user_id)->l_name;
-          //  $wo -> resident_id = Resident::findOrFail($wo -> resident_id)->res_fname;
-         }
+            //  $wo -> resident_id = Resident::findOrFail($wo -> resident_id)->res_fname;
+        }
 
-       // error_log("WO details is " .$woDetails);
+        // error_log("WO details is " .$woDetails);
         /*
                                         <td>{{ $order->id}}</td>
                                         <td>{{ $order->user_id}}</td>
@@ -107,14 +107,14 @@ class WorkOrderController extends Controller
         $input = $request -> input('option');
 
         $resident_data = Resident::
-        select(DB::raw("CONCAT(`res_fname`, ' ',`res_lname`) as res_fname, id"))->where('res_apt_id', '=' , $input )
+        select(DB::raw("CONCAT(res_fname, ' ',res_lname) as res_fname, id"))->where('res_apt_id', '=' , $input )
             ->lists('res_fname', 'id')->all();
 
         $apartment_floor_data = Apartment::
         select(DB::raw("apt_floornumber"))->where('id', '=' , $input )
             ->lists('apt_floornumber')->all();
 
-          return $resident_data;
+        return $resident_data;
     }
 
     public function getIssueDesc(Request $request) {
@@ -137,16 +137,16 @@ class WorkOrderController extends Controller
     {
         // Validation depends on type of the user
 
- /*       //Admin validation
-        $this -> validate($request, [
-            'requester' => 'required|string',
-            'cntr_name' => 'required|string',
-            'apartment_name' => 'required|string',
-            'residentname' => 'required|string',
-            'resident_comments' => 'required|string',
-            'status' => 'required|string',
+        /*       //Admin validation
+               $this -> validate($request, [
+                   'requester' => 'required|string',
+                   'cntr_name' => 'required|string',
+                   'apartment_name' => 'required|string',
+                   'residentname' => 'required|string',
+                   'resident_comments' => 'required|string',
+                   'status' => 'required|string',
 
-        ]);*/
+               ]);*/
 
 
         error_log("Request is " . $request);
@@ -164,10 +164,10 @@ class WorkOrderController extends Controller
         $order -> resident_comment = $request -> resident_comments;
         $order -> last_status_modified = Auth::user()->getFullName();
 
-/*        $now = new DateTime();
-        $now->format('Y-m-d H:i:s');
+        /*        $now = new DateTime();
+                $now->format('Y-m-d H:i:s');
 
-        $order -> order_date_created = $now->getTimestamp();*/
+                $order -> order_date_created = $now->getTimestamp();*/
         $order ->save();
 
         //Save all Assign orders
@@ -205,7 +205,7 @@ class WorkOrderController extends Controller
                 if ($key == 'id') {
                     $so -> sup_id = $value;
                 }
-             //   error_log($key ." --- " .$value );
+                //   error_log($key ." --- " .$value );
             }
             $unit = explode('=',$sd_f_a[$i+1]);
             $so -> supord_units = $unit[1];
@@ -218,6 +218,6 @@ class WorkOrderController extends Controller
             $so ->save();
             $i=$i+4;
         }
-            return redirect('WorkOrder.index');
+        return redirect('workorderview');
     }
 }
