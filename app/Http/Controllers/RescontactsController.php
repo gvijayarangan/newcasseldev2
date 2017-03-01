@@ -32,7 +32,7 @@ class RescontactsController extends Controller
     public function create()
     {
 
-        $residents = Resident::select(DB::raw("CONCAT('res_fname', ' ','res_lname') as res_fname, id"))->lists('res_fname', 'id');
+        $residents = Resident::select(DB::WhereRaw("CONCAT(res_fname, ' ',res_lname) as res_fname, id"))->lists('res_fname', 'id');
 
         return view('CreateRescon.create', compact('residents'));
     }
@@ -79,7 +79,7 @@ class RescontactsController extends Controller
      */
     public function edit($id)
     {
-        $residentscon = Resident::select(DB::raw("CONCAT('res_fname', ' ','res_lname') as res_fname, id"))->lists('res_fname', 'id');
+        $residentscon = Resident::select(DB::WhereRaw("CONCAT(res_fname, ' ',res_lname) as res_fname, id"))->lists('res_fname', 'id');
 
         $createrescontacts = Rescontact::find($id);
         return view('CreateRescon.edit',compact('residentscon', 'createrescontacts'));
