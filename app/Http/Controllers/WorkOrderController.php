@@ -79,7 +79,7 @@ class WorkOrderController extends Controller
                                         <td>{{ $order->order_total_cost}}</td>
                                         <td>{{ $order->user_id}}</td>
  */
-        return redirect('WorkOrder.index',compact('woDetails'));
+        return view('WorkOrder.index',compact('woDetails'));
 
     }
 
