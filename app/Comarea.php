@@ -10,7 +10,6 @@ class Comarea extends Model
     protected $fillable=[
         'ca_name',
         'ca_comments',
-        'cntr_id',
     ];
 
     public function order() {
@@ -20,4 +19,6 @@ class Comarea extends Model
     public function center() {
         return $this->belongsTo('App\center');
     }
+
+
 }

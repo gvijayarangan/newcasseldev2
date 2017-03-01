@@ -15,6 +15,7 @@ class Order extends Model
         'order_date_created',
         'order_priority',
         'order_status',
+        'order_total_cost'
     ];
 
     public function orcomment() {
@@ -27,8 +28,8 @@ class Order extends Model
     public function assignorder() {
         return $this->hasMany('App\assignorder');
     }
-    public function equiporder() {
-        return $this->hasMany('App\equiporder');
+    public function toolorder() {
+        return $this->hasMany('App\toolorder');
     }
 
     public function user() {
@@ -39,5 +40,9 @@ class Order extends Model
     }
     public function apartment() {
         return $this->belongsTo('App\apartment');
+    }
+ public function getOrderId()
+    {
+        return $this->id;
     }
 }

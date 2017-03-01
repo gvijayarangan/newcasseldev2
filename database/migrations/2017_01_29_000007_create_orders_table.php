@@ -21,15 +21,16 @@ class CreateOrdersTable extends Migration
             $table->string('order_date_created');
             $table->string('order_priority');
             $table->string('order_status');
+            $table->bigInteger('order_total_cost');
+            $table->timestamps('deleted_at');
+            $table->string('resident_comment');
+            $table->string('last_status_modified');
+            $table->dateTime('last_status_modified_time');
+            $table->integer('issue_type');
             $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('apt_id')->references('id')->on('apartments')
-                ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('ca_id')->references('id')->on('comareas')
-                ->onUpdate('cascade')->onDelete('cascade');
-
             /*$table->primary(['order_id']);*/
         });
     }

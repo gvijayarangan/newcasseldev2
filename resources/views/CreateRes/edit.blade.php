@@ -1,6 +1,7 @@
-@include('common.nav')
+@include('layouts.app')
 @extends('CreateRes')
 @section('content')
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <h1>NCRC Edit Resident</h1>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -13,9 +14,6 @@
     @endif
     {!! Form::model($resident,['method' => 'PATCH','route'=>['resident.update',$resident->id]]) !!}
 
-    <div class="form-group">
-        {!! Form::label('id', '*Res ID:') !!}
-        {!! Form::text('id',null,['class'=>'form-control']) !!}
         <div class="form-group">
             {!! Form::label('res_pccid', '*PCCID:') !!}
             {!! Form::text('res_pccid',null,['class'=>'form-control']) !!}
@@ -39,8 +37,8 @@
                 'Male' => 'Male'], old('res_gender'), ['class' => 'form-control']) }}
         </div>
         <div class="form-group">
-            {!! Form::label('res_phone', 'Phone:') !!}
-            {!! Form::text('res_phone',null,['class'=>'form-control']) !!}
+            {!! Form::label('res_Homephone', 'Home Phone:') !!}
+            {!! Form::text('res_Homephone',null,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('res_cellphone', 'Cellphone:') !!}
@@ -60,9 +58,16 @@
                         'Inactive' => 'Inactive',
                         'Active' => 'Active'], old('res_status'), ['class' => 'form-control']) !!}
         </div>
+    <div class="form-group">
+        {!!Form::label('res_apt_id', 'Apartment Number:',['class' => 'col-md-4 control-label']) !!}
+        {{ Form::select('res_apt_id', $apartments) }}
+    </div>
+
+
         <div class="form-group">
             {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
     {!! Form::close() !!}
 @stop
+

@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Resident;
 
 class Rescontact extends Model
 {
+    public $timestamps = false;
     protected $fillable=[
         'con_fname',
         'con_mname',
@@ -15,11 +17,15 @@ class Rescontact extends Model
         'con_email',
         'con_comment',
         'con_gender',
-        'user_id'
+        'con_res_id'
     ];
 
-    public function user() {
-        return $this->belongsTo('App\user');
+    // public function user() {
+    //    return $this->belongsTo('App\user');
+    // }
+
+    public function conres() {
+        return $this->hasMany('App\conresi');
     }
 
 }

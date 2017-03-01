@@ -1,23 +1,22 @@
-@include('common.nav')
+@include('layouts.app')
 @extends('CreateRes')
 @section('content')
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <h1>Resident</h1>
     <a href="{{url('/resident/create')}}" class="btn btn-success">Create Resident</a>
     <hr>
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">
-            <th>Resident Id</th>
             <th>PCCID</th>
             <th>First Name</th>
-            <th>Middle Name</th>
             <th>Last Name</th>
-            <th>Gender</th>
-            <th>Phone</th>
+            <th>Home Phone</th>
             <th>Cellphone</th>
             <th>Email</th>
-            <th>Comment</th>
             <th>Status</th>
+            <th>Apartment Number</th>
+            <th>Center Name</th>
             <th colspan="3">Actions</th>
         </tr>
         </thead>
@@ -35,19 +34,15 @@
         </script>
         @foreach ($createres as $createres)
             <tr>
-                <td>{{ $createres-> id }}</td>
                 <td>{{ $createres-> res_pccid }}</td>
                 <td>{{ $createres-> res_fname }}</td>
-                <td>{{ $createres-> res_mname }}</td>
                 <td>{{ $createres-> res_lname }}</td>
-                <td>{{ $createres-> res_gender }}</td>
-                <td>{{ $createres-> res_phone }}</td>
+                <td>{{ $createres-> res_Homephone }}</td>
                 <td>{{ $createres-> res_cellphone }}</td>
                 <td>{{ $createres-> res_email }}</td>
-                <td>{{ $createres-> res_comment }}</td>
                 <td>{{ $createres-> res_status }}</td>
-                <td>{{ $createres-> cntr_name }}</td>
-                <td>{{ $createres-> apt_id }}</td>
+                <td>{{ $createres-> res_apt_id }}</td>
+                <td>{{ $createres-> res_cntr_id }}</td>
                 <td><a href="{{url('resident',$createres->id)}}" class="btn btn-primary">Read</a></td>
                 <td><a href="{{url('resident/update',$createres->id)}}" class="btn btn-warning">Update</a></td>
                 <td>

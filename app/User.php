@@ -84,4 +84,8 @@ class User extends Authenticatable
     {
         return $this->email;
     }
+ public function getUserId()
+    {
+        return $this->id;
+    }
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use App\Center;
 
-
+//adding comment for demo1
 class ApartmentsController extends Controller
 {
 
@@ -46,7 +46,8 @@ class ApartmentsController extends Controller
         $apartment->apt_floornumber = $request->apt_floornumber;
         $apartment->apt_number = $request->apt_number;
         $apartment->apt_comments = $request->apt_comments;
-        $apartment->cntr_id = $request->cntr_id;
+        $apartment->cntr_id = $request->cntr_name;
+
         $apartment->save();
 
         return redirect('apartment');

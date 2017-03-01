@@ -19,16 +19,15 @@ class CreateResContactsTable extends Migration
             $table->string('con_mname');
             $table->string('con_lname');
             $table->string('con_relationship');
-            $table->string('con_cellphone');
+            $table->biginteger('con_cellphone');
             $table->string('con_email');
             $table->string('con_comment');
             $table->string('con_gender');
-            $table->integer('user_id')->unsigned();
+            $table->integer('con_res_id');
+          
         });
 
-        Schema::table('rescontacts', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
+   
     }
 
     /**
@@ -40,4 +39,5 @@ class CreateResContactsTable extends Migration
     {
         Schema::drop('rescontacts');
     }
+
 }

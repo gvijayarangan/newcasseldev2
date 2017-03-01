@@ -17,17 +17,17 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(RoleUserTableSeeder::class);
         $this->call(UsersRolesPermissions::class);
-        $this->call(NotificationsTableSeeder::class);
-        $this->call(ResidentsTableSeeder::class);
-        $this->call(RescontactsTableSeeder::class);
-        $this->call(CentersTableSeeder::class);
-        $this->call(EquipmentsTableSeeder::class);
-        $this->call(ConressTableSeeder::class);
-        $this->call(ApartmentsTableSeeder::class);
-        $this->call(AptressTableSeeder::class);
-        $this->call(ComareasTableSeeder::class);
-        $this->call(OrdersTableSeeder::class);
-        $this->call(AssignordersTableSeeder::class);
+        //$this->call(NotificationsTableSeeder::class);
+        //$this->call(ResidentsTableSeeder::class);
+        //$this->call(RescontactsTableSeeder::class);
+        //$this->call(CentersTableSeeder::class);
+        //$this->call(EquipmentsTableSeeder::class);
+//        $this->call(ConresisTableSeeder::class);
+//        $this->call(ApartmentsTableSeeder::class);
+//        $this->call(AptresisTableSeeder::class);
+//        $this->call(ComareasTableSeeder::class);
+//        $this->call(OrdersTableSeeder::class);
+       //$this->call(AssignordersTableSeeder::class);
         //$this->call(EquipordersTableSeeder::class);
         $this->command->info('User, Role and Permission tables seeded!');
 

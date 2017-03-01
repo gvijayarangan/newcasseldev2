@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="" />
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -22,18 +20,7 @@
     <favorites_list name="basic" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../newcasseldevpaddu/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -273,15 +260,16 @@
       <workItem from="1487021415618" duration="3511000" />
       <workItem from="1487038319811" duration="7424000" />
       <workItem from="1487184940439" duration="1705000" />
+      <workItem from="1487303605717" duration="1083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90512000" />
+    <option name="totallyTimeSpent" value="91595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="0" width="3204" height="1714" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23307292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -341,12 +329,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000005_create_Rescontacts_table.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000006_create_Conress_table.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000007_create_orders_table.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000008_create_Equipments_table.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000009_create_Equiporders_table.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000010_create_assignorders_table.php" />
     <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000001_create_centers_table.php" />
     <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2015_10_12_000000_create_notifications_table.php" />
     <entry file="file://$PROJECT_DIR$/../newcasseldev/database/migrations/2016_04_23_215546_create_comments_table.php" />
@@ -388,29 +370,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/create.blade.php" />
     <entry file="file://$PROJECT_DIR$/../newcasseldev/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
-          <folding>
-            <element signature="e#4864#4870#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/show.blade.php" />
+    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/index.blade.php" />
+    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/edit.blade.php" />
+    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/app/Http/Controllers/ApartmentsController.php" />
+    <entry file="file://$PROJECT_DIR$/app/Apartment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -418,15 +393,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateApt/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -434,17 +401,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/app/Http/Controllers/ApartmentsController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateApt/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateApt/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateApt/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1353">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../newcasseldevpaddu/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-198">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>

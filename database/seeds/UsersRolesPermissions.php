@@ -5,12 +5,12 @@ use App\User;
 use App\Role;
 use App\Permission;
 use App\Apartment;
-use App\Aptres;
+use App\Aptresi;
 use App\Assignorder;
 use App\Center;
 use App\Comment;
 use App\Comarea;
-use App\Comres;
+use App\Conresi;
 use App\Equipment;
 use App\Equiporder;
 use App\Notification;
@@ -183,16 +183,16 @@ class ResidentsTableSeeder extends Seeder
     public function run()
     {
         DB::table('residents')->insert([
-            'res_pccid' => '1', 'res_fname' => 'John', 'res_mname' => 'Mc', 'res_lname' => 'Mann', 'res_gender' => 'M', 'res_phone' => '1234567899', 'res_cellphone' => '4029876789',
-            'res_email' => 'jmmann@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active',
+            'res_pccid' => '1111', 'res_fname' => 'John', 'res_mname' => 'Mc', 'res_lname' => 'Mann', 'res_gender' => 'M', 'res_Homephone' => '1234567899', 'res_cellphone' => '4029876789',
+            'res_email' => 'jmmann@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active', 'res_apt_id' => 1 , 'res_cntr_name' => 'Aksarben',
         ]);
         DB::table('residents')->insert([
-            'res_pccid' => '2', 'res_fname' => 'David', 'res_mname' => '', 'res_lname' => 'Schoof', 'res_gender' => 'M', 'res_phone' => '1234567890', 'res_cellphone' => '4567876543',
-            'res_email' => 'schoof@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active',
+            'res_pccid' => '2222', 'res_fname' => 'David', 'res_mname' => '', 'res_lname' => 'Schoof', 'res_gender' => 'M', 'res_Homephone' => '1234567890', 'res_cellphone' => '4567876543',
+            'res_email' => 'schoof@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active', 'res_apt_id' => 2 , 'res_cntr_name' => 'Aksarben',
         ]);
         DB::table('residents')->insert([
-            'res_pccid' => '3', 'res_fname' => 'Skyler', 'res_mname' => 'White', 'res_lname' => 'Walter', 'res_gender' => 'F', 'res_phone' => '5654343234', 'res_cellphone' => '5654343234',
-            'res_email' => 'skyler@hotmail.com', 'res_comment' => 'test user', 'res_status' => 'InActive',
+            'res_pccid' => '3333', 'res_fname' => 'Skyler', 'res_mname' => 'White', 'res_lname' => 'Walter', 'res_gender' => 'F', 'res_Homephone' => '5654343234', 'res_cellphone' => '5654343234',
+            'res_email' => 'skyler@hotmail.com', 'res_comment' => 'test user', 'res_status' => 'InActive', 'res_apt_id' => 3 , 'res_cntr_name' => 'Aksarben',
         ]);
     }
 }
@@ -211,11 +211,11 @@ class RescontactsTableSeeder extends Seeder
 
         DB::table('rescontacts')->insert([
             'con_fname' => 'Walter', 'con_mname' => ' ', 'con_lname' => 'Jr', 'con_relationship' => 'Son', 'con_cellphone' => '7898765435', 'con_email' => 'walter@gmail.com',
-            'con_comment' => 'Primary Contact', 'con_gender' => 'M', 'user_id' => ($user = User::where('f_name', '=', 'Walter')->first()->id) ,
+            'con_comment' => 'Primary Contact', 'con_gender' => 'M', 'con_res_name' => ' ', 'user_id' => ($user = User::where('f_name', '=', 'Walter')->first()->id) ,
         ]);
         DB::table('rescontacts')->insert([
             'con_fname' => 'Flynn', 'con_mname' => 'Mc', 'con_lname' => 'Mann', 'con_relationship' => 'Son', 'con_cellphone' => '9876545678', 'con_email' => 'flynn@gmail.com',
-            'con_comment' => 'Primary Contact', 'con_gender' => 'M', 'user_id' => ($user = User::where('f_name', '=', 'Flynn')->first()->id) ,
+            'con_comment' => 'Primary Contact', 'con_gender' => 'M', 'con_res_name' => ' ', 'user_id' => ($user = User::where('f_name', '=', 'Flynn')->first()->id) ,
         ]);
 
     }
@@ -232,6 +232,10 @@ class CentersTableSeeder extends Seeder
     {
         DB::table('centers')->insert([
             'cntr_name' => 'Aksarben', 'cntr_add1' => '3001 Dodge', 'cntr_add2' => '31st ST', 'cntr_city' => 'Omaha', 'cntr_state' => 'NE', 'cntr_zip' => 68105, 'cntr_phone' =>98787,
+            'cntr_fax' => 234567, 'cntr_comments' => 'test',
+        ]);
+        DB::table('centers')->insert([
+            'cntr_name' => 'Omaha', 'cntr_add1' => '3001 Dodge', 'cntr_add2' => '31st ST', 'cntr_city' => 'Omaha', 'cntr_state' => 'NE', 'cntr_zip' => 68105, 'cntr_phone' =>98787,
             'cntr_fax' => 234567, 'cntr_comments' => 'test',
         ]);
     }
@@ -255,20 +259,20 @@ class EquipmentsTableSeeder extends Seeder
     }
 }
 
-class ConressTableSeeder extends Seeder
+class ConresisTableSeeder extends Seeder
 {
 
     public function run()
     {
-        DB::table('conress')->delete();
+        DB::table('conresis')->delete();
 
 
-        DB::table('conress')->insert([
+        DB::table('conresis')->insert([
             'res_id' => ($Resident = Resident::where('res_fname', '=', 'John')->first()->id) ,
             'con_id' => ($Rescontact = Rescontact::where('con_fname', '=', 'Walter')->first()->id) ,
         ]);
 
-        DB::table('conress')->insert([
+        DB::table('conresis')->insert([
             'res_id' => ($Resident = Resident::where('res_fname', '=', 'David')->first()->id) ,
             'con_id' => ($Rescontact = Rescontact::where('con_fname', '=', 'Flynn')->first()->id) ,
         ]);
@@ -301,25 +305,25 @@ class ApartmentsTableSeeder extends Seeder
             'apt_floornumber' => 4 , 'apt_number' => '4', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
         DB::table('apartments')->insert([
-            'apt_floornumber' => 0 , 'apt_number' => 'N/A', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
+            'apt_floornumber' => 5 , 'apt_number' => '5', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
 
     }
 }
 
-class AptressTableSeeder extends Seeder
+class AptresisTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('aptress')->delete();
+        DB::table('aptresis')->delete();
 
 
-        DB::table('aptress')->insert([
-            'apt_id' => ($apartment = Apartment::where('apt_number', '=', '1')->first()->id) , 'res_id' => ($resident = Resident::where('res_fname', '=', 'John')->first()->id), 'start_date' => date_create(),  'end_date' => date_create(), 'status' => 'Active',
+        DB::table('aptresis')->insert([
+            'apt_id' => ($apartment = Apartment::where('apt_number', '=', '1')->first()->id) , 'res_id' => ($resident = Resident::where('res_fname', '=', 'John')->first()->id), 'start_date' => date_create(),  'end_date' => date_create(),
         ]);
 
-        DB::table('aptress')->insert([
-            'apt_id' => ($apartment = Apartment::where('apt_number', '=', '2')->first()->id) , 'res_id' => ($resident = Resident::where('res_fname', '=', 'David')->first()->id), 'start_date' => date_create(),  'end_date' => date_create(), 'status' => 'Active',
+        DB::table('aptresis')->insert([
+            'apt_id' => ($apartment = Apartment::where('apt_number', '=', '2')->first()->id) , 'res_id' => ($resident = Resident::where('res_fname', '=', 'David')->first()->id), 'start_date' => date_create(),  'end_date' => date_create(),
         ]);
 
     }
@@ -371,7 +375,7 @@ class OrdersTableSeeder extends Seeder
         ]);
 
         DB::table('orders')->insert([
-            'user_id' => ($user = User::where('f_name', '=', 'Korvah')->first()->id) , 'apt_id' => ($apartment = Apartment::where('apt_number', '=', 'N/A')->first()->id),
+            'user_id' => ($user = User::where('f_name', '=', 'Korvah')->first()->id) , 'apt_id' => ($apartment = Apartment::where('apt_number', '=', '5')->first()->id),
             'ca_id' => ($comarea = Comarea::where('ca_name', '=', 'Gym')->first()->id) , 'order_description' => 'test order', 'order_date_created' => date_create(),
             'order_priority' => 'Medium', 'order_status' => 'closed',
         ]);

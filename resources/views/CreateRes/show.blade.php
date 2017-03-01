@@ -1,6 +1,7 @@
-@include('common.nav')
+@include('layouts.app')
 @extends('CreateRes')
 @section('content')
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <h1>NCRC Resident Information </h1>
     <div class="container">
         <table class="table table-striped table-bordered table-hover">
@@ -32,7 +33,7 @@
             </tr>
             <tr>
                 <td>Phone</td>
-                <td><?php echo ($post['res_phone']); ?></td>
+                <td><?php echo ($post['res_Homephone']); ?></td>
             </tr>
             <tr>
                 <td>Cellphone</td>

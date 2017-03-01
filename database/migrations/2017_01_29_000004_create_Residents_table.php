@@ -20,11 +20,13 @@ class CreateResidentsTable extends Migration
             $table->string('res_mname');
             $table->string('res_lname');
             $table->string('res_gender');
-            $table->string('res_phone');
+            $table->string('res_Homephone');
             $table->string('res_cellphone');
             $table->string('res_email');
             $table->string('res_comment');
             $table->string('res_status');
+            $table->integer('res_apt_id');
+            $table->integer('res_cntr_id');
         });
     }
 

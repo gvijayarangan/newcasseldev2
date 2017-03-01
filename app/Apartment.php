@@ -13,15 +13,15 @@ class Apartment extends Model
         'apt_floornumber',
         'apt_number',
         'apt_comments',
-        'cntr_id',
+        'cntr_name',
     ];
 
     public function aptres() {
-        return $this->hasMany('App\aptres');
+        return $this->hasMany('App\aptresi');
     }
 
-    public function conres() {
-        return $this->hasMany('App\conres');
+    public function order() {
+        return $this->hasMany('App\order');
     }
 
     public function center() {

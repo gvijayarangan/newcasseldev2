@@ -39,7 +39,7 @@ class UsersController extends Controller
         $this->list_role = Role::lists('display_name', 'id');
         $this->heading = "Users";
 
-        $this->viewData = [ 'user' => $this->user, 'users' => $this->users, 'list_role' => $this->list_role, 'heading' => $this->heading ];
+        $this->viewData = ['user' => $this->user, 'users' => $this->users, 'list_role' => $this->list_role, 'heading' => $this->heading];
     }
 
     public function index()
@@ -54,9 +54,9 @@ class UsersController extends Controller
     public function show(User $users)
     {
         $object = $users;
-        Log::info('UsersController.show: '.$object->id.'|'.$object->name);
+        Log::info('UsersController.show: ' . $object->id . '|' . $object->name);
         $this->viewData['user'] = $object;
-        $this->viewData['heading'] = "View User: ".$object->name;
+        $this->viewData['heading'] = "View User: " . $object->name;
 
         return view('users.show', $this->viewData);
     }
@@ -73,20 +73,26 @@ class UsersController extends Controller
     {
         Log::info('UsersController.store - Start: ');
         $input = $request->all();
+        $this->validate($request, [
+            'f_name' => 'required|max:255',
+            'l_name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'cell' => 'required|phone|size:11',
+        ]);
         $this->populateCreateFields($input);
         $input['password'] = "";
         $input['active'] = $request['active'] == '' ? false : true;
         $input['rec_email'] = $request['rec_email'] == '' ? false : true;
         $object = User::create($input);
         $this->syncRoles($object, $request->input('rolelist'));
-        Session::flash('flash_message', 'User successfully added!');
-        Log::info('UsersController.store - End: '.$object->id.'|'.$object->name);
+        Session::flash('flash_message', 'User successfully added and an email has been sent for activation!');
+        Log::info('UsersController.store - End: ' . $object->id . '|' . $object->name);
 
         session_start();
         $_SESSION['user_id'] = $object->id;
         $_SESSION['user_email'] = $request['email'];
 
-        error_log('store - Value of User ID for creating password for the first time - ' .$object->id);
+        error_log('store - Value of User ID for creating password for the first time - ' . $object->id);
 
         $data = array(
             'name' => $request['email'],
@@ -98,15 +104,15 @@ class UsersController extends Controller
             $message->to($_SESSION['user_email'])->subject('New Account Setup');
 
         });
-       return redirect()->back();
+        return redirect()->back();
     }
 
     public function edit(User $users)
     {
         $object = $users;
-        Log::info('UsersController.edit: '.$object->id.'|'.$object->name);
+        Log::info('UsersController.edit: ' . $object->id . '|' . $object->name);
         $this->viewData['user'] = $object;
-        $this->viewData['heading'] = "Edit User: ".$object->name;
+        $this->viewData['heading'] = "Edit User: " . $object->name;
 
         return view('users.edit', $this->viewData);
     }
@@ -114,31 +120,34 @@ class UsersController extends Controller
     public function update(User $users, UserRequest $request)
     {
         $object = $users;
-        Log::info('UsersController.update - Start: '.$object->id.'|'.$object->name);
-//        $this->authorize($object);
+        Log::info('UsersController.update - Start: ' . $object->id . '|' . $object->name);
+        $this->validate($request, [
+            'f_name' => 'required|max:255',
+            'l_name' => 'required|max:255',
+            'cell' => 'required|phone|size:11',
+        ]);
         $this->populateUpdateFields($request);
         //$request['active'] = $request['active'] == '' ? true : false;
 
         $object->update($request->all());
         $this->syncRoles($object, $request->input('rolelist'));
         Session::flash('flash_message', 'User successfully updated!');
-        Log::info('UsersController.update - End: '.$object->id.'|'.$object->name);
+        Log::info('UsersController.update - End: ' . $object->id . '|' . $object->name);
         return redirect('users');
     }
 
     /**
      * Destroy the given user.
      *
-     * @param  Request  $request
-     * @param  User  $user
+     * @param  Request $request
+     * @param  User $user
      * @return Response
      */
     public function destroy(Request $request, User $users)
     {
         $object = $users;
-        Log::info('UsersController.destroy: Start: '.$object->id.'|'.$object->name);
-        if ($this->authorize('destroy', $object))
-        {
+        Log::info('UsersController.destroy: Start: ' . $object->id . '|' . $object->name);
+        if ($this->authorize('destroy', $object)) {
             Log::info('Authorization successful');
             $object->delete();
         }
@@ -149,12 +158,12 @@ class UsersController extends Controller
     /**
      * Sync up the list of roles for the given user record.
      *
-     * @param  User  $user
-     * @param  array  $roles (id)
+     * @param  User $user
+     * @param  array $roles (id)
      */
     private function syncRoles(User $user, array $roles)
     {
-        Log::info('UsersController.syncRoles: Start: '.$user->name);
+        Log::info('UsersController.syncRoles: Start: ' . $user->name);
         // ToDo: At somepoint need to update the timestamps and created_by/updated_by fields on the pivot table
         $user->roles()->sync($roles);
 //        $user->roles()->sync([$roles => ['created_by' => Auth::user()->name, 'updated_by' => Auth::user()->name]]);

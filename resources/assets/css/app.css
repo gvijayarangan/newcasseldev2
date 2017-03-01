@@ -43,4 +43,14 @@ div.pull-left button {
 
 div.se-highlights {
   padding-top: 10px; }
-/*# sourceMappingURL=app.css.map */
+
+/* Syles from layout */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 40px;
+}
+

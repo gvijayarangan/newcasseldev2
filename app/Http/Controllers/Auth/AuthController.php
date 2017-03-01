@@ -86,7 +86,7 @@ class AuthController extends Controller
     public function showUpdatePassword()
     {
 
-            return view('auth.passwords.change');
+        return view('auth.passwords.change');
 
     }
 
@@ -101,69 +101,81 @@ class AuthController extends Controller
     {
         if (Auth::check())
         {
+            Session::forget('flash_message');
+            Session::forget('error_message');
+
             $user = Auth::user();
             $rules = array(
                 'old_password' => 'required',
-                'password' => 'required|confirmed|min:6'
-             );
-
-            $passwordOInput = bcrypt(Input::get('old_password'));
-            $passwordNewInput = bcrypt(Input::get('password'));
-
-            error_log('updatePassword - Value of old password - ' . $user->password);
-            error_log('updatePassword - Value of new password - ' . $passwordOInput);
-
-           $validator = Validator::make(Input::all(), $rules);
-
-            if ($validator->fails()) {
-                return view('auth.passwords.change')->withErrors($validator);
-            } elseif (Hash::check(Input::get('old_password'), $user->password)) {
-                error_log('updatePassword - Inside Hash::check ');
-                $user->password = $passwordNewInput;
-                $user->save();
-                Session::flash('flash_message', 'Password has been changed successfully');
-
-                return redirect('changepasswordpage');
-                //return view('auth.passwords.change')->withErrors('Password has been changed');
-            } else {
-                error_log('updatePassword - Failed Hash::check ');
-                return view('auth.passwords.change')->withErrors($validator);
-         }
-        }
-    }
-/*
-
-    public function updatePassword()
-    {
-        if (Auth::check())
-        {
-            $user = Auth::user();
-            $rules = array(
-                'old_password' => 'required',
-                'password' => 'required|confirmed|min:6'
+                'password' => 'required|different:old_password|confirmed|min:6',
+                'password_confirmation' => 'required|min:6'
             );
 
-            $passwordOInput = bcrypt(Input::get('old_password'));
+            $passwordOInput = Input::get('old_password');
             $passwordNewInput = bcrypt(Input::get('password'));
+
             error_log('updatePassword - Value of old password - ' . $user->password);
             error_log('updatePassword - Value of new password - ' . $passwordOInput);
 
             $validator = Validator::make(Input::all(), $rules);
 
             if ($validator->fails()) {
-                return view('auth.passwords.change')->withErrors($validator);
+                // return view('auth.passwords.change')->withErrors($validator);
+                error_log('updatePassword - Inside fails ');
+
+                return redirect()->back()->withErrors($validator->errors());
+
             } elseif (Hash::check($passwordOInput, $user->password)) {
                 error_log('updatePassword - Inside Hash::check ');
                 $user->password = $passwordNewInput;
                 $user->save();
-                return view('auth.passwords.change')->with('Password has been changed');
+                Session::flash('flash_message', 'Password has been changed successfully');
+
+                return view('auth.passwords.change');
             } else {
                 error_log('updatePassword - Failed Hash::check ');
+                //return view('auth.passwords.change')->withErrors($validator);
+                Session::flash('error_message', 'Old password does not match');
+
                 return view('auth.passwords.change')->withErrors($validator);
+                //return redirect()->back()->withErrors($validator->errors());
+
             }
         }
     }
-*/
+    /*
+
+        public function updatePassword()
+        {
+            if (Auth::check())
+            {
+                $user = Auth::user();
+                $rules = array(
+                    'old_password' => 'required',
+                    'password' => 'required|confirmed|min:6'
+                );
+
+                $passwordOInput = bcrypt(Input::get('old_password'));
+                $passwordNewInput = bcrypt(Input::get('password'));
+                error_log('updatePassword - Value of old password - ' . $user->password);
+                error_log('updatePassword - Value of new password - ' . $passwordOInput);
+
+                $validator = Validator::make(Input::all(), $rules);
+
+                if ($validator->fails()) {
+                    return view('auth.passwords.change')->withErrors($validator);
+                } elseif (Hash::check($passwordOInput, $user->password)) {
+                    error_log('updatePassword - Inside Hash::check ');
+                    $user->password = $passwordNewInput;
+                    $user->save();
+                    return view('auth.passwords.change')->with('Password has been changed');
+                } else {
+                    error_log('updatePassword - Failed Hash::check ');
+                    return view('auth.passwords.change')->withErrors($validator);
+                }
+            }
+        }
+    */
     // This function overridden the one in traits AuthenticatesUsers.php
     protected function getCredentials($request)
     {
