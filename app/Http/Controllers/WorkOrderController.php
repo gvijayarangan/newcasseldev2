@@ -36,7 +36,7 @@ class WorkOrderController extends Controller
 
         $centers = Center::lists('cntr_name', 'id')->all();
         $issuetypes = Issuetype::lists('issue_typename', 'id')->all();
-        $workers = User::select(DB::raw("CONCAT(`f_name`, ' ',`l_name`) as fullname, id"))->lists('fullname', 'id')->all();
+        $workers = User::select(DB::raw("CONCAT('f_name', ' ','l_name') as fullname, id"))->lists('fullname', 'id')->all();
         $toolsdata = Tool::lists('tool_name', 'id')->all();
         $suppliesdata = Supply::lists('sup_name', 'id')->all();
 
