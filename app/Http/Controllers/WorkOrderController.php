@@ -218,6 +218,8 @@ class WorkOrderController extends Controller
             $so ->save();
             $i=$i+4;
         }
-        return redirect('workorderview');
+        $woDetails = Order::all();
+        return view('WorkOrder.index',compact('woDetails'));
+
     }
 }
