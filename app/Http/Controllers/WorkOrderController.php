@@ -36,7 +36,7 @@ class WorkOrderController extends Controller
 
         $centers = Center::lists('cntr_name', 'id')->all();
         $issuetypes = Issuetype::lists('issue_typename', 'id')->all();
-        $workers = User::select(DB::WhereRaw("CONCAT(f_name, ' ',l_name) as fullname, id"))->lists('fullname', 'id')->all();
+        $workers = User::select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, id"))->lists('fullname', 'id')->all();
         $toolsdata = Tool::lists('tool_name', 'id')->all();
         $suppliesdata = Supply::lists('sup_name', 'id')->all();
 
@@ -107,7 +107,7 @@ class WorkOrderController extends Controller
         $input = $request -> input('option');
 
         $resident_data = Resident::
-        select(DB::WhereRaw("CONCAT(res_fname, ' ',res_lname) as res_fname, id"))->where('res_apt_id', '=' , $input )
+        select(DB::raw("CONCAT(res_fname, ' ',res_lname) as res_fname, id"))->where('res_apt_id', '=' , $input )
             ->lists('res_fname', 'id')->all();
 
         $apartment_floor_data = Apartment::
