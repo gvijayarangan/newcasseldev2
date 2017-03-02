@@ -13,7 +13,7 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#">
-                            <img alt="Brand" src="images/New_Cassel.png" class="img-responsive img-brand">
+                            <img alt="Brand" src="/images/New_Cassel.png" class="img-responsive img-brand">
                         </a>
                         <a class="navbar-brand navtext" href="#">New Cassel Center's <br>Work Order System</a>
                     </div>
