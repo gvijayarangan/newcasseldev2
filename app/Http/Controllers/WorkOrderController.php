@@ -200,7 +200,7 @@ class WorkOrderController extends Controller
             $so = new Supplyorder();
             $supplyName = explode('=',$sd_f_a[$i]);
             //Fetch supply id using supplyname
-            $array_supply_id = DB::table('Supplies')->where('sup_name',$supplyName[1])->pluck('id');
+            $array_supply_id = DB::table('supplies')->where('sup_name',$supplyName[1])->pluck('id');
             foreach ($array_supply_id as $key => $value) {
                 if ($key == 'id') {
                     $so -> sup_id = $value;
