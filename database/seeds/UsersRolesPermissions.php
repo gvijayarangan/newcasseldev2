@@ -184,15 +184,15 @@ class ResidentsTableSeeder extends Seeder
     {
         DB::table('residents')->insert([
             'res_pccid' => '1111', 'res_fname' => 'John', 'res_mname' => 'Mc', 'res_lname' => 'Mann', 'res_gender' => 'M', 'res_Homephone' => '1234567899', 'res_cellphone' => '4029876789',
-            'res_email' => 'jmmann@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active', 'res_apt_id' => 1 , 'res_cntr_name' => 'Aksarben',
+            'res_email' => 'jmmann@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active', 'res_apt_id' => 1 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
         DB::table('residents')->insert([
             'res_pccid' => '2222', 'res_fname' => 'David', 'res_mname' => '', 'res_lname' => 'Schoof', 'res_gender' => 'M', 'res_Homephone' => '1234567890', 'res_cellphone' => '4567876543',
-            'res_email' => 'schoof@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active', 'res_apt_id' => 2 , 'res_cntr_name' => 'Aksarben',
+            'res_email' => 'schoof@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active', 'res_apt_id' => 2 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
         DB::table('residents')->insert([
             'res_pccid' => '3333', 'res_fname' => 'Skyler', 'res_mname' => 'White', 'res_lname' => 'Walter', 'res_gender' => 'F', 'res_Homephone' => '5654343234', 'res_cellphone' => '5654343234',
-            'res_email' => 'skyler@hotmail.com', 'res_comment' => 'test user', 'res_status' => 'InActive', 'res_apt_id' => 3 , 'res_cntr_name' => 'Aksarben',
+            'res_email' => 'skyler@hotmail.com', 'res_comment' => 'test user', 'res_status' => 'InActive', 'res_apt_id' => 3 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
     }
 }
@@ -211,11 +211,11 @@ class RescontactsTableSeeder extends Seeder
 
         DB::table('rescontacts')->insert([
             'con_fname' => 'Walter', 'con_mname' => ' ', 'con_lname' => 'Jr', 'con_relationship' => 'Son', 'con_cellphone' => '7898765435', 'con_email' => 'walter@gmail.com',
-            'con_comment' => 'Primary Contact', 'con_gender' => 'M', 'con_res_name' => ' ', 'user_id' => ($user = User::where('f_name', '=', 'Walter')->first()->id) ,
+            'con_comment' => 'Primary Contact', 'con_gender' => 'M', 'con_res_id' => ($resident = Resident::where('res_fname', '=', 'David')->first()->id)
         ]);
         DB::table('rescontacts')->insert([
             'con_fname' => 'Flynn', 'con_mname' => 'Mc', 'con_lname' => 'Mann', 'con_relationship' => 'Son', 'con_cellphone' => '9876545678', 'con_email' => 'flynn@gmail.com',
-            'con_comment' => 'Primary Contact', 'con_gender' => 'M', 'con_res_name' => ' ', 'user_id' => ($user = User::where('f_name', '=', 'Flynn')->first()->id) ,
+            'con_comment' => 'Primary Contact', 'con_gender' => 'M', 'con_res_id' => ($resident = Resident::where('res_fname', '=', 'John')->first()->id)
         ]);
 
     }
