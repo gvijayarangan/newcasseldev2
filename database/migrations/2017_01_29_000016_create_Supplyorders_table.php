@@ -14,7 +14,7 @@ class CreateSupplyOrdersTable extends Migration
     public function up()
     {
         Schema::create('supplyorders', function (Blueprint $table) {
-
+            $table->increments('id');
             $table->integer('sup_id')->unsigned();
             $table->integer('order_id')->unsigned();
             $table->bigInteger('supord_units')->unsigned();
