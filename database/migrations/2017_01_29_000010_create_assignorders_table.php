@@ -13,6 +13,7 @@ class CreateAssignordersTable extends Migration
     public function up()
     {
         Schema::create('assignorders', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('order_id')->unsigned();
             $table->softDeletes();

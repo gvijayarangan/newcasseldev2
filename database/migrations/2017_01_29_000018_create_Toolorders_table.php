@@ -14,7 +14,7 @@ class CreateToolordersTable extends Migration
     public function up()
     {
         Schema::create('toolorders', function (Blueprint $table) {
-
+            $table->increments('id');
             $table->integer('tool_id')->unsigned();
             $table->integer('order_id')->unsigned();
         });
