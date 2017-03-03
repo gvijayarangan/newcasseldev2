@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
 //        $this->call(ConresisTableSeeder::class);
 //        $this->call(AptresisTableSeeder::class);
           $this->call(ComareasTableSeeder::class);
+        $this->call(ToolsTableSeeder::class);
+        $this->call(SuppliesTableSeeder::class);
 //        $this->call(OrdersTableSeeder::class);
        //$this->call(AssignordersTableSeeder::class);
         //$this->call(EquipordersTableSeeder::class);

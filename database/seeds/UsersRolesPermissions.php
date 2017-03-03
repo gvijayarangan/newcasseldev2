@@ -345,11 +345,64 @@ class ComareasTableSeeder extends Seeder
             'ca_name' => 'Swimming pool', 'ca_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
         DB::table('comareas')->insert([
-            'ca_name' => 'N/A', 'ca_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
+            'ca_name' => 'Pantry', 'ca_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
     }
 }
 
+class ToolsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('tools')->insert([
+            'tool_name' => 'Hammer', 'tool_comment' => 'test',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Screw driver', 'tool_comment' => 'test',
+        ]);
+    }
+}
+
+class SuppliesTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('supplies')->insert([
+            'sup_name' => 'Bulb', 'sup_unitprice' => 6, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Fan', 'sup_unitprice' => 16, 'sup_comment' => 'test',
+        ]);
+    }
+}
+
+class IssuetypesTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('issuetypes')->insert([
+            'issue_typename' => 'Flooding',  'issue_description' => 'Flooding in sink',
+        ]);
+        DB::table('issuetypes')->insert([
+            'issue_typename' => 'Electrical Failure',  'issue_description' => 'Switch tripped',
+        ]);
+    }
+}
 class OrdersTableSeeder extends Seeder
 {
     /**
