@@ -183,16 +183,16 @@ class ResidentsTableSeeder extends Seeder
     public function run()
     {
         DB::table('residents')->insert([
-            'res_pccid' => '1111', 'res_fname' => 'John', 'res_mname' => 'Mc', 'res_lname' => 'Mann', 'res_gender' => 'M', 'res_Homephone' => '1234567899', 'res_cellphone' => '4029876789',
+            'res_pccid' => '1111', 'res_fname' => 'John', 'res_mname' => 'Mc', 'res_lname' => 'Mann', 'res_gender' => 'Male', 'res_Homephone' => '1234567899', 'res_cellphone' => '4029876789',
             'res_email' => 'jmmann@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active', 'res_apt_id' => 1 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
         DB::table('residents')->insert([
-            'res_pccid' => '2222', 'res_fname' => 'David', 'res_mname' => '', 'res_lname' => 'Schoof', 'res_gender' => 'M', 'res_Homephone' => '1234567890', 'res_cellphone' => '4567876543',
+            'res_pccid' => '2222', 'res_fname' => 'David', 'res_mname' => '', 'res_lname' => 'Schoof', 'res_gender' => 'Male', 'res_Homephone' => '1234567890', 'res_cellphone' => '4567876543',
             'res_email' => 'schoof@gmail.com', 'res_comment' => 'test user', 'res_status' => 'Active', 'res_apt_id' => 2 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
         DB::table('residents')->insert([
-            'res_pccid' => '3333', 'res_fname' => 'Skyler', 'res_mname' => 'White', 'res_lname' => 'Walter', 'res_gender' => 'F', 'res_Homephone' => '5654343234', 'res_cellphone' => '5654343234',
-            'res_email' => 'skyler@hotmail.com', 'res_comment' => 'test user', 'res_status' => 'InActive', 'res_apt_id' => 3 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
+            'res_pccid' => '3333', 'res_fname' => 'Skyler', 'res_mname' => 'White', 'res_lname' => 'Walter', 'res_gender' => 'Female', 'res_Homephone' => '5654343234', 'res_cellphone' => '5654343234',
+            'res_email' => 'skyler@hotmail.com', 'res_comment' => 'test user', 'res_status' => 'Inactive', 'res_apt_id' => 3 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', 'Aksarben')->first()->id) ,
         ]);
     }
 }
