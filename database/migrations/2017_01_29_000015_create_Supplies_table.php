@@ -16,7 +16,7 @@ class CreateSuppliesTable extends Migration
         Schema::create('supplies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('sup_name');
-            $table->float('sup_unitprice', 6,2);
+            $table->float('sup_unitprice', 8,2);
             $table->string('sup_comment');
         });
 
