@@ -17,7 +17,7 @@ class CreateSuppliesTable extends Migration
             $table->increments('id');
             $table->string('sup_name');
             $table->float('sup_unitprice', 8,2);
-            $table->string('sup_comment');
+            $table->string('sup_comment')->nullable();
         });
 
 

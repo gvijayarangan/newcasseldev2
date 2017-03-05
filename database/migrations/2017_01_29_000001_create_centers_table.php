@@ -17,13 +17,13 @@ class CreateCentersTable extends Migration
             $table->increments('id');
             $table->string('cntr_name');
             $table->string('cntr_add1');
-            $table->string('cntr_add2');
+            $table->string('cntr_add2')->nullable();
             $table->string('cntr_city');
             $table->string('cntr_state');
             $table->integer('cntr_zip');
-            $table->string('cntr_phone');
-            $table->string('cntr_fax');
-            $table->String('cntr_comments');
+            $table->string('cntr_phone')->nullable();
+            $table->string('cntr_fax')->nullable();
+            $table->String('cntr_comments')->nullable();
         });
     }
 

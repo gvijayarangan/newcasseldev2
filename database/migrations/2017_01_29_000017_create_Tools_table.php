@@ -16,7 +16,7 @@ class CreateToolsTable extends Migration
         Schema::create('tools', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tool_name');
-            $table->string('tool_comment');
+            $table->string('tool_comment')->nullable();
         });
 
 
