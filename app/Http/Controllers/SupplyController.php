@@ -41,16 +41,15 @@ class SupplyController extends Controller
     {//dd($request);
         $this->validate($request, [
             //'id' => 'required|integer',
-            'sup_name' => 'required',
-            'sup_unitprice' => 'required|integer',
-            'sup_comment' => 'required',
+            'sup_name' => 'required|alpha',
+            'sup_unitprice' => 'required|numeric',
+            'sup_comment' => 'string',
         ]);
         //dd($request);
         $supplydata = new Supply();
         $supplydata->sup_name = $request->sup_name;
         $supplydata->sup_unitprice = $request->sup_unitprice;
-        $supplydata->sup_comment = $request->sup_comment;
-
+       $supplydata->sup_comment = $request->sup_comment;
         $supplydata->save();
        // dd($supplydata);
         return redirect('Supply');
@@ -81,11 +80,11 @@ class SupplyController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'sup_name' => 'required',
-            'sup_unitprice' => 'required',
-            //'sup_comment' => 'required|integer',
-        ]);
 
+            'sup_name' => 'required|alpha',
+            'sup_unitprice' => 'required|numeric',
+            'sup_comment' => 'string',
+        ]);
         $CreateSupply = Supply::find($id);
         $CreateSupply->sup_name = $request->sup_name;
         $CreateSupply->sup_unitprice = $request->sup_unitprice;

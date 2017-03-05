@@ -1,10 +1,22 @@
 @include('layouts.app')
 @extends('CreateRes')
 @section('content')
+
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <h1>Resident</h1>
-    <a href="{{url('/resident/create')}}" class="btn btn-success">Create Resident</a>
-    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="width: 100%">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="pull-right">
+                            <form action="{{ url('/resident/create') }}" method="GET">{{ csrf_field() }}
+                                <button type="submit" id="create-user" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create Resident</button>
+                            </form>
+                        </div>
+                        <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp New Cassel Resident Information</h4></div>
+                    </div>
+                    <div class="panel-body" style="width: 100%">
+                        <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">
@@ -43,8 +55,8 @@
                 <td>{{ $createres-> res_status }}</td>
                 <td>{{ $createres-> res_apt_id }}</td>
                 <td>{{ $createres-> res_cntr_id }}</td>
-                <td><a href="{{url('resident',$createres->id)}}" class="btn btn-primary">Read</a></td>
-                <td><a href="{{url('resident/update',$createres->id)}}" class="btn btn-warning">Update</a></td>
+                <td><a href="{{url('resident',$createres->id)}}" class="btn btn-primary">View</a></td>
+                <td><a href="{{url('resident/update',$createres->id)}}" class="btn btn-warning">Modify</a></td>
                 <td>
                     {!! Form::open(['method' => 'DELETE', 'route'=>['resident.destroy', $createres->id], 'onsubmit' => 'return ConfirmDelete()']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
@@ -56,4 +68,10 @@
         </tbody>
 
     </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection

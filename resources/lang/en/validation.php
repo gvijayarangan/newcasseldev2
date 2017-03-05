@@ -108,6 +108,62 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' =>array(
+        'apt_floornumber' => 'Apartment Floor Number',
+        'apt_number' => 'Apartment Number',
+        'apt_comments'=> 'Apartment Commnent',
+
+        'res_pccid' => 'Resident PCCID',
+        'res_fname' => 'Resident First Name',
+        'res_mname' => 'Resident Middle Name',
+        'res_lname'=> 'Resident Last Name',
+        'res_gender' => 'Resident Gender',
+        'res_Homephone'=> 'Resident Homephone',
+        'res_cellphone' => 'Resident Cellphone',
+        'res_email' => 'Resident Email',
+        'res_status'=> 'Resident Status',
+        'res_comment' => 'Resident Comment',
+
+        'con_fname' => 'Resident Contact First Name',
+        'con_mname' => 'Resident Contact Middle Name',
+        'con_lname' => 'Resident Contact Last Name',
+        'con_relationship' => 'Resident Contact Relationship',
+        'con_cellphone' => 'Resident Contact Cellphone',
+        'con_email' => 'Resident Contact Email',
+        'con_comment' => 'Resident Contact Comment',
+        'con_gender' => 'Resident Contact Gender',
+
+        'ca_name' => 'Common Area Name',
+        'ca_comments' => 'Common Area Comments',
+
+        'cntr_id' => 'Center ID',
+        'cntr_name' => 'Center Name',
+        'cntr_add1' => 'Center Address1',
+        'cntr_add2' => 'Center Address2',
+        'cntr_city' => 'Center City',
+        'cntr_state' => 'Center State',
+        'cntr_zip' => 'Center Zip',
+        'cntr_phone' => 'Center Phone',
+        'cntr_fax' => 'Center Fax',
+        'cntr_comments' => 'Center Comments ',
+
+        'sup_name' => 'Supply Name',
+        'sup_unitprice' => 'Supply Unit Price',
+        'sup_comment' => 'Supply Comment',
+
+        'tool_name' => 'Tool Name',
+        'tool_comment' => 'Tool Comment',
+
+        'issue_typename' => 'Issue Type Name',
+        'issue_description' => 'Issue Description',
+
+        'f_name' => 'First Name',
+        'l_name' => 'Last Name',
+        'email' => 'Email id',
+        'cell' => 'Mobile phone number',
+        'requester' => 'Requestor name',
+        'resident_comments' => 'Comments',
+        'status' => 'Status',
+    ),
 
 ];

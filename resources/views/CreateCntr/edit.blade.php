@@ -2,6 +2,12 @@
 @extends('CreateCntr')
 @section('content')
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center" > Update Create Information</div>
+                    <div class="panel-body">
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -11,7 +17,7 @@
             </ul>
         </div>
     @endif
-    <h1>Update Center Information</h1>
+
     {!! Form::model($createcntrs, ['method' => 'PATCH','route'=>['center.update', $createcntrs->id]]) !!}
     <div class="form-group">
         {!! Form::label('cntr_name', '*Center Name:') !!}
@@ -49,13 +55,20 @@
         {!!Form::label('cntr_fax', 'Center Fax:') !!}
         {!! Form::text('cntr_fax',null,['class'=>'form-control']) !!}
     </div>
+        <div class="form-group">
+            {!!Form::label('cntr_comments', 'Center Comments:') !!}
+            {!! Form::textarea('cntr_comments',null,['class'=>'form-control']) !!}
+        </div>
 
-    <div class="form-group">
-        {!!Form::label('cntr_comments', 'Center Comments:') !!}
-        {!! Form::text('cntr_comments',null,['class'=>'form-control']) !!}
-    </div>
     <div class="form-group">
         {!! Form::submit('Update Information', ['class' => 'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @stop

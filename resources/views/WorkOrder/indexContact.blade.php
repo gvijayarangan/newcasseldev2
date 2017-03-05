@@ -20,7 +20,6 @@
                                 <tr class="bg-info">
                                     <th>Work Order ID</th>
                                     <th>Requestor</th>
-                                    <th>Created By</th>
                                     <th>Created Time</th>
                                     <th>Center Name</th>
                                     <th>Apartment Number</th>
@@ -28,11 +27,6 @@
                                     <th>Resident Name</th>
                                     <th>Issue Type</th>
                                     <th>Status</th>
-                                    <th>Changed By</th>
-                                    <th>Changed Time</th>
-                                    <th>Priority</th>
-                                    <th>Total Cost</th>
-                                    <th>Assigned To</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -41,7 +35,6 @@
                                     <tr>
                                         <td>{{ $order->wo_id}}</td>
                                         <td>{{ $order->requestor_name}}</td>
-                                        <td>{{ $order->created_by}}</td>
                                         <td>{{ $order->created_date_time}}</td>
                                         <td>{{ $order->center_name}}</td>
                                         <td>{{ $order->apartment_number}}</td>
@@ -49,11 +42,6 @@
                                         <td>{{ $order->resident_name}}</td>
                                         <td>{{ $order->issue_type}}</td>
                                         <td>{{ $order->status}}</td>
-                                        <td>{{ $order->changed_by}}</td>
-                                        <td>{{ $order->changed_time}}</td>
-                                        <td>{{ $order->priority}}</td>
-                                        <td>{{ $order->total_cost}}</td>
-                                        <td>{{ $order->assign_to}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -77,7 +77,7 @@ class UsersController extends Controller
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'cell' => 'required|phone|size:11',
+            'cell' => 'required|integer|digits:10',
         ]);
         $this->populateCreateFields($input);
         $input['password'] = "";
@@ -124,7 +124,7 @@ class UsersController extends Controller
         $this->validate($request, [
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
-            'cell' => 'required|phone|size:11',
+            'cell' => 'required|integer|digits:10',
         ]);
         $this->populateUpdateFields($request);
         //$request['active'] = $request['active'] == '' ? true : false;

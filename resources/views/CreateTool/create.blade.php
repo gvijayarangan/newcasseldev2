@@ -28,9 +28,9 @@
                         </br> </br>
 
                         <div class="form-group">
-                            {!! Form::label('tool_comment', 'Tool Comments:',['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::label('tool_comment', 'Tool Description:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::text('tool_comment',null,['class'=>'col-md-4 form-control']) !!}
+                                {!! Form::textarea('tool_comment',null,['class'=>'col-md-4 form-control']) !!}
                             </div>
                         </div>
                         </br> </br>

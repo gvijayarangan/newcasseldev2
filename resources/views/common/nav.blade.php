@@ -36,8 +36,8 @@
                         <li><a href="{{ url('/workorder') }}"><i class="fa fa-file-text"></i> Work
                                 Order Form</a></li>
 
-                        <li><a href="{{ url('/workorderview') }}"><i class="fa fa-files-o"></i> View
-                                Work Order's</a></li>
+                        <li><a href="{{ url('/workorderview') }}"><i class="fa fa-files-o"></i>
+                                Work Order List</a></li>
 
                     </ul>
                 </li>
@@ -54,8 +54,9 @@
                         <li><a href="{{ url('/apartment') }}"><i class="fa fa-btn fa-fw fa-file-o"></i>Apartments</a>
                         </li>
 
-                        <li><a href="{{ url('/resident') }}"><i class="fa fa-btn fa-fw fa-file-o"></i>Residents</a>
-                        </li>
+
+                        <li><a href="{{ url('/resident') }}"><i class="fa fa-street-view" aria-hidden="true"></i>&nbsp; Resident</a></li>
+                       
 
                         <li><a href="{{ url('/rescontact') }}"><i class="fa fa-btn fa-fw fa-file-o"></i>Resident
                                 Contact</a></li>
@@ -63,11 +64,11 @@
                         <li><a href="{{ url('/tool') }}"><i class="fa fa-btn fa-fw fa-file-o"></i>Tool</a>
                         </li>
 
-                        <li><a href="{{ url('/Supply') }}"><i
-                                        class="fa fa-btn fa-fw fa-file-o"></i>Supply</a></li>
 
-                        <li><a href="{{ url('/commonarea') }}"><i class="fa fa-btn fa-fw fa-file-o"></i>Common
-                                Area</a></li>
+                        <li><a href="{{ url('/Supply') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp; Supply</a></li>
+
+                        <li><a href="{{ url('/commonarea') }}"><span><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Common Area/<br>&nbsp;&nbsp;&nbsp;&nbsp; System Name</span></a></li>
+                        
 
                         <li><a href="{{ url('/issuetype') }}"><i class="fa fa-btn fa-fw fa-file-o"></i>Issue
                                 Type</a></li>

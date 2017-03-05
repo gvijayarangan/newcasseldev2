@@ -1,17 +1,30 @@
 @include('layouts.app')
 @extends('CreateSupply')
 @section('content')
+
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <h1>New Cassel Supplies information page </h1>
-    <a href="{{url('/Supply/create')}}" class="btn btn-success">Create Supply</a>
-    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="pull-right">
+                            <form action="{{ url('/Supply/create') }}" method="GET">{{ csrf_field() }}
+                                <button type="submit" id="create-user" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create Supply</button>
+                            </form>
+                        </div>
+                        <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp New Cassel Supply Information</h4></div>
+                    </div>
+                    <div class="panel-body" style="width: 100%">
+                        <div class="table-responsive">
+
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">
-            <th>Supply_ID</th>
+
             <th>Supply Name</th>
             <th>Unit_Price</th>
-            <th>Comments</th>
+
             <th colspan="3">Actions</th>
         </tr>
         </thead>
@@ -29,12 +42,12 @@
 
         @foreach ($createsupply as $createsupp)
             <tr>
-                <td>{{ $createsupp->id}}</td>
+
                 <td>{{ $createsupp->sup_name}}</td>
                 <td>{{ $createsupp->sup_unitprice}}</td>
-                <td>{{ $createsupp->sup_comment}}</td>
-                <td><a href="{{url('Supply',$createsupp->id)}}" class="btn btn-primary">Read</a></td>
-                <td><a href="{{url('Supply/update', $createsupp->id)}}" class="btn btn-warning">Update</a></td>
+
+                <td><a href="{{url('Supply',$createsupp->id)}}" class="btn btn-primary">View</a></td>
+                <td><a href="{{url('Supply/update', $createsupp->id)}}" class="btn btn-warning">Modify</a></td>
                 <td>
                     {!! Form::open(['method' => 'DELETE', 'route'=>['Supply.destroy', $createsupp->id],'onsubmit' => 'return ConfirmDelete()']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
@@ -46,4 +59,10 @@
         </tbody>
 
     </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

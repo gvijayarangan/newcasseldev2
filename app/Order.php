@@ -10,6 +10,7 @@ class Order extends Model
     protected $fillable=[
         'user_id',
         'apt_id',
+        'cntr_id',
         'ca_id',
         'order_description',
         'order_date_created',
@@ -18,7 +19,8 @@ class Order extends Model
         'issue_type',
         'order_total_cost',
         'resident_comment',
-        'last_status_modified'
+        'last_status_modified',
+        'requestor_name'
     ];
 
     public function orcomment() {

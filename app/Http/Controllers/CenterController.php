@@ -37,12 +37,13 @@ class CenterController extends Controller
     public function store(Request $request)
     {//dd($request);
         $this->validate($request, [
-            'cntr_name' => 'required|string',
-            'cntr_add1' => 'required|string',
-            'cntr_city' => 'required|string',
-            'cntr_state' => 'required|string',
-            'cntr_zip' => 'required|integer',
-
+            'cntr_name' => 'required|string|Max:50',
+            'cntr_add1' => 'required|string|Max:50',
+            'cntr_city' => 'required|string|Max:50',
+            'cntr_state' => 'required|string|Max:20',
+            'cntr_zip' => 'required|integer|digits:5',
+            'cntr_phone' => 'integer|digits:10',
+            'cntr_fax' => 'integer|digits:10',
         ]);
         $center = new Center();
         $center->cntr_name = $request->cntr_name;
@@ -81,12 +82,13 @@ class CenterController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'cntr_name' => 'required|string',
-            'cntr_add1' => 'required|string',
-            'cntr_city' => 'required|string',
-            'cntr_state' => 'required|string',
-            'cntr_zip' => 'required|integer',
-
+            'cntr_name' => 'required|string|Max:50',
+            'cntr_add1' => 'required|string|Max:50',
+            'cntr_city' => 'required|string|Max:50',
+            'cntr_state' => 'required|string|Max:20',
+            'cntr_zip' => 'required|integer|digits:5',
+            'cntr_phone' => 'integer|digits:10',
+            'cntr_fax' => 'integer|digits:10',
         ]);
 
         $UpdateCntr = Center::find($id);

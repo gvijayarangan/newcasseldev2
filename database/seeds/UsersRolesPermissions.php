@@ -231,12 +231,12 @@ class CentersTableSeeder extends Seeder
     public function run()
     {
         DB::table('centers')->insert([
-            'cntr_name' => 'Aksarben', 'cntr_add1' => '3001 Dodge', 'cntr_add2' => '31st ST', 'cntr_city' => 'Omaha', 'cntr_state' => 'NE', 'cntr_zip' => 68105, 'cntr_phone' =>98787,
-            'cntr_fax' => 234567, 'cntr_comments' => 'test',
+            'cntr_name' => 'Aksarben', 'cntr_add1' => '3001 Dodge', 'cntr_add2' => '31st ST', 'cntr_city' => 'Omaha', 'cntr_state' => 'NE', 'cntr_zip' => 68105, 'cntr_phone' =>'98787',
+            'cntr_fax' => '234567', 'cntr_comments' => 'test',
         ]);
         DB::table('centers')->insert([
-            'cntr_name' => 'Omaha', 'cntr_add1' => '3001 Dodge', 'cntr_add2' => '31st ST', 'cntr_city' => 'Omaha', 'cntr_state' => 'NE', 'cntr_zip' => 68105, 'cntr_phone' =>98787,
-            'cntr_fax' => 234567, 'cntr_comments' => 'test',
+            'cntr_name' => 'Omaha', 'cntr_add1' => '3001 Dodge', 'cntr_add2' => '31st ST', 'cntr_city' => 'Omaha', 'cntr_state' => 'NE', 'cntr_zip' => 68105, 'cntr_phone' =>'98787',
+            'cntr_fax' => '234567', 'cntr_comments' => 'test',
         ]);
     }
 }

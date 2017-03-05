@@ -77,22 +77,29 @@
                                     {!! Form::text('cntr_fax',null,['class'=>'col-md-4 form-control']) !!}
                                 </div>
                             </div>
+
+                        </div>
+                            </br> </br>
+                            <div class="form-group">
+                                <div class="form-group">
+                                {!!Form::label('cntr_comments', 'Center Comments:',['class' => 'col-md-4 control-label']) !!}
+                                <div class="col-md-4">
+                                    {!! Form::textarea('cntr_comments',null,['class'=>'col-md-4 form-control']) !!}
+                                </div>
+                            </div>
+                            </div>
+
                             </br> </br>
 
                             <div class="form-group">
-                                {!!Form::label('cntr_comments', 'Center Comments:',['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-4">
-                                    {!! Form::text('cntr_comments',null,['class'=>'col-md-4 form-control']) !!}
-                                </div>
-                            </div>
-                            </br> </br>
-                            {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
+                            {!! Form::submit('Submit', ['class' => 'btn btn-primary form-control ']) !!}
                         </div>
 
+                            {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {!! Form::close() !!}
+
 @stop

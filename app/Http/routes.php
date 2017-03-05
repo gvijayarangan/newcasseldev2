@@ -87,6 +87,7 @@ Route::get('/getIssueDesc', 'WorkOrderController@getIssueDesc');
 Route::get('/getUnitPrice', 'WorkOrderController@getUnitPrice');
 Route::post('/workorder/storeData', 'WorkOrderController@storeData');
 
+Route::get('/getAptDetailRes', 'ResidentsController@getAptDet');
 
 Route::post('/sendemail', function () {
 

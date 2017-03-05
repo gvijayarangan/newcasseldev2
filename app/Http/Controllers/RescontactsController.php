@@ -26,7 +26,9 @@ class RescontactsController extends Controller
     public function show($id)
     {
         $post = Rescontact::find($id);
-        return view('CreateRescon.show', compact('post'));
+        $resident_name = Resident::findOrFail($post->con_res_id)->res_fname . " " .
+            Resident::findOrFail($post->con_res_id)->res_lname;
+         return view('CreateRescon.show', compact('post', 'resident_name'));
     }
 
     public function create()
@@ -45,13 +47,11 @@ class RescontactsController extends Controller
     public function store(Request $request)
     {//dd($request);
         $this->validate($request, [
-            'con_fname' => 'required|string',
-          //  'con_mname' => 'required|string',
-            'con_lname' => 'required|string',
-            'con_relationship' => 'required|string',
-            'con_cellphone' => 'required|integer',
-            'con_email' => 'required|string',
-          //  'con_comment' => 'required|string',
+            'con_fname' => 'required|alpha|Max:50',
+            'con_lname' => 'required|alpha|Max:50',
+            'con_relationship' => 'required|string|Max:50',
+            'con_cellphone' => 'required|integer|digits:10',
+            'con_email' => 'required|string|Max:30',
             'con_gender' => 'required|string',
         ]);
         $rescontact = new Rescontact();
@@ -94,13 +94,11 @@ class RescontactsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'con_fname' => 'required|string',
-            //  'con_mname' => 'required|string',
-            'con_lname' => 'required|string',
-            'con_relationship' => 'required|string',
-            'con_cellphone' => 'required|integer',
-            'con_email' => 'required|string',
-            //'con_comment' => 'required|string',
+            'con_fname' => 'required|alpha|Max:50',
+            'con_lname' => 'required|alpha|Max:50',
+            'con_relationship' => 'required|string|Max:50',
+            'con_cellphone' => 'required|integer|digits:10',
+            'con_email' => 'required|string|Max:30',
             'con_gender' => 'required|string',
         ]);
         $CreateRescon = Rescontact::find($id);

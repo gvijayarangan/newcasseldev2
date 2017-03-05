@@ -42,14 +42,10 @@ class HomeController extends Controller
             $user = Auth::user();
             $loginUser = Auth::user()->getUserEmail();
             setcookie('login', $loginUser, time() + (86400 * 30), "/");
-            if ($user->hasRole('admin'))
+            if ($user->hasRole('admin') || $user->hasRole('engineer'))
              return view('carousel', compact('user'));
-            else
-                return view('workorder', compact('user'));
-
-           
-
-
+            else if ($user->hasRole('contact'))
+                return view('carousel', compact('user'));
 
         }
     }

@@ -2,7 +2,12 @@
 @extends('CreateComarea')
 @section('content')
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
-    <h1>NCRC Edit Common Area/System</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center" > Update Common Area Information</div>
+                    <div class="panel-body">
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -18,13 +23,13 @@
         {!! Form::label('ca_name', '*Common Area/System name:') !!}
         {!! Form::text('ca_name',null,['class'=>'form-control']) !!}
     </div>
+        <div class="form-group">
+            {!! Form::label('ca_comments', '*Comments:') !!}
+            {!! Form::textarea('ca_comments',null,['class'=>'form-control']) !!}
+        </div>
     <div class="form-group">
-        {!! Form::label('ca_comments', '*Comments:') !!}
-        {!! Form::text('ca_comments',null,['class'=>'form-control']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('cntr_id', 'Center ID:') !!}
-        {!! Form::text('cntr_id',null,['class'=>'form-control']) !!}
+        {!! Form::label('cntr_id', 'Center Name:') !!}
+        {{ Form::select('cntr_id',  $centers) }}
     </div>
 
     <div class="form-group">
@@ -32,4 +37,11 @@
     </div>
     </div>
     {!! Form::close() !!}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
 @stop

@@ -37,8 +37,8 @@ class IssuetypesController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'issue_typename' => 'required|string',
-          // 'issue_description' => 'required|string',
+            'issue_typename' => 'required|alpha',
+            'issue_description' => 'string',
         ]);
         $issuetype = new Issuetype();
         $issuetype->issue_typename = $request -> issue_typename;
@@ -63,8 +63,8 @@ class IssuetypesController extends Controller
     public function update(Request $request, $id)
     {
         $this -> validate ($request, [
-            'issue_typename' => 'required|string',
-            'issue_description' => 'required|string',
+            'issue_typename' => 'required|alpha',
+            'issue_description' => 'string',
         ]);
 
 

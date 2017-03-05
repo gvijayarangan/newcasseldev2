@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 use App\Apartment;
 use App\Center;
+use DB;
 
 //adding comment for demo1
 class ApartmentsController extends Controller
@@ -13,7 +14,7 @@ class ApartmentsController extends Controller
     public function index()
     {
         $createapts = Apartment::all();
-        foreach ($createapts as $apts) {//dd(Center::findOrFail(7)->cntr_name);
+        foreach ($createapts as $apts) {
             $apts->centerName = Center::findOrFail($apts->cntr_id)->cntr_name;
         }
         return view('CreateApt.index',compact('createapts'));
@@ -22,6 +23,7 @@ class ApartmentsController extends Controller
     public function show($id)
     {
         $post = Apartment::find($id);
+        $post->cntr_id = DB::table('centers')->where('id', $post->cntr_id)->value('cntr_name');
         return view('CreateApt.show', compact('post'));
     }
 
@@ -39,8 +41,8 @@ class ApartmentsController extends Controller
     public function store(Request $request)
     {//dd($request);
         $this->validate($request, [
-            'apt_floornumber' => 'required|integer',
-            'apt_number' => 'required|integer',
+            'apt_floornumber' => 'required|integer|digits:3 ',
+            'apt_number' => 'required|integer|digits:3',
         ]);
         $apartment = new Apartment();
         $apartment->apt_floornumber = $request->apt_floornumber;
@@ -75,8 +77,8 @@ class ApartmentsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'apt_floornumber' => 'required|integer',
-            'apt_number' => 'required|integer',
+            'apt_floornumber' => 'required|integer|digits:3',
+            'apt_number' => 'required|integer|digits:3',
         ]);
 
         $CreateApt = Apartment::find($id);
