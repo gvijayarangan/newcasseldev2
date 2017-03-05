@@ -88,7 +88,8 @@ class WorkOrderController extends Controller
         $input = $request -> input('option');
 
         $resident_data = Resident::
-        select(DB::raw("CONCAT(`res_fname`, ' ',`res_lname`) as res_fname, id"))->where('res_apt_id', '=' , $input )
+
+        select(DB::raw("CONCAT(res_fname, ' ',res_lname) as res_fname, id"))->where('res_apt_id', '=' , $input )
             ->lists('res_fname', 'id')->all();
 
         $apartment_floor_data = Apartment::
