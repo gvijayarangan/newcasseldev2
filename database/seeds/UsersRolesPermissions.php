@@ -100,7 +100,7 @@ class RoleUserTableSeeder extends Seeder {
          DB::table('role_user')->insert($role_user);
 
         $user = User::where('f_name', '=', 'Prakruthi')->first()->id;
-        $role = Role::where('name', '=', 'Engineer')->first()->id;
+        $role = Role::where('name', '=', 'engineer')->first()->id;
         $role_user = [ ['role_id' => $role, 'user_id' => $user, 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create() ] ];
         DB::table('role_user')->insert($role_user);
 
