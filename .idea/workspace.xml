@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000020_create_orderviews_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000021_create_orders_table.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php" />
     </list>
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +37,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SocialAuthController.php" />
         <option value="$PROJECT_DIR$/app/SocialAccountService.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
@@ -90,6 +87,7 @@
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000021_create_orders_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000022_create_orderviews_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php" />
       </list>
     </option>
   </component>
@@ -267,12 +265,12 @@
       <workItem from="1487303605717" duration="1083000" />
       <workItem from="1488523320143" duration="29000" />
       <workItem from="1488609668107" duration="2293000" />
-      <workItem from="1488671256063" duration="4569000" />
+      <workItem from="1488671256063" duration="5196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98486000" />
+    <option name="totallyTimeSpent" value="99113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="0" width="3204" height="1714" extended-state="0" />
@@ -336,7 +334,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/Resident0215/Apartment.php" />
     <entry file="file://$USER_HOME$/Downloads/Resident0215/routes.php" />
     <entry file="file://$PROJECT_DIR$/../newcasseldev/.env" />
     <entry file="file://$PROJECT_DIR$/../newcasselprak/.env" />
@@ -508,6 +505,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding />
         </state>
       </provider>

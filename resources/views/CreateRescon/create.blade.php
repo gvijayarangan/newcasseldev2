@@ -65,7 +65,7 @@
                         <div class="form-group">
                             {!!Form::label('con_comment', 'Comment:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::textarea('con_comment',null,['class'=>'col-md-4 form-control']) !!}
+                                {!! Form::textarea('con_comment',null,['class'=>'col-md-4 form-control', 'rows'=>'1']) !!}
                             </div>
                         </div>
                         </br> </br>
@@ -91,10 +91,11 @@
                             </br> </br>
                             {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
 
+                            {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {!! Form::close() !!}
+
 @stop

@@ -84,16 +84,17 @@
                                 <div class="form-group">
                                 {!!Form::label('cntr_comments', 'Center Comments:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
-                                    {!! Form::textarea('cntr_comments',null,['class'=>'col-md-4 form-control']) !!}
+                                    {!! Form::textarea('cntr_comments',null,['class'=>'col-md-4 form-control','rows' => 4, 'cols' => 60]) !!}
                                 </div>
                             </div>
                             </div>
 
                             </br> </br>
 
-                            <div class="form-group">
-                            {!! Form::submit('Submit', ['class' => 'btn btn-primary form-control ']) !!}
-                        </div>
+                            <div class="form-group" style="text-align: center; padding-top: 100px">
+                                {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
+
+                            </div>
 
                             {!! Form::close() !!}
                     </div>

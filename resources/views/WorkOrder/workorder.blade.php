@@ -13,8 +13,6 @@
 
     <div class="container">
         <div class="row">
-
-            
             <div class="col-md-10">
                 <br> <br>
                 <div class="panel panel-default">
@@ -23,57 +21,36 @@
                     <div class="panel-body" style="padding-left: 15%">
                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                         <input type="hidden" name="supplyData" id="supplyData" value="">
-
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-sm-4">
                             {!! Form::text('requester',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
                         </div.panel-heading>
-                        </br> </br>
-
-                        <div class="form-group{{ $errors->has('centername') ? ' has-error' : '' }}">
-                            {!! Form::label('centername', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading class="col-md-8">
-                                <div class="form-group">
-                                    {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
-                                     array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
-                                    @if ($errors->has('centername'))
-                                        <span class="help-block">
-                <strong>{{ $errors->first('centername') }}</strong>
-            </span>
-                                    @endif
-                                </div>
-                            </div.panel-heading>
-                        </div>
 
                         </br> </br>
 
-                        <div class="form-group{{ $errors->has('apartment no') ? ' has-error' : '' }}">
-                            {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading class="col-md-8">
-                                {{ Form::select('apt_id', array_merge([0 => 'Please Select']), 'default',
-                                array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
-                                @if ($errors->has('apartment no'))
-                                    <span class="help-block">
-                <strong>{{ $errors->first('apartment no') }}</strong>
-            </span>
-                                @endif
-                            </div.panel-heading>
-                        </div>
+                        {!! Form::label('centername', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-8">
+                            <div class="form-group">
+                                {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
+                                 array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
+                            </div>
+                        </div.panel-heading>
 
                         </br> </br>
 
-                        <div class="form-group{{ $errors->has('residentname') ? ' has-error' : '' }}">
-                            {!! Form::label('residentname', 'Resident Name:', ['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading class="col-md-8">
-                                {{ Form::select('residentname', array_merge([0 => 'Please Select']),
-                                'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
-                                @if ($errors->has('residentname'))
-                                    <span class="help-block">
-                <strong>{{ $errors->first('residentname') }}</strong>
-            </span>
-                                @endif
-                            </div.panel-heading>
-                        </div>
+                        {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-8">
+                            {{ Form::select('apt_id', array_merge([0 => 'Please Select']), 'default',
+                            array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
+                        </div.panel-heading>
+
+                        </br> </br>
+
+                        {!! Form::label('residentname', 'Resident Name:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-8">
+                            {{ Form::select('residentname', array_merge([0 => 'Please Select']),
+                            'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
+                        </div.panel-heading>
 
                         </br> </br>
                         {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
@@ -85,20 +62,12 @@
 
                         </br> </br>
 
-                        <div class="form-group{{ $errors->has('resident_comments') ? ' has-error' : '' }}">
-                            {!! Form::label('res_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading class="col-md-6">
-                                {!! Form::text('resident_comments',null,['class'=>'form-control'], array('id' => 'res_comments','class' => 'col-md-6')) !!}
-                                @if ($errors->has('resident_comments'))
-                                    <span class="help-block">
-                <strong>{{ $errors->first('resident_comments') }}</strong>
-            </span>
-                                @endif
-                            </div.panel-heading>
-                        </div>
+                        {!! Form::label('res_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-6">
+                            {!! Form::text('resident_comments',null,['class'=>'form-control'], array('id' => 'res_comments','class' => 'col-md-6')) !!}
+                        </div.panel-heading>
 
                         </br> </br>
-
 
                         {!! Form::label('status', 'Status:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-6">
@@ -109,36 +78,24 @@
 
                         </br> </br>
 
-                        <div class="form-group{{ $errors->has('priority') ? ' has-error' : '' }}">
-                            {!! Form::label('priority', 'Priority:', ['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading class="col-md-8">
-                                {!! Form::select('order_priority', ['Please Select' => 'Please Select', 'Low' => 'Low', 'Moderate' => 'Moderate', 'High' => 'High'],
-                                'default', array('class' => 'col-md-4')) !!}
-                                @if ($errors->has('priority'))
-                                    <span class="help-block">
-                <strong>{{ $errors->first('priority') }}</strong>
-            </span>
-                                @endif
-                            </div.panel-heading>
-                        </div>
+                        {!! Form::label('priority', 'Priority:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-8">
+                            {!! Form::select('order_priority', ['Please Select' => 'Please Select', 'Low' => 'Low', 'Moderate' => 'Moderate', 'High' => 'High'],
+                            'default', array('class' => 'col-md-4')) !!}
+                        </div.panel-heading>
 
 
                         </br> </br>
 
-                        <div class="form-group{{ $errors->has('issuetype') ? ' has-error' : '' }}">
-                            {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading class="col-md-4">
-                                {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default', array('id' => 'issuetype_dropdown')) }}
-                                @if ($errors->has('issuetype'))
-                                    <span class="help-block">
-                <strong>{{ $errors->first('issuetype') }}</strong>
-            </span>
-                                @endif
-                            </div.panel-heading>
-                        </div>
+
+
+
+                        {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-4">
+                            {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default', array('id' => 'issuetype_dropdown')) }}
+                        </div.panel-heading>
 
                         </br> </br>
-
 
                         {!! Form::label('issuedescription', 'Issue Description:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-2">
@@ -147,20 +104,12 @@
 
                         </br> </br>
 
-                        <div class="form-group{{ $errors->has('wodescription') ? ' has-error' : '' }}">
-                            {!! Form::label('wodescription', 'Work Order Description:', ['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading class="col-md-8">
-                                {!! Form::text('order_description',null,['class'=>'form-control']) !!}
-                                @if ($errors->has('wodescription'))
-                                    <span class="help-block">
-                <strong>{{ $errors->first('wodescription') }}</strong>
-            </span>
-                                @endif
-                            </div.panel-heading>
-                        </div>
+                        {!! Form::label('wodescription', 'Work Order Description:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-8">
+                            {!! Form::text('order_description',null,['class'=>'form-control']) !!}
+                        </div.panel-heading>
 
                         </br> </br>
-
 
                         {!! Form::label('assigntype', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-6">
@@ -170,18 +119,12 @@
 
                         </br> </br>
 
-                        <div class="form-group{{ $errors->has('toolsused') ? ' has-error' : '' }}">
-                            {!! Form::label('toolsused', 'Tools used:', ['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading style="padding-left: 15px">
-                                {{ Form::select('toolsused_id[]', $toolsdata,
-                                  'default', array('id' => 'tools_data', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
-                                @if ($errors->has('toolsused'))
-                                    <span class="help-block">
-                <strong>{{ $errors->first('toolsused') }}</strong>
-            </span>
-                                @endif
-                            </div.panel-heading>
-                        </div>
+
+                        {!! Form::label('toolsused', 'Tools used:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading style="padding-left: 15px">
+                            {{ Form::select('toolsused_id[]', $toolsdata,
+                              'default', array('id' => 'tools_data', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
+                        </div.panel-heading>
 
                         </br> </br>
 
@@ -198,7 +141,6 @@
                             <h4 class="text-info" style="padding-left: 25px">Supply Information:</h4>
                             <div class="panel panel-default">
                                 <div class="panel-body form-horizontal payment-form">
-
                                     <div class="form-group">
                                         <label for="concept" class="col-sm-3 control-label">Supply Name</label>
                                         <div class="col-sm-8">
@@ -206,52 +148,26 @@
                                            'default', array('id' => 'supply_dropdown')) }}
                                         </div>
                                     </div>
-
-                                    <div class="form-group{{ $errors->has('unitprice') ? ' has-error' : '' }}">
-                                        <div class="form-group">
-                                            <label for="amount" class="col-sm-3 control-label">Unit Price</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" id="unitprice" name="unitprice"
-                                                       readonly>
-                                                @if ($errors->has('unitprice'))
-                                                    <span class="help-block">
-                <strong>{{ $errors->first('unitprice') }}</strong>
-            </span>
-                                                @endif
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="amount" class="col-sm-3 control-label">Unit Price</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="unitprice" name="unitprice"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description" class="col-sm-3 control-label">Unit</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="unit" name="unit" disabled>
                                         </div>
                                     </div>
 
-                                    <div class="form-group{{ $errors->has('unit') ? ' has-error' : '' }}">
-                                        <div class="form-group">
-                                            <label for="description" class="col-sm-3 control-label">Unit</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" id="unit" name="unit" disabled>
-                                                @if ($errors->has('unit'))
-                                                    <span class="help-block">
-                <strong>{{ $errors->first('unit') }}</strong>
-            </span>
-                                                @endif
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="status" class="col-sm-3 control-label">Total</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="total" name="total" readonly>
                                         </div>
                                     </div>
-
-                                    <div class="form-group{{ $errors->has('total') ? ' has-error' : '' }}">
-                                        <div class="form-group">
-                                            <label for="status" class="col-sm-3 control-label">Total</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" id="total" name="total"
-                                                       readonly>
-                                                @if ($errors->has('total'))
-                                                    <span class="help-block">
-                                                            <strong>{{ $errors->first('total') }}</strong>
-                                                        </span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-
-
                                     <div class="form-group">
                                         <div class="col-sm-12 text-left">
                                             <button id="addDetails" type="button"
@@ -348,13 +264,13 @@
                 $("#apartment_dropdown").empty();
 
                 apartment_data.append($("<option></option>")
-                    .attr("value", 0)
-                    .text("Please Select"));
+                        .attr("value", 0)
+                        .text("Please Select"));
 
                 $.each(data, function (key, value) {
                     apartment_data.append($("<option></option>")
-                        .attr("value", key)
-                        .text(value));
+                            .attr("value", key)
+                            .text(value));
                 });
                 $('#apartment_dropdown').val(0).change();
 
@@ -367,13 +283,13 @@
                 $("#commonarea_dropdown").empty();
 
                 commonarea_data.append($("<option></option>")
-                    .attr("value", 0)
-                    .text("Please Select"));
+                        .attr("value", 0)
+                        .text("Please Select"));
 
                 $.each(data, function (key, value) {
                     commonarea_data.append($("<option></option>")
-                        .attr("value", key)
-                        .text(value));
+                            .attr("value", key)
+                            .text(value));
                 });
                 $('#commonarea_dropdown').val(0).change();
 
@@ -395,18 +311,17 @@
                     if (data.length != 0) {
                         $.each(data, function (key, value) {
                             resident_data.append($("<option></option>")
-                                .attr("value", key)
-                                .text(value));
+                                    .attr("value", key)
+                                    .text(value));
                         });
                         //Show the first index upon change
                         $('#residentname_dropdown').val(Object.entries(data)[0][0]).change();
                     } else {
                         resident_data.append($("<option></option>")
-
                                 .attr("value", 0)
                                 .text("Resident not occupied"));
                         $('#residentname_dropdown').val(0).change();
-                      }
+                    }
                 });
             } else {
                 //Empty resident information
@@ -490,14 +405,14 @@
                 $("#supply_dropdown option:eq(0)").prop("selected", true).change();
 
 
-                var tableData = $.param($('#dataSupplyTable td').map(function () {
+                var tableData = $.param($('#dataSupplyTable td').map(function() {
                     return {
                         name: $(this).attr('name'),
                         value: $(this).text().trim()
                     };
                 }));
 
-                $("#supplyData").val("" + tableData + "");
+                $("#supplyData").val(""+tableData+"");
                 console.log(tableData);
             }
         });
@@ -519,7 +434,7 @@
                 };
             }));
 
-            $("#supplyData").val("" + tableData + "");
+            $("#supplyData").val(""+tableData+"");
             console.log(tableData);
         });
 

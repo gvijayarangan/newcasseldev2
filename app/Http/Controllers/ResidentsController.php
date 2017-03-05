@@ -150,7 +150,7 @@ class ResidentsController extends Controller
 
 //
 //        $resident->res_cntr_id = $center_id;
-        $resident->cntr_name = $request -> cntr_name;
+        $resident->res_cntr_id = $request -> cntr_name;
         $resident->save();
         return redirect('resident');
     }

@@ -36,10 +36,10 @@ class WorkOrderController extends Controller
         $centers = Center::lists('cntr_name', 'id')->all();
         $issuetypes = Issuetype::lists('issue_typename', 'id')->all();
         $workers = DB::table('users')
-                ->join('role_user', 'users.id', '=', 'role_user.user_id')
-                ->where('role_id','=','2')
-                ->select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, id"))
-                ->lists('fullname', 'id');
+            ->join('role_user', 'users.id', '=', 'role_user.user_id')
+            ->where('role_id','=','2')
+            ->select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, id"))
+            ->lists('fullname', 'id');
 
         $toolsdata = Tool::lists('tool_name', 'id')->all();
         $suppliesdata = Supply::lists('sup_name', 'id')->all();
@@ -71,7 +71,7 @@ class WorkOrderController extends Controller
         select(DB::raw("apt_number, id"))->where('cntr_id', '=' , $input )
             ->lists('apt_number', 'id')->all();
 
-         return $apartment_data;
+        return $apartment_data;
     }
 
     public function getComAreaDetails(Request $request) {
@@ -116,8 +116,9 @@ class WorkOrderController extends Controller
 
     public function storeData(Request $request)
     {
-
         // Validation depends on type of the user
+
+        /*       //Admin validation
                $this -> validate($request, [
                    'requester' => 'required|string',
                    'cntr_name' => 'required|string',
@@ -126,7 +127,9 @@ class WorkOrderController extends Controller
                    'resident_comments' => 'required|string',
                    'status' => 'required|string',
 
-               ]);
+               ]);*/
+
+
         error_log("Request is " . $request);
 
         //Save all orders

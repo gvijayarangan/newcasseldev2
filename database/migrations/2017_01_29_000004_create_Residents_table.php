@@ -17,13 +17,13 @@ class CreateResidentsTable extends Migration
             $table->increments('id');
             $table->string('res_pccid');
             $table->string('res_fname');
-            $table->string('res_mname');
+            $table->string('res_mname')->nullable();
             $table->string('res_lname');
             $table->string('res_gender');
-            $table->string('res_Homephone');
-            $table->string('res_cellphone');
-            $table->string('res_email');
-            $table->string('res_comment');
+            $table->string('res_Homephone')->nullable();
+            $table->string('res_cellphone')->nullable();
+            $table->string('res_email')->nullable();
+            $table->string('res_comment')->nullable();
             $table->string('res_status');
             $table->integer('res_apt_id');
             $table->integer('res_cntr_id');

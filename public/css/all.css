@@ -73,7 +73,7 @@ img.img-responsive {
 }
 
 .navbar-default .navbar-brand {
-    color: #191970;
+  color: #191970;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -117,7 +117,8 @@ img.img-responsive {
   color: #191970;
 }
 
-.navbar-default .navbar-nav .home >a:hover {
+
+.navbar-default .navbar-nav .home>a:hover {
   color: #FFFFFF;
   background-color: #B22222;
   border-radius: 5px;
@@ -157,7 +158,7 @@ img.img-responsive {
 }
 
 .dropdown:hover .dropdown-menu{
-  display: block;	/* Display the dropdown */
+  display: block;  /* Display the dropdown */
 }
 
 /** List Item Styles **/
@@ -234,3 +235,4 @@ body > .container {
 code {
   font-size: 80%;
 }
+
