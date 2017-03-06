@@ -324,21 +324,21 @@ class ApartmentsTableSeeder extends Seeder
         DB::table('apartments')->insert([
             'apt_floornumber' => 1 , 'apt_number' => '105', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
         ]);
-        DB::table('apartments')->insert([
-            'apt_floornumber' => 1 , 'apt_number' => '106', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
-        ]);
-        DB::table('apartments')->insert([
-            'apt_floornumber' => 1 , 'apt_number' => '107', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
-        ]);
-        DB::table('apartments')->insert([
-            'apt_floornumber' => 1 , 'apt_number' => '108', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
-        ]);
-        DB::table('apartments')->insert([
-            'apt_floornumber' => 1 , 'apt_number' => '109', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
-        ]);
-        DB::table('apartments')->insert([
-            'apt_floornumber' => 1 , 'apt_number' => '110', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
-        ]);
+//        DB::table('apartments')->insert([
+//            'apt_floornumber' => 1 , 'apt_number' => '106', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
+//        ]);
+//        DB::table('apartments')->insert([
+//            'apt_floornumber' => 1 , 'apt_number' => '107', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
+//        ]);
+//        DB::table('apartments')->insert([
+//            'apt_floornumber' => 1 , 'apt_number' => '108', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
+//        ]);
+//        DB::table('apartments')->insert([
+//            'apt_floornumber' => 1 , 'apt_number' => '109', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
+//        ]);
+//        DB::table('apartments')->insert([
+//            'apt_floornumber' => 1 , 'apt_number' => '110', 'apt_comments' => 'test', 'cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
+//        ]);
 
     }
 }
