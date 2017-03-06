@@ -63,8 +63,8 @@ class ResidentsController extends Controller
             'res_lname' => 'required|alpha',
             'res_gender' => 'required',
             'res_status' => 'required',
-            'res_cellphone' =>'integer|digits:10',
-            'res_Homephone' =>'integer|digits:10',
+            'res_cellphone' =>'string|digits:10',
+            'res_Homephone' =>'string|digits:10',
             'res_email' => 'email|max:255'
         ]);
         $resident = new Resident();
@@ -128,8 +128,8 @@ class ResidentsController extends Controller
             'res_lname' => 'required|alpha',
             'res_gender' => 'required',
             'res_status' => 'required',
-            'res_cellphone' =>'integer|digits:10',
-            'res_Homephone' =>'integer|digits:10',
+            'res_cellphone' =>'string|digits:10',
+            'res_Homephone' =>'string|digits:10',
             'res_email' => 'email|max:255',
         ]);
 
