@@ -18,7 +18,7 @@ class CreateSupplyOrdersTable extends Migration
             $table->integer('sup_id')->unsigned();
             $table->integer('order_id')->unsigned();
             $table->bigInteger('supord_units')->unsigned();
-            $table->bigInteger('supord_total')->unsigned();
+            $table->float('supord_total', 8, 2)->unsigned();
         });
 
         Schema::table('supplyorders', function (Blueprint $table) {
