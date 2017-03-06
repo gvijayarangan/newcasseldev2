@@ -25,14 +25,14 @@ class DatabaseSeeder extends Seeder
         //$this->call(EquipmentsTableSeeder::class);
 //        $this->call(ConresisTableSeeder::class);
 //        $this->call(AptresisTableSeeder::class);
-          $this->call(ComareasTableSeeder::class);
+        $this->call(ComareasTableSeeder::class);
         $this->call(ToolsTableSeeder::class);
         $this->call(SuppliesTableSeeder::class);
         $this->call(IssuetypesTableSeeder::class);
 //        $this->call(OrdersTableSeeder::class);
        //$this->call(AssignordersTableSeeder::class);
         //$this->call(EquipordersTableSeeder::class);
-        $this->command->info('User, Role and Permission tables seeded!');
+        $this->command->info('All important tables seeded!');
 
         // Seed the Tags table
         // $this->call(TagsTableSeeder::class);
