@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resident.php" afterPath="$PROJECT_DIR$/app/Resident.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000004_create_Residents_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_29_000004_create_Residents_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CenterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CenterController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" afterPath="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRes/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRes/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRes/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRes/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRes/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRes/show.blade.php" />
     </list>
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,89 +24,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2017_01_29_000004_create_Residents_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000004_create_Residents_table.php">
+      <file leaf-file-name="2017_01_29_000001_create_centers_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="22" column="41" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="41" />
-              <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="660">
+              <caret line="22" column="26" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersRolesPermissions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1094">
+              <caret line="261" column="1" selection-start-line="261" selection-start-column="1" selection-end-line="261" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Center.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Center.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CenterController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CenterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/show.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/CreateCntr/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            <state relative-caret-position="-1041">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/create.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/CreateCntr/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="72" column="57" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="57" />
-              <folding>
-                <marker date="1488821452313" expanded="true" signature="2741:2908" ph="..." />
-                <marker date="1488821452313" expanded="true" signature="2756:2859" ph="..." />
-                <marker date="1488821452313" expanded="true" signature="4812:5019" ph="..." />
-                <marker date="1488821452313" expanded="true" signature="4826:5017" ph="..." />
-                <marker date="1488821452313" expanded="true" signature="4841:4968" ph="..." />
-                <marker date="1488821452313" expanded="true" signature="5364:5518" ph="..." />
-                <marker date="1488821452313" expanded="true" signature="5862:6010" ph="..." />
-              </folding>
+            <state relative-caret-position="-2328">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/edit.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/CreateCntr/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="50" column="58" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="58" />
-              <folding>
-                <marker date="1488821452256" expanded="true" signature="2407:2574" ph="..." />
-                <marker date="1488821452256" expanded="true" signature="2422:2525" ph="..." />
-                <marker date="1488821452256" expanded="true" signature="3767:3974" ph="..." />
-                <marker date="1488821452256" expanded="true" signature="3781:3972" ph="..." />
-                <marker date="1488821452256" expanded="true" signature="3796:3923" ph="..." />
-                <marker date="1488821452256" expanded="true" signature="4252:4408" ph="..." />
-                <marker date="1488821452256" expanded="true" signature="4753:4948" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Resident.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resident.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/CreateCntr/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResidentsController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="66" column="26" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/common/nav.blade.php" />
         <option value="$PROJECT_DIR$/app/Apartment.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateApt/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
@@ -178,7 +161,6 @@
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000022_create_orderviews_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php" />
-        <option value="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000004_create_Residents_table.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateRes/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateRes/create.blade.php" />
@@ -186,6 +168,8 @@
         <option value="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Resident.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
+        <option value="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CenterController.php" />
       </list>
     </option>
   </component>
@@ -365,12 +349,12 @@
       <workItem from="1488523320143" duration="29000" />
       <workItem from="1488609668107" duration="2293000" />
       <workItem from="1488671256063" duration="5196000" />
-      <workItem from="1488816863678" duration="4023000" />
+      <workItem from="1488816863678" duration="4381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103136000" />
+    <option name="totallyTimeSpent" value="103494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -434,12 +418,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/resources/views/CreateApt/show.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/views/CreateApt/show.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/resources/views/CreateApt/edit.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/resources/views/CreateApt/create.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak1/database/migrations/2017_01_29_000002_create_apartments_table.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak1/database/migrations/2017_01_29_000004_create_Residents_table.php" />
     <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/views/CreateApt.blade.php" />
     <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/views/CreateApt/create.blade.php" />
     <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/lang/en/passwords.php" />
@@ -577,22 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="254" column="161" selection-start-line="254" selection-start-column="161" selection-end-line="254" selection-end-column="161" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -614,7 +576,7 @@
         <state relative-caret-position="726">
           <caret line="22" column="41" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="41" />
           <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
+            <element signature="e#7#45#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -679,6 +641,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="66" column="26" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1094">
+          <caret line="261" column="1" selection-start-line="261" selection-start-column="1" selection-end-line="261" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Center.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CenterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateCntr/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1041">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateCntr/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2328">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateCntr/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateCntr/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

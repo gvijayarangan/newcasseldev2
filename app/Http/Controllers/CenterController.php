@@ -41,7 +41,7 @@ class CenterController extends Controller
             'cntr_add1' => 'required|string|Max:50',
             'cntr_city' => 'required|string|Max:50',
             'cntr_state' => 'required|string|Max:20',
-            'cntr_zip' => 'required|integer|digits:5',
+            'cntr_zip' => 'required|string|digits:5',
             'cntr_phone' => 'string|digits:10',
             'cntr_fax' => 'string|digits:10',
         ]);
@@ -86,7 +86,7 @@ class CenterController extends Controller
             'cntr_add1' => 'required|string|Max:50',
             'cntr_city' => 'required|string|Max:50',
             'cntr_state' => 'required|string|Max:20',
-            'cntr_zip' => 'required|integer|digits:5',
+            'cntr_zip' => 'required|string|digits:5',
             'cntr_phone' => 'string|digits:10',
             'cntr_fax' => 'string|digits:10',
         ]);

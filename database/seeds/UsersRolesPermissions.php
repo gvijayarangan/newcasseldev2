@@ -252,7 +252,7 @@ class CentersTableSeeder extends Seeder
             'cntr_fax' => '234567', 'cntr_comments' => 'test',
         ]);
         DB::table('centers')->insert([
-            'cntr_name' => '90th', 'cntr_add1' => '900 North 90th Street', 'cntr_add2' => ' ', 'cntr_city' => 'Omaha', 'cntr_state' => 'NE', 'cntr_zip' => 08114', 'cntr_phone' =>'4023932277',
+            'cntr_name' => '90th', 'cntr_add1' => '900 North 90th Street', 'cntr_add2' => ' ', 'cntr_city' => 'Omaha', 'cntr_state' => 'NE', 'cntr_zip' => '08114', 'cntr_phone' =>'4023932277',
             'cntr_fax' => ' ', 'cntr_comments' => 'This is the New Cassel\'s First Center',
         ]);
     }
