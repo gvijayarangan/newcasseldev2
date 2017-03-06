@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
         //$this->call(NotificationsTableSeeder::class);
         $this->call(CentersTableSeeder::class);
         $this->call(ApartmentsTableSeeder::class);
-        $this->call(ResidentsTableSeeder::class);
-        $this->call(RescontactsTableSeeder::class);
+        //$this->call(ResidentsTableSeeder::class);
+        //$this->call(RescontactsTableSeeder::class);
         //$this->call(EquipmentsTableSeeder::class);
 //        $this->call(ConresisTableSeeder::class);
 //        $this->call(AptresisTableSeeder::class);
