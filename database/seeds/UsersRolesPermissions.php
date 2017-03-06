@@ -183,23 +183,23 @@ class ResidentsTableSeeder extends Seeder
     public function run()
     {
         DB::table('residents')->insert([
-            'res_pccid' => '1234', 'res_fname' => 'Ken', 'res_mname' => '', 'res_lname' => 'Adams', 'res_gender' => 'Male', 'res_Homephone' => '4021231234', 'res_cellphone' => '4021111111',
+            'res_pccid' => '1234', 'res_fname' => 'Ken', 'res_mname' => '', 'res_lname' => 'Adams', 'res_gender' => 'Male', 'res_homephone' => '4021231234', 'res_cellphone' => '4021111111',
             'res_email' => 'kenn@gmail.com', 'res_comment' => 'No entry without permission', 'res_status' => 'Active', 'res_apt_id' => 101 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
         ]);
         DB::table('residents')->insert([
-            'res_pccid' => '1235', 'res_fname' => 'Nancy', 'res_mname' => 'Yong', 'res_lname' => 'Adams', 'res_gender' => 'Female', 'res_Homephone' => '4021231235', 'res_cellphone' => '4021111112',
+            'res_pccid' => '1235', 'res_fname' => 'Nancy', 'res_mname' => 'Yong', 'res_lname' => 'Adams', 'res_gender' => 'Female', 'res_homephone' => '4021231235', 'res_cellphone' => '4021111112',
             'res_email' => 'Nancy@gmail.com', 'res_comment' => 'Knock the door three times', 'res_status' => 'Active', 'res_apt_id' => 101 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
         ]);
         DB::table('residents')->insert([
-            'res_pccid' => '1236', 'res_fname' => 'Billy', 'res_mname' => '', 'res_lname' => 'King', 'res_gender' => 'Male', 'res_Homephone' => '4021231236', 'res_cellphone' => '4021111113',
+            'res_pccid' => '1236', 'res_fname' => 'Billy', 'res_mname' => '', 'res_lname' => 'King', 'res_gender' => 'Male', 'res_homephone' => '4021231236', 'res_cellphone' => '4021111113',
             'res_email' => 'Billy@gmail.com', 'res_comment' => 'Call before entry', 'res_status' => 'Active', 'res_apt_id' => 102 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
         ]);
         DB::table('residents')->insert([
-            'res_pccid' => '1237', 'res_fname' => 'Emily', 'res_mname' => "O'Hara", 'res_lname' => 'King', 'res_gender' => 'Female', 'res_Homephone' => '4021231237', 'res_cellphone' => '4021111114',
+            'res_pccid' => '1237', 'res_fname' => 'Emily', 'res_mname' => "O'Hara", 'res_lname' => 'King', 'res_gender' => 'Female', 'res_homephone' => '4021231237', 'res_cellphone' => '4021111114',
             'res_email' => 'Emily@gmail.com', 'res_comment' => 'Entry after 4:00 PM', 'res_status' => 'Active', 'res_apt_id' => 102 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
         ]);
         DB::table('residents')->insert([
-            'res_pccid' => '1238', 'res_fname' => 'Joe', 'res_mname' => '', 'res_lname' => 'Edward', 'res_gender' => 'Male', 'res_Homephone' => '4021231238', 'res_cellphone' => '4021111115',
+            'res_pccid' => '1238', 'res_fname' => 'Joe', 'res_mname' => '', 'res_lname' => 'Edward', 'res_gender' => 'Male', 'res_homephone' => '4021231238', 'res_cellphone' => '4021111115',
             'res_email' => 'Joe@gmail.com', 'res_comment' => 'Entry before noon', 'res_status' => 'Active', 'res_apt_id' => 103 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
         ]);
 
