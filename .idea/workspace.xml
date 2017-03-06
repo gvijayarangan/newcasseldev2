@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
     </list>
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,13 +27,59 @@
         <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="434">
-              <caret line="185" column="144" selection-start-line="185" selection-start-column="144" selection-end-line="185" selection-end-column="144" />
+              <caret line="185" column="97" selection-start-line="185" selection-start-column="92" selection-end-line="185" selection-end-column="97" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="70" column="49" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="49" />
+              <folding>
+                <marker date="1488781666716" expanded="true" signature="2741:2908" ph="..." />
+                <marker date="1488781666716" expanded="true" signature="2756:2859" ph="..." />
+                <marker date="1488781666716" expanded="true" signature="4812:5019" ph="..." />
+                <marker date="1488781666716" expanded="true" signature="4826:5017" ph="..." />
+                <marker date="1488781666716" expanded="true" signature="4841:4968" ph="..." />
+                <marker date="1488781666716" expanded="true" signature="5364:5518" ph="..." />
+                <marker date="1488781666716" expanded="true" signature="5862:6010" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResidentsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="929">
+              <caret line="50" column="58" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="58" />
+              <folding>
+                <marker date="1488781666732" expanded="true" signature="2407:2574" ph="..." />
+                <marker date="1488781666732" expanded="true" signature="2422:2525" ph="..." />
+                <marker date="1488781666732" expanded="true" signature="3767:3974" ph="..." />
+                <marker date="1488781666732" expanded="true" signature="3781:3972" ph="..." />
+                <marker date="1488781666732" expanded="true" signature="3796:3923" ph="..." />
+                <marker date="1488781666732" expanded="true" signature="4252:4408" ph="..." />
+                <marker date="1488781666732" expanded="true" signature="4753:4948" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="693">
@@ -58,7 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000004_create_Residents_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000014_create_passwords_table.php" />
@@ -77,7 +122,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
         <option value="$PROJECT_DIR$/resources/views/users/partial.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/resources/views/workorderview.blade.php" />
@@ -109,6 +153,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateRes/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
       </list>
     </option>
   </component>
@@ -288,12 +334,12 @@
       <workItem from="1488523320143" duration="29000" />
       <workItem from="1488609668107" duration="2293000" />
       <workItem from="1488671256063" duration="5196000" />
-      <workItem from="1488816863678" duration="956000" />
+      <workItem from="1488816863678" duration="2185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100069000" />
+    <option name="totallyTimeSpent" value="101298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -357,9 +403,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../newcasselprak/resources/views/home.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak/resources/views/carousel.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak/resources/views/CreateRes.blade.php" />
     <entry file="file://$PROJECT_DIR$/../newcasselprak/resources/views/layouts/app.blade.php" />
     <entry file="file://$PROJECT_DIR$/../newcasselprak/resources/views/CreateApt.blade.php" />
     <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/views/CreateApt/edit.blade.php" />
@@ -515,18 +558,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="185" column="144" selection-start-line="185" selection-start-column="144" selection-end-line="185" selection-end-column="144" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="185" column="97" selection-start-line="185" selection-start-column="92" selection-end-line="185" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="929">
+          <caret line="50" column="58" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="58" />
+          <folding>
+            <marker date="1488781666732" expanded="true" signature="2407:2574" ph="..." />
+            <marker date="1488781666732" expanded="true" signature="2422:2525" ph="..." />
+            <marker date="1488781666732" expanded="true" signature="3767:3974" ph="..." />
+            <marker date="1488781666732" expanded="true" signature="3781:3972" ph="..." />
+            <marker date="1488781666732" expanded="true" signature="3796:3923" ph="..." />
+            <marker date="1488781666732" expanded="true" signature="4252:4408" ph="..." />
+            <marker date="1488781666732" expanded="true" signature="4753:4948" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="70" column="49" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="49" />
+          <folding>
+            <marker date="1488781666716" expanded="true" signature="2741:2908" ph="..." />
+            <marker date="1488781666716" expanded="true" signature="2756:2859" ph="..." />
+            <marker date="1488781666716" expanded="true" signature="4812:5019" ph="..." />
+            <marker date="1488781666716" expanded="true" signature="4826:5017" ph="..." />
+            <marker date="1488781666716" expanded="true" signature="4841:4968" ph="..." />
+            <marker date="1488781666716" expanded="true" signature="5364:5518" ph="..." />
+            <marker date="1488781666716" expanded="true" signature="5862:6010" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
           <folding />
         </state>
       </provider>

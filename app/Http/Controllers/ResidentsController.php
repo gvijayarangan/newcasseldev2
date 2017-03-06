@@ -73,10 +73,10 @@ class ResidentsController extends Controller
         $resident->res_mname = $request -> res_mname;
         $resident->res_lname = $request -> res_lname;
         $resident->res_gender = $request -> res_gender;
-        $resident->res_Homephone = $request -> res_phone;
+        $resident->res_Homephone = $request -> res_Homephone;
         $resident->res_cellphone = $request -> res_cellphone;
         $resident->res_email = $request -> res_email;
-        $resident->res_pccid = $request -> res_pccid;
+       // $resident->res_pccid = $request -> res_pccid;
         $resident->res_status = $request -> res_status;
         $resident->res_comment = $request -> res_comment;
     
