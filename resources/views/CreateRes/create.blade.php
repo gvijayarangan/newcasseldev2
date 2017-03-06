@@ -68,9 +68,9 @@
 
                     </br> </br>
                     <div class="form-group">
-                        {!! Form::label('res_Homephone', 'Home Phone:',['class' => 'col-md-4 control-label']) !!}
+                        {!! Form::label('res_homephone', 'Home Phone:',['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-4">
-                            {!! Form::text('res_Homephone',null,['class'=>'form-control']) !!}
+                            {!! Form::text('res_homephone',null,['class'=>'form-control']) !!}
                         </div>
                     </div>
 

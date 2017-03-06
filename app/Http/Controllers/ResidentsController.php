@@ -64,7 +64,7 @@ class ResidentsController extends Controller
             'res_gender' => 'required',
             'res_status' => 'required',
             'res_cellphone' =>'string|digits:10',
-            'res_Homephone' =>'string|digits:10',
+            'res_homephone' =>'string|digits:10',
             'res_email' => 'email|max:255'
         ]);
         $resident = new Resident();
@@ -73,7 +73,7 @@ class ResidentsController extends Controller
         $resident->res_mname = $request -> res_mname;
         $resident->res_lname = $request -> res_lname;
         $resident->res_gender = $request -> res_gender;
-        $resident->res_Homephone = $request -> res_Homephone;
+        $resident->res_homephone = $request -> res_homephone;
         $resident->res_cellphone = $request -> res_cellphone;
         $resident->res_email = $request -> res_email;
        // $resident->res_pccid = $request -> res_pccid;
@@ -129,7 +129,7 @@ class ResidentsController extends Controller
             'res_gender' => 'required',
             'res_status' => 'required',
             'res_cellphone' =>'string|digits:10',
-            'res_Homephone' =>'string|digits:10',
+            'res_homephone' =>'string|digits:10',
             'res_email' => 'email|max:255',
         ]);
 
@@ -139,7 +139,7 @@ class ResidentsController extends Controller
         $resident->res_mname = $request->res_mname;
         $resident->res_lname = $request->res_lname;
         $resident->res_gender = $request->res_gender;
-        $resident->res_Homephone = $request->res_Homephone;
+        $resident->res_homephone = $request->res_homephone;
         $resident->res_cellphone = $request->res_cellphone;
         $resident->res_email = $request->res_email;
         $resident->res_status = $request->res_status;

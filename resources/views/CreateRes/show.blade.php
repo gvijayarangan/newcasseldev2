@@ -37,7 +37,7 @@
             </tr>
             <tr>
                 <td>Phone</td>
-                <td><?php echo ($post['res_Homephone']); ?></td>
+                <td><?php echo ($post['res_homephone']); ?></td>
             </tr>
             <tr>
                 <td>Cellphone</td>

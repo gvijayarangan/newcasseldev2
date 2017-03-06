@@ -20,7 +20,7 @@ class CreateCentersTable extends Migration
             $table->string('cntr_add2')->nullable();
             $table->string('cntr_city');
             $table->string('cntr_state');
-            $table->integer('cntr_zip');
+            $table->string('cntr_zip');
             $table->string('cntr_phone')->nullable();
             $table->string('cntr_fax')->nullable();
             $table->String('cntr_comments')->nullable();

@@ -20,7 +20,7 @@ class CreateResidentsTable extends Migration
             $table->string('res_mname')->nullable();
             $table->string('res_lname');
             $table->string('res_gender');
-            $table->string('res_Homephone')->nullable();
+            $table->string('res_homephone')->nullable();
             $table->string('res_cellphone')->nullable();
             $table->string('res_email')->nullable();
             $table->string('res_comment')->nullable();
