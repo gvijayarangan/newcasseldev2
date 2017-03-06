@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" afterPath="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
     </list>
     <ignored path="basic.iws" />
@@ -23,7 +22,28 @@
     <favorites_list name="basic" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="UsersRolesPermissions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="186" column="138" selection-start-line="186" selection-start-column="138" selection-end-line="186" selection-end-column="138" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="726">
+              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,8 +107,8 @@
         <option value="$PROJECT_DIR$/app/Resident.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CenterController.php" />
-        <option value="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
       </list>
     </option>
   </component>
@@ -268,16 +288,16 @@
       <workItem from="1488523320143" duration="29000" />
       <workItem from="1488609668107" duration="2293000" />
       <workItem from="1488671256063" duration="5196000" />
-      <workItem from="1488816863678" duration="5084000" />
+      <workItem from="1488816863678" duration="5237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104197000" />
+    <option name="totallyTimeSpent" value="104350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23307292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -556,14 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="186" column="192" selection-start-line="186" selection-start-column="192" selection-end-line="186" selection-end-column="192" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -616,6 +628,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="186" column="138" selection-start-line="186" selection-start-column="138" selection-end-line="186" selection-end-column="138" />
           <folding />
         </state>
       </provider>

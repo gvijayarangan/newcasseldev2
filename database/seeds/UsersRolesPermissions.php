@@ -184,7 +184,7 @@ class ResidentsTableSeeder extends Seeder
     {
         DB::table('residents')->insert([
             'res_pccid' => '1234', 'res_fname' => 'Ken', 'res_mname' => '', 'res_lname' => 'Adams', 'res_gender' => 'Male', 'res_homephone' => '4021231234', 'res_cellphone' => '4021111111',
-            'res_email' => 'kenn@gmail.com', 'res_comment' => 'No entry without permission', 'res_status' => 'Active', 'res_apt_id' => => ($apartment = Apartment::where('apt_number', '=', '101')->first()->id) , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
+            'res_email' => 'kenn@gmail.com', 'res_comment' => 'No entry without permission', 'res_status' => 'Active', 'res_apt_id' => 101 , 'res_cntr_id' => ($center = Center::where('cntr_name', '=', '90th')->first()->id) ,
         ]);
         DB::table('residents')->insert([
             'res_pccid' => '1235', 'res_fname' => 'Nancy', 'res_mname' => 'Yong', 'res_lname' => 'Adams', 'res_gender' => 'Female', 'res_homephone' => '4021231235', 'res_cellphone' => '4021111112',
