@@ -40,7 +40,7 @@ class CommonareaController extends Controller
     {
         $this -> validate($request, [
             'ca_name' => 'required|string|Max:50',
-            'ca_comments' => 'required|string:Max:255',
+            //'ca_comments' => 'required|string:Max:255',
 
         ]);
         $comareas = new Comarea();
