@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateApt/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateApt/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRescon/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRescon/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateTool/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateTool/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
     </list>
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +85,6 @@
         <option value="$PROJECT_DIR$/resources/views/CreateComarea/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateComarea/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateTool/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateComarea/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/WorkOrder/workorder.blade.php" />
@@ -101,6 +98,7 @@
         <option value="$PROJECT_DIR$/resources/views/CreateApt/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateRescon/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateTool/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
       </list>
     </option>
   </component>
@@ -299,12 +297,12 @@
       <workItem from="1488671256063" duration="5196000" />
       <workItem from="1488816863678" duration="6610000" />
       <workItem from="1488851168548" duration="4304000" />
-      <workItem from="1488867400607" duration="732000" />
+      <workItem from="1488867400607" duration="841000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110759000" />
+    <option name="totallyTimeSpent" value="110868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -597,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
@@ -689,6 +680,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1137">
           <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1137">
+          <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
           <folding />
         </state>
       </provider>
