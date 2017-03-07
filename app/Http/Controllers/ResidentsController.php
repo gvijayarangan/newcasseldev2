@@ -59,8 +59,8 @@ class ResidentsController extends Controller
     {
         $this -> validate($request, [
             'res_pccid' => 'required|integer|digits:4',
-            'res_fname' => 'required|alpha',
-            'res_lname' => 'required|alpha',
+            'res_fname' => 'required|string|Max:50',
+            'res_lname' => 'required|string|Max:50',
             'res_gender' => 'required',
             'res_status' => 'required',
             'res_cellphone' =>'string|digits:10',
@@ -124,8 +124,8 @@ class ResidentsController extends Controller
     {
                 $this -> validate ($request, [
             'res_pccid' => 'required|integer|digits:4',
-            'res_fname' => 'required|alpha',
-            'res_lname' => 'required|alpha',
+            'res_fname' => 'required|string|Max:50',
+            'res_lname' => 'required|string|Max:50',
             'res_gender' => 'required',
             'res_status' => 'required',
             'res_cellphone' =>'string|digits:10',

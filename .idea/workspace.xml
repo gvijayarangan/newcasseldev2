@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplyController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplyController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ToolsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ToolsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateComarea/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateComarea/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateComarea/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateComarea/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateComarea/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateComarea/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateIssue/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateIssue/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateTool/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateTool/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateTool/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateTool/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/WorkOrder/workorder.blade.php" afterPath="$PROJECT_DIR$/resources/views/WorkOrder/workorder.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/WorkOrder/workorderContact.blade.php" afterPath="$PROJECT_DIR$/resources/views/WorkOrder/workorderContact.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" afterPath="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RescontactsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RescontactsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
     </list>
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +24,18 @@
     <favorites_list name="basic" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="759">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,8 +50,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/workorder.blade.php" />
-        <option value="$PROJECT_DIR$/../newcasseldev/resources/views/workorderview.blade.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/database/seeds/UsersRolesPermissions.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000004_create_Residents_table.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000005_create_Rescontacts_table.php" />
@@ -84,7 +78,6 @@
         <option value="$PROJECT_DIR$/resources/views/CreateRes/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateRes/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Resident.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CenterController.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
@@ -105,6 +98,9 @@
         <option value="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/RescontactsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -173,6 +169,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -189,6 +186,9 @@
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -232,6 +232,19 @@
       <scripts />
       <node-interpreter value="project" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
     <list size="1">
@@ -285,16 +298,16 @@
       <workItem from="1488609668107" duration="2293000" />
       <workItem from="1488671256063" duration="5196000" />
       <workItem from="1488816863678" duration="6610000" />
-      <workItem from="1488851168548" duration="2880000" />
+      <workItem from="1488851168548" duration="4304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108603000" />
+    <option name="totallyTimeSpent" value="110027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23307292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -354,8 +367,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/edit.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/app/Http/Controllers/ApartmentsController.php" />
     <entry file="file://$PROJECT_DIR$/app/Apartment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -477,13 +488,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="66" column="26" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -626,8 +631,8 @@
         <state relative-caret-position="401">
           <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
           <folding>
-            <element signature="e#228#247#0#HTML" expanded="true" />
-            <element signature="e#912#931#0#HTML" expanded="true" />
+            <element signature="e#228#247#0#HTML" expanded="false" />
+            <element signature="e#912#931#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -697,6 +702,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1023">
           <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381">
+          <caret line="127" column="50" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RescontactsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="13" />
           <folding />
         </state>
       </provider>

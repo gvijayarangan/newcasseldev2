@@ -47,8 +47,8 @@ class RescontactsController extends Controller
     public function store(Request $request)
     {//dd($request);
         $this->validate($request, [
-            'con_fname' => 'required|alpha|Max:50',
-            'con_lname' => 'required|alpha|Max:50',
+            'con_fname' => 'required|string|Max:50',
+            'con_lname' => 'required|string|Max:50',
             'con_relationship' => 'required|string|Max:50',
             'con_cellphone' => 'required|string|digits:10',
             'con_email' => 'required|email|max:255',
@@ -94,8 +94,8 @@ class RescontactsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'con_fname' => 'required|alpha|Max:50',
-            'con_lname' => 'required|alpha|Max:50',
+            'con_fname' => 'required|string|Max:50',
+            'con_lname' => 'required|string|Max:50',
             'con_relationship' => 'required|string|Max:50',
             'con_cellphone' => 'required|string|digits:10',
             'con_email' => 'required|email|max:255',
