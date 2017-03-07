@@ -82,7 +82,7 @@ class PasswordController extends Controller
             if ($user->hasRole('admin'))
                 return view('carousel', compact('user'));
             else
-                return view('home', compact('user'));
+                return view('carousel', compact('user'));
             //return view('auth.passwords.createpassword')->with('Password has been changed',  $this->viewData);
         }
     }
