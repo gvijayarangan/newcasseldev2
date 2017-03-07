@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" afterPath="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateApt/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateApt/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRescon/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRescon/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplyController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplyController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ToolsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ToolsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateComarea/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateComarea/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateComarea/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateComarea/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateComarea/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateComarea/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateIssue/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateIssue/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateTool/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateTool/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/CreateTool/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/CreateTool/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/WorkOrder/workorder.blade.php" afterPath="$PROJECT_DIR$/resources/views/WorkOrder/workorder.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/WorkOrder/workorderContact.blade.php" afterPath="$PROJECT_DIR$/resources/views/WorkOrder/workorderContact.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" afterPath="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" />
     </list>
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,19 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_06_01_212641_entrust_setup_tables.php" />
-        <option value="$PROJECT_DIR$/app/Role.php" />
-        <option value="$PROJECT_DIR$/../newcasseldev/.env" />
-        <option value="$PROJECT_DIR$/resources/views/users/show.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" />
-        <option value="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/users/partial.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
-        <option value="$PROJECT_DIR$/resources/views/workorderview.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workorder.blade.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/resources/views/workorderview.blade.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/database/seeds/UsersRolesPermissions.php" />
@@ -75,14 +77,12 @@
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000015_create_Supplies_table.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000007_create_orders_table.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000021_create_orders_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" />
         <option value="$PROJECT_DIR$/../newcasseldev/database/migrations/2017_01_29_000022_create_orderviews_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000001_create_centers_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000004_create_Residents_table.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateRes/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateRes/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateRes/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Resident.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CenterController.php" />
@@ -90,6 +90,21 @@
         <option value="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateRescon/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateApt/index.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ToolsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SupplyController.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateComarea/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateComarea/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateTool/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateRes/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateTool/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/CreateComarea/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/WorkOrder/workorder.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php" />
       </list>
     </option>
   </component>
@@ -269,12 +284,13 @@
       <workItem from="1488523320143" duration="29000" />
       <workItem from="1488609668107" duration="2293000" />
       <workItem from="1488671256063" duration="5196000" />
-      <workItem from="1488816863678" duration="6022000" />
+      <workItem from="1488816863678" duration="6610000" />
+      <workItem from="1488851168548" duration="2880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105135000" />
+    <option name="totallyTimeSpent" value="108603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -338,29 +354,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/views/CreateApt/create.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/lang/en/passwords.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/lang/en/pagination.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/lang/en/auth.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasselprak1/resources/lang/en/validation.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/app/Apartment.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/app/Center.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/create.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/show.blade.php" />
-    <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/index.blade.php" />
     <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/resources/views/CreateApt/edit.blade.php" />
     <entry file="file://$PROJECT_DIR$/../newcasseldev paddu/app/Http/Controllers/ApartmentsController.php" />
     <entry file="file://$PROJECT_DIR$/app/Apartment.php">
@@ -388,13 +381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1353">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -452,18 +438,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000005_create_Rescontacts_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -471,9 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="22" column="41" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -481,7 +456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -489,15 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="72" column="57" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="57" />
-          <folding>
-            <marker date="1488821452313" expanded="true" signature="2741:2908" ph="..." />
-            <marker date="1488821452313" expanded="true" signature="2756:2859" ph="..." />
-            <marker date="1488821452313" expanded="true" signature="4812:5019" ph="..." />
-            <marker date="1488821452313" expanded="true" signature="4826:5017" ph="..." />
-            <marker date="1488821452313" expanded="true" signature="4841:4968" ph="..." />
-            <marker date="1488821452313" expanded="true" signature="5364:5518" ph="..." />
-            <marker date="1488821452313" expanded="true" signature="5862:6010" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -505,23 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="50" column="58" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="58" />
-          <folding>
-            <marker date="1488821452256" expanded="true" signature="2407:2574" ph="..." />
-            <marker date="1488821452256" expanded="true" signature="2422:2525" ph="..." />
-            <marker date="1488821452256" expanded="true" signature="3767:3974" ph="..." />
-            <marker date="1488821452256" expanded="true" signature="3781:3972" ph="..." />
-            <marker date="1488821452256" expanded="true" signature="3796:3923" ph="..." />
-            <marker date="1488821452256" expanded="true" signature="4252:4408" ph="..." />
-            <marker date="1488821452256" expanded="true" signature="4753:4948" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -529,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -537,7 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="66" column="26" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -545,7 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="642">
           <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -553,15 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="22" column="26" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -577,7 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1041">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -585,7 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2328">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -593,7 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -601,7 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -609,7 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -617,10 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1488823358073" expanded="true" signature="4324:4499" ph="..." />
-            <marker date="1488823358073" expanded="true" signature="4339:4450" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -628,7 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="323" column="41" selection-start-line="323" selection-start-column="41" selection-end-line="323" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,6 +562,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000002_create_apartments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="43" column="64" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ToolsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1797">
+          <caret line="67" column="11" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SupplyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="85" column="33" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateComarea/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateComarea/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="38" column="68" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateTool/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateRes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
+          <folding>
+            <element signature="e#228#247#0#HTML" expanded="true" />
+            <element signature="e#912#931#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateTool/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateComarea/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/WorkOrder/workorder.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-693">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488863891425" expanded="true" signature="1614:1774" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="2118:2262" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="2572:2725" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="3037:3181" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="3883:4210" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="3897:4208" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="3914:4136" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="4497:4696" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="4511:4694" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="6194:6358" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="6673:6818" ph="..." />
+            <marker date="1488863891425" expanded="true" signature="8062:8211" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_29_000007_create_orders_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1023">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
           <folding />
         </state>
       </provider>

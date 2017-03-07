@@ -20,7 +20,7 @@
 
     {!! Form::model($tool, ['method' => 'PATCH','route'=>['tool.update', $tool->id]]) !!}
     <div class="form-group">
-        {!! Form::label('tool_name', 'Tool Name:') !!}
+        {!! Form::label('tool_name', '*Tool Name:') !!}
         {!! Form::text('tool_name',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">

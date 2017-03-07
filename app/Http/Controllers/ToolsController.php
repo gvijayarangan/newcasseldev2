@@ -37,7 +37,7 @@ class ToolsController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'tool_name' => 'required|alpha',
+            'tool_name' => 'required',
             'tool_comment' => 'string',
         ]);
         $tool = new Tool();
@@ -63,7 +63,7 @@ class ToolsController extends Controller
     public function update(Request $request, $id)
     {
         $this -> validate ($request, [
-            'tool_name' => 'required|alpha',
+            'tool_name' => 'required',
             'tool_comment' => 'string'
         ]);
 

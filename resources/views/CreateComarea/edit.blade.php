@@ -24,7 +24,7 @@
         {!! Form::text('ca_name',null,['class'=>'form-control']) !!}
     </div>
         <div class="form-group">
-            {!! Form::label('ca_comments', '*Comments:') !!}
+            {!! Form::label('ca_comments', 'Comments:') !!}
             {!! Form::textarea('ca_comments',null,['class'=>'form-control']) !!}
         </div>
     <div class="form-group">

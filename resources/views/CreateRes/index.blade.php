@@ -1,5 +1,5 @@
-@include('layouts.app')
-@extends('CreateRes')
+@extends('layouts.app')
+
 @section('content')
 
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
@@ -49,7 +49,7 @@
                 <td>{{ $createres-> res_pccid }}</td>
                 <td>{{ $createres-> res_fname }}</td>
                 <td>{{ $createres-> res_lname }}</td>
-                <td>{{ $createres-> res_homephone }}</td>
+                <td>{{ $createres-> res_Homephone }}</td>
                 <td>{{ $createres-> res_cellphone }}</td>
                 <td>{{ $createres-> res_email }}</td>
                 <td>{{ $createres-> res_status }}</td>

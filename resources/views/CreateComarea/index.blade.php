@@ -1,6 +1,7 @@
-@include('layouts.app')
-@extends('CreateComarea')
+@extends('layouts.app')
+
 @section('content')
+
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
         <div class="row">

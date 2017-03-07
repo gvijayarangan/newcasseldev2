@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_date_created')->default('2017-03-01');
             $table->string('order_priority')->nullable();
             $table->string('order_status')->nullable();
-            $table->float('order_total_cost', 6,2)->default(0.00);
+            $table->float('order_total_cost', 10,2)->default(0.00)->nullable();
             $table->timestamps('deleted_at');
             $table->string('resident_comment')->nullable();
             $table->string('last_status_modified')->default('2017-03-01');

@@ -98,8 +98,8 @@
                         </br> </br>
 
                         {!! Form::label('issuedescription', 'Issue Description:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-2">
-                            {!! Form::text('issuedescription',null, array('id' => 'issuedescription', 'readonly' => true)) !!}
+                        <div.panel-heading class="col-md-8">
+                            {!! Form::text('issuedescription',null, array('id' => 'issuedescription', 'readonly' => true,'size'=>70)) !!}
                         </div.panel-heading>
 
                         </br> </br>
@@ -143,7 +143,7 @@
                                 <div class="panel-body form-horizontal payment-form">
                                     <div class="form-group">
                                         <label for="concept" class="col-sm-3 control-label">Supply Name</label>
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-6">
                                             {{ Form::select('supply', array_merge([0 => 'Please Select']) + $suppliesdata,
                                            'default', array('id' => 'supply_dropdown')) }}
                                         </div>

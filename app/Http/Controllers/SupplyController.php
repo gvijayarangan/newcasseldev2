@@ -41,7 +41,7 @@ class SupplyController extends Controller
     {//dd($request);
         $this->validate($request, [
             //'id' => 'required|integer',
-            'sup_name' => 'required|alpha',
+            'sup_name' => 'required',
             'sup_unitprice' => 'required|numeric',
             'sup_comment' => 'string',
         ]);
@@ -81,7 +81,7 @@ class SupplyController extends Controller
     {
         $this->validate($request, [
 
-            'sup_name' => 'required|alpha',
+            'sup_name' => 'required',
             'sup_unitprice' => 'required|numeric',
             'sup_comment' => 'string',
         ]);

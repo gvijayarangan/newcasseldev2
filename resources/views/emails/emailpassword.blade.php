@@ -10,7 +10,7 @@
 <div>
      Your account has been created. Welcome to New Cassel Work Order System!
     <br>
-    Click <a href="http://newcassel.herokuapp.com/createPassword/<?php echo $_SESSION['user_id'];?>">here</a> to create your password.
+    Click <a href="http://newcassel-gv.herokuapp.com/createPassword/<?php echo $_SESSION['user_id'];?>">here</a> to create your password.
     <br>
     Regards
 

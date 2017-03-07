@@ -78,7 +78,7 @@
 
                         {!! Form::label('issuedescription', 'Issue Description:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-2">
-                            {!! Form::text('issuedescription',null, array('id' => 'issuedescription', 'readonly' => true)) !!}
+                            {!! Form::text('issuedescription',null, array('id' => 'issuedescription', 'readonly' => true,'size'=>70)) !!}
                         </div.panel-heading>
 
                         </br> </br>
