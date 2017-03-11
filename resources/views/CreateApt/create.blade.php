@@ -21,6 +21,11 @@
                         @endif
                         {!! Form::open(['url' => 'apartment']) !!}
                         <div class="form-group">
+                            {!! Form::label('cntr_name', '*Center Name:',['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-4">
+                                {!! Form::select('cntr_name', $centers ,null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
+                            </div>
+                            </br> </br>
                             {!! Form::label('apt_floornumber', '*Apartment Floor Number:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('apt_floornumber',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
@@ -36,12 +41,6 @@
 
 
                                 <div class="form-group">
-                                    {!! Form::label('cntr_name', '*Center Name:',['class' => 'col-md-4 control-label']) !!}
-                                    <div class="col-md-4">
-                                        {!! Form::select('cntr_name', $centers ,null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
-                                    </div>
-                                    </br> </br>
-
                                     <div class="form-group">
                                         {!! Form::label('apt_comments', 'Apartment Comments:',['class' => 'col-md-4 control-label']) !!}
                                         <div class="col-md-4">

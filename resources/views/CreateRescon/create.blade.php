@@ -47,16 +47,16 @@
                         </div>
                         </br> </br>
                         <div class="form-group">
-                            {!!Form::label('con_cellphone', '*Cellphone:',['class' => 'col-md-4 control-label']) !!}
+                            {!!Form::label('con_cellphone', 'Cellphone:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::text('con_cellphone',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
+                                {!! Form::text('con_cellphone',null,['class'=>'col-md-4 form-control']) !!}
                             </div>
                         </div>
                         </br> </br>
                         <div class="form-group">
-                            {!!Form::label('con_email', '*Email:',['class' => 'col-md-4 control-label']) !!}
+                            {!!Form::label('con_email', 'Email:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::text('con_email',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
+                                {!! Form::text('con_email',null,['class'=>'col-md-4 form-control']) !!}
                             </div>
                         </div>
                         </br> </br>

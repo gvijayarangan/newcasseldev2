@@ -22,10 +22,9 @@
         <thead>
         <tr class="bg-info">
 
-            <th>Common Area/System Name</th>
-
             <th>Center Name</th>
 
+            <th>Common Area/System Name</th>
             <th colspan="3">Actions</th>
         </tr>
         </thead>
@@ -44,9 +43,9 @@
         @foreach ($createcomarea as $createcomarea)
             <tr>
 
+                <td>{{ $createcomarea-> cntr_id }}</td>
                 <td>{{ $createcomarea-> ca_name }}</td>
 
-                <td>{{ $createcomarea-> cntr_id }}</td>
                 <td><a href="{{url('commonarea',$createcomarea->id)}}" class="btn btn-primary">View</a></td>
                 <td><a href="{{url('commonarea/update',$createcomarea->id)}}" class="btn btn-warning">Modify</a></td>
                 <td>

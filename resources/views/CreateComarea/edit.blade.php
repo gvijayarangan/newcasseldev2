@@ -19,6 +19,10 @@
     @endif
     {!! Form::model($comareas,['method' => 'PATCH','route'=>['commonarea.update',$comareas->id]]) !!}
 
+        <div class="form-group">
+            {!! Form::label('cntr_id', '*Center Name:') !!}
+            {{ Form::select('cntr_id',  $centers) }}
+        </div>
     <div class="form-group">
         {!! Form::label('ca_name', '*Common Area/System name:') !!}
         {!! Form::text('ca_name',null,['class'=>'form-control']) !!}
@@ -27,11 +31,6 @@
             {!! Form::label('ca_comments', 'Comments:') !!}
             {!! Form::textarea('ca_comments',null,['class'=>'form-control']) !!}
         </div>
-    <div class="form-group">
-        {!! Form::label('cntr_id', 'Center Name:') !!}
-        {{ Form::select('cntr_id',  $centers) }}
-    </div>
-
     <div class="form-group">
         {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
     </div>

@@ -28,7 +28,7 @@
         {!! Form::text('cntr_add1',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('cntr_add2', '*Center Address2:') !!}
+        {!! Form::label('cntr_add2', 'Center Address2:') !!}
         {!! Form::text('cntr_add2',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">

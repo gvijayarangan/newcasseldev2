@@ -26,10 +26,11 @@
                                 <thead>
                                 <tr class="bg-info">
 
+
+                                    <th>Center Name</th>
                                     <th>Apartment Floor Number</th>
                                     <th>Apartment Number</th>
 
-                                    <th>Center Name</th>
                                     <th colspan="3">Actions</th>
                                 </tr>
                                 </thead>
@@ -47,10 +48,11 @@
                                 @foreach ($createapts as $createapt)
                                     <tr>
 
+                                        <td>{{ $createapt->centerName}}</td>
                                         <td>{{ $createapt->apt_floornumber}}</td>
                                         <td>{{ $createapt->apt_number}}</td>
 
-                                        <td>{{ $createapt->centerName}}</td>
+
                                         <td><a href="{{url('apartment',$createapt->id)}}" class="btn btn-primary">View</a></td>
                                         <td><a href="{{url('apartment/update', $createapt->id)}}" class="btn btn-warning">Modify</a></td>
                                         <td>

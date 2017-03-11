@@ -10,6 +10,7 @@ class Comarea extends Model
     protected $fillable=[
         'ca_name',
         'ca_comments',
+        'cntr_name',
     ];
 
     public function order() {

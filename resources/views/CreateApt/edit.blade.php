@@ -18,6 +18,10 @@
     @endif
 
     {!! Form::model($createapts, ['method' => 'PATCH','route'=>['apartment.update', $createapts->id]]) !!}
+        <div class="form-group">
+            {!!Form::label('cntr_id', 'Center Name:') !!}
+            {{ Form::select('cntr_id', $centers) }}
+        </div>
     <div class="form-group">
         {!! Form::label('apt_floornumber', 'Apartment FloorNumber:') !!}
         {!! Form::text('apt_floornumber',null,['class'=>'form-control']) !!}
@@ -30,10 +34,6 @@
             {!! Form::label('apt_comments', 'Apartment Comments:') !!}
             {!! Form::textarea('apt_comments',null,['class'=>'form-control']) !!}
         </div>
-    <div class="form-group">
-        {!!Form::label('cntr_id', 'Center Name:') !!}
-        {{ Form::select('cntr_id', $centers) }}
-    </div>
     <div class="form-group">
         {!! Form::submit('Update Information', ['class' => 'btn btn-primary']) !!}
     </div>

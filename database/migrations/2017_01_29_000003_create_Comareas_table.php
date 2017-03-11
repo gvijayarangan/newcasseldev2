@@ -16,8 +16,8 @@ class CreateComAreasTable extends Migration
         Schema::create('comareas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ca_name');
-            $table->String('ca_comments');
-            $table->integer('cntr_id')->unsigned();
+            $table->String('ca_comments')->nullable();
+            $table->integer('cntr_id')->nullable();
         });
 
         Schema::table('comareas', function (Blueprint $table) {

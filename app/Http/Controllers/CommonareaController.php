@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Center;
 use App\Comarea;
 use Illuminate\Http\Request;
+use DB;
 //use App\AppServiceProvider;
 //use App\Illuminate\Support\Facades\Validator;
 
@@ -22,6 +23,7 @@ class CommonareaController extends Controller
     public function show($id)
     {
         $post = Comarea::find($id);
+        $post->cntr_id = DB::table('centers')->where('id', $post->cntr_id)->value('cntr_name');
         return view('CreateComarea.show', compact('post'));
     }
 

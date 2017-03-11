@@ -19,7 +19,7 @@
     @endif
     {!! Form::model($createrescontacts, ['method' => 'PATCH','route'=>['rescontact.update', $createrescontacts->id]]) !!}
     <div class="form-group">
-        {!! Form::label('con_fname', 'First Name:') !!}
+        {!! Form::label('con_fname', '*First Name:') !!}
         {!! Form::text('con_fname',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
@@ -27,11 +27,11 @@
         {!! Form::text('con_mname',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('con_lname', 'Last Name:') !!}
+        {!! Form::label('con_lname', '*Last Name:') !!}
         {!! Form::text('con_lname',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('con_relationship', 'Relationship:') !!}
+        {!! Form::label('con_relationship', '*Relationship:') !!}
         {!! Form::text('con_relationship',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
@@ -53,7 +53,7 @@
             'Male' => 'Male'], old('con_gender'), ['class' => 'form-control']) }}
     </div>
     <div class="form-group">
-        {!!Form::label('con_res_id', 'Resident Name:') !!}
+        {!!Form::label('con_res_id', '*Resident Name:') !!}
         {{ Form::select('con_res_id', $residentscon) }}
     </div>
     <div class="form-group">

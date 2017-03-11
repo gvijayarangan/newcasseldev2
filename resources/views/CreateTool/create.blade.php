@@ -21,6 +21,7 @@
                         {!! Form::open(['url' => 'tool']) !!}
                         <div class="form-group">
                             {!! Form::label('tool_name', '*Tool Name:',['class' => 'col-md-4 control-label']) !!}
+
                             <div class="col-md-4">
                                 {!! Form::text('tool_name',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>

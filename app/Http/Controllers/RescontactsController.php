@@ -50,8 +50,8 @@ class RescontactsController extends Controller
             'con_fname' => 'required|string|Max:50',
             'con_lname' => 'required|string|Max:50',
             'con_relationship' => 'required|string|Max:50',
-            'con_cellphone' => 'required|string|digits:10',
-            'con_email' => 'required|email|max:255',
+            'con_cellphone' => 'string|digits:10',
+            'con_email' => 'email|max:255',
             'con_gender' => 'required|string',
         ]);
         $rescontact = new Rescontact();
@@ -97,8 +97,8 @@ class RescontactsController extends Controller
             'con_fname' => 'required|string|Max:50',
             'con_lname' => 'required|string|Max:50',
             'con_relationship' => 'required|string|Max:50',
-            'con_cellphone' => 'required|string|digits:10',
-            'con_email' => 'required|email|max:255',
+            'con_cellphone' => 'string|digits:10',
+            'con_email' => 'email|max:255',
             'con_gender' => 'required|string',
         ]);
         $CreateRescon = Rescontact::find($id);

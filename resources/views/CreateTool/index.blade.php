@@ -41,7 +41,6 @@
         </script>
         @foreach ($createtool as $createtool)
             <tr>
-
                 <td>{{ $createtool->tool_name}}</td>
                 {{--<td>{{ $createtool->tool_comment}}</td>--}}
                 <td><a href="{{url('tool',$createtool->id)}}" class="btn btn-primary">View</a></td>
