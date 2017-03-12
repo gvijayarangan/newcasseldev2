@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-  @section('content') 
+@section('content')
 
 <div class="container">
     <div class="row">
@@ -18,9 +18,9 @@
                         </div>
                     @endif
 
-                    {!! Form::open(['url' => 'resident']) !!}  
-                    <input type="hidden" name="_token" value="{{ Session::token() }}"> 
-                     
+                    {!! Form::open(['url' => 'resident']) !!}
+                    <input type="hidden" name="_token" value="{{ Session::token() }}">
+                    
                     <div class="form-group">
                         {!! Form::label('res_pccid', '*PCCID:',['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-4">
@@ -115,19 +115,20 @@
                     <br><br>
 
                     <div class="form-group">
-                          {!! Form::label('cntr_name', 'Center Name:', ['class' => 'col-md-4 control-label']) !!} 
-                        <div class="col-md-6"> 
+                        {!! Form::label('cntr_name', 'Center Name:', ['class' => 'col-md-4 control-label']) !!}
+                        <div class="col-md-8">
                             {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
                                array('id' => 'center_drop', 'class' => 'col-md-4')) }}
-                        </div> 
+                        </div>
                     </div>
-                     
+
+                    <br><br>
 
                     <div class="form-group">
-                           {!! Form::label('apt_number', 'Apartment Number:', ['class' => 'col-md-4 control-label']) !!}
-                        <div class="col-md-6">
-                            {{ Form::select('apt_number', array_merge([0 => 'Please Select']), 'default',
-                                array('id' => 'apartment_drop', 'class' => 'col-md-4')) }} 
+                         {!! Form::label('apt_number', 'Apartment Number:', ['class' => 'col-md-4 control-label']) !!}
+                        <div class="col-md-8">
+                            {{ Form::select('apt_number', array_merge([0 => 'Please Select']),'default',
+                                array('id' => 'apartment_drop', 'class' => 'col-md-4')) }}
                         </div>
                     </div>
 
@@ -135,7 +136,7 @@
                         {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
                     </div>
 
-                      {!! Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
