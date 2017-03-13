@@ -21,15 +21,18 @@
                     <div class="panel-body" style="padding-left: 15%">
                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                         <input type="hidden" name="supplyData" id="supplyData" value="">
+                        <span style="color: red; display:block; float:left">*</span>
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-sm-4">
                             {!! Form::text('requester',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
                         </div.panel-heading>
 
                         </br> </br>
+                        <span style="color: red; display:block; float:left">*</span>
 
                         {!! Form::label('centername', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
+
                             <div class="form-group">
                                 {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
                                  array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
@@ -62,12 +65,13 @@
 
                         </br> </br>
 
-                        {!! Form::label('res_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}
+                        {!! Form::label('resident_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-6">
-                            {!! Form::text('resident_comments',null,['class'=>'form-control'], array('id' => 'res_comments','class' => 'col-md-6')) !!}
+                            {!! Form::text('resident_comments',null, array('id' => 'resident_comments','readonly' => true,'size'=>70)) !!}
                         </div.panel-heading>
 
                         </br> </br>
+                        <span style="color: red; display:block; float:left">*</span>
 
                         {!! Form::label('status', 'Status:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-6">
@@ -77,6 +81,7 @@
                         </div.panel-heading>
 
                         </br> </br>
+                        <span style="color: red; display:block; float:left">*</span>
 
                         {!! Form::label('priority', 'Priority:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
@@ -88,7 +93,7 @@
                         </br> </br>
 
 
-
+                        <span style="color: red; display:block; float:left">*</span>
 
                         {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-4">
@@ -111,6 +116,7 @@
 
                         </br> </br>
 
+                        <span style="color: red; display:block; float:left">*</span>
                         {!! Form::label('assigntype', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-6">
                             {{ Form::select('assign_user_id', array_merge([0 => 'Please Select']) + $workers, 'default',
@@ -341,6 +347,14 @@
 
             $.get("/getIssueDesc", data, function (data) {
                 $("#issuedescription").val(data);
+            });
+        });
+
+        $('#residentname_dropdown').change(function () {
+            data = {option: $(this).val()};
+
+            $.get("/getresidentComments", data, function (data) {
+                $("#resident_comments").val(data);
             });
         });
 
