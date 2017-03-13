@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Center;
+use App\comarea;
+use App\Resident;
+use App\Apartment;
 use Illuminate\Http\Request;
 
 
@@ -113,9 +116,21 @@ class CenterController extends Controller
      */
     public function destroy($id)
     {
-        Center::find($id)->delete();
+        try {
+            /*DB::connection()->pdo->beginTransaction();*/
+
+            //Delete all comarea for Center
+            $comarea = Comarea::where('cntr_id', '=', $id)->delete();
+            $apartment = Apartment::where('cntr_id', '=', $id)->delete();
+            $resident = Resident::where('res_cntr_id', '=', $id)->delete();
+            $center = Center::where('id', '=', $id)->delete();
+
+        }catch(Exception $e) {
+            /*DB::connection()->pdo->rollBack();*/
+            Log::exception($e);
+        }
+        //Center::find($id)->delete();
         return redirect('center');
     }
-
 
 }
