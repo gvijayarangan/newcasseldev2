@@ -178,13 +178,13 @@ img.img-responsive {
   background-color: #191970;
 }
 
-.drop-log .dropdown-menu>li>a {
+.nav-bar-log .dropdown-menu>li>a {
   color: #191970;
   font-weight: 600;
   background-color: #C0C0C0;
 }
 
-.drop-log .dropdown-menu>li>a:hover {
+.nav-bar-log .dropdown-menu>li>a:hover {
   color: #FFFFFF;
   background-color: black;
 }
