@@ -20,6 +20,16 @@ class Center extends Model
         'cntr_comments',
 
     ];
+    public function comarea() {
+        return $this->hasMany('App\comarea');
+    }
+    public function apartment() {
+        return $this->hasMany('App\apartment');
+    }
+
+    public function resident() {
+        return $this->hasMany('App\resident');
+    }
 
   
 }
