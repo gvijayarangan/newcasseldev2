@@ -21,18 +21,13 @@
 
                 @if (Auth::check())
 
-                    <li class="home"><a href="{{ url('/home') }}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;
-                            Home <span class="sr-only">(current)</span></a></li>
+                    <li class="home"><a href="{{ url('/home') }}"><i class="fa fa-btn fa-fw fa-home" aria-hidden="true"></i>&nbsp;Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false">
-                            <i class="fa fa-wrench"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Work Order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    class="caret"></span></a>
+                           aria-expanded="false"><i class="fa fa-btn"></i><i class="fa fa-btn fa-fw fa-wrench"></i>Work Order<i class="fa fa-btn"></i><span class="caret"></span><i class="fa fa-btn"></i></a>
                         <ul class="dropdown-menu multi level" role="menu">
-                            <li><a href="{{ url('/workorder') }}"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Work
-                                    Order Form&nbsp;&nbsp;</a></li>
-                            <li><a href="{{ url('/workorderview') }}"><i class="fa fa-list-ol" aria-hidden="true"></i>
-                                    &nbsp;&nbsp;&nbsp;Work Order List&nbsp;&nbsp;</a></li>
+                            <li><a href="{{ url('/workorder') }}"><i class="fa fa-btn fa-fw fa-file-text-o" aria-hidden="true"></i>Work Order Form</a></li>
+                            <li><a href="{{ url('/workorderview') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Work Order List</a></li>
                         </ul>
                     </li>
 
@@ -42,31 +37,22 @@
                            aria-expanded="false"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Manage Application<span
                                     class="caret"></span></a>
                         <ul class="dropdown-menu multi level" role="menu">
-                            <li><a href="{{ url('/center') }}"><i class="fa fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Center</a>
-                            </li>
+                            <li><a href="{{ url('/center') }}"><span><i class="fa fa-btn fa-fw fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Center</span></a></li>
 
-                            <li><a href="{{ url('/apartment') }}"><i class="fa fa-building" aria-hidden="true"></i>&nbsp;&nbsp;Apartments</a>
-                            </li>
+                            <li><a href="{{ url('/apartment') }}"><span><i class="fa fa-btn fa-fw fa-building" aria-hidden="true"></i>&nbsp;&nbsp;Apartment</span></a></li>
 
-                            <li><a href="{{ url('/resident') }}"><i class="fa fa-street-view" aria-hidden="true"></i>&nbsp;&nbsp;Resident</a>
-                            </li>
+                            <li><a href="{{ url('/resident') }}"><span><i class="fa fa-btn fa-fw fa-street-view" aria-hidden="true"></i>&nbsp;&nbsp;Resident</span></a></li>
 
-                            <li><a href="{{ url('/rescontact') }}"><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp;&nbsp;Resident
-                                    Contact</a></li>
+                            <li><a href="{{ url('/rescontact') }}"><span><i class="fa fa-btn fa-fw fa-phone-square" aria-hidden="true"></i>&nbsp;&nbsp;Resident Contact</span></a></li>
 
-                            <li><a href="{{ url('/tool') }}"><i class="fa fa-gavel" aria-hidden="true"></i>&nbsp;&nbsp;Tool</a>
-                            </li>
+                            <li><a href="{{ url('/tool') }}"><span><i class="fa fa-btn fa-fw fa-gavel" aria-hidden="true"></i>&nbsp;&nbsp;Tool</span></a></li>
 
-                            <li><a href="{{ url('/Supply') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;Supply</a>
-                            </li>
+                            <li><a href="{{ url('/Supply') }}"><span><i class="fa fa-btn fa-fw fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;Supply</span></a></li>
 
-                            <li><a href="{{ url('/commonarea') }}"><span><i class="fa fa-map-marker"
-                                                                            aria-hidden="true"></i>&nbsp;&nbsp;Common Area/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System Name</span></a>
-                            </li>
+                            <li><a href="{{ url('/commonarea') }}"><span><i class="fa fa-btn fa-fw fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;Common Area/<br>
+                                        <i class="fa fa-btn fa-fw" aria-hidden="true"></i><span> &nbsp;</span>System Name</span></a></li>
 
-                            <li><a href="{{ url('/issuetype') }}"><i class="fa fa-exclamation-circle"
-                                                                     aria-hidden="true"></i></i>&nbsp;&nbsp;Issue
-                                    Type</a></li>
+                            <li><a href="{{ url('/issuetype') }}"><span><i class="fa fa-btn fa-fw fa-exclamation-circle" aria-hidden="true"></i></i>&nbsp;&nbsp;Issue Type</span></a></li>
                         </ul>
                     </li>
 
@@ -75,12 +61,8 @@
                            aria-expanded="false">
                             <i class="fa fa-user-plus"></i>&nbsp; User Management<span class="caret"></span></a>
                         <ul class="dropdown-menu multi level" role="menu">
-                            <li><a href="{{ url('/users') }}"><i class="fa fa-btn fa-fw fa-user"></i>Users</a>
-                            </li>
-                            <li><a href="{{ url('/roles') }}"><i class="fa fa-btn fa-fw fa-users"></i>Roles</a>
-                            </li>
-                            {{--<li class="divider"></li>--}}
-                            {{--<li><a href="{{ url('/files') }}"><i class="fa fa-btn fa-fw fa-file"></i>Files</a></li>--}}
+                            <li><a href="{{ url('/users') }}"><i class="fa fa-btn fa-fw fa-user"></i>Users</a></li>
+                            <li><a href="{{ url('/roles') }}"><i class="fa fa-btn fa-fw fa-users"></i>Roles</a></li>
                         </ul>
                     </li>
 
@@ -94,7 +76,7 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form> -->
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right nav-bar-log">
 
                 @if (Auth::guest())
 
