@@ -4,6 +4,8 @@ use App\Apartment;
 use Illuminate\Http\Request;
 use App\Resident;
 use App\Center;
+use App\Rescontact;
+use App\Conresi;
 use DB;
 
 //use App\AppServiceProvider;
@@ -158,7 +160,18 @@ class ResidentsController extends Controller
 
     public function destroy($id)
     {
-        Resident::find($id)->delete();
+        try {
+            /*DB::connection()->pdo->beginTransaction();*/
+
+            //Delete all comarea for Center
+            $conresi = Conresi::where('res_id', '=', $id)->delete();
+            $rescontact = Rescontact::where('con_res_id', '=', $id)->delete();
+            $resident = Resident::where('id', '=', $id)->delete();
+
+        }catch(Exception $e) {
+            /*DB::connection()->pdo->rollBack();*/
+            Log::exception($e);
+        }
         return redirect('resident');
     }
 
