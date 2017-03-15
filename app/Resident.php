@@ -29,5 +29,7 @@ class Resident extends Model
     public function conres() {
         return $this->hasMany('App\conresi');
     }
-   
+    public function center() {
+        return $this->belongsTo('App\center');
+    }
 }
