@@ -1,7 +1,6 @@
-@include('layouts.app')
-@extends('CreateTool')
+@extends('layouts.app')
 @section('content')
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
