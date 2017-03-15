@@ -1,7 +1,6 @@
-@include('layouts.app')
-@extends('CreateRescon')
+@extends('layouts.app')
 @section('content')
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -25,6 +24,10 @@
                 <td><?php echo ($post['con_lname']); ?></td>
             </tr>
             <tr>
+                <td>Resident Name:</td>
+                <td><?php echo ($resident_name); ?></td>
+            </tr>
+            <tr>
                 <td>Relationship:</td>
                 <td><?php echo ($post['con_relationship']); ?></td>
             </tr>
@@ -43,10 +46,6 @@
             <tr>
                 <td>Gender:</td>
                 <td><?php echo ($post['con_gender']); ?></td>
-            </tr>
-            <tr>
-                <td>Resident Name:</td>
-                <td><?php echo ($resident_name); ?></td>
             </tr>
             </tbody>
         </table>
