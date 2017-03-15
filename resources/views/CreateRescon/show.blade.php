@@ -25,6 +25,10 @@
                 <td><?php echo ($post['con_lname']); ?></td>
             </tr>
             <tr>
+                <td>Resident Name:</td>
+                <td><?php echo ($resident_name); ?></td>
+            </tr>
+            <tr>
                 <td>Relationship:</td>
                 <td><?php echo ($post['con_relationship']); ?></td>
             </tr>
@@ -43,10 +47,6 @@
             <tr>
                 <td>Gender:</td>
                 <td><?php echo ($post['con_gender']); ?></td>
-            </tr>
-            <tr>
-                <td>Resident Name:</td>
-                <td><?php echo ($resident_name); ?></td>
             </tr>
             </tbody>
         </table>

@@ -24,12 +24,11 @@
             <th>Contact First Name</th>
             <th>Contact Middle Name</th>
             <th>Contact Last Name</th>
+            <th>Resident Name</th>
             <th>Relationship</th>
             <th>Cellphone</th>
             <th>Email</th>
-
             <th>Gender</th>
-            <th>Resident Name</th>
             <th colspan="3">Actions</th>
         </tr>
         </thead>
