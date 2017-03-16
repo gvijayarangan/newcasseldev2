@@ -1,22 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <div class="container">
-        <div class="row">
+         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="pull-right">
-                            <form action="{{ url('/apartment/create') }}" method="GET">{{ csrf_field() }}
+                              <form action="{{ url('/apartment/create') }}" method="GET">{{ csrf_field() }}
                                 <button type="submit" id="create-user" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create Apartment</button>
                             </form>
                         </div>
-                        <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp New Cassel Apartment Information</h4></div>
-                    </div>
+                          <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp New Cassel Apartment Information</h4></div>
+                       </div>
                     <div class="panel-body" style="width: 100%">
                         <div class="table-responsive">
 
+                            {{Form::open(['action' =>'ApartmentsController@search','method'=>'GET']) }}
+                               {{Form::input('search','q',null,['placeholder'=>'Search'])}}
+                               {{ Form::submit('Search', array('class' => 'btn')) }}
+                            {{Form::close() }}
 
+                            {{--<form>--}}
+                            {{--<button type="submit" id="submit-page" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Search</button>--}}
+                            {{--</form>--}}
 
                             {{--    <h1>New Cassel Apartment Information </h1>
                                 <a href="{{url('/apartment/create')}}" class="btn btn-success">Create Apartment</a>--}}

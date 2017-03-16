@@ -16,7 +16,14 @@
                         <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp New Cassel Resident Information</h4></div>
                     </div>
                     <div class="panel-body" style="width: 100%">
+
+                        {{Form::open(['action' =>'ResidentsController@search','method'=>'GET']) }}
+                        {{--{{Form::open(['method'=>'GET'])}}--}}
+                        {{Form::input('search','q',null,['placeholder'=>'Search Apartment Number'])}}
+                        {{ Form::submit('Search', array('class' => 'btn')) }}
+                        {{Form::close() }}
                         <div class="table-responsive">
+
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">

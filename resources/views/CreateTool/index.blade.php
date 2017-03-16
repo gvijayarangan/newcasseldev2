@@ -19,6 +19,12 @@
                     <div class="panel-body" style="width: 100%">
                         <div class="table-responsive">
 
+                            {{Form::open(['action' =>'ToolsController@search','method'=>'GET']) }}
+                            {{--{{Form::open(['method'=>'GET']) }}--}}
+                            {{Form::input('search','q',null,['placeholder'=>'Search Tool Name'])}}
+                            {{ Form::submit('Search', array('class' => 'btn')) }}
+                            {{Form::close() }}
+
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">
