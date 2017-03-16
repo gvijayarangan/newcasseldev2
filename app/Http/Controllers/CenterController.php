@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Center;
 use Illuminate\Http\Request;
+use DB;
 
 
 
@@ -17,6 +18,20 @@ class CenterController extends Controller
         return view('CreateCntr.index', compact('createcntrs'));
     }
 
+    public function search(Request $request)
+    {
+
+        $query = trim($request->get('q'));
+        #dd(!$query);
+        $createcntrs = $query
+            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+            ? DB::table('Centers')
+                ->where('cntr_name', '=', $query)->get()
+
+            : \App\Center::all();
+        return view('CreateCntr.index', compact('createcntrs'));
+
+    }
     public function show($id)
     {
         $post = Center::find($id);

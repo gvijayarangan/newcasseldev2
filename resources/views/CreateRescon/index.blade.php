@@ -17,6 +17,12 @@
                     </div>
                     <div class="panel-body" style="width: 100%">
                         <div class="table-responsive">
+
+                            {{Form::open(['action' =>'RescontactsController@search','method'=>'GET']) }}
+                            {{Form::input('search','q',null,['placeholder'=>'Search First Name'])}}
+                            {{ Form::submit('Search', array('class' => 'btn')) }}
+                            {{Form::close() }}
+
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">
