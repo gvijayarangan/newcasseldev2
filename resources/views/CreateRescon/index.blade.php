@@ -1,8 +1,7 @@
-@include('layouts.app')
-@extends('CreateRescon')
+@extends('layouts.app')
 @section('content')
 
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <div class="container">
         <div class="row">
             <div class="col-md-8" style="width: 100%">
@@ -30,12 +29,11 @@
             <th>Contact First Name</th>
             <th>Contact Middle Name</th>
             <th>Contact Last Name</th>
+            <th>Resident Name</th>
             <th>Relationship</th>
             <th>Cellphone</th>
             <th>Email</th>
-
             <th>Gender</th>
-            <th>Resident Name</th>
             <th colspan="3">Actions</th>
         </tr>
         </thead>

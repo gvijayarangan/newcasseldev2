@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 
 use App\Apartment;
 use App\Center;
+use App\Resident;
+use App\Aptresi;
 use DB;
 
 //adding comment for demo1
@@ -99,7 +101,18 @@ class ApartmentsController extends Controller
      */
     public function destroy($id)
     {
-        Apartment::find($id)->delete();
+        try {
+            /*DB::connection()->pdo->beginTransaction();*/
+
+            //Delete all comarea for Center
+            $aptresi = Aptresi::where('apt_id', '=', $id)->delete();
+            $resident = Resident::where('res_apt_id', '=', $id)->delete();
+            $apartment = Apartment::where('id', '=', $id)->delete();
+
+        }catch(Exception $e) {
+            /*DB::connection()->pdo->rollBack();*/
+            Log::exception($e);
+        }
         return redirect('apartment');
     }
 
