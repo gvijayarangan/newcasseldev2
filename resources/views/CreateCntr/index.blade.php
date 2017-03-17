@@ -1,7 +1,7 @@
-@include('layouts.app')
-@extends('CreateCntr')
+@extends('layouts.app')
+
 @section('content')
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -18,6 +18,10 @@
                         <div class="table-responsive">
 
 
+                            {{Form::open(['action' =>'CenterController@search','method'=>'GET']) }}
+                            {{Form::input('search','q',null,['placeholder'=>'Search'])}}
+                            {{ Form::submit('Search', array('class' => 'btn')) }}
+                            {{Form::close() }}
 
                             {{--    <h1>New Cassel Apartment Information </h1>
                                 <a href="{{url('/apartment/create')}}" class="btn btn-success">Create Apartment</a>--}}

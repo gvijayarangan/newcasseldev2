@@ -16,6 +16,7 @@ class ApartmentsController extends Controller
     public function index()
     {
         $createapts = Apartment::all();
+        #dd($createapts);
         foreach ($createapts as $apts) {
             $apts->centerName = Center::findOrFail($apts->cntr_id)->cntr_name;
         }
@@ -113,5 +114,24 @@ class ApartmentsController extends Controller
             Log::exception($e);
         }
         return redirect('apartment');
+    }
+
+    public function search(Request $request)
+    {
+
+        $query = trim($request->get('q'));
+        #dd(!$query);
+        $createapts = $query
+                //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+                ? DB::table('Apartments')
+                  ->where('apt_number', '=', $query)->get()
+
+                : \App\Apartment::all();
+        foreach ($createapts as $apts) {
+            $apts->centerName = Center::findOrFail($apts->cntr_id)->cntr_name;
+        }
+        return view('CreateApt.index',compact('createapts'));
+        //dd($apartments);
+
     }
 }

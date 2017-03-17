@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -18,12 +18,15 @@
                     <div class="panel-body" style="width: 100%">
                         <div class="table-responsive">
 
+                            {{Form::open(['action' =>'CommonareaController@search','method'=>'GET']) }}
+                            {{Form::input('search','q',null,['placeholder'=>'Search Common Area'])}}
+                            {{ Form::submit('Search', array('class' => 'btn')) }}
+                            {{Form::close() }}
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">
 
             <th>Center Name</th>
-
             <th>Common Area/System Name</th>
             <th colspan="3">Actions</th>
         </tr>

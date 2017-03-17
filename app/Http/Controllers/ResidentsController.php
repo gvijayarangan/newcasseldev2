@@ -17,13 +17,35 @@ class ResidentsController extends Controller
 {
     public function index()
     {
+
         $createres = Resident::all();
+        //dd($createres);
+        foreach ($createres as $res) {
+            $res->res_apt_id = Apartment::findOrFail($res->res_apt_id)->apt_number;
+            $res->res_cntr_id = Center::findOrFail($res->res_cntr_id)->cntr_name;
+        }
+
+        return view('CreateRes.index',compact('createres'));
+    }
+
+    public function search(Request $request)
+    {
+        dd();
+        $query = trim($request->get('q'));
+        #dd(!$query);
+        $createres = $query
+            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+            ? DB::table('Residents')
+                ->where('apt_number', '=', $query)->get()
+
+            : \App\Resident::all();
 
         foreach ($createres as $res) {
             $res->res_apt_id = Apartment::findOrFail($res->res_apt_id)->apt_number;
             $res->res_cntr_id = Center::findOrFail($res->res_cntr_id)->cntr_name;
         }
         return view('CreateRes.index',compact('createres'));
+
     }
 
     public function show($id)
@@ -60,7 +82,7 @@ class ResidentsController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'res_pccid' => 'required|integer|digits:4',
+            'res_pccid' => 'required|integer|digits:4|unique:residents',
             'res_fname' => 'required|string|Max:50',
             'res_lname' => 'required|string|Max:50',
             'res_gender' => 'required',
@@ -102,6 +124,7 @@ class ResidentsController extends Controller
 
     public function edit($id)
     {
+        dd();
         error_log("Id passed edit - " . $id);
 
         $resident=Resident::find($id);
@@ -176,6 +199,7 @@ class ResidentsController extends Controller
     }
 
     public function getAptDet(Request $request) {
+        dd();
         $input = $request -> input('option');
         $apartment_data = Apartment::
         select(DB::raw("apt_number, id"))->where('cntr_id', '=' , $input )
@@ -183,5 +207,6 @@ class ResidentsController extends Controller
 
         return $apartment_data;
     }
+
 
 }

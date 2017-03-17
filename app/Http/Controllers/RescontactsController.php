@@ -23,6 +23,25 @@ class RescontactsController extends Controller
         return view('CreateRescon.index',compact('createrescons'));
     }
 
+    public function search(Request $request)
+    {
+
+        $query = trim($request->get('q'));
+        #dd(!$query);
+        $createrescons = $query
+            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+            ? DB::table('Rescontacts')
+                ->where('con_fname', '=', $query)->get()
+            : \App\Rescontact::all();
+        foreach ($createrescons as $rescons) {
+
+            $rescons->con_res_id = Resident::findOrFail($rescons->con_res_id)->res_fname . " " .
+                Resident::findOrFail($rescons->con_res_id)->res_lname;
+        }
+        return view('CreateRescon.index',compact('createrescons'));
+
+    }
+
     public function show($id)
     {
         $post = Rescontact::find($id);

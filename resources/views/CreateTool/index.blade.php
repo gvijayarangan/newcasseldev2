@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -18,6 +18,12 @@
                     </div>
                     <div class="panel-body" style="width: 100%">
                         <div class="table-responsive">
+
+                            {{Form::open(['action' =>'ToolsController@search','method'=>'GET']) }}
+                            {{--{{Form::open(['method'=>'GET']) }}--}}
+                            {{Form::input('search','q',null,['placeholder'=>'Search Tool Name'])}}
+                            {{ Form::submit('Search', array('class' => 'btn')) }}
+                            {{Form::close() }}
 
     <table class="table table-striped table-bordered table-hover">
         <thead>
