@@ -128,7 +128,7 @@
                          {!! Form::label('apt_number', 'Apartment Number:', ['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-8">
                             {{ Form::select('apt_number', array_merge([0 => 'Please Select']),'default',
-                                ['id' => 'apartment_drop', 'class' => 'col-md-4']) }}
+                               array('id' => 'apartment_drop', 'class' => 'col-md-4')) }}
                         </div>
                     </div>
 
