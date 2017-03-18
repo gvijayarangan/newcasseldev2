@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -19,7 +19,8 @@
 
     {!! Form::model($tool, ['method' => 'PATCH','route'=>['tool.update', $tool->id]]) !!}
     <div class="form-group">
-        {!! Form::label('tool_name', '*Tool Name:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('tool_name', 'Tool Name:') !!}
         {!! Form::text('tool_name',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">

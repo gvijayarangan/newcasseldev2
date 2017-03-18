@@ -26,11 +26,13 @@
                         @endif
                         {!! Form::model($resident,['method' => 'PATCH','route'=>['resident.update',$resident->id]]) !!}
                         <div class="form-group">
-                            {!! Form::label('res_pccid', '*PCCID:') !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('res_pccid', 'PCCID:') !!}
                             {!! Form::text('res_pccid',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('res_fname', '*First Name:') !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('res_fname', 'First Name:') !!}
                             {!! Form::text('res_fname',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
@@ -38,11 +40,13 @@
                             {!! Form::text('res_mname',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('res_lname', '*Last Name:') !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('res_lname', 'Last Name:') !!}
                             {!! Form::text('res_lname',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::Label('res_gender', '*Gender:') !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::Label('res_gender', 'Gender:') !!}
                             {{ Form::select('res_gender', [
                                 'Female' => 'Female',
                                 'Male' => 'Male'], old('res_gender'), ['class' => 'form-control']) }}
@@ -64,12 +68,14 @@
                             {!! Form::textarea('res_comment',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::Label('res_status', '*Status:') !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::Label('res_status', 'Status:') !!}
                             {!! Form::select('res_status', [
                                         'Inactive' => 'Inactive',
                                         'Active' => 'Active'], old('res_status'), ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-group"> 
+                            <span style="color: red; display:block; float:left">*</span>
                             {!! Form::label('cntr_name', 'Center Name:', ['class' => 'col-md-3 control-label']) !!} 
 
 
@@ -81,6 +87,7 @@
 
                                                   </br> </br>
                         <div class="form-group">
+                            <span style="color: red; display:block; float:left">*</span>
                                {!! Form::label('apt_number', 'Apartment Number:', ['class' => 'col-md-3 control-label']) !!} 
 
                             {{ Form::select('apt_number', array_merge([0 => 'Please Select']) + $apartments,

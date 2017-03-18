@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Center;
-use App\comarea;
+use App\Comarea;
 use App\Resident;
 use App\Apartment;
 use Illuminate\Http\Request;
@@ -28,7 +28,7 @@ class CenterController extends Controller
         #dd(!$query);
         $createcntrs = $query
             //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('Centers')
+            ? DB::table('centers')
                 ->where('cntr_name', '=', $query)->get()
 
             : \App\Center::all();
@@ -147,5 +147,6 @@ class CenterController extends Controller
         //Center::find($id)->delete();
         return redirect('center');
     }
+
 
 }

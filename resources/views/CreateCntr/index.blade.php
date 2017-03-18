@@ -1,7 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
-
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -19,7 +18,7 @@
 
 
                             {{Form::open(['action' =>'CenterController@search','method'=>'GET']) }}
-                            {{Form::input('search','q',null,['placeholder'=>'Search'])}}
+                            {{Form::input('search','q',null,['placeholder'=>'Search Center Name'])}}
                             {{ Form::submit('Search', array('class' => 'btn')) }}
                             {{Form::close() }}
 
