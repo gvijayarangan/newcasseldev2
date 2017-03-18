@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -20,11 +20,13 @@
 
     {!! Form::model($createcntrs, ['method' => 'PATCH','route'=>['center.update', $createcntrs->id]]) !!}
     <div class="form-group">
-        {!! Form::label('cntr_name', '*Center Name:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('cntr_name', 'Center Name:') !!}
         {!! Form::text('cntr_name',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('cntr_add1', '*Center Address1:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('cntr_add1', 'Center Address1:') !!}
         {!! Form::text('cntr_add1',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
@@ -32,17 +34,20 @@
         {!! Form::text('cntr_add2',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!!Form::label('cntr_city', '*Center City:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!!Form::label('cntr_city', 'Center City:') !!}
         {!! Form::text('cntr_city',null,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
-        {!!Form::label('cntr_state', '*Center State:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!!Form::label('cntr_state', 'Center State:') !!}
         {!! Form::text('cntr_state',null,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
-        {!!Form::label('cntr_zip', '*Center Zip:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!!Form::label('cntr_zip', 'Center Zip:') !!}
         {!! Form::text('cntr_zip',null,['class'=>'form-control']) !!}
     </div>
 

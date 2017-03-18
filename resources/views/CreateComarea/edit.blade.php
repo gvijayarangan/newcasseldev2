@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -19,11 +19,13 @@
     {!! Form::model($comareas,['method' => 'PATCH','route'=>['commonarea.update',$comareas->id]]) !!}
 
         <div class="form-group">
-            {!! Form::label('cntr_id', '*Center Name:') !!}
+            <span style="color: red; display:block; float:left">*</span>
+            {!! Form::label('cntr_id', 'Center Name:') !!}
             {{ Form::select('cntr_id',  $centers) }}
         </div>
     <div class="form-group">
-        {!! Form::label('ca_name', '*Common Area/System name:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('ca_name', 'Common Area/System name:') !!}
         {!! Form::text('ca_name',null,['class'=>'form-control']) !!}
     </div>
         <div class="form-group">

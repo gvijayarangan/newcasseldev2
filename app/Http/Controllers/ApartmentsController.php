@@ -21,6 +21,7 @@ class ApartmentsController extends Controller
             $apts->centerName = Center::findOrFail($apts->cntr_id)->cntr_name;
         }
         return view('CreateApt.index',compact('createapts'));
+//          return view::make('CreateApt.index',compact('createapts'),);
     }
 
     public function show($id)
@@ -123,7 +124,7 @@ class ApartmentsController extends Controller
         #dd(!$query);
         $createapts = $query
                 //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-                ? DB::table('Apartments')
+                ? DB::table('apartments')
                   ->where('apt_number', '=', $query)->get()
 
                 : \App\Apartment::all();
