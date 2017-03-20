@@ -32,14 +32,17 @@
                                     <th>Priority</th>
                                     <th>Total Cost</th>
                                     <th>Assigned To</th>
-                                </tr>
+                                    <th colspan="1">Actions</th>
+                                 </tr>
                                 </thead>
                                 <tbody>
 
                                 @foreach ($woDetails as $order)
                                     <tr>
-                                        <td>{{ $order->wo_id}}</td>
-                                        <td>{{ $order->requestor_name}}</td>
+                                        <td>{{ $order->wo_id }}</td>
+                                        {{--<td>{{ $order->wo_id}}</td>--}}
+                                        <td>{{ $order->requestor_name }}</td>
+                                        {{--<td>{{ $order->requestor_name}}</td>--}}
                                         <td>{{ $order->created_by}}</td>
                                         <td>{{ $order->created_date_time}}</td>
                                         <td>{{ $order->center_name}}</td>
@@ -53,6 +56,7 @@
                                         <td>{{ $order->priority}}</td>
                                         <td>{{ $order->total_cost}}</td>
                                         <td>{{ $order->assign_to}}</td>
+                                        <td><a href="{{url('/workorder/edit',$order->wo_id)}}" class="btn btn-warning">Edit</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

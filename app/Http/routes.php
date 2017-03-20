@@ -75,8 +75,14 @@ Route::resource('/issuetype','IssuetypesController');
 Route::resource('users', 'UsersController');
 Route::resource('roles', 'RolesController');
 
+Route::resource('orders', 'WorkOrderController');
+
 Route::resource('/workorder', 'WorkOrderController@index');
+Route::resource('/readworkorder', 'WorkOrderController@show');
 Route::resource('/workorderview', 'WorkOrderController@view');
+Route::post('/workorder/storeData', 'WorkOrderController@storeData');
+Route::post('/workorder/updateData', 'WorkOrderController@updateData');
+Route::get('/workorder/edit/{wo_id}', 'WorkOrderController@edit');
 
 /*    Route::get('/redirect', 'SocialAuthController@redirect');
     Route::get('/callback', 'SocialAuthController@callback');*/
@@ -92,9 +98,11 @@ Route::get('/getAptDetails', 'WorkOrderController@getAptDetails');
 Route::get('/getComAreaDetails', 'WorkOrderController@getComAreaDetails');
 Route::get('/getResidentName', 'WorkOrderController@getResidentName');
 Route::get('/getIssueDesc', 'WorkOrderController@getIssueDesc');
+Route::get('/getresidentComments', 'WorkOrderController@getresidentComments');
 Route::get('/getUnitPrice', 'WorkOrderController@getUnitPrice');
-Route::post('/workorder/storeData', 'WorkOrderController@storeData');
 
+Route::get('/getComments', 'WorkOrderController@getComments');
+Route::post('/postComment', 'WorkOrderController@addComment');
 Route::get('/getAptDetailRes', 'ResidentsController@getAptDet');
 
 Route::post('/sendemail', function () {
