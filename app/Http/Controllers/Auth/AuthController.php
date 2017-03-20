@@ -60,7 +60,11 @@ class AuthController extends Controller
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'password'   => array(
+                'required',
+                'min:6',
+                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/',
+                'confirmed'),
             'cell' => 'required|min:10|max:10',
             'role' => 'required',
         ]);
@@ -107,8 +111,17 @@ class AuthController extends Controller
             $user = Auth::user();
             $rules = array(
                 'old_password' => 'required',
-                'password' => 'required|different:old_password|confirmed|min:6',
-                'password_confirmation' => 'required|min:6'
+                'password' => array(
+                    'required',
+                    'different:old_password',
+                    'min:8',
+                    'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/',
+                    'confirmed'),
+
+                'password_confirmation' => array(
+                    'required',
+                    'min:8',
+                    'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'),
             );
 
             $passwordOInput = Input::get('old_password');
