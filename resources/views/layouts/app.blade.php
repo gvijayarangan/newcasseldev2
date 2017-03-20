@@ -27,12 +27,16 @@
 
     <!-- Styles -->
     @yield('styles')
+    <link rel="stylesheet"  href="{{ URL::asset('css/jquery-comments.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
 </head>
 
 <body id="app-layout">
 <!-- JavaScripts -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
         integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
         crossorigin="anonymous"></script>
@@ -47,6 +51,7 @@
         integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
         crossorigin="anonymous"></script>
 <script src="{{ asset('js/all.js') }}"></script>
+<script src="{{ URL::asset('js/jquery-comments.js') }}"></script>
 
 <!-- Navigation Bar -->
 @include('common.nav')

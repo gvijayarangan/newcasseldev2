@@ -107,6 +107,14 @@ class WorkOrderController extends Controller
         return $issue_description;
     }
 
+    public function getresidentComments(Request $request) {
+        $input = $request -> input('option');
+
+        $res_comment = Resident::select(DB::raw("res_comment"))->where('id', '=' , $input)
+            ->lists('res_comment');
+        return $res_comment;
+    }
+
     public function getUnitPrice(Request $request) {
         $input = $request -> input('option');
 
@@ -115,6 +123,33 @@ class WorkOrderController extends Controller
         return $sup_unitprice;
     }
 
+    public function show($id)
+    {
+        $post = Order::find($id);
+
+        error_log($post);
+        $post->cntr_id = Center::findOrFail($post->cntr_id)->cntr_name;
+        if ($post->apt_id == 0) {
+            $post->apt_id = 'N/A';
+        } else {
+            $post->apt_id = Apartment::findOrFail($post->apt_id)->apt_number;
+        }
+        $post->issue_type = Issuetype::findOrFail($post->issue_type)->issue_typename;
+        if ($post->resident_id == 0) {
+            $post->resident_id = 'N/A';
+        } else {
+            $post->resident_id = Resident::findOrFail($post->resident_id)->res_fname . " " . Resident::findOrFail($post->resident_id)->res_lname;
+        }
+        if ($post->ca_id == 0) {
+            $post->ca_id = 'N/A';
+        } else {
+            $post->ca_id = Comarea::findOrFail($post->ca_id)->ca_name;
+
+        }
+
+        error_log($post);
+        return view('WorkOrder.show', compact('post'));
+    }
     public function storeData(Request $request)
     {
         // Validation depends on type of the user
