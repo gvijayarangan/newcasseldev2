@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Center;
+use App\Comarea;
+use App\Resident;
+use App\Apartment;
 use Illuminate\Http\Request;
+use DB;
 
 
 
@@ -17,6 +21,20 @@ class CenterController extends Controller
         return view('CreateCntr.index', compact('createcntrs'));
     }
 
+    public function search(Request $request)
+    {
+
+        $query = trim($request->get('q'));
+        #dd(!$query);
+        $createcntrs = $query
+            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+            ? DB::table('centers')
+                ->where('cntr_name', '=', $query)->get()
+
+            : \App\Center::all();
+        return view('CreateCntr.index', compact('createcntrs'));
+
+    }
     public function show($id)
     {
         $post = Center::find($id);
@@ -113,7 +131,20 @@ class CenterController extends Controller
      */
     public function destroy($id)
     {
-        Center::find($id)->delete();
+        try {
+            /*DB::connection()->pdo->beginTransaction();*/
+
+            //Delete all comarea for Center
+            $comarea = Comarea::where('cntr_id', '=', $id)->delete();
+            $apartment = Apartment::where('cntr_id', '=', $id)->delete();
+            $resident = Resident::where('res_cntr_id', '=', $id)->delete();
+            $center = Center::where('id', '=', $id)->delete();
+
+        }catch(Exception $e) {
+            /*DB::connection()->pdo->rollBack();*/
+            Log::exception($e);
+        }
+        //Center::find($id)->delete();
         return redirect('center');
     }
 

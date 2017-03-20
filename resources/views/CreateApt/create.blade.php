@@ -1,5 +1,4 @@
-@include('layouts.app')
-@extends('CreateApt')
+@extends('layouts.app')
 @section('content')
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css"/>
     <div class="container">
@@ -20,20 +19,23 @@
                             </div>
                         @endif
                         {!! Form::open(['url' => 'apartment']) !!}
+                        <span style="color: red; display:block; float:left">*</span>
                         <div class="form-group">
-                            {!! Form::label('cntr_name', '*Center Name:',['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::label('cntr_name', 'Center Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::select('cntr_name', $centers ,null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
                             </br> </br>
-                            {!! Form::label('apt_floornumber', '*Apartment Floor Number:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('apt_floornumber', 'Apartment Floor Number:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('apt_floornumber',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
                             </br> </br>
 
+                            <span style="color: red; display:block; float:left">*</span>
                             <div class="form-group">
-                                {!! Form::label('apt_number', '*Apartment Number:',['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('apt_number', 'Apartment Number:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
                                     {!! Form::text('apt_number',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                                 </div>

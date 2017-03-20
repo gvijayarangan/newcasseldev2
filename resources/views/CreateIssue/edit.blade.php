@@ -1,5 +1,4 @@
-@include('layouts.app')
-@extends('CreateIssue')
+@extends('layouts.app')
 @section('content')
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
@@ -19,6 +18,7 @@
     @endif
     {!! Form::model($issue, ['method' => 'PATCH','route'=>['issuetype.update', $issue->id]]) !!}
     <div class="form-group">
+        <span style="color: red; display:block; float:left">*</span>
         {!! Form::label('issue_typename', 'Issue Type Name:') !!}
         {!! Form::text('issue_typename',null,['class'=>'form-control']) !!}
     </div>

@@ -1,23 +1,32 @@
 @extends('layouts.app')
-
 @section('content')
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+<link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <div class="container">
-        <div class="row">
+        {{--@foreach(array_chunk($createapts,10)as $row)--}}
+          <div class="row">
+              {{--@foreach($row as $apt)--}}
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="pull-right">
-                            <form action="{{ url('/apartment/create') }}" method="GET">{{ csrf_field() }}
+                              <form action="{{ url('/apartment/create') }}" method="GET">{{ csrf_field() }}
                                 <button type="submit" id="create-user" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create Apartment</button>
-                            </form>
+                              </form>
                         </div>
-                        <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp New Cassel Apartment Information</h4></div>
+                          <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp New Cassel Apartment Information</h4></div>
                     </div>
                     <div class="panel-body" style="width: 100%">
                         <div class="table-responsive">
 
+                            {{Form::open(['action' =>'ApartmentsController@search','method'=>'GET']) }}
+                               {{Form::input('search','q',null,['placeholder'=>'Apartment Number'])}}
+                               {{ Form::submit('Search', array('class' => 'btn')) }}
+                            {{Form::close() }}
 
+                            {{--<form>--}}
+                            {{--<button type="submit" id="submit-page" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Search</button>--}}
+                            {{--</form>--}}
 
                             {{--    <h1>New Cassel Apartment Information </h1>
                                 <a href="{{url('/apartment/create')}}" class="btn btn-success">Create Apartment</a>--}}
@@ -25,12 +34,9 @@
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr class="bg-info">
-
-
                                     <th>Center Name</th>
                                     <th>Apartment Floor Number</th>
                                     <th>Apartment Number</th>
-
                                     <th colspan="3">Actions</th>
                                 </tr>
                                 </thead>
@@ -45,7 +51,9 @@
                                             return false;
                                     }
                                 </script>
+
                                 @foreach ($createapts as $createapt)
+                                {{--@foreach ($createapts as $createapt)--}}
                                     <tr>
 
                                         <td>{{ $createapt->centerName}}</td>
@@ -71,6 +79,8 @@
                     </div>
                 </div>
             </div>
+            {{--@endforeach--}}
         </div>
+     {{--@endforeach--}}
     </div>
 @endsection

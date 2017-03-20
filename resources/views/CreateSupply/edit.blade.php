@@ -19,11 +19,13 @@
 
     {!! Form::model($createsupply, ['method' => 'PATCH','route'=>['Supply.update', $createsupply->id]]) !!}
     <div class="form-group">
-        {!! Form::label('sup_name', '*Enter Name:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('sup_name', 'Supply Name:') !!}
         {!! Form::text('sup_name',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('sup_unitprice', '*Enter Unit Price:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('sup_unitprice', 'Unit Price:') !!}
         {!! Form::text('sup_unitprice',null,['class'=>'form-control']) !!}
     </div>
         <div class="form-group">

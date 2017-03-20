@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Supply;
 use App\Supplyorder;
+use DB;
 
 class SupplyController extends Controller
 {
@@ -16,6 +17,21 @@ class SupplyController extends Controller
 //            $apts->centerName = Center::findOrFail($apts->cntr_id)->cntr_name;
 //
         return view('CreateSupply.index',compact('createsupply'));
+    }
+
+    public function search(Request $request)
+    {
+
+        $query = trim($request->get('q'));
+        #dd(!$query);
+        $createsupply = $query
+            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+            ? DB::table('supplies')
+                ->where('sup_name', '=', $query)->get()
+
+            : \App\Supply::all();
+        return view('CreateSupply.index',compact('createsupply'));
+
     }
 
     public function show($id)

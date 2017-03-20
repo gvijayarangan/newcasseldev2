@@ -1,5 +1,4 @@
-@include('layouts.app')
-@extends('CreateIssue')
+@extends('layouts.app')
 @section('content')
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
@@ -21,7 +20,8 @@
 
                         {!! Form::open(['url' => 'issuetype']) !!}
                         <div class="form-group">
-                            {!! Form::label('issue_typename', '*Issue Type Name::',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('issue_typename', 'Issue Type Name::',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('issue_typename',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>

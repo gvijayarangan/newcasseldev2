@@ -1,5 +1,4 @@
-@include('layouts.app')
-@extends('CreateSupply')
+@extends('layouts.app')
 @section('content')
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
@@ -21,7 +20,8 @@
 
                         {!! Form::open(['url' => 'Supply']) !!}
                         <div class="form-group">
-                            {!! Form::label('sup_name', '*Enter Name:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('sup_name', 'Supply Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('sup_name',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
@@ -29,7 +29,8 @@
                         </br> </br>
 
                         <div class="form-group">
-                            {!! Form::label('sup_unitprice', '*Enter Unit Price:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('sup_unitprice', 'Unit Price:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
                             </div>

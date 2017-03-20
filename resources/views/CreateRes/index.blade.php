@@ -17,6 +17,7 @@
                     </div>
                     <div class="panel-body" style="width: 100%">
                         <div class="table-responsive">
+
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">

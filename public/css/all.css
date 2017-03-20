@@ -178,13 +178,13 @@ img.img-responsive {
   background-color: #191970;
 }
 
-.drop-log .dropdown-menu>li>a {
+.nav-bar-log .dropdown-menu>li>a {
   color: #191970;
   font-weight: 600;
   background-color: #C0C0C0;
 }
 
-.drop-log .dropdown-menu>li>a:hover {
+.nav-bar-log .dropdown-menu>li>a:hover {
   color: #FFFFFF;
   background-color: black;
 }
@@ -194,8 +194,8 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
-  /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
 
@@ -209,12 +209,13 @@ body {
   width:100%;
   height:auto;
   overflow:hidden;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   border: solid;
   border-color: #C0C0C0;
   border-top-color: #191970;
 }
+
 .text-muted {
   color: #191970;
   font-weight: 600;

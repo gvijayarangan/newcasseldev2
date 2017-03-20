@@ -1,5 +1,4 @@
-@include('layouts.app')
-@extends('CreateTool')
+@extends('layouts.app')
 @section('content')
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <div class="row">
@@ -20,7 +19,8 @@
 
                         {!! Form::open(['url' => 'tool']) !!}
                         <div class="form-group">
-                            {!! Form::label('tool_name', '*Tool Name:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('tool_name', 'Tool Name:',['class' => 'col-md-4 control-label']) !!}
 
                             <div class="col-md-4">
                                 {!! Form::text('tool_name',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}

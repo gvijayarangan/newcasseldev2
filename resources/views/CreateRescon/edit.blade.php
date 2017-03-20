@@ -19,19 +19,22 @@
     @endif
     {!! Form::model($createrescontacts, ['method' => 'PATCH','route'=>['rescontact.update', $createrescontacts->id]]) !!}
     <div class="form-group">
-        {!! Form::label('con_fname', '*First Name:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('con_fname', 'Contact First Name:') !!}
         {!! Form::text('con_fname',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('con_mname', 'Middle Name:') !!}
+        {!! Form::label('con_mname', 'Contact Middle Name:') !!}
         {!! Form::text('con_mname',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('con_lname', '*Last Name:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('con_lname', 'Contact Last Name:') !!}
         {!! Form::text('con_lname',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('con_relationship', '*Relationship:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::label('con_relationship', 'Relationship:') !!}
         {!! Form::text('con_relationship',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
@@ -47,13 +50,15 @@
             {!! Form::textarea('con_comment',null,['class'=>'form-control']) !!}
         </div>
     <div class="form-group">
-        {!! Form::Label('con_gender', '*Gender') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!! Form::Label('con_gender', 'Gender') !!}
         {{ Form::select('con_gender', [
             'Female' => 'Female',
             'Male' => 'Male'], old('con_gender'), ['class' => 'form-control']) }}
     </div>
     <div class="form-group">
-        {!!Form::label('con_res_id', '*Resident Name:') !!}
+        <span style="color: red; display:block; float:left">*</span>
+        {!!Form::label('con_res_id', 'Resident Name:') !!}
         {{ Form::select('con_res_id', $residentscon) }}
     </div>
     <div class="form-group">
