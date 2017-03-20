@@ -10,6 +10,11 @@
                         {{--@include('common.errors')--}}
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/createNewPassword/') }}">{!! csrf_field() !!}
                             <input type="hidden" name="user_id_from_email" value="<?php echo $user_id_from_email ?>">
+                            <div style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>Password have to be 8 digits and contains at least:</div>
+                            <div style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>*One Upper-case letter</div>
+                            <div  style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>*One Lower-case letter</div>
+                            <div  style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>*One Symbol</div>
+                            <div  style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>*One Number</div>
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">New Password</label>
                                 <div class="col-md-6">
