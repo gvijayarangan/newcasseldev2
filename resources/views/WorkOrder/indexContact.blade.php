@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@include('layouts.app')
+@extends('WorkOrder')
 @section('content')
     <div class="container">
         <div class="row">
