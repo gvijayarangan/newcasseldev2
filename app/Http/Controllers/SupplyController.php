@@ -26,8 +26,8 @@ class SupplyController extends Controller
         #dd(!$query);
         $createsupply = $query
             //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('Supplies')
-                ->where('Sup_name', '=', $query)->get()
+            ? DB::table('supplies')
+                ->where('sup_name', '=', $query)->get()
 
             : \App\Supply::all();
         return view('CreateSupply.index',compact('createsupply'));

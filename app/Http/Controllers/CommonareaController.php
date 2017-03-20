@@ -27,7 +27,7 @@ class CommonareaController extends Controller
         #dd($query);
         $createcomarea = $query
             //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('Comareas')
+            ? DB::table('comareas')
                 ->where('ca_name', '=', $query)->get()
             : \App\Comareas::all();
         foreach ($createcomarea as $ca) {

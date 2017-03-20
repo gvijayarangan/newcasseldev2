@@ -23,8 +23,8 @@ class IssuetypesController extends Controller
         #dd(!$query);
         $createissue = $query
             //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('Issuetypes')
-                ->where('Issue_typename', '=', $query)->get()
+            ? DB::table('issuetypes')
+                ->where('issue_typename', '=', $query)->get()
             : \App\Issuetype::all();
         return view('CreateIssue.index',compact('createissue'));
 

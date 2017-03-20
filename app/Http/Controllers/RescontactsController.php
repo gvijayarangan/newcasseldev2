@@ -30,7 +30,7 @@ class RescontactsController extends Controller
         #dd(!$query);
         $createrescons = $query
             //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('Rescontacts')
+            ? DB::table('rescontacts')
                 ->where('con_fname', '=', $query)->get()
             : \App\Rescontact::all();
         foreach ($createrescons as $rescons) {
