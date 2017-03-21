@@ -513,7 +513,7 @@
                 $.ajax({
                     type: 'post',
                     url: '/postComment',
-                    data: commentJSON,
+                    data:  commentJSON,
                     success: function(commentReturned) {
                         success(commentReturned)
                     },
