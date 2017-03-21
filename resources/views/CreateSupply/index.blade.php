@@ -43,8 +43,7 @@
                                             {{--<td class="table-text"><div>{{ $user->email }}</div></td>--}}
                                             {{--@if ($user->active)<td class="table-text"><div>Active</div></td>@else<td class="table-text"><div>Inactive</div></td>@endif--}}
 
-                                            <td class="table-text"><div>{{ $createsupp->sup_name}}</div></td>
-                                            <td class="table-text"><div>{{ $createsupp->sup_unitprice}}</div></td>
+                                     
 
                                             <td class="table-text"><div><a href="{{url('Supply',$createsupp->id)}}" class="btn btn-primary ">View</a>
                                                     <a href="{{url('Supply/update', $createsupp->id)}}"class="btn btn-warning">Modify</a>
