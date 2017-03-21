@@ -30,11 +30,19 @@
 
                         <div class="form-group">
                             <span style="color: red; display:block; float:left">*</span>
-                            {!! Form::label('sup_unitprice', 'Unit Price:',['class' => 'col-md-4 control-label']) !!}
+                            <div class="form-group">
+                            {!! Form::label('sup_unitprice', 'Enter Unit Price:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
+
+                            <div class="input-group" style="width: 150px">
+                                <span class="input-group-addon">$</span>
+                            {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
+                          {{--  <div class="col-md-4">
                                 {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
-                            </div>
+                            </div>--}}
                         </div>
+                            </div>
+                            </div>
                         </br> </br>
                             <div class="form-group">
                                 {!! Form::label('sup_comment', 'Enter Comments:',['class' => 'col-md-4 control-label']) !!}

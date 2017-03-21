@@ -49,7 +49,7 @@
             <tr>
 
                 <td>{{ $createsupp->sup_name}}</td>
-                <td>{{ $createsupp->sup_unitprice}}</td>
+                <td>$ {{ $createsupp->sup_unitprice}}</td>
 
                 <td><a href="{{url('Supply',$createsupp->id)}}" class="btn btn-primary">View</a></td>
                 <td><a href="{{url('Supply/update', $createsupp->id)}}" class="btn btn-warning">Modify</a></td>
