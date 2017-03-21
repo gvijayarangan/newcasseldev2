@@ -11,6 +11,11 @@
                                 <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
                             </form>
                         </div>
+                        <div class="pull-left">
+                            <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                                <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                            </form>
+                        </div>
                         <div><h4>Residents Information</h4></div>
                     </div>
                     <div class="panel-body">
@@ -29,7 +34,7 @@
                                     <th>Status</th>
                                     <th>Apartment Number</th>
                                     <th>Center Name</th>
-                                    <th style="width: 200px;">Actions</th>
+                                    <th style="width: 300px;">Actions</th>
                                     {{--</tr>--}}
                                     </thead>
                                     <tbody>
@@ -53,7 +58,7 @@
                                             <td class="table-text"><div>{{ $createresi-> res_pccid }}</div></td>
                                             <td class="table-text"><div>{{ $createresi-> res_fname }}</div></td>
                                             <td class="table-text"><div>{{ $createresi-> res_lname }}</div></td>
-                                            <td class="table-text"><div>{{ $createresi-> res_Homephone }}</div></td>
+                                            <td class="table-text"><div>{{ $createresi-> res_homephone }}</div></td>
                                             <td class="table-text"><div>{{ $createresi-> res_cellphone }}</div></td>
                                             <td class="table-text"><div>{{ $createresi-> res_email }}</div></td>
                                             <td class="table-text"><div>{{ $createresi-> res_status }}</div></td>
