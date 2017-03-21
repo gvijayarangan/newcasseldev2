@@ -20,22 +20,22 @@ class CommonareaController extends Controller
 
         return view('CreateComarea.index',compact('createcomarea'));
     }
-    public function search(Request $request)
-    {
-
-        $query = trim($request->get('q'));
-        #dd($query);
-        $createcomarea = $query
-            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('comareas')
-                ->where('ca_name', '=', $query)->get()
-            : \App\Comareas::all();
-        foreach ($createcomarea as $ca) {
-            $ca -> cntr_id = Center::findOrFail($ca -> cntr_id)->cntr_name;
-        }
-
-        return view('CreateComarea.index',compact('createcomarea'));
-    }
+//    public function search(Request $request)
+//    {
+//
+//        $query = trim($request->get('q'));
+//        #dd($query);
+//        $createcomarea = $query
+//            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+//            ? DB::table('comareas')
+//                ->where('ca_name', '=', $query)->get()
+//            : \App\Comareas::all();
+//        foreach ($createcomarea as $ca) {
+//            $ca -> cntr_id = Center::findOrFail($ca -> cntr_id)->cntr_name;
+//        }
+//
+//        return view('CreateComarea.index',compact('createcomarea'));
+//    }
     public function show($id)
     {
         $post = Comarea::find($id);
