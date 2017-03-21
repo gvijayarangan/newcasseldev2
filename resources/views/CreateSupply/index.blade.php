@@ -39,10 +39,9 @@
                                     @foreach ($createsupply as $createsupp)
                                         {{--@foreach ($createapts as $createapt)--}}
                                         <tr>
-                                            {{--<td class="table-text"><div><a href="{{ url('/users/'.$user->id.'/edit') }}">{{ $user->f_name }} {{  $user->m_name }} {{  $user->l_name }}</a></div></td>--}}
-                                            {{--<td class="table-text"><div>{{ $user->email }}</div></td>--}}
-                                            {{--@if ($user->active)<td class="table-text"><div>Active</div></td>@else<td class="table-text"><div>Inactive</div></td>@endif--}}
-
+					 <td>{{ $createsupp->sup_name}}</td>
+                <td>$ {{ $createsupp->sup_unitprice}}</td>
+                                           
                                      
 
                                             <td class="table-text"><div><a href="{{url('Supply',$createsupp->id)}}" class="btn btn-primary ">View</a>
@@ -51,9 +50,6 @@
                                                 </div></td>
 
 
-
-                <td>{{ $createsupp->sup_name}}</td>
-                <td>$ {{ $createsupp->sup_unitprice}}</td>
 
                                       
 
