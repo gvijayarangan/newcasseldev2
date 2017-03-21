@@ -19,20 +19,20 @@ class SupplyController extends Controller
         return view('CreateSupply.index',compact('createsupply'));
     }
 
-    public function search(Request $request)
-    {
-
-        $query = trim($request->get('q'));
-        #dd(!$query);
-        $createsupply = $query
-            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('supplies')
-                ->where('sup_name', '=', $query)->get()
-
-            : \App\Supply::all();
-        return view('CreateSupply.index',compact('createsupply'));
-
-    }
+//    public function search(Request $request)
+//    {
+//
+//        $query = trim($request->get('q'));
+//        #dd(!$query);
+//        $createsupply = $query
+//            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+//            ? DB::table('supplies')
+//                ->where('sup_name', '=', $query)->get()
+//
+//            : \App\Supply::all();
+//        return view('CreateSupply.index',compact('createsupply'));
+//
+//    }
 
     public function show($id)
     {
