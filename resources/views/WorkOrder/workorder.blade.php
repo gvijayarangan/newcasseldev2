@@ -22,7 +22,7 @@
                     <div class="panel-body" style="padding-left: 15%">
                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                         <input type="hidden" name="supplyData" id="supplyData" value="">
-                        <span style="color: red; display:block; float:left">*</span>
+
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-sm-4">
                             {!! Form::text('requestor_name',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
