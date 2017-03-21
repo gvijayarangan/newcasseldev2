@@ -50,26 +50,21 @@
                                                     <a href="{{url('Supply/destroy',$createsupp->id)}}"class="btn btn-danger">Delete</a>
                                                 </div></td>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <td>{{ $createsupp->sup_name}}</td>
-                <td>$ {{ $createsupp->sup_unitprice}}</td>
-=======
-                                        </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
-                                        {{--{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}--}}
-                                        {{--{!! Form::close() !!}--}}
->>>>>>> master
-=======
+
 
                 <td>{{ $createsupp->sup_name}}</td>
                 <td>$ {{ $createsupp->sup_unitprice}}</td>
+
+                                      
+
+
+
+            
 
                                         </tr>                                                
-                                        {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
-                                        {{--{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}--}}
-                                        {{--{!! Form::close() !!}--}}
+                                     
 
->>>>>>> origin/Prakruthi
+
 
                                     @endforeach
 
