@@ -19,20 +19,20 @@ class SupplyController extends Controller
         return view('CreateSupply.index',compact('createsupply'));
     }
 
-    public function search(Request $request)
-    {
-
-        $query = trim($request->get('q'));
-        #dd(!$query);
-        $createsupply = $query
-            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('supplies')
-                ->where('sup_name', '=', $query)->get()
-
-            : \App\Supply::all();
-        return view('CreateSupply.index',compact('createsupply'));
-
-    }
+//    public function search(Request $request)
+//    {
+//
+//        $query = trim($request->get('q'));
+//        #dd(!$query);
+//        $createsupply = $query
+//            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+//            ? DB::table('supplies')
+//                ->where('sup_name', '=', $query)->get()
+//
+//            : \App\Supply::all();
+//        return view('CreateSupply.index',compact('createsupply'));
+//
+//    }
 
     public function show($id)
     {
@@ -58,7 +58,9 @@ class SupplyController extends Controller
         $this->validate($request, [
             //'id' => 'required|integer',
             'sup_name' => 'required',
-            'sup_unitprice' => 'required|numeric',
+
+      'sup_unitprice' => 'required|numeric|min:0',
+
             'sup_comment' => 'string',
         ]);
         //dd($request);
@@ -98,7 +100,14 @@ class SupplyController extends Controller
         $this->validate($request, [
 
             'sup_name' => 'required',
-            'sup_unitprice' => 'required|numeric',
+            'sup_unitprice' => 'required|numeric|min:0',
+       /*     'sup_unitprice'  => [
+        'required',
+        'regex:/^\d{1,2}(\.\d{1,2})?$/',
+        'numeric',
+        'min:1',
+        'max:50'
+    ],*/
             'sup_comment' => 'string',
         ]);
         $CreateSupply = Supply::find($id);

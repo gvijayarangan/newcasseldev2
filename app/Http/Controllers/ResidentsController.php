@@ -67,7 +67,9 @@ class ResidentsController extends Controller
             'res_status' => 'required',
             'res_cellphone' =>'string|digits:10',
             'res_homephone' =>'string|digits:10',
-            'res_email' => 'email|max:255'
+            'res_email' => 'email|max:255',
+            'cntr_name' => 'required|not_in:0',
+            'apt_number' => 'required|not_in:0',
         ]);
         $resident = new Resident();
         $resident->res_pccid = $request -> res_pccid;

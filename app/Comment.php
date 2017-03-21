@@ -33,7 +33,7 @@ class Comment extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'text', 'created_by', 'updated_by'];
+    protected $fillable = ['user_id', 'text', 'order_id', 'created_by', 'updated_by'];
 
     /**
      * Get all of the owning likeable models.
