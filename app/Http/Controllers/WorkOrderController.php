@@ -214,6 +214,7 @@ class WorkOrderController extends Controller
         error_log($post);
         return view('WorkOrder.show', compact('post'));
     }
+
     public function storeData(Request $request)
     {
         // Validation depends on type of the user
