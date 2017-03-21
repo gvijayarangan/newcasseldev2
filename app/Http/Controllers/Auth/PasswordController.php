@@ -60,8 +60,12 @@ class PasswordController extends Controller
 
         //Get the user object from database
         $rules = array(
-            'password' => 'required|confirmed|min:6',
-            'password_confirmation' => 'required|min:6'
+            'password'          => array(
+                'required',
+                'min:8',
+                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/',
+                'confirmed'
+            )
         );
 
         $user_id = $_POST["user_id_from_email"];
