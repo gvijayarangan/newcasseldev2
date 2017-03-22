@@ -16,19 +16,19 @@ class IssuetypesController extends Controller
         $createissue = Issuetype::all();
         return view('CreateIssue.index',compact('createissue'));
     }
-    public function search(Request $request)
-    {
-
-        $query = trim($request->get('q'));
-        #dd(!$query);
-        $createissue = $query
-            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
-            ? DB::table('issuetypes')
-                ->where('issue_typename', '=', $query)->get()
-            : \App\Issuetype::all();
-        return view('CreateIssue.index',compact('createissue'));
-
-    }
+//    public function search(Request $request)
+//    {
+//
+//        $query = trim($request->get('q'));
+//        #dd(!$query);
+//        $createissue = $query
+//            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+//            ? DB::table('issuetypes')
+//                ->where('issue_typename', '=', $query)->get()
+//            : \App\Issuetype::all();
+//        return view('CreateIssue.index',compact('createissue'));
+//
+//    }
 
     public function show($id)
     {
@@ -51,7 +51,7 @@ class IssuetypesController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'issue_typename' => 'required',
+            'issue_typename' => 'required|max:100',
             'issue_description' => 'string',
         ]);
         $issuetype = new Issuetype();
@@ -77,8 +77,8 @@ class IssuetypesController extends Controller
     public function update(Request $request, $id)
     {
         $this -> validate ($request, [
-            'issue_typename' => 'required',
-            'issue_description' => 'string',
+            'issue_typename' => 'required|max:100',
+            'issue_description' => 'string|max:100',
         ]);
 
 

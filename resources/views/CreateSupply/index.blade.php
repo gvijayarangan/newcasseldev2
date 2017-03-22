@@ -22,7 +22,7 @@
                                     {{--<tr>--}}
                                     <th>Supply Name</th>
                                     <th>Unit_Price</th>
-                                    <th style="width: 200px;">Actions</th>
+                                    <th style="width: 300px;">Actions</th>
                                     {{--</tr>--}}
                                     </thead>
                                     <tbody>
@@ -48,7 +48,7 @@
 
                                             <td class="table-text"><div><a href="{{url('Supply',$createsupp->id)}}" class="btn btn-primary ">View</a>
                                                     <a href="{{url('Supply/update', $createsupp->id)}}"class="btn btn-warning">Modify</a>
-                                                    <a href="{{url('Supply/destroy',$createsupp->id)}}"class="btn btn-danger">Delete</a>
+                                                    <a href="{{url('Supply/destroy',$createsupp->id)}}" onclick='return confirm("Are you sure?")' class="btn btn-danger">Delete</a>
                                                 </div></td>
 
                                         </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}

@@ -29,7 +29,7 @@
                                     <th>Status</th>
                                     <th>Apartment Number</th>
                                     <th>Center Name</th>
-                                    <th style="width: 200px;">Actions</th>
+                                    <th style="width: 300px;">Actions</th>
                                     {{--</tr>--}}
                                     </thead>
                                     <tbody>
@@ -61,7 +61,7 @@
                                             <td class="table-text"><div>{{ $createresi-> res_cntr_id }}</div></td>
                                             <td class="table-text"><div><a href="{{url('resident',$createresi->id)}}" class="btn btn-primary ">View</a>
                                                     <a href="{{url('resident/update',$createresi->id)}}"class="btn btn-warning">Modify</a>
-                                                    <a href="{{url('resident/destroy',$createresi->id)}}"class="btn btn-danger">Delete</a>
+                                                    <a href="{{url('resident/destroy',$createresi->id)}}" onclick='return confirm("Are you sure?")' class="btn btn-danger">Delete</a>
                                                 </div></td>
 
                                         </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}

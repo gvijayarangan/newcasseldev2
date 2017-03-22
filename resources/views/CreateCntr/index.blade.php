@@ -19,6 +19,7 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped cds-datatable">
                                     <thead>
+                                    <meta name="csrf-token" content="{{ csrf_token() }}">
                                     {{--<tr>--}}
                                         <th>Center Name</th>
                                         <th>Center Address1</th>
@@ -28,7 +29,7 @@
                                         <th>Center Zip</th>
                                         <th>Center Phone</th>
                                         <th>Center Fax</th>
-                                        <th style="width: 200px;">Actions</th>
+                                        <th style="width: 300px;">Actions</th>
                                     {{--</tr>--}}
                                     </thead>
                                     <tbody>
@@ -60,7 +61,7 @@
 
                                             <td class="table-text"><div><a href="{{url('center',$createcntr->id)}}" class="btn btn-primary ">View</a>
                                             <a href="{{url('center/update', $createcntr->id)}}"class="btn btn-warning">Modify</a>
-                                            <a href="{{url('center/destroy',$createcntr->id)}}"class="btn btn-danger">Delete</a>
+                                            <a href="{{url('center/destroy',$createcntr->id)}}" onclick='return confirm("Are you sure?") 'class="btn btn-danger">Delete</a>
                                             </div></td>
 
                                         </tr>   {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
