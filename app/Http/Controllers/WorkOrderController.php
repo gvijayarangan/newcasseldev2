@@ -87,12 +87,17 @@ class WorkOrderController extends Controller
             return view('WorkOrder.index',compact('woDetails'));
         } else if($user->hasRole('engineer')) {
             error_log("USer id - " . $user->getUserId());
-            $woDetails = DB::select('call GetEngineerWoDetails('. $user->getUserId() .')');
+            //   $woDetails = DB::select('call GetEngineerWoDetails('. $user->getUserId() .')');
+           // $woDetails = DB::select('SELECT GetEngineerWoDetails (eng_user_id INTEGER)('. $user->getUserId() .')');
+            $woDetails = DB::select('SELECT GetEngineerWoDetails ('. $user->getUserId() .')');
             return view('WorkOrder.index',compact('woDetails'));
         } else if ($user->hasRole('contact')) {
-            $woDetails = DB::select('call GetContactWoDetails('. $user->getUserId() .')');
+            // $woDetails = DB::select('call GetContactWoDetails('. $user->getUserId() .')');
+           // $woDetails = DB::select('SELECT GetContactWoDetails (contact_resident_id INTEGER)('. $user->getUserId() .')');
+            $woDetails = DB::select('SELECT GetContactWoDetails ('. $user->getUserId() .')');
             return view('WorkOrder.indexContact',compact('woDetails'));
         }
+
     }
     public function getAptDetails(Request $request) {
         $input = $request -> input('option');
