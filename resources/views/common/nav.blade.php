@@ -28,6 +28,7 @@
                         <ul class="dropdown-menu multi level" role="menu">
                             <li><a href="{{ url('/workorder') }}"><i class="fa fa-btn fa-fw fa-file-text-o" aria-hidden="true"></i>Work Order Form</a></li>
                             <li><a href="{{ url('/workorderview') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Work Order List</a></li>
+                            <li><a href="{{ url('/report') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Report</a></li>
                         </ul>
                     </li>
 
