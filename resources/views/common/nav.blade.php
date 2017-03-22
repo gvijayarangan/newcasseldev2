@@ -54,6 +54,8 @@
                                         <i class="fa fa-btn fa-fw" aria-hidden="true"></i><span> &nbsp;</span>System Name</span></a></li>
 
                             <li><a href="{{ url('/issuetype') }}"><span><i class="fa fa-btn fa-fw fa-exclamation-circle" aria-hidden="true"></i></i>&nbsp;&nbsp;Issue Type</span></a></li>
+
+                            <li><a href="{{ url('/notifications') }}"><span><i class="fa fa-btn fa-fw fa-envelope" aria-hidden="true"></i>&nbsp; Email Notification</span></a></li>
                         </ul>
                     </li>
 
