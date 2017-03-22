@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css"/>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -19,7 +19,8 @@
                         @endif
                         {!! Form::open(['url' => 'rescontact']) !!}
                         <div class="form-group">
-                            {!! Form::label('con_fname', '*Contact First Name:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('con_fname', 'Contact First Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('con_fname',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
@@ -33,14 +34,16 @@
                         </div>
                         </br> </br>
                         <div class="form-group">
-                            {!! Form::label('con_lname', '*Contact Last Name:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('con_lname', 'Contact Last Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('con_lname',null,['class'=>'col-md-4 form-control']) !!}
                             </div>
                         </div>
                         </br> </br>
                         <div class="form-group">
-                            {!!Form::label('con_relationship', '*Relationship:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!!Form::label('con_relationship', 'Relationship:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('con_relationship',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
                             </div>
@@ -72,7 +75,8 @@
 
 
                             <div class="form-group">
-                                {!!Form::label('con_gender', '*Gender:',['class' => 'col-md-4 control-label']) !!}
+                                <span style="color: red; display:block; float:left">*</span>
+                                {!!Form::label('con_gender', 'Gender:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
                                     {{ Form::select('con_gender', [
                                     'Female' => 'Female',
@@ -82,6 +86,7 @@
                             </br> </br>
 
                             <div class="form-group">
+                                <span style="color: red; display:block; float:left">*</span>
                                 {!!Form::label('res_fullname', 'Resident Name:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
                                     {{ Form::select('res_fullname', $residents) }}

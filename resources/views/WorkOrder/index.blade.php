@@ -1,9 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-12" style="width: 105%" >
-                <div class="panel panel-default">
+        <div>
+                <div class="panel panel-default" style="width: 110%">
                     <div class="panel-heading">
                         <div class="pull-right">
                             <form action="{{ url('/workorder') }}" method="GET">{{ csrf_field() }}
@@ -12,8 +11,8 @@
                         </div>
                         <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp Work Order Information</h4></div>
                     </div>
-                    <div class="panel-body" style="width: 100%">
-                        <div class="table-responsive">
+                    <div class="panel-body">
+                        <div class="table-responsive" style="overflow-x: visible">
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr class="bg-info">
@@ -32,14 +31,17 @@
                                     <th>Priority</th>
                                     <th>Total Cost</th>
                                     <th>Assigned To</th>
-                                </tr>
+                                    <th colspan="1">Actions</th>
+                                 </tr>
                                 </thead>
                                 <tbody>
 
                                 @foreach ($woDetails as $order)
                                     <tr>
-                                        <td>{{ $order->wo_id}}</td>
-                                        <td>{{ $order->requestor_name}}</td>
+                                        <td>{{ $order->wo_id }}</td>
+                                        {{--<td>{{ $order->wo_id}}</td>--}}
+                                        <td>{{ $order->requestor_name }}</td>
+                                        {{--<td>{{ $order->requestor_name}}</td>--}}
                                         <td>{{ $order->created_by}}</td>
                                         <td>{{ $order->created_date_time}}</td>
                                         <td>{{ $order->center_name}}</td>
@@ -53,6 +55,7 @@
                                         <td>{{ $order->priority}}</td>
                                         <td>{{ $order->total_cost}}</td>
                                         <td>{{ $order->assign_to}}</td>
+                                        <td><a href="{{url('/workorder/edit',$order->wo_id)}}" class="btn btn-warning">Edit</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -61,6 +64,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+     </div>
 @endsection

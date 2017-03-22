@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
 
 class ToolsController extends Controller
 {
@@ -16,6 +17,20 @@ class ToolsController extends Controller
         $createtool = Tool::all();
         return view('CreateTool.index',compact('createtool'));
     }
+
+//    public function search(Request $request)
+//    {
+//
+//        $query = trim($request->get('q'));
+//        $createtool = $query
+//            //? \App\Apartment::where('apt_number', 'LIKE', "%$query%")->get()
+//            ? DB::table('tools')
+//                ->where('tool_name', '=', $query)->get()
+//
+//            : \App\Tool::all();
+//
+//        return view('CreateTool.index',compact('createtool'));
+//    }
 
     public function show($id)
     {

@@ -23,7 +23,7 @@
                         <input type="hidden" name="supplyData" id="supplyData" value="">
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-sm-4">
-                            {!! Form::text('requester',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
+                            {!! Form::text('requestor_name',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
                         </div.panel-heading>
 
                         </br> </br>
@@ -62,12 +62,6 @@
 
                         </br> </br>
 
-                        {!! Form::label('res_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-6">
-                            {!! Form::text('resident_comments',null,['class'=>'form-control'], array('id' => 'res_comments','class' => 'col-md-6')) !!}
-                        </div.panel-heading>
-
-                        </br> </br>
 
                         {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-4">

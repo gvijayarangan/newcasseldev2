@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -20,7 +20,8 @@
 
                         {!! Form::open(['url' => 'Supply']) !!}
                         <div class="form-group">
-                            {!! Form::label('sup_name', '*Enter Name:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!! Form::label('sup_name', 'Supply Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('sup_name',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
@@ -28,11 +29,20 @@
                         </br> </br>
 
                         <div class="form-group">
-                            {!! Form::label('sup_unitprice', '*Enter Unit Price:',['class' => 'col-md-4 control-label']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                            <div class="form-group">
+                            {!! Form::label('sup_unitprice', 'Enter Unit Price:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
+
+                            <div class="input-group" style="width: 150px">
+                                <span class="input-group-addon">$</span>
+                            {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
+                          {{--  <div class="col-md-4">
                                 {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
-                            </div>
+                            </div>--}}
                         </div>
+                            </div>
+                            </div>
                         </br> </br>
                             <div class="form-group">
                                 {!! Form::label('sup_comment', 'Enter Comments:',['class' => 'col-md-4 control-label']) !!}
