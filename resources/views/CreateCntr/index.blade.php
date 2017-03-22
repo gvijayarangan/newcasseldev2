@@ -8,11 +8,16 @@
                     <div class="panel-heading">
                         <div class="pull-right">
                             <form action="{{ url('/center/create') }}" method="GET">{{ csrf_field() }}
-                                <button type="submit" id="create-user" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
+
+                                <button type="submit" id="create-user" class="btn btn-primary"><i
+                                            class="fa fa-btn fa-file-o"></i>Create Center
+                                </button>
+
                             </form>
                         </div>
                         <div><h4>Center Information</h4></div>
                     </div>
+
                     <div class="panel-body">
                         {{--<div class="pull-left">--}}
                         @if (count($createcntrs) > 0)
@@ -59,6 +64,7 @@
                                             <td class="table-text"><div>{{ $createcntr->cntr_phone}}</div></td>
                                             <td class="table-text"><div>{{ $createcntr->cntr_fax}}</div></td>
 
+
                                             <td class="table-text"><div><a href="{{url('center',$createcntr->id)}}" class="btn btn-primary ">View</a>
                                             <a href="{{url('center/update', $createcntr->id)}}"class="btn btn-warning">Modify</a>
                                             <a href="{{url('center/destroy',$createcntr->id)}}" onclick='return confirm("Are you sure?") 'class="btn btn-danger">Delete</a>
@@ -67,6 +73,7 @@
                                         </tr>   {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
                                                 {{--{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}--}}
                                                 {{--{!! Form::close() !!}--}}
+
 
                                     @endforeach
 

@@ -51,9 +51,11 @@ Route::resource('/rescontact', 'RescontactsController');
 
 Route::get('/resident/update/{id}', 'ResidentsController@edit');
 Route::get('/resident/update information/{id}', 'ResidentsController@update');
+
 Route::get('resident/destroy/{id}', 'ResidentsController@destroy');
 //Route::get('resident/search', ['as' => 'res-search', 'uses' => 'ResidentsController@search']);
 Route::resource('/resident','ResidentsController');
+
 
 Route::get('commonarea/update/{id}', 'CommonareaController@edit');
 Route::get('commonarea/update information/{id}', 'CommonareaController@update');
@@ -63,6 +65,7 @@ Route::resource('/commonarea', 'CommonareaController');
 
 Route::get('/Supply/update/{id}', 'SupplyController@edit');
 Route::get('/Supply/update information/{id}', 'SupplyController@update');
+
 Route::get('/Supply/destroy/{id}', 'SupplyController@destroy');
 //Route::get('Supply/search', ['as' => 'supply-search', 'uses' => 'SupplyController@search']);
 Route::resource('/Supply','SupplyController');
@@ -80,6 +83,8 @@ Route::get('issuetype/destroy/{id}', 'IssuetypesController@destroy');
 Route::resource('/issuetype','IssuetypesController');
 
 
+Route::resource('notifications', 'NotificationController');
+
 
 Route::get('/report','ReportController@index');
 Route::post('/report/store', 'ReportController@store');
@@ -94,7 +99,9 @@ Route::get('downloadExcel/{type}/{results}', array('as' =>'storeCategory','uses'
 
 Route::resource('users', 'UsersController');
 Route::resource('roles', 'RolesController');
+
 Route::resource('orders', 'WorkOrderController');
+
 Route::resource('/workorder', 'WorkOrderController@index');
 Route::resource('/readworkorder', 'WorkOrderController@show');
 Route::resource('/workorderview', 'WorkOrderController@view');
@@ -135,11 +142,13 @@ Route::post('/sendemail', function () {
 
         error_log('Value of User ID for email password reset - ' . $user_id);
 
-        Mail::send('emails.welcome', $data, function ($message) {
-            $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-            $message->to($_POST['email'])->subject('Password Setup');
-
-        });
+        $noti_status = DB::table('notifications')->where('noti_type', 'Password Reset')->value('noti_status');
+        if ($noti_status == 'Active') {
+            Mail::send('emails.welcome', $data, function ($message) {
+                $message->from('newcassel@domain.com', 'New Cassel Work Order System');
+                $message->to($_POST['email'])->subject('Password Setup');
+            });
+        }
 
         return view('auth.passwords.emailconfirmation');
     } else {
