@@ -28,7 +28,7 @@
                                     <th>Email</th>
                                     <th>Gender</th>
                                     <th>Resident Name</th>
-                                    <th style="width: 200px;">Actions</th>
+                                    <th style="width: 300px;">Actions</th>
                                     {{--</tr>--}}
                                     </thead>
                                     <tbody>
