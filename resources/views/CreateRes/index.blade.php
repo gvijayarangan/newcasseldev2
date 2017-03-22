@@ -8,6 +8,7 @@
                     <div class="panel-heading">
                         <div class="pull-right">
                             <form action="{{ url('/resident/create') }}" method="GET">{{ csrf_field() }}
+
                                 <button type="submit" id="index-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
                             </form>
                         </div>
@@ -18,6 +19,7 @@
                         </div>
                         <div><h4>Residents Information</h4></div>
                     </div>
+
                     <div class="panel-body">
                         {{--<div class="pull-left">--}}
                         @if (count($createres) > 0)
@@ -25,6 +27,7 @@
                                 <table class="table table-bordered table-striped cds-datatable">
                                     <thead>
                                     {{--<tr>--}}
+
                                     <th>PCCID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
@@ -72,6 +75,7 @@
                                         </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
                                         {{--{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}--}}
                                         {{--{!! Form::close() !!}--}}
+
 
                                     @endforeach
 

@@ -18,6 +18,7 @@ class CreateNotificationsTable extends Migration
             $table->string('noti_alert_content');
             $table->string('noti_status'); /*res_status*/
             $table->string('noti_email_title');
+            $table->timestamps();
             $table->softDeletes();
 
             /*$table->primary(['noti_id']); */

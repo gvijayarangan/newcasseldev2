@@ -77,7 +77,7 @@ return [
     ],
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
+    'unique'               => 'The :attribute already exists in the system.',
     'url'                  => 'The :attribute format is invalid.',
 
     /*
@@ -164,6 +164,11 @@ return [
         'requester' => 'Requestor name',
         'resident_comments' => 'Comments',
         'status' => 'Status',
+
+        'noti_type' => 'Email Notification Type',
+        'noti_email_title' => 'Email Notification Title',
+        'noti_alert_content' => 'Email Notification Content',
+        'noti_status' => 'Email Notification Status',
     ),
 
 ];
