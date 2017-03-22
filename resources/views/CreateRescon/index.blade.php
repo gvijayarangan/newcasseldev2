@@ -60,7 +60,7 @@
 
                                             <td class="table-text"><div><a href="{{url('rescontact',$createrescon->id)}}" class="btn btn-primary ">View</a>
                                                     <a href="{{url('rescontact/update', $createrescon->id)}}"class="btn btn-warning">Modify</a>
-                                                    <a href="{{url('rescontact/destroy',$createrescon->id)}}"class="btn btn-danger">Delete</a>
+                                                    <a href="{{url('rescontact/destroy',$createrescon->id)}}" onclick='return confirm("Are you sure?")' class="btn btn-danger">Delete</a>
                                                 </div></td>
 
                                         </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
