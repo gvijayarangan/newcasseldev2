@@ -9,19 +9,15 @@
                     <div class="panel-heading">
                         <div class="pull-right">
                             <form action="{{ url('/center/create') }}" method="GET">{{ csrf_field() }}
-                                <button type="submit" id="create-user" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create Center</button>
+                                <button type="submit" id="create-user" class="btn btn-primary"><i
+                                            class="fa fa-btn fa-file-o"></i>Create Center
+                                </button>
                             </form>
                         </div>
                         <div><h4>&nbsp &nbsp &nbsp &nbsp &nbsp New Cassel Center Information</h4></div>
                     </div>
                     <div class="panel-body" style="width: 100%">
                         <div class="table-responsive">
-
-
-
-                            {{--    <h1>New Cassel Apartment Information </h1>
-                                <a href="{{url('/apartment/create')}}" class="btn btn-success">Create Apartment</a>--}}
-
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr class="bg-info">
@@ -40,8 +36,7 @@
                                 </thead>
                                 <tbody>
                                 <script>
-                                    function ConfirmDelete()
-                                    {
+                                    function ConfirmDelete() {
                                         var x = confirm("Are you sure you want to delete? Click OK to continue");
                                         if (x)
                                             return true;
@@ -60,8 +55,10 @@
                                         <td>{{ $createcntr->cntr_phone}}</td>
                                         <td>{{ $createcntr->cntr_fax}}</td>
 
-                                        <td><a href="{{url('center',$createcntr->id)}}" class="btn btn-primary">View</a></td>
-                                        <td><a href="{{url('center/update', $createcntr->id)}}" class="btn btn-warning">Modify</a></td>
+                                        <td><a href="{{url('center',$createcntr->id)}}" class="btn btn-primary">View</a>
+                                        </td>
+                                        <td><a href="{{url('center/update', $createcntr->id)}}" class="btn btn-warning">Modify</a>
+                                        </td>
                                         <td>
                                             {!! Form::open(['method' => 'DELETE', 'route'=>['center.destroy', $createcntr->id],'onsubmit' => 'return ConfirmDelete()']) !!}
                                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}

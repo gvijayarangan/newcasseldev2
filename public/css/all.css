@@ -199,6 +199,11 @@ body {
   margin-bottom: 60px;
 }
 
+/*notifucation page*/
+.input-field{
+  padding-bottom: 20px;
+}
+
 .footer {
   background-color: #C0C0C0;
   text-align: center;
@@ -236,4 +241,5 @@ body > .container {
 code {
   font-size: 80%;
 }
+
 

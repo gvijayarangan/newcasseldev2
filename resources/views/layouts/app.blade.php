@@ -18,12 +18,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
-    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.css"
           integrity="sha256-e2JbBawr7mQaQ8GkrYHPfjB0RKyqiP8A0s8R54VnU0A=" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="../../../resources/assets/css/app.css">
+    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 
     <!-- Styles -->
     @yield('styles')
@@ -32,6 +31,14 @@
 </head>
 
 <body id="app-layout">
+<!-- Navigation Bar -->
+@include('common.nav')
+
+
+<!-- Content -->
+@yield('content')
+
+
 <!-- JavaScripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
         integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
@@ -47,12 +54,6 @@
         integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
         crossorigin="anonymous"></script>
 <script src="{{ asset('js/all.js') }}"></script>
-
-<!-- Navigation Bar -->
-@include('common.nav')
-
-<!-- Content -->
-@yield('content')
 
 <!-- Scripts -->
 @yield('scripts')
