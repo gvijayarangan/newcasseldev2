@@ -22,13 +22,13 @@ class ReportController extends Controller
     {
       $report = Report::all();
 
-        $center = DB::table('get_order_details')->groupBy('center_name')-> lists('center_name','wo_id');
-        $apartmentNumber = DB::table('get_order_details')->groupBy('apartment_number')-> lists('apartment_number','wo_id');
-        $commonArea = DB::table('get_order_details')->groupBy('common_area_name')-> lists('common_area_name','wo_id');
-        $createdDate = DB::table('get_order_details')->groupBy('created_date_time')-> lists('created_date_time','wo_id');
-        $status = DB::table('get_order_details')->groupBy('status')-> lists('status','wo_id');
-        $priority = DB::table('get_order_details')->groupBy('priority')-> lists('priority','wo_id');
-        $assign = DB::table('get_order_details')->groupBy('assign_to')-> lists('assign_to','wo_id');
+        $center = DB::table('get_order_details')->groupBy('center_name','wo_id')-> lists('center_name','wo_id');
+        $apartmentNumber = DB::table('get_order_details')->groupBy('apartment_number','wo_id')-> lists('apartment_number','wo_id');
+        $commonArea = DB::table('get_order_details')->groupBy('common_area_name','wo_id')-> lists('common_area_name','wo_id');
+        $createdDate = DB::table('get_order_details')->groupBy('created_date_time','wo_id')-> lists('created_date_time','wo_id');
+        $status = DB::table('get_order_details')->groupBy('status','wo_id')-> lists('status','wo_id');
+        $priority = DB::table('get_order_details')->groupBy('priority','wo_id')-> lists('priority','wo_id');
+        $assign = DB::table('get_order_details')->groupBy('assign_to','wo_id')-> lists('assign_to','wo_id');
         $reportDatas=Report::all();
 
 
@@ -129,13 +129,13 @@ class ReportController extends Controller
         }
 
 
-        $center = DB::table('get_order_details')->groupBy('center_name')-> lists('center_name','wo_id');
-        $apartmentNumber = DB::table('get_order_details')->groupBy('apartment_number')-> lists('apartment_number','wo_id');
-        $commonArea = DB::table('get_order_details')->groupBy('common_area_name')-> lists('common_area_name','wo_id');
-        $createdDate = DB::table('get_order_details')->groupBy('created_date_time')-> lists('created_date_time','wo_id');
-        $status = DB::table('get_order_details')->groupBy('status')-> lists('status','wo_id');
-        $priority = DB::table('get_order_details')->groupBy('priority')-> lists('priority','wo_id');
-        $assign = DB::table('get_order_details')->groupBy('assign_to')-> lists('assign_to','wo_id');
+        $center = DB::table('get_order_details')->groupBy('center_name','wo_id')-> lists('center_name','wo_id');
+        $apartmentNumber = DB::table('get_order_details')->groupBy('apartment_number','wo_id')-> lists('apartment_number','wo_id');
+        $commonArea = DB::table('get_order_details')->groupBy('common_area_name','wo_id')-> lists('common_area_name','wo_id');
+        $createdDate = DB::table('get_order_details')->groupBy('created_date_time','wo_id')-> lists('created_date_time','wo_id');
+        $status = DB::table('get_order_details')->groupBy('status','wo_id')-> lists('status','wo_id');
+        $priority = DB::table('get_order_details')->groupBy('priority','wo_id')-> lists('priority','wo_id');
+        $assign = DB::table('get_order_details')->groupBy('assign_to','wo_id')-> lists('assign_to','wo_id');
 
         if($aptNumber==''&&$commonAreaName=='' && $centerReport=='' && $createdDateTime==''&&$statusReport==''&&$priorityReport=='' && $assignReport==='')
         {
