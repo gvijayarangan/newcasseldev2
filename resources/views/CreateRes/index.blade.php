@@ -8,7 +8,7 @@
                     <div class="panel-heading">
                         <div class="pull-right">
                             <form action="{{ url('/resident/create') }}" method="GET">{{ csrf_field() }}
-                                <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
+                                <button type="submit" id="index-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
                             </form>
                         </div>
                         <div class="pull-left">
