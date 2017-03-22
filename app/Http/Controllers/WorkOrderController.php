@@ -93,10 +93,17 @@ class WorkOrderController extends Controller
     {
         // Navigate to different views based on user role
         $user = Auth::user();
-        $woDetails = DB::table('get_order_details')->get();
-        if ($user->hasRole('admin') || $user->hasRole('engineer')) {
+
+
+        if ($user->hasRole('admin')) {
+            $woDetails = DB::table('get_order_details')->get();
+            return view('WorkOrder.index',compact('woDetails'));
+        } else if($user->hasRole('engineer')) {
+            error_log("USer id - " . $user->getUserId());
+            $woDetails = DB::select('call GetEngineerWoDetails('. $user->getUserId() .')');
             return view('WorkOrder.index',compact('woDetails'));
         } else if ($user->hasRole('contact')) {
+            $woDetails = DB::select('call GetContactWoDetails('. $user->getUserId() .')');
             return view('WorkOrder.indexContact',compact('woDetails'));
         }
 
@@ -335,7 +342,7 @@ class WorkOrderController extends Controller
         error_log("Request for update data " . $request);
 
         $order = Order::find($request -> wo_id);
-        $order -> user_id = Auth::user()->getUserId();
+        //$order -> user_id = Auth::user()->getUserId();
 
 
         //Common area selected, omit apartment and resident information

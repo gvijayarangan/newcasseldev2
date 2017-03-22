@@ -19,7 +19,7 @@ class CreateCommentsTable extends Migration
             $table->text('text');
             $table->morphs('commentable');
             $table->string('created_by')->CurrentTimestamp();
-//            $table->string('updated_by');
+            $table->string('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
