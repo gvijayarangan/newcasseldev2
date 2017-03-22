@@ -80,6 +80,18 @@ Route::get('issuetype/destroy/{id}', 'IssuetypesController@destroy');
 Route::resource('/issuetype','IssuetypesController');
 
 
+
+Route::get('/report','ReportController@index');
+Route::post('/report/store', 'ReportController@store');
+Route::resource('/report','ReportController');
+//Route::resource('/report', 'ReportController@show');
+
+//Route::get('/getAptDetails', 'ReportController@getAptDetails');
+//Route::get('/getComAreaDetails', 'ReportController@getComAreaDetails');
+
+Route::get('downloadExcel/{type}/{results}', array('as' =>'storeCategory','uses'=>'DemoController@downloadExcel'));
+
+
 Route::resource('users', 'UsersController');
 Route::resource('roles', 'RolesController');
 Route::resource('orders', 'WorkOrderController');
