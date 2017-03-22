@@ -22,7 +22,7 @@
                                     {{--<tr>--}}
                                     <th>Center Name</th>
                                     <th>Common Area/System Name</th>
-                                    <th style="width: 200px;">Actions</th>
+                                    <th style="width: 300px;">Actions</th>
                                     {{--</tr>--}}
                                     </thead>
                                     <tbody>
@@ -48,7 +48,7 @@
 
                                             <td class="table-text"><div><a href="{{url('commonarea',$createcomarea->id)}}" class="btn btn-primary ">View</a>
                                                     <a href="{{url('commonarea/update',$createcomarea->id)}}"class="btn btn-warning">Modify</a>
-                                                    <a href="{{url('commonarea/destroy',$createcomarea->id)}}"class="btn btn-danger">Delete</a>
+                                                    <a href="{{url('commonarea/destroy',$createcomarea->id)}}" onclick='return confirm("Are you sure?")' class="btn btn-danger">Delete</a>
                                                 </div></td>
 
                                         </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}

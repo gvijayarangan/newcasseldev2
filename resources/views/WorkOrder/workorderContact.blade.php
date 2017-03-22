@@ -23,7 +23,7 @@
                         <input type="hidden" name="supplyData" id="supplyData" value="">
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-sm-4">
-                            {!! Form::text('requester',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
+                            {!! Form::text('requestor_name',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
                         </div.panel-heading>
 
                         </br> </br>
