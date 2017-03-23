@@ -8,8 +8,7 @@
                     <div class="panel-heading">
                         <div class="pull-right">
                             <form action="{{ url('/resident/create') }}" method="GET">{{ csrf_field() }}
-
-                                <button type="submit" id="index-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
+                                <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
                             </form>
                         </div>
                         <div class="pull-left">
@@ -19,7 +18,6 @@
                         </div>
                         <div><h4>Residents Information</h4></div>
                     </div>
-
                     <div class="panel-body">
                         {{--<div class="pull-left">--}}
                         @if (count($createres) > 0)
@@ -27,7 +25,6 @@
                                 <table class="table table-bordered table-striped cds-datatable">
                                     <thead>
                                     {{--<tr>--}}
-
                                     <th>PCCID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
@@ -69,13 +66,12 @@
                                             <td class="table-text"><div>{{ $createresi-> res_cntr_id }}</div></td>
                                             <td class="table-text"><div><a href="{{url('resident',$createresi->id)}}" class="btn btn-primary ">View</a>
                                                     <a href="{{url('resident/update',$createresi->id)}}"class="btn btn-warning">Modify</a>
-                                                    <a href="{{url('resident/destroy',$createresi->id)}}" onclick='return confirm("Are you sure?")' class="btn btn-danger">Delete</a>
+                                                    <a href="{{url('resident/destroy',$createresi->id)}}"class="btn btn-danger">Delete</a>
                                                 </div></td>
 
                                         </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
                                         {{--{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}--}}
                                         {{--{!! Form::close() !!}--}}
-
 
                                     @endforeach
 

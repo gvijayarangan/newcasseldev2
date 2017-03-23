@@ -166,16 +166,11 @@
                                                     @if($CRUD_Action == 'Create')
                                                         {!! Form::button('<i class="fa fa-btn fa-save"></i>Register', ['type' => 'submit', 'class' => 'btn btn-success']) !!}
 
-                                                        {!! Form::reset('Reset', ['type' => 'reset','value'=>'Clear form', 'class' => 'btn btn-default']) !!}
-
-                                                        <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
-
+                                                        {!! Form::reset('Reset', ['type' => 'reset', 'class' => 'btn btn-default']) !!}
                                                     @else
-                                                        {!! Form::button('<i class="fa fa-btn fa-save"></i>Update', ['type' => 'submit', 'class' => 'btn btn-warning']) !!}
+                                                        {!! Form::button('<i class="fa fa-btn fa-save"></i>Update', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
 
                                                         {!! Form::button('Cancel', ['type' => 'submit', 'class' => 'btn btn-default', 'onClick' => 'users']) !!}
-
-                                                        <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
                                                     @endif
                                                 </div>
 
@@ -184,17 +179,16 @@
                 </div>
         </div>
 </div>
-<script>
-    $(document).ready(function ($) {
-
-    });
-    $("#roles-select-id").change(function () {
-        if ($('#roles-select-id :selected').text() != 'Contact') {
-            $("#resident-id").prop("disabled", true);
-            $("#resident-relationship").prop("disabled", true);
-        } else {
-            $("#resident-id").prop("disabled", false);
-            $("#resident-relationship").prop("disabled", false);
-        }
-    });
-</script>
+                                    <script>
+                                        $(document).ready(function($) {
+                                            $("#roles-select-id").change(function () {
+                                                if ($('#roles-select-id :selected').text() != 'Contact') {
+                                                    $("#resident-id").prop("disabled", true);
+                                                    $("#resident-relationship").prop("disabled", true);
+                                                } else {
+                                                    $("#resident-id").prop("disabled", false);
+                                                    $("#resident-relationship").prop("disabled", false);
+                                                }
+                                            });
+                                        });
+                                    </script>
