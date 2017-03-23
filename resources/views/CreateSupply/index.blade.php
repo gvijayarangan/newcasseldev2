@@ -39,10 +39,10 @@
                                     @foreach ($createsupply as $createsupp)
                                         {{--@foreach ($createapts as $createapt)--}}
                                         <tr>
-					 <td>{{ $createsupp->sup_name}}</td>
-                <td>$ {{ $createsupp->sup_unitprice}}</td>
-                                           
-                                     
+                                            <td>{{ $createsupp->sup_name}}</td>
+                                            <td>$ {{ $createsupp->sup_unitprice}}</td>
+
+
 
                                             <td class="table-text"><div><a href="{{url('Supply',$createsupp->id)}}" class="btn btn-primary ">View</a>
                                                     <a href="{{url('Supply/update', $createsupp->id)}}"class="btn btn-warning">Modify</a>
@@ -51,14 +51,14 @@
 
 
 
-                                      
 
 
 
-            
 
-                                        </tr>                                                
-                                     
+
+
+                                        </tr>
+
 
 
 
@@ -78,4 +78,3 @@
         </div>
     </div>
 @endsection
-
