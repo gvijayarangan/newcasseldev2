@@ -24,7 +24,7 @@ class CreateCommentsTable extends Migration
             $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            //$table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

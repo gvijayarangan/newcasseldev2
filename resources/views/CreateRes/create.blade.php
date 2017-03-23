@@ -121,8 +121,8 @@
 
                     <div class="form-group">
                         <span style="color: red; display:block; float:left">*</span> {!! Form::label('cntr_name', 'Center Name:', ['class' => 'col-md-4 control-label']) !!}
-                        <div class="col-md-6">
-                            {{ Form::select('cntr_name', array_merge([0 => 'Select']) + $centers, 'default',
+                        <div class="col-md-8">
+                            {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
                                array('id' => 'center_drop', 'class' => 'col-md-4')) }}
                         </div>
                     </div>
@@ -132,8 +132,8 @@
                     <div class="form-group">
                         <span style="color: red; display:block; float:left">*</span>
                          {!! Form::label('apt_number', 'Apartment Number:', ['class' => 'col-md-4 control-label']) !!}
-                        <div class="col-md-6">
-                            {{ Form::select('apt_number', array_merge([0 => 'Select']), 'default',
+                        <div class="col-md-8">
+                            {{ Form::select('apt_number', array_merge([0 => 'Please Select']),'default',
                                 array('id' => 'apartment_drop', 'class' => 'col-md-4')) }}
                         </div>
                     </div>
