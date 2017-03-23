@@ -20,14 +20,15 @@ class CreateOrdersTable extends Migration
             $table->integer('cntr_id');
             $table->integer('ca_id')->unsigned()->nullable();
             $table->string('order_description')->nullable();
-            $table->string('order_date_created')->default('2017-03-01');
+            $table->dateTime('order_date_created');
             $table->string('order_priority')->nullable();
             $table->string('order_status')->nullable();
             $table->float('order_total_cost', 8,2)->default(0.00)->nullable();
+            $table->timestamps('created_at');
+            $table->timestamps('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->timestamps('deleted_at');
+            $table->integer('updated_by')->nullable();
             $table->string('resident_comment')->nullable();
-            $table->string('last_status_modified')->default('2017-03-01');
-            $table->dateTime('last_status_modified_time')->default('2017-03-01');
             $table->integer('issue_type');
             $table->string('requestor_name')->nullable();
             $table->softDeletes();
