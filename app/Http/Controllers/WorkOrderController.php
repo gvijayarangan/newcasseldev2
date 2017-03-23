@@ -80,20 +80,14 @@ class WorkOrderController extends Controller
     {
         // Navigate to different views based on user role
         $user = Auth::user();
-
-
-        if ($user->hasRole('admin')) {
-            $woDetails = DB::table('get_order_details')->get();
-            return view('WorkOrder.index',compact('woDetails'));
-        } else if($user->hasRole('engineer')) {
-            error_log("USer id - " . $user->getUserId());
-            $woDetails = DB::select('call GetEngineerWoDetails('. $user->getUserId() .')');
+        $woDetails = DB::table('get_order_details')->get();
+        if ($user->hasRole('admin') || $user->hasRole('engineer')) {
             return view('WorkOrder.index',compact('woDetails'));
         } else if ($user->hasRole('contact')) {
-            $woDetails = DB::select('call GetContactWoDetails('. $user->getUserId() .')');
             return view('WorkOrder.indexContact',compact('woDetails'));
         }
     }
+
     public function getAptDetails(Request $request) {
         $input = $request -> input('option');
         $apartment_data = Apartment::
@@ -280,9 +274,17 @@ class WorkOrderController extends Controller
         error_log("Request for update data " . $request);
         $order = Order::find($request -> wo_id);
 <<<<<<< HEAD
+<<<<<<< HEAD
+        //$order -> user_id = Auth::user()->getUserId();
+=======
+>>>>>>> master
+
         //$order -> user_id = Auth::user()->getUserId();
 
-
+<<<<<<< HEAD
+=======
+        $order -> user_id = Auth::user()->getUserId();
+>>>>>>> master
 =======
         $order -> user_id = Auth::user()->getUserId();
 >>>>>>> master
