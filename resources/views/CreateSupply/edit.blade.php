@@ -25,7 +25,7 @@
     </div>
         </br> </br>
         <span style="color: red; display:block; float:left">*</span>
-        {!! Form::label('sup_unitprice', 'Enter Unit Price:') !!}
+        {!! Form::label('sup_unitprice', 'Supply Unit Price:') !!}
         <div class="input-group">
             <span class="input-group-addon">$</span>
             {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
