@@ -1,11 +1,20 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+</head>
 <body>
-{{$noti_alert_content = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_alert_content')}}
-<br>
+
+
 <div>
-    <a href="http://newcassel.herokuapp.com/createPassword/<?php echo $_SESSION['user_id'];?>">Link</a>
+     Your account has been created. Welcome to New Cassel Work Order System!
     <br>
-    <p>Regards</p>
+    Click <a href="http://newcassel-gv.herokuapp.com/createPassword/<?php echo $_SESSION['user_id'];?>">here</a> to create your password.
+    <br>
+    Regards
+
 </div>
+
 </body>
 </html>

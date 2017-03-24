@@ -1,11 +1,20 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+</head>
 <body>
-{{$noti_alert_content = DB::table('notifications')->where('noti_type', 'Password Reset')->value('noti_alert_content')}}
-<br>
+
+
 <div>
-    <a href="http://newcassel.herokuapp.com/createPassword/<?php echo $_SESSION['user_id'];?>">Link</a>
+    Welcome to New Cassel Work Order System!
     <br>
-    <p>Regards</p>
+    Click <a href="http://newcassel-gv.herokuapp.com/createPassword/<?php echo $_SESSION['user_id'];?>">here</a> to enter a new password.
+    <br>
+    Regards
+
 </div>
+
 </body>
 </html>
