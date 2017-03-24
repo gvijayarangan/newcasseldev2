@@ -20,10 +20,10 @@ class CreateOrdersTable extends Migration
             $table->integer('cntr_id');
             $table->integer('ca_id')->unsigned()->nullable();
             $table->string('order_description')->nullable();
-            $table->dateTime('order_date_created');
+            $table->timestamps('order_date_created')->date();
             $table->string('order_priority')->nullable();
             $table->string('order_status')->nullable();
-            $table->float('order_total_cost', 8,2)->default(0.00)->nullable();
+            $table->decimal('order_total_cost', 8,2)->default(0.00);
             $table->timestamps('created_at');
             $table->timestamps('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->timestamps('deleted_at');

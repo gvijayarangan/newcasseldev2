@@ -28,6 +28,7 @@
                         <ul class="dropdown-menu multi level" role="menu">
                             <li><a href="{{ url('/workorder') }}"><i class="fa fa-btn fa-fw fa-file-text-o" aria-hidden="true"></i>Work Order Form</a></li>
                             <li><a href="{{ url('/workorderview') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Work Order List</a></li>
+                            <li><a href="{{ url('/report') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Report</a></li>
                         </ul>
                     </li>
 
@@ -53,6 +54,8 @@
                                         <i class="fa fa-btn fa-fw" aria-hidden="true"></i><span> &nbsp;</span>System Name</span></a></li>
 
                             <li><a href="{{ url('/issuetype') }}"><span><i class="fa fa-btn fa-fw fa-exclamation-circle" aria-hidden="true"></i></i>&nbsp;&nbsp;Issue Type</span></a></li>
+
+                            <li><a href="{{ url('/notifications') }}"><span><i class="fa fa-btn fa-fw fa-envelope" aria-hidden="true"></i>&nbsp; Email Notification</span></a></li>
                         </ul>
                     </li>
 
