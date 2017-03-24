@@ -23,7 +23,7 @@
                                         <th>Center Name</th>
                                         <th>Apartment Floor Number</th>
                                         <th>Apartment Number</th>
-                                        <th>Actions</th>
+                                        <th style="width: 200px;">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -49,7 +49,7 @@
                                             <td><a href="{{url('apartment',$createapt->id)}}" class="btn btn-primary">View</a>
                                                 <a href="{{url('apartment/update', $createapt->id)}}"
                                                    class="btn btn-warning">Modify</a>
-                                                <a href="{{url('apartment/destroy',$createapt->id)}}"
+                                                <a href="{{url('apartment/destroy',$createapt->id)}}"onclick='return confirm("Are you sure?")'
                                                    class="btn btn-danger">Delete</a>
 
 

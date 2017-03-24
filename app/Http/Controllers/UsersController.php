@@ -77,7 +77,7 @@ class UsersController extends Controller
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'cell' => 'required|integer|digits:10',
+            'cell' => 'required|digits:10',
         ]);
         $this->populateCreateFields($input);
         $input['password'] = "";
@@ -85,7 +85,7 @@ class UsersController extends Controller
         $input['rec_email'] = $request['rec_email'] == '' ? false : true;
         $object = User::create($input);
         $this->syncRoles($object, $request->input('rolelist'));
-        Session::flash('flash_message', 'User successfully added and an email has been sent for activation!');
+        Session::flash('flash_message', 'User successfully added');
         Log::info('UsersController.store - End: ' . $object->id . '|' . $object->name);
 
         session_start();
@@ -98,12 +98,15 @@ class UsersController extends Controller
             'name' => $request['email'],
         );
 
+        $noti_status = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_status');
 
-        Mail::send('emails.emailpassword', $data, function ($message) {
-            $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-            $message->to($_SESSION['user_email'])->subject('New Account Setup');
+        if ($noti_status == 'Active') {
+            Mail::send('emails.emailpassword', $data, function ($message) {
+                $message->from('newcassel@domain.com', 'New Cassel Work Order System');
+                $message->to($_SESSION['user_email'])->subject('New Account Setup');
+            });
+        }
 
-        });
         return redirect()->back();
     }
 
@@ -124,7 +127,7 @@ class UsersController extends Controller
         $this->validate($request, [
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
-            'cell' => 'required|integer|digits:10',
+            'cell' => 'required|digits:10',
         ]);
         $this->populateUpdateFields($request);
         //$request['active'] = $request['active'] == '' ? true : false;
