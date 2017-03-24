@@ -69,6 +69,8 @@ class AuthController extends Controller
             'role' => 'required',
         ]);
     }
+    protected $maxLoginAttempts = 5; // Amount of bad attempts user can make
+    protected $lockoutTime = 300; // Time for which user is going to be blocked in seconds
 
     /**
      * Create a new user instance after a valid registration.

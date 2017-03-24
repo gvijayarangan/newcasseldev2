@@ -8,8 +8,7 @@
 
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}" input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">E-Mail Address</label>
@@ -67,8 +66,9 @@
 
                         {{--  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp
                         <a class="btn btn-link" href="redirect">Login Using Facebook</a>--}}
-
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </form>
+
                 </div>
             </div>
         </div>
