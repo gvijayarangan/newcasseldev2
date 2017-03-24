@@ -24,13 +24,14 @@ class CreateOrdersTable extends Migration
             $table->string('order_priority')->nullable();
             $table->string('order_status')->nullable();
             $table->decimal('order_total_cost', 8,2)->default(0.00);
- //           $table->timestamp('deleted_at')->CurrentTimestamp();
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('deleted_at');
+            $table->integer('updated_by')->nullable();
             $table->string('resident_comment')->nullable();
-            $table->string('last_status_modified')->nullable();
-            $table->timestamp('last_status_modified_time')->nullable();
             $table->integer('issue_type');
             $table->string('requestor_name')->nullable();
-            $table->softDeletes()->CurrentTimestamp();
+         //   $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');

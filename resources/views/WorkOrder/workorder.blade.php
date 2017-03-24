@@ -70,7 +70,7 @@
                         <div.panel-heading class="col-md-6">
                             {!! Form::text('resident_comments',null,
                             array('id' => 'resident_comments','readonly' => true,'size'=>70)) !!}
-                        </div.panel-heading>
+                          </div.panel-heading>
 
                         </br> </br>
                         <span style="color: red; display:block; float:left">*</span>
@@ -117,7 +117,6 @@
 
                         </br> </br>
 
-                        <span style="color: red; display:block; float:left">*</span>
                         {!! Form::label('assigntype', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-6">
                             {{ Form::select('assign_user_id', array_merge([0 => 'Please Select']) + $workers, 'default',
@@ -224,19 +223,23 @@
 
 @section('footer')
     <script>
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
         $(document).ready(function ($) {
             $('select').select2();
             $('#datetime').datepicker();
+
             $("#tools_data").select2({
                 placeholder: "Please Select",
                 tags: true
             })
         });
+
         function validateOnSave() {
             var rc = true;
             if ($("select#sb_id").val() === "") {
@@ -248,6 +251,7 @@
             }
             return rc;
         }
+
         $('#center_dropdown').change(function () {
             // var selectedCenterIndex;
             data = {option: $(this).val()};
@@ -255,17 +259,21 @@
             //Apartment fetch
             $.get("/getAptDetails", data, function (data) {
                 console.log(data);
+
                 var apartment_data = $('#apartment_dropdown');
                 $("#apartment_dropdown").empty();
+
                 apartment_data.append($("<option></option>")
                         .attr("value", 0)
                         .text("Please Select"));
+
                 $.each(data, function (key, value) {
                     apartment_data.append($("<option></option>")
                             .attr("value", key)
                             .text(value));
                 });
                 $('#apartment_dropdown').val(0).change();
+
             });
             // data = null;
             // data = selectedCenterIndex;
@@ -273,21 +281,28 @@
             $.get("/getComAreaDetails", data, function (data) {
                 var commonarea_data = $('#commonarea_dropdown');
                 $("#commonarea_dropdown").empty();
+
                 commonarea_data.append($("<option></option>")
                         .attr("value", 0)
                         .text("Please Select"));
+
                 $.each(data, function (key, value) {
                     commonarea_data.append($("<option></option>")
                             .attr("value", key)
                             .text(value));
                 });
                 $('#commonarea_dropdown').val(0).change();
+
             });
+
+
         });
+
         $('#apartment_dropdown').change(function () {
             if ($("#apartment_dropdown").val() != 0) {
                 //Disable commonarea dropdown
                 $("#commonarea_dropdown").attr('disabled', true);
+
                 data = {option: $(this).val()};
                 $.get("/getResidentName", data, function (data) {
                     //Check if data is empty, then no need to store/display users, also clear any old values
@@ -315,24 +330,32 @@
                         .attr("value", 0)
                         .text("Please Select"));
                 $('#residentname_dropdown').val(0).change();
+
                 //Disable commonarea dropdown
                 $("#commonarea_dropdown").attr('disabled', false);
             }
         });
+
         $('#issuetype_dropdown').change(function () {
             data = {option: $(this).val()};
+
             $.get("/getIssueDesc", data, function (data) {
                 $("#issuedescription").val(data);
             });
         });
+
         $('#residentname_dropdown').change(function () {
             data = {option: $(this).val()};
+
             $.get("/getresidentComments", data, function (data) {
                 $("#resident_comments").val(data);
             });
         });
+
         $('#supply_dropdown').change(function () {
             data = {option: $(this).val()};
+
+
             $.get("/getUnitPrice", data, function (data) {
                 $("#unitprice").val(data);
             });
@@ -343,6 +366,8 @@
                 $("#unit").attr("disabled", false);
             }
         });
+
+
         //Commonarea condition
         $('#commonarea_dropdown').change(function () {
             var selectedIndex = $("#commonarea_dropdown option:selected").val();
@@ -353,46 +378,59 @@
                 $('#res_comments').val("");
                 $("#apartment_dropdown option:eq(0)").prop("selected", true).change();
                 $("#residentname_dropdown option:eq(0)").prop("selected", true).change();
+
             } else {
                 $("#apartment_dropdown").attr("disabled", false);
                 $('#residentname_dropdown').attr("disabled", false);
                 $('#res_comments').attr("disabled", false);
             }
         });
+
+
         $('#addDetails').click(function () {
             if ($("#supply_dropdown option:selected").val() != 0) {
+
                 var order_data = {};
                 order_data["SupplyName"] = $("#supply_dropdown option:selected").text();
                 order_data["unit"] = $("#unit").val();
                 order_data["unitPrice"] = $("#unitprice").val();
                 order_data["total"] = $("#total").val();
                 order_data["remove-row"] = '<span class="glyphicon glyphicon-remove"></span>';
+
                 var row = $('<tr></tr>');
                 $.each(order_data, function (type, value) {
                     $('<td name =' + type + ' class="input-' + type + '"></td>').html(value).appendTo(row);
                 });
                 $('.preview-table > tbody:last').append(row);
+
                 calculateTotalAmount();
+
                 //Clear the supply information
                 $('#total').val("");
                 $('#unit').val("");
                 $('#unitprice').val("");
                 $("#unit").attr("disabled", true);
                 $("#supply_dropdown option:eq(0)").prop("selected", true).change();
+
+
                 var tableData = $.param($('#dataSupplyTable td').map(function() {
                     return {
                         name: $(this).attr('name'),
                         value: $(this).text().trim()
                     };
                 }));
+
                 $("#supplyData").val(""+tableData+"");
                 console.log(tableData);
             }
         });
+
         $('#unit').change(function () {
             var totalAmount = $('#unit').val() * $('#unitprice').val();
             $('#total').val(totalAmount);
+
         });
+
         $(document).on('click', '.input-remove-row', function () {
             var tr = $(this).closest('tr');
             tr.remove();
@@ -403,9 +441,11 @@
                     value: $(this).text().trim()
                 };
             }));
+
             $("#supplyData").val(""+tableData+"");
             console.log(tableData);
         });
+
         function calculateTotalAmount() {
             var totalSum = 0;
             $('.input-total').each(function () {
@@ -413,5 +453,6 @@
             });
             $("#totalOrderAmount").val(totalSum);
         }
+
     </script>
 @endsection

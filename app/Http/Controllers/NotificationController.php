@@ -76,7 +76,7 @@ class NotificationController extends Controller
         return redirect('notifications');*/
 
         $this->validate($request, [
-            'noti_type' => 'required|unique:notifications',
+            //'noti_type' => 'required|unique:notifications',
             'noti_email_title' => 'required',
             'noti_alert_content' => 'required',
             'noti_status' => 'required',
