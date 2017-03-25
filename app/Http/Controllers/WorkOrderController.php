@@ -264,7 +264,8 @@ class WorkOrderController extends Controller
         $order -> order_total_cost = $request -> order_total_cost;
         $order -> resident_comment = $request -> resident_comments;
         $order -> requestor_name = $request -> requestor_name;
-        $order -> last_status_modified = Auth::user()->getFullName();
+        //$order -> last_status_modified = Auth::user()->getFullName();
+        $order -> updated_by = Auth::user()->getFullName();
         $order -> order_date_created =  (new \DateTime())->format('Y-m-d H:i:s');
         $order ->save();
 
