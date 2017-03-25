@@ -40,16 +40,12 @@
                                     {!! Form::text('apt_number',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                                 </div>
                                 </br> </br>
-
-
                                 <div class="form-group">
                                     <div class="form-group">
                                         {!! Form::label('apt_comments', 'Apartment Comments:',['class' => 'col-md-4 control-label']) !!}
                                         <div class="col-md-4">
                                             {!! Form::textarea('apt_comments',null,['class' => 'col-md-4 form-control','rows' => 4, 'cols' => 60]) !!}
                                         </div>
-
-
                                     </div>
                                     </br> </br>
                                     <div class="form-group" style="text-align: center; padding-top: 100px">
@@ -63,4 +59,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 @stop
