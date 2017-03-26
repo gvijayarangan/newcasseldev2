@@ -70,8 +70,8 @@
                         {!! Form::Label('res_gender', 'Gender:',['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-4">
                             {{ Form::select('res_gender', [
-                                'Female' => 'Female',
-                                'Male' => 'Male'], old('res_gender'), ['class' => 'form-control']) }}
+                                'Male' => 'Male',
+                                'Female' => 'Female'], old('res_gender'), ['class' => 'form-control']) }}
                         </div>
                     </div>
 
@@ -117,8 +117,8 @@
                         {!! Form::Label('res_status', 'Status:',['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-4">
                             {!! Form::select('res_status', [
-                                        'Inactive' => 'Inactive',
-                                        'Active' => 'Active'], old('res_status'), ['class' => 'form-control']) !!}
+                                        'Active' => 'Active',
+                                        'Inactive' => 'Inactive'], old('res_status'), ['class' => 'form-control']) !!}
                         </div>
                     </div>
 

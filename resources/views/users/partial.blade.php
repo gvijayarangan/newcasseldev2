@@ -55,9 +55,12 @@
 
         <div class="form-group">
             <label class="col-md-4 control-label">*Roles</label>
-            <div class="col-md-6">{!! Form::select('rolelist[]', $list_role, null,
-    ['id' => 'roles-select-id', 'class' => 'form-control roles cds-select', 'multiple', 'style' => 'width: 50%; margin-top: 10px;', 'required' => 'required']) !!}</div>
+            <div class="col-md-6">
+                {!! Form::select('rolelist[]', $list_role, null, ['placeholder' => 'Please select', 'id' => 'roles-select-id',
+                'class' => 'form-control roles cds-select', 'required' => 'required']) !!}
+            </div>
         </div>
+
 
         <div class="form-group{{ $errors->has('residentid') ? ' has-error' : '' }}">
             @if($CRUD_Action == 'Create')
@@ -72,7 +75,7 @@
                                 @else
                                     {!! Form::label('residentid', 'Resident ID:', ['class' => 'col-md-4 control-label']) !!}
                                     <div class="col-md-2">
-                                        {!! Form::text('residentid', null, ['id' => 'resident-id', 'class' => 'col-md-6 form-control']) !!}
+                                        {!! Form::text('residentid', null, ['id' => 'resident-id', 'class' => 'col-md-6 form-control','required' => 'required']) !!}
                                         @endif
                                         @endif
                                         @if ($errors->has('residentid'))
@@ -93,18 +96,18 @@
                                                 {!! Form::label('residentrelationship', '*Resident Relationship:', ['class' => 'col-md-4 control-label']) !!}
                                                 <div class="col-md-4">
                                                     {!! Form::text('residentrelationship', null, ['id' => 'resident-relationship', 'class' => 'col-md-6 form-control','readonly']) !!}
-                                                    @else
-                                                        {!! Form::label('residentrelationship', '*Resident Relationship:', ['class' => 'col-md-4 control-label']) !!}
-                                                        <div class="col-md-4">
-                                                            {!! Form::text('residentrelationship', null, ['id' => 'resident-relationship', 'class' => 'col-md-6 form-control']) !!}
-                                                            @endif
-                                                            @endif
-                                                            @if ($errors->has('residentrelationship'))
-                                                                <span class="help-block">
-                <strong>{{ $errors->first('residentrelationship') }}</strong>
-            </span>
-                                                            @endif
-                                                        </div>
+                                                    @else--}}
+                                                    {!! Form::label('residentrelationship', '*Resident Relationship:', ['class' => 'col-md-4 control-label']) !!}
+                                                    <div class="col-md-4">
+                                                        {!! Form::text('residentrelationship', null, ['id' => 'resident-relationship', 'class' => 'col-md-6 form-control','required' => 'required']) !!}
+                                                        @endif
+                                                        @endif
+                                                        @if ($errors->has('residentrelationship'))
+                                                            <span class="help-block">
+                                                                    <strong>{{ $errors->first('residentrelationship') }}</strong>
+                                                                </span>
+                                                        @endif
+                                                    </div>
                                                 </div>
 
                                                 <div class="form-group{{ $errors->has('comment') ? ' has-error' : '' }}">
@@ -168,14 +171,18 @@
 
                                                         {!! Form::reset('Reset', ['type' => 'reset','value'=>'Clear form', 'class' => 'btn btn-default']) !!}
 
-                                                        <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                                                        <a class="btn btn-primary"
+                                                           href="{{ route('users.index') }}">
+                                                            Back</a>
 
                                                     @else
                                                         {!! Form::button('<i class="fa fa-btn fa-save"></i>Update', ['type' => 'submit', 'class' => 'btn btn-warning']) !!}
 
                                                         {!! Form::button('Cancel', ['type' => 'submit', 'class' => 'btn btn-default', 'onClick' => 'users']) !!}
 
-                                                        <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                                                        <a class="btn btn-primary"
+                                                           href="{{ route('users.index') }}">
+                                                            Back</a>
                                                     @endif
                                                 </div>
 
@@ -184,6 +191,7 @@
                 </div>
         </div>
 </div>
+
 <script>
     $(document).ready(function ($) {
 
@@ -193,8 +201,9 @@
             $("#resident-id").prop("disabled", true);
             $("#resident-relationship").prop("disabled", true);
         } else {
-            $("#resident-id").prop("disabled", false);
-            $("#resident-relationship").prop("disabled", false);
+            $("#resident-id").attr('required', true);
+            $("#resident-relationship").attr('required', true);
         }
     });
+
 </script>

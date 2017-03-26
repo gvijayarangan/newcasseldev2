@@ -99,11 +99,11 @@ class UsersController extends Controller
         );
 
         $noti_status = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_status');
-
         if ($noti_status == 'Active') {
             Mail::send('emails.emailpassword', $data, function ($message) {
                 $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-                $message->to($_SESSION['user_email'])->subject('New Account Setup');
+                $message->to($_SESSION['user_email'])
+                    ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_email_title'));
             });
         }
 
