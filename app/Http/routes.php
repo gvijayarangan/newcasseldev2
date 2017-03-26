@@ -157,7 +157,8 @@ Route::post('/sendemail', function () {
         if ($noti_status == 'Active') {
             Mail::send('emails.welcome', $data, function ($message) {
                 $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-                $message->to($_POST['email'])->subject('Password Setup');
+                $message->to($_POST['email'])
+                    ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'Password Reset')->value('noti_email_title'));
             });
         }
 

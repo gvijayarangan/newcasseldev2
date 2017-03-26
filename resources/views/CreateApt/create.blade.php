@@ -23,7 +23,7 @@
                         <div class="form-group">
                             {!! Form::label('cntr_name', 'Center Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::select('cntr_name', $centers ,null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
+                                {!! Form::select('cntr_name', $centers ,null,['placeholder' => 'Please select','class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
                             </br> </br>
                             <span style="color: red; display:block; float:left">*</span>
