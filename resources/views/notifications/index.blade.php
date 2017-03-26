@@ -10,7 +10,7 @@
                             {{--<a class="btn btn-success" href="{{ route('notifications.create') }}"> Create New Email
                                 Notification</a>--}}
                         </div>-->
-                        <div><h4>Email Notifcations Information</h4></div>
+                        <div><h4>Email Notifications Information</h4></div>
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
