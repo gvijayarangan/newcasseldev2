@@ -18,11 +18,8 @@ class CreateComAreasTable extends Migration
             $table->string('ca_name');
             $table->String('ca_comments')->nullable();
             $table->integer('cntr_id')->nullable();
+            $table->foreign('cntr_id')->references('id')->on('centers')->onDelete('cascade');
         });
-
-      //  Schema::table('comareas', function (Blueprint $table) {
-       //     $table->foreign('cntr_id')->references('id')->on('centers')->onDelete('cascade');
-       // });
 
     }
 
