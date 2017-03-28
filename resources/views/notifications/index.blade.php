@@ -6,11 +6,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="pull-right">
-                            <a class="btn btn-success" href="{{ route('notifications.create') }}"> Create New Email
-                                Notification</a>
-                        </div>
-                        <div><h4>Email Notifcations Information</h4></div>
+                        <!--<div class="pull-right">
+                            {{--<a class="btn btn-success" href="{{ route('notifications.create') }}"> Create New Email
+                                Notification</a>--}}
+                        </div>-->
+                        <div><h4>Email Notifications Information</h4></div>
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">

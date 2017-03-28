@@ -85,10 +85,21 @@ Route::resource('/issuetype','IssuetypesController');
 
 Route::resource('notifications', 'NotificationController');
 
-
+//added line according to prakruthi --- started
 Route::get('/report','ReportController@index');
 Route::post('/report/store', 'ReportController@store');
 Route::resource('/report','ReportController');
+//Route::resource('/report', 'ReportController@show');
+
+Route::get('/getAptDetailsRes', 'ReportController@getAptDetails');
+
+Route::get('/excel/download', 'ReportController@excel');
+//added line according to prakruthi  ---- ended
+
+//commenting
+//Route::get('/report','ReportController@index');--started
+//Route::post('/report/store', 'ReportController@store');
+//Route::resource('/report','ReportController');--ended
 //Route::resource('/report', 'ReportController@show');
 
 //Route::get('/getAptDetails', 'ReportController@getAptDetails');
@@ -146,7 +157,8 @@ Route::post('/sendemail', function () {
         if ($noti_status == 'Active') {
             Mail::send('emails.welcome', $data, function ($message) {
                 $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-                $message->to($_POST['email'])->subject('Password Setup');
+                $message->to($_POST['email'])
+                    ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'Password Reset')->value('noti_email_title'));
             });
         }
 

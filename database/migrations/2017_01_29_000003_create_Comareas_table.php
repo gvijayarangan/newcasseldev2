@@ -20,9 +20,9 @@ class CreateComAreasTable extends Migration
             $table->integer('cntr_id')->nullable();
         });
 
-        Schema::table('comareas', function (Blueprint $table) {
-            $table->foreign('cntr_id')->references('id')->on('centers')->onDelete('cascade');
-        });
+      //  Schema::table('comareas', function (Blueprint $table) {
+       //     $table->foreign('cntr_id')->references('id')->on('centers')->onDelete('cascade');
+       // });
 
     }
 

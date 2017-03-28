@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css"/>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -74,29 +73,29 @@
                         </br> </br>
 
 
-                            <div class="form-group">
-                                <span style="color: red; display:block; float:left">*</span>
-                                {!!Form::label('con_gender', 'Gender:',['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-4">
-                                    {{ Form::select('con_gender', [
-                                    'Female' => 'Female',
-                                    'Male' => 'Male'], old('con_gender'), ['class' => 'form-control']) }}
-                                </div>
+                        <div class="form-group">
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!!Form::label('con_gender', 'Gender:',['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-4">
+                                {{ Form::select('con_gender', [
+                                'Male' => 'Male',
+                                'Female' => 'Female'], old('con_gender'), ['class' => 'form-control']) }}
                             </div>
-                            </br> </br>
+                        </div>
+                        </br> </br>
 
-                            <div class="form-group">
-                                <span style="color: red; display:block; float:left">*</span>
-                                {!!Form::label('res_fullname', 'Resident Name:',['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-4">
-                                    {{ Form::select('res_fullname', $residents) }}
-                                </div>
+                        <div class="form-group">
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!!Form::label('res_fullname', 'Resident Name:',['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-4">
+                                {{ Form::select('res_fullname', $residents, null, ['placeholder' => 'Please select','class' => 'col-md-4 form-control','required' => 'required']) }}
                             </div>
+                        </div>
 
-                            </br> </br>
-                            {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
+                        </br> </br>
+                        {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
 
-                            {!! Form::close() !!}
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
