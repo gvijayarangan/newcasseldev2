@@ -27,6 +27,7 @@ class CreateResidentsTable extends Migration
             $table->string('res_status');
             $table->integer('res_apt_id');
             $table->integer('res_cntr_id');
+            $table->foreign('res_apt_id')->references('id')->on('apartments')->onDelete('cascade');
         });
     }
 
