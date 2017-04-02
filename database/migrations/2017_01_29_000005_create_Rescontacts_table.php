@@ -23,7 +23,7 @@ class CreateResContactsTable extends Migration
             $table->string('con_email')->nullable();
             $table->string('con_comment')->nullable();
             $table->string('con_gender');
-            $table->integer('con_res_id');
+            $table->integer('con_res_id')->unsigned();;
 
             $table->foreign('con_res_id')->references('id')->on('residents')->onDelete('cascade');
           
