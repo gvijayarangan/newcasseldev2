@@ -45,7 +45,7 @@
             </tr>
             <tr>
                 <td>Resident Name:</td>
-                <td><?php echo ($resident_name); ?></td>
+                <td><?php echo ($concatenated_con_res_id); ?></td>
             </tr>
             </tbody>
         </table>

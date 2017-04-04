@@ -2,6 +2,8 @@
 
 @section('content')
     <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -56,11 +58,20 @@
             'Female' => 'Female',
             'Male' => 'Male'], old('con_gender'), ['class' => 'form-control']) }}
     </div>
-    <div class="form-group">
+  {{--  <div class="form-group">
         <span style="color: red; display:block; float:left">*</span>
         {!!Form::label('con_res_id', 'Resident Name:') !!}
-        {{ Form::select('con_res_id', $residentscon) }}
-    </div>
+        {{ Form::select('con_res_id', $residentscon,'default', array('id' => 'residents', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
+    </div>--}}
+
+        <div class="form-group">
+
+            {!! Form::label('con_res_id', 'ResidentName:', ['class' => 'col-md-3 control-label']) !!}
+            <div.panel-heading style="padding-left: 15px">
+                {{ Form::select('con_res_id[]', $residentscon, $residentscon_existing,
+                array('id' => 'residents', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
+            </div.panel-heading>
+        </div>
     <div class="form-group">
         {!! Form::submit('Update Information', ['class' => 'btn btn-primary']) !!}
     </div>
@@ -70,4 +81,11 @@
             </div>
         </div>
     </div>
+    <script>
+
+        $("#residents").select2({
+            placeholder: "Please Select",
+            tags: true
+        })
+    </script>
 @stop

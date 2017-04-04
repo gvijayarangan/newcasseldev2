@@ -1,5 +1,12 @@
 @extends('layouts.app')
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
 @section('content')
     <div class="container">
         <div class="row">
@@ -25,8 +32,9 @@
                             </div>
                         </div>
                         </br> </br>
+
                         <div class="form-group">
-                            {!! Form::label('con_mname', 'Contact Middle Name',['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::label('con_mname', 'Contact Middle Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('con_mname',null,['class' => 'col-md-4 form-control']) !!}
                             </div>
@@ -84,13 +92,18 @@
                         </div>
                         </br> </br>
 
-                        <div class="form-group">
+
                             <span style="color: red; display:block; float:left">*</span>
-                            {!!Form::label('res_fullname', 'Resident Name:',['class' => 'col-md-4 control-label']) !!}
+                         {{--   {!!Form::label('res_fullname', 'Resident Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {{ Form::select('res_fullname', $residents, null, ['placeholder' => 'Please select','class' => 'col-md-4 form-control','required' => 'required']) }}
-                            </div>
-                        </div>
+                            </div>--}}
+
+                            {!! Form::label('res_fullname', 'ResidentName:', ['class' => 'col-md-2 control-label']) !!}
+                            <div.panel-heading style="padding-left: 15px">
+                                {{ Form::select('res_fullname[]', $residents,
+                                  'default', array('id' => 'residents', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
+                            </div.panel-heading>
 
                         </br> </br>
                         {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
@@ -102,4 +115,27 @@
         </div>
     </div>
 
-@stop
+@endsection
+
+@section('footer')
+    <script>
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(document).ready(function ($) {
+            $('select').select2();
+
+
+            $("#residents").select2({
+                placeholder: "Please Select",
+                tags: true
+            })
+        });
+
+
+    </script>
+@endsection
