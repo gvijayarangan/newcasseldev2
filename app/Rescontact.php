@@ -28,5 +28,10 @@ class Rescontact extends Model
         return $this->hasMany('App\conresi');
     }
 
+    public function getResId()
+    {
+        return $this->id;
+    }
+
 }
 

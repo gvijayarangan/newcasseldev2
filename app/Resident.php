@@ -8,6 +8,7 @@ class Resident extends Model
 {
     public $timestamps = false;
     protected $fillable=[
+        'id',
         'res_pccid',
         'res_fname',
         'res_mname',
