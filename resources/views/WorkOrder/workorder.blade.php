@@ -164,14 +164,16 @@
 
                                         <label for="amount" class="col-sm-3 control-label">Unit Price</label>
 
-                                     <div class="col-sm-6">
-                                            <input type="text" class="form-control" id="unitprice" name="unitprice"
-                                                   readonly>  </input>
+                                         <div class= "col-sm-6 input-group" >
+                                             <span class="input-group-addon">$</span>
+
+                                       <input type="text" class="form-control" placeholder="unitprice" id="unitprice" name="unitprice"
+                                                readonly>
+
                                        </div>
 
-
                                 </div>
-                                  
+
                                     <div class="form-group">
                                         <label for="description" class="col-sm-3 control-label">Unit</label>
                                         <div class="col-sm-6">
@@ -216,7 +218,7 @@
                                     </div>
                                     <br><br><br><br>
                                     {!! Form::label('totalOrderAmountLabel', 'Work Order Total Cost:' ,['class' => 'col-md-4 control-label']) !!}
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6 ">
                                         {!! Form::text('order_total_cost',null, array('id' => 'totalOrderAmount', 'readonly' =>true)) !!}
                                     </div>
                                 </div>
@@ -410,7 +412,7 @@
                 var order_data = {};
                 order_data["SupplyName"] = $("#supply_dropdown option:selected").text();
                 order_data["unit"] = $("#unit").val();
-                order_data["unitPrice"] = $("#unitprice").val();
+                order_data["unitPrice"] = "$"+$("#unitprice").val();
                 order_data["total"] = $("#total").val();
                 order_data["remove-row"] = '<span class="glyphicon glyphicon-remove"></span>';
 
@@ -444,7 +446,8 @@
 
         $('#unit').change(function () {
             var totalAmount = $('#unit').val() * $('#unitprice').val();
-            $('#total').val(totalAmount).toFixed(2);
+            totalAmount = totalAmount.toFixed(2);
+            $('#total').val(totalAmount);
 
         });
 
@@ -466,9 +469,10 @@
         function calculateTotalAmount() {
             var totalSum = 0;
             $('.input-total').each(function () {
-                totalSum += parseFloat($(this).text()).toFixed(2);
+                totalSum += parseFloat($(this).text());
             });
-            $("#totalOrderAmount").val(totalSum).toFixed(2);
+            totalSum = totalSum.toFixed(2);
+            $("#totalOrderAmount").val(totalSum);
         }
 
     </script>

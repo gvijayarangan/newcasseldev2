@@ -14,8 +14,8 @@ class CreateConResisTable extends Migration
     public function up()
     {
         Schema::create('conresis', function (Blueprint $table) {
-            $table->integer('res_id')->unsigned();
             $table->integer('con_id')->unsigned();
+            $table->integer('res_id')->unsigned();
             $table->softDeletes();
 
             $table->foreign('res_id')->references('id')->on('residents')->onDelete('cascade');
