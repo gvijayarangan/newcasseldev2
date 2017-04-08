@@ -1,5 +1,12 @@
 @extends('layouts.app')
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
 @section('content')
 
 <div class="container">
@@ -142,6 +149,8 @@
                                 array('id' => 'apartment_drop', 'class' => 'col-md-4')) }}
                         </div>
                     </div>
+
+                        <br><br>
 
                     <div class="form-group" style="text-align: center">
                         {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}

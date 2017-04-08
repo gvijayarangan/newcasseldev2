@@ -135,6 +135,8 @@ class ResidentsController extends Controller
             'res_cellphone' =>'string|digits:10',
             'res_homephone' =>'string|digits:10',
             'res_email' => 'email|max:255',
+                    'cntr_name' => 'required|not_in:0',
+                    'apt_number' => 'required|not_in:0',
         ]);
 
         $resident = Resident::find($id);

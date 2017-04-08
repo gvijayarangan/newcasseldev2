@@ -60,9 +60,13 @@
                         </div.panel-heading>
 
 
+                      {{--  </br> </br>
+                        {!! Form::label('resident_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}--}}
+                        <div.panel-heading class="col-md-6">
+                            {!! Form::text('resident_comments',null,
+                            array('class' => 'form-control hidden','id' => 'resident_comments','readonly' => true,'size'=>70)) !!}
+                        </div.panel-heading>
                         </br> </br>
-
-
                         {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-4">
                             {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default', array('id' => 'issuetype_dropdown')) }}
@@ -214,6 +218,15 @@
                 //Disable commonarea dropdown
                 $("#commonarea_dropdown").attr('disabled', false);
             }
+        });
+
+        $('#residentname_dropdown').change(function () {
+            data = {option: $(this).val()};
+
+            $.get("/getresidentComments", data, function (data) {
+                $("#resident_comments").val(data);
+                $('.form-control.hidden').removeclass('hidden');
+            });
         });
 
         $('#issuetype_dropdown').change(function () {
