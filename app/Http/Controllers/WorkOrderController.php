@@ -35,7 +35,6 @@ class WorkOrderController extends Controller
 {
     public function index()
     {
-        $centers = Center::lists('cntr_name', 'id')->all();
         $issuetypes = Issuetype::lists('issue_typename', 'id')->all();
         $workers = DB::table('users')
             ->join('role_user', 'users.id', '=', 'role_user.user_id')
@@ -151,6 +150,12 @@ class WorkOrderController extends Controller
         } else {
             $woDetails = DB::table('order_histories')->where('created_by','=',$user->getUserId())->get();
         }
+
+        foreach ($woDetails as $wo) {
+            $wo -> created_by =  User::findOrFail($wo -> created_by)->f_name  . ' ' .
+                User::findOrFail($wo -> created_by)->l_name;
+        }
+
         //print_r($woDetails);
         return view('WorkOrder.history',compact('woDetails'));
     }
