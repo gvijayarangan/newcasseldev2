@@ -33,7 +33,7 @@
                                     <th>PCCID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
-                                    <th>Home Phone</th>
+                                  {{--<th>Home Phone</th>--}}
                                     <th>Cellphone</th>
                                     <th>Email</th>
                                     <th>Status</th>
@@ -54,9 +54,9 @@
                                             <td class="table-text">
                                                 <div>{{ $createresi-> res_lname }}</div>
                                             </td>
-                                            <td class="table-text">
+                                            {{--<td class="table-text">
                                                 <div>{{ $createresi-> res_homephone }}</div>
-                                            </td>
+                                            </td>--}}
                                             <td class="table-text">
                                                 <div>{{ $createresi-> res_cellphone }}</div>
                                             </td>

@@ -119,6 +119,7 @@ Route::resource('/workorderview', 'WorkOrderController@view');
 Route::post('/workorder/storeData', 'WorkOrderController@storeData');
 Route::post('/workorder/updateData', 'WorkOrderController@updateData');
 Route::get('/workorder/edit/{wo_id}', 'WorkOrderController@edit');
+Route::get('/history', 'WorkOrderController@history');
 /*    Route::get('/redirect', 'SocialAuthController@redirect');
     Route::get('/callback', 'SocialAuthController@callback');*/
 

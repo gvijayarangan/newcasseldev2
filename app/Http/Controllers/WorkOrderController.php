@@ -48,7 +48,7 @@ class WorkOrderController extends Controller
         $user = Auth::user();
         if ($user->hasRole('admin') || $user->hasRole('engineer')) {
             return view('WorkOrder.workorder', compact('centers', 'issuetypes', 'workers', 'toolsdata', 'suppliesdata'));
-        }  else if ($user->hasRole('contact')) {
+        }  else if ($user->hasRole('contact') || $user->hasRole('employee') ){
             return view('WorkOrder.workorderContact', compact('centers', 'issuetypes', 'workers', 'toolsdata', 'suppliesdata'));
         }
     }
@@ -102,14 +102,20 @@ class WorkOrderController extends Controller
         } else if($user->hasRole('engineer')) {
             error_log("USer id - " . $user->getUserId());
             $woDetails = DB::select('call GetEngineerWoDetails('. $user->getUserId() .')');
+
             return view('WorkOrder.index',compact('woDetails'));
-        } else if ($user->hasRole('contact')) {
+        } else if ($user->hasRole('contact') || $user->hasRole('employee')) {
             $woDetails = DB::select('call GetContactWoDetails('. $user->getUserId() .')');
             return view('WorkOrder.indexContact',compact('woDetails'));
         }
 
     }
 
+    public function history() {
+        $user = Auth::user();
+        $woDetails = DB::select('call GetEngineerWOHistory('. $user->getUserId() .')');
+        return view('WorkOrder.index',compact('woDetails'));
+    }
     public function getAptDetails(Request $request) {
         $input = $request -> input('option');
         $apartment_data = Apartment::
@@ -227,17 +233,10 @@ class WorkOrderController extends Controller
     {
         // Validation depends on type of the user
 
-        /*       //Admin validation
-               $this -> validate($request, [
-                   'requester' => 'required|string',
-                   'cntr_name' => 'required|string',
-                   'apartment_name' => 'required|string',
-                   'residentname' => 'required|string',
-                   'resident_comments' => 'required|string',
-                   'status' => 'required|string',
-
-               ]);*/
-
+          //Admin validation
+        $this -> validate($request, [
+            'cntr_name' => 'required|not_in:0',
+        ]);
 
         error_log("Request is " . $request);
 
@@ -338,16 +337,10 @@ class WorkOrderController extends Controller
     {
         // Validation depends on type of the user
 
-        /*       //Admin validation
-               $this -> validate($request, [
-                   'requester' => 'required|string',
-                   'cntr_name' => 'required|string',
-                   'apartment_name' => 'required|string',
-                   'residentname' => 'required|string',
-                   'resident_comments' => 'required|string',
-                   'status' => 'required|string',
-
-               ]);*/
+            //Admin validation
+        $this -> validate($request, [
+            'cntr_name' => 'required|not_in:0',
+        ]);
         //Save all orders
 
         error_log("Request for update data " . $request);

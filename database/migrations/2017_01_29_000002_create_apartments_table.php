@@ -19,8 +19,9 @@ class CreateApartmentsTable extends Migration
             $table->string('apt_floornumber');
             $table->string('apt_number');
             $table->string('apt_comments')->nullable();
-            $table->integer('cntr_id')->nullable();
-            $table->foreign('cntr_id')->references('id')->on('centers')->onDelete('cascade');
+            $table->integer('cntr_id')->unsigned();
+
+        $table->foreign('cntr_id')->references('id')->on('centers')->onDelete('cascade')->change();
         });
 
     }
