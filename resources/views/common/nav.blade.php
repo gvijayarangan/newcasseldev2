@@ -32,9 +32,9 @@
                             @role('admin')
                                 <li><a href="{{ url('/report') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Report</a></li>
                             @endrole
-                            @role('engineer')
+
                                 <li><a href="{{ url('/history') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Work Order History</a></li>
-                            @endrole
+
                         </ul>
                     </li>
 

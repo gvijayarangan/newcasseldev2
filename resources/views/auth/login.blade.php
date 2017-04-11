@@ -2,6 +2,10 @@
 <head>
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta http-equiv="cache-control" content="private, max-age=0, no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
 </head>
 
 @section('content')

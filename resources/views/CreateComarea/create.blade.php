@@ -26,7 +26,7 @@
                             <span style="color: red; display:block; float:left">*</span>
                             {!! Form::label('cntr_id', 'Center Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {{ Form::select('cntr_id', array_merge([0 => 'Please Select']) + $centers, 'default', array('id' => 'center_dropdown')) }}
+                                {{ Form::select('cntr_id', array_merge([0 => 'Please Select']) + $centers, 'default', array('id' => 'center_dropdown','required' => 'required')) }}
                             </div>
                             </br> </br>
                             <span style="color: red; display:block; float:left">*</span>

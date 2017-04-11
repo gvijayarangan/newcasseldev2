@@ -1,8 +1,13 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('auth/login');
+
+Route::get('/',  function() {
+    if(!Auth::check()) {
+        return view('auth/login');
+    } else {
+        return back();
+    }
 });
 
 Route::get('php-version', function () {
@@ -40,7 +45,6 @@ Route::resource('apartment', 'ApartmentsController');
 Route::get('center/update/{id}', 'CenterController@edit');
 Route::get('center/update information/{id}', 'CenterController@update');
 Route::get('center/destroy/{id}', 'CenterController@destroy');
-//Route::get('center/search', ['as' => 'cntr-search', 'uses' => 'CenterController@search']);
 Route::resource('/center', 'CenterController');
 
 Route::get('rescontact/update/{id}', 'RescontactsController@edit');
@@ -119,7 +123,7 @@ Route::resource('/workorderview', 'WorkOrderController@view');
 Route::post('/workorder/storeData', 'WorkOrderController@storeData');
 Route::post('/workorder/updateData', 'WorkOrderController@updateData');
 Route::get('/workorder/edit/{wo_id}', 'WorkOrderController@edit');
-Route::get('/history', 'WorkOrderController@history');
+Route::get('/history', 'WorkOrderController@getHistory');
 /*    Route::get('/redirect', 'SocialAuthController@redirect');
     Route::get('/callback', 'SocialAuthController@callback');*/
 
@@ -139,6 +143,7 @@ Route::get('/getUnitPrice', 'WorkOrderController@getUnitPrice');
 Route::get('/getComments', 'WorkOrderController@getComments');
 Route::post('/postComment', 'WorkOrderController@addComment');
 Route::get('/getAptDetailRes', 'ResidentsController@getAptDet');
+Route::get('/getContactDetails', 'UsersController@getContactDetails');
 
 Route::post('/sendemail', function () {
 

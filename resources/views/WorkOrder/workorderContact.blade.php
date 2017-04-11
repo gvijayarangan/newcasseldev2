@@ -31,7 +31,7 @@
                         {!! Form::label('centername', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
                             <div class="form-group">
-                                {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
+                                {{ Form::select('cntr_name', $centers, 'default',
                                  array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
                             </div>
                         </div.panel-heading>
@@ -40,7 +40,7 @@
 
                         {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{ Form::select('apt_id', array_merge([0 => 'Please Select']), 'default',
+                            {{ Form::select('apt_id', $apartment_data, 'default',
                             array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
                         </div.panel-heading>
 
@@ -48,7 +48,7 @@
 
                         {!! Form::label('residentname', 'Resident Name:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{ Form::select('residentname', array_merge([0 => 'Please Select']),
+                            {{ Form::select('residentname', $residents,
                             'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
                         </div.panel-heading>
 
@@ -112,16 +112,6 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        });
-
-        $(document).ready(function ($) {
-            $('select').select2();
-            $('#datetime').datepicker();
-
-            $("#tools_data").select2({
-                placeholder: "Please Select",
-                tags: true
-            })
         });
 
         function validateOnSave() {
