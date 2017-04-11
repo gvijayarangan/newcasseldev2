@@ -27,18 +27,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {{--<script>--}}
-                                        {{--function ConfirmDelete() {--}}
-                                            {{--var x = confirm("Are you sure you want to delete? Click OK to continue");--}}
-                                            {{--if (x)--}}
-                                                {{--return true;--}}
-                                            {{--else--}}
-                                                {{--return false;--}}
-                                        {{--}--}}
-                                    {{--</script>--}}
+
 
                                     @foreach ($createapts as $createapt)
-                                        {{--@foreach ($createapts as $createapt)--}}
+
                                         <tr>
 
                                             <td>{{ $createapt->centerName}}</td>
@@ -49,13 +41,11 @@
                                             <td><a href="{{url('apartment',$createapt->id)}}" class="btn btn-primary">View</a>
                                                 <a href="{{url('apartment/update', $createapt->id)}}"
                                                    class="btn btn-warning">Modify</a>
-                                                <a href="{{url('apartment/destroy',$createapt->id)}}"onclick='return confirm("Are you sure?")'
-                                                   class="btn btn-danger">Delete</a>
+                                        {{--        <a href="{{url('apartment/destroy',$createapt->id)}}"onclick='return confirm("Are you sure?")'
+                                                   class="btn btn-danger">Delete</a>--}}
 
 
-                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
-                                                {{--{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}--}}
-                                                {{--{!! Form::close() !!}--}}
+
                                             </td>
                                         </tr>
 

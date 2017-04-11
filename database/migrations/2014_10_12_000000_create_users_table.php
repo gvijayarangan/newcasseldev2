@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('cell');
             $table->boolean('active')->default(true);
             $table->boolean('rec_email')->default(true);
+            $table->integer('res_con_id')->unsigned()->nullable();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->rememberToken();
