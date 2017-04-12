@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Apartment;
+use App\Assignorder;
 use App\Comarea;
 use App\Order;
 use App\Report;
@@ -11,8 +13,7 @@ use App\center;
 use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ReportController extends Controller
 {
@@ -20,23 +21,71 @@ class ReportController extends Controller
 
     public function index()
     {
-      $report = Report::all();
+        $center = Center::lists('cntr_name', 'id')->all();
+        $workers = DB::table('users')
+            ->join('role_user', 'users.id', '=', 'role_user.user_id')
+            ->where('role_id','=','2')
+            ->select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, id"))
+            ->lists('fullname', 'id');
+        $reportDatas = DB::table('get_order_details')->get();
 
-        $center = DB::table('get_order_details')->groupBy('center_name')-> lists('center_name','wo_id');
-        $apartmentNumber = DB::table('get_order_details')->groupBy('apartment_number')-> lists('apartment_number','wo_id');
-        $commonArea = DB::table('get_order_details')->groupBy('common_area_name')-> lists('common_area_name','wo_id');
-        $createdDate = DB::table('get_order_details')->groupBy('created_date_time')-> lists('created_date_time','wo_id');
-        $status = DB::table('get_order_details')->groupBy('status')-> lists('status','wo_id');
-        $priority = DB::table('get_order_details')->groupBy('priority')-> lists('priority','wo_id');
-        $assign = DB::table('get_order_details')->groupBy('assign_to')-> lists('assign_to','wo_id');
+        $report_array = [];
+        $report_array[] = ['user_id','id','resident_id','apt_id','cntr_id','ca_id','order_description','order_date_created',
+            'order_priority','order_status','order_total_cost','created_at','updated_at','updated_by','resident_comment','issue_type',
+            'requestor_name','deleted_at'];
+        /*
+                // Convert each member of the returned collection into an array,
+                // and append it to the payments array.
+                foreach ($reportDatas as $report) {
+                    $report_array[] = $report->toArray();
+                }
+               // Generate and return the spreadsheet
+                Excel::create('reports', function($excel) use ($report_array) {
+
+                    // Set the spreadsheet title, creator, and description
+                    $excel->setTitle('Report');
+                    $excel->setCreator('Laravel')->setCompany('New Cassel');
+                    $excel->setDescription('Reports of work orders');
+
+                    // Build the spreadsheet, passing in the payments array
+                    $excel->sheet('sheet1', function($sheet) use ($report_array) {
+                        $sheet->fromArray($report_array, null, 'A1', false, false);
+                    });
+
+                })->download('xlsx');*/
+
+        return view('Report.index', compact('center','reportDatas','workers'));
+    }
+
+    public function excel() {
+
         $reportDatas=Report::all();
 
+        $report_array = [];
+      /*  $report_array[] = ['user_id','id','resident_id','apt_id','cntr_id','ca_id','order_description','order_date_created',
+            'order_priority','order_status','order_total_cost','created_at','updated_at','updated_by','resident_comment','issue_type',
+            'requestor_name','deleted_at'];
 
-        $paymentsArray = [];
-        foreach ($reportDatas as $payment) {
-            $paymentsArray[] = $payment->toArray();
+        // Convert each member of the returned collection into an array,
+        // and append it to the payments array.
+      */
+        foreach ($reportDatas as $report) {
+            $report_array[] = $report->toArray();
         }
-      return view('Report.index', compact('apartmentNumber','center','commonArea','createdDate','status','priority','assign','reportDatas','report','paymentsArray'));
+
+        Excel::create('reports', function($excel) use ($report_array) {
+
+            // Set the spreadsheet title, creator, and description
+            $excel->setTitle('Report');
+            $excel->setCreator('Laravel')->setCompany('New Cassel');
+            $excel->setDescription('Reports of work orders');
+
+            // Build the spreadsheet, passing in the payments array
+            $excel->sheet('sheet1', function($sheet) use ($report_array) {
+                $sheet->fromArray($report_array);
+            });
+
+        })->download('xlsx');
     }
 
     public function show()
@@ -44,125 +93,75 @@ class ReportController extends Controller
     return redirect('report');
     }
 
-//public function show($id)
-//{
-//    $post = Report::find($id);
-//
-//    error_log($post);
-//    $post->center_name = Report::findOrFail($post->center_name)->center_name;
-//    if ($post->apartment_number == 0) {
-//        $post->apartment_number = 'N/A';
-//    } else {
-//        $post->apartment_number = Report::findOrFail($post->apartment_number)-> apartment_number;
-//    }
-//    if ($post->common_area_name == 0) {
-//        $post->common_area_name = 'N/A';
-//    } else {
-//        $post->common_area_name = Report::findOrFail($post->common_area_name)->common_area_name;
-//    }
-//    error_log($post);
-//    return redirect('report', compact('post'));
-//}
+    public function getAptDetailsRes(Request $request) {
+       $input = $request -> input('option');
+       $apartment_data = Report::
+        select(DB::raw("apartment_number, id"))->where('center_name', '=' , $input )
+            ->lists('apartment_number', 'id')->all();
 
-
-//    public function getAptDetails(Request $request) {
-//        $input = $request -> input('option');
-//        $apartment_data = Report::
-//        select(DB::raw("apartment_number, id"))->where('center_name', '=' , $input )
-//            ->lists('apartment_number', 'id')->all();
-//
-//        return $apartment_data;
-//    }
-//    public function getComAreaDetails(Request $request) {
-//        $input = $request -> input('option');
-//        $apartment_data = Report::
-//        select(DB::raw("common_area_name, id"))->where('center_name', '=' , $input )
-//            ->lists('common_area_name', 'id')->all();
-//
-//        //error_log("Apartment data with center id " . $input . " is - " . $apartment_data);
-//        return $apartment_data;
-//    }
-
+        return $apartment_data;
+    }
 
        public function store(Request $request)
     {
-        $report = new Report();
-        $report1 = $request->input();
-        $commonAreaName='';
-        $centerReport ='';
-        $aptNumber='';
-        $createdDateTime ='';
-        $createdDateTimeTo ='';
-        $statusReport ='';
-        $priorityReport = '';
-        $assignReport ='';
 
-        $report->id1 = trim($report1['apartment_number']);
-        if(!$report->id1==0) {
-            $aptNumber = Report::find($report->id1)->apartment_number;
-        }
-        $report->center_name = trim($report1['center_name']);
-        if(!$report->center_name==0) {
-            $centerReport = Report::find($report->center_name)->center_name;
-        }
-        $report->common_area_name = trim($report1['common_area_name']);
-        if(!$report->common_area_name==0) {
-           $commonAreaName = Report::find($report->common_area_name)->common_area_name;
-        }
-        $report->created_date_time = trim($report1['createdDateTime']);
-        $createdDateTime = trim($report1['createdDateTime']);
+        $center = Center::lists('cntr_name', 'id')->all();
+        $workers = DB::table('users')
+            ->join('role_user', 'users.id', '=', 'role_user.user_id')
+            ->where('role_id','=','2')
+            ->select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, id"))
+            ->lists('fullname', 'id');
 
-        $report->created_date_time = trim($report1['createdDateTimeTo']);
-        $createdDateTimeTo = trim($report1['createdDateTimeTo']);
-
-        $report->status = trim($report1['status']);
-        if(!$report->status==0) {
-            $statusReport = Report::find($report->status)->status;
+        error_log("request is " .$request);
+        $query = DB::table('get_order_details');
+        if ($request->center_name != 0) {
+            $center_name = DB::table('centers')->where('id','=',$request->center_name)->pluck('cntr_name');
+            $query->where('center_name','=',$center_name);
         }
-        $report->priority = trim($report1['priority']);
-        if(!$report->priority==0) {
-            $priorityReport = Report::find($report->priority)->priority;
+        if ($request->apartment_number != 0) {
+            $apartment_number = DB::table('apartments')->where('id','=',$request->apartment_number)->pluck('apt_number');
+            $query->where('apartment_number','=',$apartment_number);
         }
-        $report->assign_to = trim($report1['assign_to']);
-        if(!$report->assign_to==0) {
-            $assignReport = Report::find($report->assign_to)->assign_to;
+        if ($request->common_area_name != 0) {
+            $common_area_name = DB::table('comareas')->where('id','=',$request->common_area_name)->pluck('ca_name');
+            $query->where('common_area_name','=',$common_area_name);
+        }
+        if ($request->createdDateTimeFrom != null && $request->createdDateTimeTo != null) {
+            $query->whereDate('created_date_time','<=', $request->createdDateTimeTo);
+            $query->whereDate('created_date_time','>=', $request->createdDateTimeFrom);
+        }
+        if ($request->assign_user_id != 0) {
+            $assign_user_name = DB::table('users')->where('id','=',$request->assign_user_id)
+                ->select(DB::raw("CONCAT(f_name, ' ',l_name) AS name"))->pluck('name');
+            $query->where('assign_to','=',$assign_user_name);
+        }
+        if ($request->order_status != 'Please Select') {
+            $query->where('status','=',$request->order_status);
+        }
+        if ($request->order_priority != 'Please Select') {
+             $query->where('priority','=',$request->order_priority);
         }
 
+        //error_log("Query generated - " .$query);
+        $reportDatas = $query->get();
+        return view('Report.index', compact('center','reportDatas','workers'));
+    }
 
-        $center = DB::table('get_order_details')->groupBy('center_name')-> lists('center_name','wo_id');
-        $apartmentNumber = DB::table('get_order_details')->groupBy('apartment_number')-> lists('apartment_number','wo_id');
-        $commonArea = DB::table('get_order_details')->groupBy('common_area_name')-> lists('common_area_name','wo_id');
-        $createdDate = DB::table('get_order_details')->groupBy('created_date_time')-> lists('created_date_time','wo_id');
-        $status = DB::table('get_order_details')->groupBy('status')-> lists('status','wo_id');
-        $priority = DB::table('get_order_details')->groupBy('priority')-> lists('priority','wo_id');
-        $assign = DB::table('get_order_details')->groupBy('assign_to')-> lists('assign_to','wo_id');
+    public function getAptDetails(Request $request) {
+        $input = $request -> input('option');
+        $apartment_data = Apartment::
+        select(DB::raw("apt_number, id"))->where('cntr_id', '=' , $input )
+            ->lists('apt_number', 'id')->all();
 
+        return $apartment_data;
+    }
 
-        if($aptNumber==''&&$commonAreaName=='' && $centerReport=='' && $createdDateTime==''&&$statusReport==''&&$priorityReport=='' && $assignReport==='')
-        {
-            $reportDatas=DB::table('get_order_details')->get();
-
-
-       }else {
-            $reportDatas = DB::table('get_order_details')->where('apartment_number', '=', $aptNumber)
-                        ->orwhere('center_name', 'like', $centerReport)
-                        ->orwhere('common_area_name', 'like', $commonAreaName)
-                        ->orwhereBetween('created_date_time', [$createdDateTime, $createdDateTimeTo])
-                        ->orwhere('status', 'like', $statusReport)
-                        ->orwhere('priority', 'like', $priorityReport)
-                        ->orwhere('assign_to', 'like', $assignReport)
-                        ->get();
-            }
-
-        $paymentsArray = [];
-
-        foreach ($reportDatas as $payment)
-        {
-            $paymentsArray[] = (array)$payment;
-        }
-        return view('Report.index', compact('apartmentNumber','commonArea','center','createdDate','status','priority','assign','reportDatas','report','paymentsArray'));
-
-
+    public function getComAreaDetails(Request $request) {
+        $input = $request -> input('option');
+        $apartment_data = Comarea::
+        select(DB::raw("ca_name, id"))->where('cntr_id', '=' , $input )
+            ->lists('ca_name', 'id')->all();
+        return $apartment_data;
     }
 
 }

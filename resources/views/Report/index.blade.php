@@ -1,10 +1,6 @@
-@include('layouts.app')
-@extends('Report')
+@extends('layouts.app')
 @section('content')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="jquery-ui.min.js"></script>
-    <head xmlns="http://www.w3.org/1999/html">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -16,14 +12,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-                <br> <br>
-                <div class="panel panel-default">
+                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Create Report
                         <div class="pull-right">
+{{--
+                            <td><a href="{{ URL('downloadExcel/csv/'.urlencode(serialize($paymentsArray)))}}"><button class="btn btn-success">Download CSV</button></a></td>
+--}}
+                            <td><a href="{{ URL('/excel/download')}}"><button class="btn btn-success">Download CSV</button></a></td>
 
-                              <td><a href="{{ URL('downloadExcel/csv/'.urlencode(serialize($paymentsArray)))}}"><button class="btn btn-success">Download CSV</button></a></td>
-                            {{--{{<td><a href="{{ URL('downloadExcel/csv/'.$reportDatas)}}"><button class="btn btn-success">Download CSV</button></a></td>}}--}}
                         </div>
                     </div>
 
@@ -37,58 +34,59 @@
                         <div.panel-heading class="col-md-8">
                             {{ Form::select('center_name', array_merge([0 => 'Please Select'])+  $center, 'default',
                                  array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
-
                         </div.panel-heading>
                         </br> </br>
 
                         {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{ Form::select('apartment_number', array_merge([0 => 'Please Select'])+  $apartmentNumber, 'default',
+                            {{ Form::select('apartment_number', array_merge([0 => 'Please Select']), 'default',
                                  array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
                         </div.panel-heading>
                         </br> </br>
 
+                        <td>
                         {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{ Form::select('common_area_name', array_merge([0 => 'Please Select']) +  $commonArea,'default',
+                            {{ Form::select('common_area_name', array_merge([0 => 'Please Select']) ,'default',
                             array('id' => 'commonarea_dropdown', 'class' => 'col-md-4' )) }}
                         </div.panel-heading>
                         </br> </br>
+                        </td>
+
 
                         {!! Form::label('created_date_time', 'Created Date From:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{--{!! Form::text('created_date_time', old('accidentdate'), array('id'=>'myDateField','class' => 'col-md-4' , 'placeholder' => 'MM-DD-YYYY','required' => 'required'))!!}--}}
-                            <input type="date" class="col-md-4" name="createdDateTime" id ="createdDateTime">
+                            <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeFrom" id ="createdDateTime">
                         </div.panel-heading>
                         </br> </br>
 
                         {!! Form::label('created_date_time_to', 'Created Date To:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-                            {{--{!! Form::text('created_date_time', old('accidentdate'), array('id'=>'myDateField','class' => 'col-md-4' , 'placeholder' => 'MM-DD-YYYY','required' => 'required'))!!}--}}
-                            <input type="date" class="col-md-4" name="createdDateTimeTo" id ="createdDateTime" >
+                        <div.panel-heading class="col-md-8" >
+                             <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeTo" id ="createdDateTime" >
                         </div.panel-heading>
                         </br> </br>
 
-                        {!! Form::label('assign_to', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-                            {{ Form::select('assign_to', array_merge([0 => 'Please Select']) + $assign, 'default',
-                             array('id' => 'assign_to_dropdown','class' => 'col-md-4')) }}
+                        {!! Form::label('assigntype', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-6">
+                            {{ Form::select('assign_user_id', array_merge([0 => 'Please Select']) + $workers, 'default',
+                             array('id' => 'assigntype_dropdown','class' => 'col-md-6')) }}
                         </div.panel-heading>
                         </br> </br>
 
                         {!! Form::label('status', 'Status:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-                            {{ Form::select('status', array_merge([0 => 'Please Select'])+ $status, 'default',
-                          array('id' => 'status_dropdown', 'class' => 'col-md-4')) }}
+                        <div.panel-heading class="col-md-6">
+                            {!! Form::select('order_status', ['Please Select' => 'Please Select','Open' => 'Open','In Progress' => 'In Progress',
+                               'Wait for third party vendor' => 'Wait for third party vendor','Complete' => 'Complete', 'Close' => 'Close'],
+                              'default', array('class' => 'col-md-6')) !!}
                         </div.panel-heading>
+
                         </br> </br>
 
                         {!! Form::label('priority', 'Priority:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{ Form::select('priority', array_merge([0 => 'Please Select'])+$priority , 'default',
-                           array('id' => 'priority_dropdown', 'class' => 'col-md-4')) }}
+                            {!! Form::select('order_priority', ['Please Select' => 'Please Select', 'Low' => 'Low', 'Moderate' => 'Moderate', 'High' => 'High'],
+                            'default', array('class' => 'col-md-4')) !!}
                         </div.panel-heading>
-                        </br> </br>
 
 
                         <div class="form-group" style="text-align: center">
@@ -103,7 +101,7 @@
         {{ Form::close() }}
 
 
-        <table class="table table-striped table-bordered table-hover">
+        <table class="table table-bordered table-striped cds-datatable">
             <thead>
             <tr class="bg-info">
                 <th>Created Date</th>
@@ -171,13 +169,25 @@
 
 
 
+        function validateOnSave() {
+            var rc = true;
+            if ($("select#sb_id").val() === "") {
+                alert("Please select a Type");
+                rc = false;
+            } else if ($("input#x_number").val() === "") {
+                alert("Please input a X-number");
+                rc = false;
+            }
+            return rc;
+        }
+
+
         $('#center_dropdown').change(function () {
             // var selectedCenterIndex;
             data = {option: $(this).val()};
             selectedCenterIndex = data;
             //Apartment fetch
-            $.get("/getAptDetails", data, function (data) {
-                console.log(data);
+            $.get("/getAptDetailsRes", data, function (data) {
 
                 var apartment_data = $('#apartment_dropdown');
                 $("#apartment_dropdown").empty();
@@ -214,6 +224,15 @@
 
             });
 
+            $('#apartment_dropdown').change(function () {
+                if ($("#apartment_dropdown").val() != 0) {
+                    //Disable commonarea dropdown
+                    $("#commonarea_dropdown").attr('disabled', true);
+                } else {
+                    //Disable commonarea dropdown
+                    $("#commonarea_dropdown").attr('disabled', false);
+                }
+            });
 
             $('#commonarea_dropdown').change(function () {
                 var selectedIndex = $("#commonarea_dropdown option:selected").val();
