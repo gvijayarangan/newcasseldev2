@@ -148,10 +148,9 @@ Route::get('/getContactDetails', 'UsersController@getContactDetails');
 Route::get('/report','ReportController@index');
 Route::post('/report/store', 'ReportController@store');
 Route::resource('/report','ReportController');
-//Route::resource('/report', 'ReportController@show');
-
-//Route::get('/getAptDetails', 'ReportController@getAptDetails');
-//Route::get('/getComAreaDetails', 'ReportController@getComAreaDetails');
+//Route::resource('/
+Route::get('/getAptDetailsRes', 'ReportController@getAptDetails');
+Route::get('/excel/download', 'ReportController@excel');
 
 Route::get('downloadExcel/{type}/{results}', array('as' =>'storeCategory','uses'=>'DemoController@downloadExcel'));
 
