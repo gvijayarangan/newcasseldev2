@@ -10,8 +10,9 @@
                         {!! Form::open(['class' => 'form-horizontal', 'route' => 'roles.store', 'onsubmit' => 'return validateOnSave();']) !!}
                         @include('common.errors')
                         @include('common.flash')
-
-                        @include ('roles.partial', ['CRUD_Action' => 'Create'])
+                        <!-- to limit creation of new roles  -->
+                            {{--@include ('roles.partial', ['CRUD_Action' => 'Create'])--}}
+                            <h3 style="text-align: center; color: red">Action not permitted</h3>
                         {!! Form::close() !!}
                     </div>
                 </div>
