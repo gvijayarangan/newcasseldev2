@@ -11,12 +11,12 @@
                                 <button type="submit" id="create-workorder" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
                             </form>
                         </div>
-                        <div><h4>Work Order Information</h4></div>
+                        <div><h4>Work Order History</h4></div>
                     </div>
                     <div class="panel-body">
                         @if (count($woDetails) > 0)
                             <div class="table-responsive col-lg-pull"  >
-                                <table class="table table-striped table-bordered table-hover">
+                                <table class="table table-bordered table-striped cds-datatable">
 
 
                                     <thead>
@@ -24,19 +24,12 @@
                                         <th>Work Order ID</th>
                                         <th>Requestor</th>
                                         <th>Created By</th>
-                                        <th>Created Time</th>
-                                        <th>Center Name</th>
+                                        <th>Closed By</th>
                                         <th>Apartment Number</th>
                                         <th>Common Area</th>
-                                        <th>Resident Name</th>
-                                        <th>Issue Type</th>
+                                        <th>Center Name</th>
                                         <th>Status</th>
-                                        <th>Changed By</th>
-                                        <th>Changed Time</th>
-                                        <th>Priority</th>
-                                        <th>Total Cost</th>
-                                        <th>Assigned To</th>
-                                        <th style="width: 200px;">Actions</th>
+                                        <th>Closed Time</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -44,23 +37,14 @@
                                     @foreach ($woDetails as $order)
                                         <tr>
                                             <td>{{ $order->wo_id }}</td>
-                                            <td>{{ $order->requestor_name }}</td>
+                                            <td>{{ $order->requestor }}</td>
                                             <td>{{ $order->created_by}}</td>
-                                            <td>{{ $order->created_date_time}}</td>
                                             <td>{{ $order->center_name}}</td>
-                                            <td>{{ $order->apartment_number}}</td>
-                                            <td>{{ $order->common_area_name}}</td>
-                                            <td>{{ $order->resident_name}}</td>
-                                            <td>{{ $order->issue_type}}</td>
+                                            <td>{{ $order->apt_num}}</td>
+                                            <td>{{ $order->common_area}}</td>
+                                            <td>{{ $order->center_name}}</td>
                                             <td>{{ $order->status}}</td>
-                                            <td>{{ $order->changed_by}}</td>
-                                            <td>{{ $order->changed_time}}</td>
-                                            <td>{{ $order->priority}}</td>
-                                            <td>${{ $order->total_cost}}</td>
-                                            <td>{{ $order->assign_to}}</td>
-                                            <td><a href="{{url('workorder/edit', $order->wo_id)}}"
-                                                   class="btn btn-warning">Modify</a>
-                                            </td>
+                                            <td>{{ $order->created_timestamp}}</td>
                                         </tr>
 
                                     @endforeach

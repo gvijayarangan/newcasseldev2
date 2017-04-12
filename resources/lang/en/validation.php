@@ -169,6 +169,7 @@ return [
         'noti_email_title' => 'Email Notification Title',
         'noti_alert_content' => 'Email Notification Content',
         'noti_status' => 'Email Notification Status',
+        'res_con_id' => 'Resident Contact User',
     ),
 
 ];

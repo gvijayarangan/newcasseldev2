@@ -407,7 +407,7 @@
 
 
         $('#addDetails').click(function () {
-            if ($("#supply_dropdown option:selected").val() != 0) {
+            if ($("#supply_dropdown option:selected").val() != 0 && $("#unit").val() != '') {
 
                 var order_data = {};
                 order_data["SupplyName"] = $("#supply_dropdown option:selected").text();
