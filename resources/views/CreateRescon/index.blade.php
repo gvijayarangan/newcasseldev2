@@ -24,7 +24,7 @@
                                     <th>Contact Middle Name</th>
                                     <th>Contact Last Name</th>
                                     <th>Relationship</th>
-                                    <th>Cellphone</th>
+                                    {{--<th>Cellphone</th>--}}
                                     <th>Email</th>
                                     <th>Gender</th>
                                     <th>Resident Name</th>
@@ -53,7 +53,7 @@
                                             <td class="table-text"><div>{{ $createrescon->con_mname}}</div></td>
                                             <td class="table-text"><div>{{ $createrescon->con_lname}}</div></td>
                                             <td class="table-text"><div>{{ $createrescon->con_relationship}}</div></td>
-                                            <td class="table-text"><div>{{ $createrescon->con_cellphone}}</div></td>
+                                            {{--<td class="table-text"><div>{{ $createrescon->con_cellphone}}</div></td>--}}
                                             <td class="table-text"><div>{{ $createrescon->con_email}}</div></td>
                                             <td class="table-text"><div>{{ $createrescon->con_gender}}</div></td>
                                             <td class="table-text"><div>{{ $createrescon->con_res_id}}</div></td>
