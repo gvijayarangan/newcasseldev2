@@ -49,6 +49,8 @@
                                             <td><a href="{{url('apartment',$createapt->id)}}" class="btn btn-primary">View</a>
                                                 <a href="{{url('apartment/update', $createapt->id)}}"
                                                    class="btn btn-warning">Modify</a>
+                                                {{--<a href="{{url('apartment/destroy',$createapt->id)}}"onclick='return confirm("Are you sure?")'--}}
+                                                   {{--class="btn btn-danger">Delete</a>--}}
 
 
                                                 {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
