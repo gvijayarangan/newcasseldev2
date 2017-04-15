@@ -33,7 +33,7 @@
                                         <th>Center State</th>
                                         <th>Center Zip</th>
                                         <th>Center Phone</th>
-                                        <th>Center Fax</th>
+                                        {{--<th>Center Fax</th>--}}
                                         <th style="width: 300px;">Actions</th>
                                     {{--</tr>--}}
                                     </thead>
@@ -62,7 +62,7 @@
                                             <td class="table-text"><div>{{ $createcntr->cntr_state}}</div></td>
                                             <td class="table-text"><div>{{ $createcntr->cntr_zip}}</div></td>
                                             <td class="table-text"><div>{{ $createcntr->cntr_phone}}</div></td>
-                                            <td class="table-text"><div>{{ $createcntr->cntr_fax}}</div></td>
+                                            {{--<td class="table-text"><div>{{ $createcntr->cntr_fax}}</div></td>--}}
 
 
                                             <td class="table-text"><div><a href="{{url('center',$createcntr->id)}}" class="btn btn-primary ">View</a>

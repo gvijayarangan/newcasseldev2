@@ -13,6 +13,13 @@
                                 </button>
                             </form>
                         </div>
+                        <div class="pull-left">
+                            <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                                <button type="submit" id="create-resident" class="btn btn-primary"><i
+                                            class="fa fa-btn fa-file-o"></i>Back
+                                </button>
+                            </form>
+                        </div>
                         <div><h4>Residents Information</h4></div>
                     </div>
 
@@ -32,7 +39,7 @@
                                     <th>Status</th>
                                     <th>Apartment Number</th>
                                     <th>Center Name</th>
-                                    <th>Actions</th>
+                                    <th style="width: 300px;">Actions</th>
                                     {{--</tr>--}}
                                     </thead>
                                     <tbody>
