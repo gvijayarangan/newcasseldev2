@@ -18,6 +18,11 @@
             <div class="col-md-10">
                 <br> <br>
                 <div class="panel panel-default">
+                    <div class="pull-left">
+                        <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                            <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                        </form>
+                    </div>
                     <div class="panel-heading"> Work Order Form</div>
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

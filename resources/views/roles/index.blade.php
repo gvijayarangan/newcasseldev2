@@ -7,9 +7,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="pull-right">
-                            <form action="{{ url('roles/create') }}" method="GET">{{ csrf_field() }}
+                            <!-- to limit creation of new roles  -->
+                            {{--<form action="{{ url('roles/create') }}" method="GET">{{ csrf_field() }}
+
                                 <button type="submit" id="create" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
-                            </form>
+                            </form>--}}
                         </div>
                         <div><h4>{{ $heading }}</h4></div>
                     </div>
@@ -25,7 +27,9 @@
                                         <tr>
                                             {{--<td class="table-text"><div><a href="{{ url('/roles/'.$role->id.'/edit') }}">{{ $role->name }}</a></div></td>--}}
                                             <td class="table-text"><div>{{ $role->name }}</div></td>
-                                            <td class="table-text"><div><a href="{{ url('/roles/'.$role->id.'/edit') }}">{{ $role->display_name }}</a></div></td>
+                                            <!-- to limit editing roles-->
+                                            {{--<td class="table-text"><div><a href="{{ url('/roles/'.$role->id.'/edit') }}">{{ $role->display_name }}</a></div></td>--}}
+                                            <td class="table-text"><div>{{ $role->display_name }}</div></td>
                                             <td class="table-text"><div>{{ $role->description }}</div></td>
                                         </tr>
                                     @endforeach

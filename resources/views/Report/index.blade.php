@@ -1,9 +1,18 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+    </head>
+
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-                <div class="panel panel-default">
+                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Create Report
                         <div class="pull-right">
@@ -13,6 +22,7 @@
                            <td><a href="{{ URL('/excel/download')}}">
                                     <button class="btn btn-success">Download CSV</button>
                                 </a></td>
+
 
                         </div>
                     </div>
@@ -38,26 +48,24 @@
                         </br> </br>
 
                         <td>
-                            {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
-                            <div.panel-heading class="col-md-8">
-                                {{ Form::select('common_area_name', array_merge([0 => 'Please Select']) ,'default',
-                                array('id' => 'commonarea_dropdown', 'class' => 'col-md-4' )) }}
-                            </div.panel-heading>
-                            </br> </br>
+                        {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
+                        <div.panel-heading class="col-md-8">
+                            {{ Form::select('common_area_name', array_merge([0 => 'Please Select']) ,'default',
+                            array('id' => 'commonarea_dropdown', 'class' => 'col-md-4' )) }}
+                        </div.panel-heading>
+                        </br> </br>
                         </td>
 
 
                         {!! Form::label('created_date_time', 'Created Date From:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeFrom"
-                                   id="createdDateTime">
+                            <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeFrom" id ="createdDateTime">
                         </div.panel-heading>
                         </br> </br>
 
                         {!! Form::label('created_date_time_to', 'Created Date To:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-                            <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeTo"
-                                   id="createdDateTime">
+                        <div.panel-heading class="col-md-8" >
+                             <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeTo" id ="createdDateTime" >
                         </div.panel-heading>
                         </br> </br>
 
@@ -86,7 +94,7 @@
 
                         <div class="form-group" style="text-align: center">
                             {{ Form::submit('Submit', array('class' => 'btn btn-success')) }}
-                            {!! Form::button('Reset', ['type' => 'reset', 'class' => 'btn btn-default']) !!}
+                           {!! Form::button('Reset', ['type' => 'reset', 'class' => 'btn btn-default']) !!}
                         </div>
 
                     </div>
@@ -134,7 +142,7 @@
                     </td>
 
                 </tr>
-            @endforeach
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -148,19 +156,20 @@
             }
         });
 
-        $(document).ready(function () {
+        $(document).ready(function(){
 //Datepicker Popups calender to Choose date
-            $(function () {
-                $("#MyDatepicker").datepicker();
+            $(function(){
+                $( "#MyDatepicker" ).datepicker();
                 //Pass the user selected date format
-                $("#format").change(function () {
-                    $("#datepicker").datepicker("option", "dateFormat", $(this).val());
+                $( "#format" ).change(function() {
+                    $( "#datepicker" ).datepicker( "option", "dateFormat", $(this).val() );
                 });
             });
         });
-        $("#datepicker").datepicker({
+        $( "#datepicker" ).datepicker({
             inline: true
         });
+
 
 
         function validateOnSave() {
