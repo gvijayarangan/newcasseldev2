@@ -145,6 +145,15 @@ Route::post('/postComment', 'WorkOrderController@addComment');
 Route::get('/getAptDetailRes', 'ResidentsController@getAptDet');
 Route::get('/getContactDetails', 'UsersController@getContactDetails');
 
+Route::get('/report','ReportController@index');
+Route::post('/report/store', 'ReportController@store');
+Route::resource('/report','ReportController');
+//Route::resource('/
+Route::get('/getAptDetailsRes', 'ReportController@getAptDetails');
+Route::get('/excel/download', 'ReportController@excel');
+
+Route::get('downloadExcel/{type}/{results}', array('as' =>'storeCategory','uses'=>'DemoController@downloadExcel'));
+
 Route::post('/sendemail', function () {
 
     session_start();

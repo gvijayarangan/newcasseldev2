@@ -14,28 +14,16 @@ class CreateengineerwospTable extends Migration
     {
         DB::unprepared('CREATE PROCEDURE`GetEngineerWoDetails`(eng_user_id int)  
                         BEGIN 
-                         select `newcassel`.`orders`.`id` 
-                         AS `wo_id`,concat(`newcassel`.`users`.`f_name`,\' \',`newcassel`.`users`.`l_name`) 
-                         AS `created_by`,`newcassel`.`orders`.`order_date_created` 
-                         AS `created_date_time`,`newcassel`.`orders`.`requestor_name` AS `requestor_name`,`newcassel`.`centers`.`cntr_name` 
-                         AS `center_name`,`newcassel`.`apartments`.`apt_number` AS `apartment_number`,`newcassel`.`comareas`.`ca_name` 
-                         AS `common_area_name`,concat(`newcassel`.`residents`.`res_fname`,\' \',`newcassel`.`residents`.`res_lname`) 
-                         AS `resident_name`,`newcassel`.`issuetypes`.`issue_typename` AS `issue_type`,`newcassel`.`orders`.`order_status` 
-                         AS `status`,(select concat(`newcassel`.`users`.`f_name`,\' \',`newcassel`.`users`.`l_name`) 
-                                       from `newcassel`.`users` where (`newcassel`.`orders`.`updated_by` = `newcassel`.`users`.`id`)) 
-                         AS `changed_by`,`newcassel`.`orders`.`updated_at` AS `changed_time`,`newcassel`.`orders`.`order_priority` 
-                         AS `priority`,`newcassel`.`orders`.`order_total_cost` 
-                         AS `total_cost`,(select concat(`newcassel`.`users`.`f_name`,\' \',`newcassel`.`users`.`l_name`) 
-                                           from `newcassel`.`users` where (`newcassel`.`assignorders`.`user_id` = `newcassel`.`users`.`id`)) 
-                         AS `assign_to` from (((((((`newcassel`.`orders` 
-                         left join `newcassel`.`apartments` on((`newcassel`.`orders`.`apt_id` = `newcassel`.`apartments`.`id`))) 
-                         left join `newcassel`.`centers` on((`newcassel`.`orders`.`cntr_id` = `newcassel`.`centers`.`id`))) 
-                         left join `newcassel`.`assignorders` on((`newcassel`.`orders`.`id` = `newcassel`.`assignorders`.`order_id`))) 
-                         left join `newcassel`.`users` on((`newcassel`.`orders`.`user_id` = `newcassel`.`users`.`id`))) 
-                         left join `newcassel`.`issuetypes` on((`newcassel`.`orders`.`issue_type` = `newcassel`.`issuetypes`.`id`))) 
-                         left join `newcassel`.`residents` on((`newcassel`.`orders`.`resident_id` = `newcassel`.`residents`.`id`))) 
-                         left join `newcassel`.`comareas` on((`newcassel`.`orders`.`ca_id` = `newcassel`.`comareas`.`id`))) 
-                         where `newcassel`.`orders`.`order_status`= \'CLOSE\' AND `newcassel`.`assignorders`.`user_id`=eng_user_id;
+                         select `orders`.`id` AS `wo_id`,concat(`users`.`f_name`,\' \',`users`.`l_name`) 
+                         AS `created_by`,`orders`.`order_date_created` AS `created_date_time`,`orders`.`requestor_name` 
+                         AS `requestor_name`,`centers`.`cntr_name` AS `center_name`,`apartments`.`apt_number` 
+                         AS `apartment_number`,`comareas`.`ca_name` AS `common_area_name`,concat(`residents`.`res_fname`,\' \',`residents`.`res_lname`) 
+                         AS `resident_name`,`issuetypes`.`issue_typename` AS `issue_type`,`orders`.`order_status` AS `status`,
+                            (select concat(`users`.`f_name`,\' \',`users`.`l_name`) from `users` where (`orders`.`updated_by`= `users`.`id`)) as changed_by,
+                            `orders`.`updated_at` AS `changed_time`,`orders`.`order_priority` AS `priority`,`orders`.`order_total_cost` AS `total_cost`,(select concat(`users`.`f_name`,\' \',`users`.`l_name`) from `users` where (`assignorders`.`user_id` = `users`.`id`)) AS `assign_to` from (((((((`orders` left join `apartments` on((`orders`.`apt_id` = `apartments`.`id`))) left join `centers` on((`orders`.`cntr_id` = `centers`.`id`))) left join `assignorders` on((`orders`.`id` = `assignorders`.`order_id`))) left join `users` on((`orders`.`user_id` = `users`.`id`))) left join `issuetypes` on((`orders`.`issue_type` = `issuetypes`.`id`))) left join `residents` on((`orders`.`resident_id` = `residents`.`id`))) left join `comareas` on((`orders`.`ca_id` = `comareas`.`id`)))
+                             WHERE `orders`.`order_status` != \'Close\' and
+                               `assignorders`.`user_id` = eng_user_id or
+                            `orders`.`id` not in (SELECT `assignorders`.`order_id` from `assignorders`) ORDER BY `created_date_time` DESC;
                          END');
     }
 

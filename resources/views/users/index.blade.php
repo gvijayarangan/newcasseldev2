@@ -8,7 +8,9 @@
                     <div class="panel-heading">
                         <div class="pull-right">
                             <form action="{{ url('users/create') }}" method="GET">{{ csrf_field() }}
-                                <button type="submit" id="create-user" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
+                                <button type="submit" id="create-user" class="btn btn-primary"><i
+                                            class="fa fa-btn fa-file-o"></i>Create
+                                </button>
                             </form>
                         </div>
                         <div><h4>{{ $heading }}</h4></div>
@@ -19,14 +21,38 @@
                                 <table class="table table-bordered table-striped cds-datatable">
                                     <thead> <!-- Table Headings -->
                                     {{--<th>User</th><th>Email</th><th>Status</th><th class="no-sort">Actions</th>--}}
-                                    <th>User</th><th>Email</th><th>Status</th>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
                                     </thead>
                                     <tbody> <!-- Table Body -->
                                     @foreach ($users as $user)
                                         <tr>
-                                            <td class="table-text"><div><a href="{{ url('/users/'.$user->id.'/edit') }}">{{ $user->f_name }} {{  $user->m_name }} {{  $user->l_name }}</a></div></td>
-                                            <td class="table-text"><div>{{ $user->email }}</div></td>
-                                            @if ($user->active)<td class="table-text"><div>Active</div></td>@else<td class="table-text"><div>Inactive</div></td>@endif
+                                            <!-- get the logged in user's user id and disable edit functionality of his/her profile -->
+                                            @if ($user->id == Auth::user()->getUserId())
+                                                <td class="table-text">
+                                                    <div>{{ $user->f_name }} {{  $user->m_name }} {{  $user->l_name }}</div>
+                                                </td>
+                                                <td class="table-text">
+                                                    <div>{{ $user->email }}</div>
+                                                </td>
+                                            @else
+                                                <td class="table-text">
+                                                    <div>
+                                                        <a href="{{ url('/users/'.$user->id.'/edit') }}">{{ $user->f_name }} {{  $user->m_name }} {{  $user->l_name }}</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table-text">
+                                                    <div>{{ $user->email }}</div>
+                                                </td>
+                                            @endif
+                                            @if ($user->active)
+                                                <td class="table-text">
+                                                    <div>Active</div>
+                                                </td>@else
+                                                <td class="table-text">
+                                                    <div>Inactive</div>
+                                                </td>@endif
                                         </tr>
                                     @endforeach
                                     </tbody>
