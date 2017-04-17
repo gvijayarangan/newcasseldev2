@@ -7,10 +7,10 @@
                     <div class="panel-heading">
                         Create Report
                         <div class="pull-right">
-                            {{--
-                                                        <td><a href="{{ URL('downloadExcel/csv/'.urlencode(serialize($paymentsArray)))}}"><button class="btn btn-success">Download CSV</button></a></td>
-                            --}}
-                            <td><a href="{{ URL('/excel/download')}}">
+
+                            {{--<td><a href="{{ URL('downloadExcel/csv/'.urlencode(serialize($reportDatas)))}}"><button class="btn btn-success">Download CSV</button></a></td>--}}
+
+                           <td><a href="{{ URL('/excel/download')}}">
                                     <button class="btn btn-success">Download CSV</button>
                                 </a></td>
 

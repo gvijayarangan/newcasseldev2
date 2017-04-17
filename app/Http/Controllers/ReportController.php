@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+session_start();
+
 use App\Apartment;
 use App\Assignorder;
 use App\Comarea;
@@ -28,7 +30,7 @@ class ReportController extends Controller
             ->select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, id"))
             ->lists('fullname', 'id');
         $reportDatas = DB::table('get_order_details')->get();
-
+        $_SESSION['downloadExcel'] = $reportDatas;
         $report_array = [];
         $report_array[] = ['user_id','id','resident_id','apt_id','cntr_id','ca_id','order_description','order_date_created',
             'order_priority','order_status','order_total_cost','created_at','updated_at','updated_by','resident_comment','issue_type',
@@ -57,20 +59,15 @@ class ReportController extends Controller
         return view('Report.index', compact('center','reportDatas','workers'));
     }
 
-    public function excel() {
+ public function excel() {
 
-        $reportDatas=Report::all();
+
+        $reportDatas = (array) $_SESSION['downloadExcel'];
 
         $report_array = [];
-      /*  $report_array[] = ['user_id','id','resident_id','apt_id','cntr_id','ca_id','order_description','order_date_created',
-            'order_priority','order_status','order_total_cost','created_at','updated_at','updated_by','resident_comment','issue_type',
-            'requestor_name','deleted_at'];
 
-        // Convert each member of the returned collection into an array,
-        // and append it to the payments array.
-      */
         foreach ($reportDatas as $report) {
-            $report_array[] = $report->toArray();
+            $report_array[] = (array) $report;
         }
 
         Excel::create('reports', function($excel) use ($report_array) {
@@ -144,6 +141,9 @@ class ReportController extends Controller
 
         //error_log("Query generated - " .$query);
         $reportDatas = $query->get();
+
+        $_SESSION['downloadExcel'] = $reportDatas;
+
         return view('Report.index', compact('center','reportDatas','workers'));
     }
 

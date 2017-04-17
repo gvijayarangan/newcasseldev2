@@ -49,7 +49,7 @@ class WorkOrderController extends Controller
         if ($user->hasRole('admin') || $user->hasRole('engineer')) {
             $centers = Center::lists('cntr_name', 'id')->all();
             return view('WorkOrder.workorder', compact('centers', 'issuetypes', 'workers', 'toolsdata', 'suppliesdata'));
-        }  else if ($user->hasRole('contact') || $user->hasRole('employee') ){
+        }  else if ($user->hasRole('contact')){
             //Contact or employee location information
             $centers = DB::table('residents')
                 ->join('conresis', 'conresis.res_id','=','residents.id')
@@ -77,9 +77,13 @@ class WorkOrderController extends Controller
                 ->select(DB::raw("CONCAT(res_fname, ' ',res_lname) as res_fname, residents.id"))
                 ->lists('res_fname', 'id');
 
-            print_r($centers + $apartment_data + $residents);
+            //print_r($centers + $apartment_data + $residents);
             return view('WorkOrder.workorderContact', compact('centers', 'issuetypes', 'workers', 'toolsdata',
-                'suppliesdata','apartment_data','residents'));
+                'suppliesdata','apartment_data','residents','user'));
+        } else if($user->hasRole('employee')) {
+            $centers = Center::lists('cntr_name', 'id')->all();
+            return view('WorkOrder.workorderContact', compact('centers', 'issuetypes', 'workers', 'toolsdata',
+                'suppliesdata','user'));
         }
     }
 
@@ -280,7 +284,7 @@ class WorkOrderController extends Controller
         $this -> validate($request, [
             'cntr_name' => 'required|not_in:0',
         ]);
-
+        $user = Auth::user();
         error_log("Request is " . $request);
 
         //Save all orders
@@ -301,9 +305,14 @@ class WorkOrderController extends Controller
         $order -> cntr_id = $request -> cntr_name;
         $order -> order_description = $request -> order_description;
         $order -> order_priority = $request -> order_priority;
-        $order -> order_status = $request -> order_status;
+
         $order -> issue_type = $request -> issuetype;
-        $order -> order_total_cost = $request -> order_total_cost;
+        if(($user->hasRole('admin') || $user->hasRole('engineer')))
+        {
+            $order -> order_status = $request -> order_status;
+            $order -> order_total_cost = $request -> order_total_cost;
+        }
+
         $order -> resident_comment = $request -> resident_comments;
         $order -> requestor_name = $request -> requestor_name;
         //$order -> last_status_modified = Auth::user()->getFullName();
@@ -311,7 +320,7 @@ class WorkOrderController extends Controller
         $order -> order_date_created =  (new \DateTime())->format('Y-m-d H:i:s');
         $order ->save();
 
-        $user = Auth::user();
+
         if ($user->hasRole('admin') || $user->hasRole('engineer')) {
             //Check if assign order is null or set in dropdown
             if ($request->assign_user_id != 0) {
@@ -387,6 +396,22 @@ class WorkOrderController extends Controller
                     ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_email_title'));
             });
         }*/
+
+        //to send mail to user logged in, when a work order is created
+
+        $user_id = Auth::user()->getUserId();
+        $user_email =  DB::table('users')->where('id', $user_id)->value('email');
+        $data = array(
+            'name' => $user_email,
+        );
+        $noti_status = DB::table('notifications')->where('noti_type', 'Work Order Create')->value('noti_status');
+        if ($noti_status == 'Active') {
+            Mail::send('emails.workordercreate', $data, function ($message) {
+                $message->from('newcassel@domain.com', 'New Cassel Work Order System');
+                $message->to($user_email =  DB::table('users')->where('id', Auth::user()->getUserId())->value('email'))
+                    ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'Work Order Create')->value('noti_email_title'));
+            });
+        }
         return redirect('workorderview');
     }
 
@@ -525,9 +550,25 @@ class WorkOrderController extends Controller
                 $order_history -> common_area = DB::table('comareas')->select('ca_name')->where('id','=',$request -> ca_id)->value('ca_name');
                 $order_history -> status = $request -> order_status;
 
-                error_log($order_history -> created_by);
+                //error_log($order_history -> created_by);
 
                 $order_history -> save();
+
+                //to send mail to user logged in, when a work order is created
+                $user_id_created = DB::table('orders')->select('user_id')->where('id', $request -> wo_id)->value('user_id');
+                $user_email =  DB::table('users')->where('id', $user_id_created)->value('email');
+                $data = array(
+                    'name' => $user_email,
+                );
+                $noti_status = DB::table('notifications')->where('noti_type', 'Work Order Close')->value('noti_status');
+
+                if ($noti_status == 'Active') {
+                    Mail::send('emails.workorderclose', $data, function ($message) use ($user_email){
+                        $message->from('newcassel@domain.com', 'New Cassel Work Order System');
+                        $message->to($user_email)
+                            ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'Work Order Close')->value('noti_email_title'));
+                    });
+                }
             }
 
 
