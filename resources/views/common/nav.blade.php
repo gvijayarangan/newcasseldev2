@@ -26,14 +26,14 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-expanded="false"><i class="fa fa-btn"></i><i class="fa fa-btn fa-fw fa-wrench"></i>Work Order<i class="fa fa-btn"></i><span class="caret"></span><i class="fa fa-btn"></i></a>
                         <ul class="dropdown-menu multi level" role="menu">
-                            <li><a href="{{ url('/workorder') }}"><i class="fa fa-btn fa-fw fa-file-text-o" aria-hidden="true"></i>Work Order Form</a></li>
-                            <li><a href="{{ url('/workorderview') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Work Order List</a></li>
+                            <li><a href="{{ url('/workorder') }}"><i class="fa fa-btn fa-fw fa-file-text-o" aria-hidden="true"></i>Create New </a></li>
+                            <li><a href="{{ url('/workorderview') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>List</a></li>
 
                             @role('admin')
                                 <li><a href="{{ url('/report') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Report</a></li>
                             @endrole
 
-                                <li><a href="{{ url('/history') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Work Order History</a></li>
+                                <li><a href="{{ url('/history') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>History</a></li>
 
                         </ul>
                     </li>

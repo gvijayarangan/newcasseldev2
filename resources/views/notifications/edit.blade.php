@@ -6,7 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="pull-right">
+                        <div class="pull-left">
                             <a class="btn btn-primary" href="{{ route('notifications.index') }}"> Back</a>
                         </div>
                         <div><h4>Update Email Notification</h4></div>
