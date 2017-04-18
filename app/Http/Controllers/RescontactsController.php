@@ -120,7 +120,7 @@ class RescontactsController extends Controller
             'con_fname' => 'required|string|Max:50',
             'con_lname' => 'required|string|Max:50',
             'con_relationship' => 'required|string|Max:50',
-            'con_cellphone' => 'string|digits:10',
+            'con_cellphone' => 'numeric|digits:10|min:0',
             'con_email' => 'email|max:255',
             'con_gender' => 'required|string',
         ]);
@@ -176,7 +176,7 @@ class RescontactsController extends Controller
             'con_fname' => 'required|string|Max:50',
             'con_lname' => 'required|string|Max:50',
             'con_relationship' => 'required|string|Max:50',
-            'con_cellphone' => 'string|digits:10',
+            'con_cellphone' => 'numeric|digits:10|min:0',
             'con_email' => 'email|max:255',
             'con_gender' => 'required|string',
         ]);
