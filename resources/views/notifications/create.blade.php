@@ -28,7 +28,8 @@
                             <div class="col-md-6 input-field">
                                 {!! Form::select('noti_type', [
                                                 'New Account Setup' => 'New Account Setup',
-                                                'Work Order Update' => 'Work Order Update',
+                                                'Work Order Create' => 'Work Order Create',
+                                                'Work Order Close' => 'Work Order Close',
                                                 'Password Reset' => 'Password Reset'], old('noti_type'), ['class' => 'form-control']) !!}
                             </div>
                         </div>

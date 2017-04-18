@@ -168,24 +168,19 @@ class NotificationsTableSeeder extends Seeder
     public function run()
     {
         DB::table('notifications')->insert([
-          
-                'noti_type' => 'New Account Setup', 'noti_alert_content' => 'Hello, Your account has been created. Welcome to New Cassel Work Order System! Use the below link to create a new password and to login into our system.',
-                'noti_status' => 'Active', 'noti_email_title' => 'Welcome to New Cassel Center',
-            ]);
+            'noti_type' => 'New Account Setup', 'noti_alert_content' => 'Hello, Your account has been created. Welcome to New Cassel Work Order System! Use the below link to create a new password and to login into our system.',
+            'noti_status' => 'Active', 'noti_email_title' => 'Welcome to New Cassel Center',
+        ]);
         DB::table('notifications')->insert([
             'noti_type' => 'Work Order Create', 'noti_alert_content' => 'Hello, You have created a new work order. Login to our work order system to track the status.',
             'noti_status' => 'Active', 'noti_email_title' => 'New Cassel Work Order Created',
-        ]);
-        DB::table('notifications')->insert([
-            'noti_type' => 'Work Order Update', 'noti_alert_content' => 'Hello, Your work order has been completed. Thanks.',
-            'noti_status' => 'Active', 'noti_email_title' => 'New Cassel Work Order Update - Completed',
         ]);
         DB::table('notifications')->insert([
             'noti_type' => 'Work Order Close', 'noti_alert_content' => 'Hello, Your work order has been closed. Thanks.',
             'noti_status' => 'Active', 'noti_email_title' => 'New Cassel Work Order Closed',
         ]);
         DB::table('notifications')->insert([
-            'noti_type' => 'Password Reset', 'noti_alert_content' => 'Hello, Welcome to New Cassel Work Order System! Click below link to reset your password. ',
+            'noti_type' => 'Password Reset', 'noti_alert_content' => 'Hello, Welcome to New Cassel Work Order System! Click below link to reset your password.',
             'noti_status' => 'Active', 'noti_email_title' => 'New Cassel Work Order System password reset',
         ]);
     }

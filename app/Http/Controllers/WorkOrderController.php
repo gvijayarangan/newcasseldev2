@@ -381,37 +381,26 @@ class WorkOrderController extends Controller
                 }
             }
         }
-        
-        //to send mail to user logged in, while creating a work order
-/*        $user_id = Auth::user()->getUserId();
-        $user_email =  DB::table('users')->where('id', $user_id)->value('email');
-        $data = array(
-            'name' => $user_email,
-        );
-        $noti_status = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_status');
-        if ($noti_status == 'Active') {
-            Mail::send('emails.emailpassword', $data, function ($message) {
-                $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-                $message->to($user_email =  DB::table('users')->where('id', Auth::user()->getUserId())->value('email'))
-                    ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_email_title'));
-            });
-        }*/
+
 
         //to send mail to user logged in, when a work order is created
-
         $user_id = Auth::user()->getUserId();
         $user_email =  DB::table('users')->where('id', $user_id)->value('email');
+        $user_email_rec = DB::table('users')->where('id', $user_id)->value('rec_email');
         $data = array(
             'name' => $user_email,
         );
         $noti_status = DB::table('notifications')->where('noti_type', 'Work Order Create')->value('noti_status');
-        if ($noti_status == 'Active') {
-            Mail::send('emails.workordercreate', $data, function ($message) {
-                $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-                $message->to($user_email =  DB::table('users')->where('id', Auth::user()->getUserId())->value('email'))
-                    ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'Work Order Create')->value('noti_email_title'));
-            });
+        if ($user_email_rec == 1) {
+            if ($noti_status == 'Active') {
+                Mail::send('emails.workordercreate', $data, function ($message) {
+                    $message->from('newcassel@domain.com', 'New Cassel Work Order System');
+                    $message->to($user_email =  DB::table('users')->where('id', Auth::user()->getUserId())->value('email'))
+                        ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'Work Order Create')->value('noti_email_title'));
+                });
+            }
         }
+
         return redirect('workorderview');
     }
 
@@ -557,17 +546,19 @@ class WorkOrderController extends Controller
                 //to send mail to user logged in, when a work order is created
                 $user_id_created = DB::table('orders')->select('user_id')->where('id', $request -> wo_id)->value('user_id');
                 $user_email =  DB::table('users')->where('id', $user_id_created)->value('email');
+                $user_email_rec = DB::table('users')->where('id', $user_id_created)->value('rec_email');
                 $data = array(
                     'name' => $user_email,
                 );
                 $noti_status = DB::table('notifications')->where('noti_type', 'Work Order Close')->value('noti_status');
-
-                if ($noti_status == 'Active') {
-                    Mail::send('emails.workorderclose', $data, function ($message) use ($user_email){
-                        $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-                        $message->to($user_email)
-                            ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'Work Order Close')->value('noti_email_title'));
-                    });
+                if ($user_email_rec == 1) {
+                    if ($noti_status == 'Active') {
+                        Mail::send('emails.workorderclose', $data, function ($message) use ($user_email){
+                            $message->from('newcassel@domain.com', 'New Cassel Work Order System');
+                            $message->to($user_email)
+                                ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'Work Order Close')->value('noti_email_title'));
+                        });
+                    }
                 }
             }
 
