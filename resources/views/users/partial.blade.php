@@ -170,17 +170,21 @@
     $(document).ready(function ($) {
         if ($('#roles-select-id :selected').text() == 'Administrator') {
             $("#resident-con-id").prop("disabled", true);
+            $("#roles-select-id").prop("disabled", true);
         }
 
         if ($('#roles-select-id :selected').text() == 'Engineer') {
             $("#resident-con-id").prop("disabled", true);
+            $("#roles-select-id").prop("disabled", true);
         }
         if ($('#roles-select-id :selected').text() == 'Employee') {
             $("#resident-con-id").prop("disabled", true);
+            $("#roles-select-id").prop("disabled", true);
         }
         if ($('#roles-select-id :selected').text() == 'Contact') {
-            $("#resident-con-id").prop("disabled", false);
-            $("#resident-con-id").attr('required', true);
+            $("#resident-con-id").prop("disabled", true);
+            $("#roles-select-id").prop("disabled", true);
+            //$("#resident-con-id").attr('required', true);
         }
     });
 

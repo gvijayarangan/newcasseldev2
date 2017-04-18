@@ -150,13 +150,13 @@ class UsersController extends Controller
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
             'cell' => 'required|digits:10',
-            'res_con_id' => 'unique:users',
+            //'res_con_id' => 'unique:users',
         ]);
         $this->populateUpdateFields($request);
         //$request['active'] = $request['active'] == '' ? true : false;
 
         $object->update($request->all());
-        $this->syncRoles($object, $request->input('rolelist'));
+        //$this->syncRoles($object, $request->input('rolelist'));
         Session::flash('flash_message', 'User successfully updated!');
         Log::info('UsersController.update - End: ' . $object->id . '|' . $object->name);
         return redirect('users');
