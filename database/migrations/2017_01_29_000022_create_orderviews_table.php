@@ -35,7 +35,7 @@ class CreateOrderviewsTable extends Migration
             left join issuetypes on((orders.issue_type = issuetypes.id))) 
             left join residents on((orders.resident_id = residents.id))) 
             left join comareas on((orders.ca_id = comareas.id))) 
-            where (orders.order_status <> 'Close')
+            where (orders.order_status <> 'Close') order by orders.order_date_created DESC
     ");
     }
 
