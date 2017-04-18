@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_description')->nullable();
             $table->timestamp('order_date_created')->date()->default('0000-00-00 00:00:00');
             $table->string('order_priority')->nullable();
-            $table->string('order_status')->default();
+            $table->string('order_status');
             $table->decimal('order_total_cost', 8,2)->default(0.00);
             $table->timestamp('created_at')->default('0000-00-00 00:00:00');;
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

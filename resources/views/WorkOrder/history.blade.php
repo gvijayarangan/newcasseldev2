@@ -6,11 +6,6 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="pull-right">
-                            <form action="{{ url('/workorder/create') }}" method="GET">{{ csrf_field() }}
-                                <button type="submit" id="create-workorder" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
-                            </form>
-                        </div>
                         <div><h4>Work Order History</h4></div>
                     </div>
                     <div class="panel-body">
