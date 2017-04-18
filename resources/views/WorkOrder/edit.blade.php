@@ -445,7 +445,7 @@
 
 
         $('#addDetails').click(function () {
-            if ($("#supply_dropdown option:selected").val() != 0) {
+            if ($("#supply_dropdown option:selected").val() != 0 && $("#unit").val() != '' && $("#unit").val() >0) {
 
                 var order_data = {};
                 order_data["SupplyName"] = $("#supply_dropdown option:selected").text();
@@ -483,9 +483,11 @@
         });
 
         $('#unit').change(function () {
-            var totalAmount = $('#unit').val() * $('#unitprice').val();
-            totalAmount = totalAmount.toFixed(2);
-            $('#total').val(totalAmount);
+            if($('#unit').val()>0) {
+                var totalAmount = $('#unit').val() * $('#unitprice').val();
+                totalAmount = totalAmount.toFixed(2);
+                $('#total').val(totalAmount);
+            }
 
         });
 
