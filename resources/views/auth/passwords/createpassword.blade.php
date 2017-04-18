@@ -10,11 +10,7 @@
                         {{--@include('common.errors')--}}
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/createNewPassword/') }}">{!! csrf_field() !!}
                             <input type="hidden" name="user_id_from_email" value="<?php echo $user_id_from_email ?>">
-                            <div style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>Password have to be 8 digits and contains at least:</div>
-                            <div style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>*One Upper-case letter</div>
-                            <div  style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>*One Lower-case letter</div>
-                            <div  style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>*One Symbol</div>
-                            <div  style ='font:21px/34px Arial,tahoma,sans-serif;color:#ff0000'>*One Number</div>
+
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">New Password</label>
                                 <div class="col-md-6">
@@ -43,7 +39,15 @@
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-save"></i>Save</button>
                                 </div>
                             </div>
-
+                            <div style="color: red; text-align: center">
+                                <p>Password have to be 8 digits and should contain at least:</p>
+                                <p>
+                                    1. *One Upper-case letter,<br>
+                                    2. *One Lower-case letter,<br>
+                                    3. *One Number is a must,   <br>
+                                    4. *One Symbol must(@,$,_)
+                                </p>
+                            </div>
                         </form>
                     </div>
                 </div>
