@@ -16,8 +16,7 @@
 
                     <div class="panel-heading">Error Page</div>
                     <div class="panel-body">
-
-                        <h3>This page is not available, Please close the browser and relogin</a>
+                        <h3>This page is not available, Please close the browser and relogin
 
                         </h3>
                     </div>
