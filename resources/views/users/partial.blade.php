@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 --}}
-                <div class="form-group{{ $errors->has('cell') ? ' has-error' : '' }}">
+              {{--   <div class="form-group{{ $errors->has('cell') ? ' has-error' : '' }}">
                     {!! Form::label('cell', '*Cell Phone:', ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-4">
                         {!! Form::number('cell', null, ['id' => 'mobile', 'class' => 'col-md-4 form-control', 'required' => 'required']) !!}
@@ -116,6 +116,18 @@
                             <span class="help-block">
                 <strong>{{ $errors->first('cell') }}</strong>
             </span>
+                        @endif
+                    </div>
+                </div> --}}
+                <div class="form-group{{ $errors->has('cell') ? ' has-error' : '' }}">
+                    {!! Form::label('cell', 'Cellphone:',['class' => 'col-md-4 control-label']) !!}
+                    <div class="col-md-6">
+                        {!! Form::text('cell',null,['class' => 'col-md-6 form-control','required' => 'required']) !!}
+
+                        @if ($errors->has('cell'))
+                            <span class="help-block">
+                              <strong>{{ $errors->first('cell') }}</strong>
+                           </span>
                         @endif
                     </div>
                 </div>
