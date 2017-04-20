@@ -169,7 +169,7 @@ class ResidentsController extends Controller
 
             //Delete all comarea for Center
             $conresi = Conresi::where('res_id', '=', $id)->delete();
-            $rescontact = Rescontact::where('con_res_id', '=', $id)->delete();
+            //$rescontact = Rescontact::where('con_res_id', '=', $id)->delete();
             $resident = Resident::where('id', '=', $id)->delete();
 
         }catch(Exception $e) {
