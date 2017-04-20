@@ -69,7 +69,7 @@
                         </br> </br>
                         {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{ Form::select('ca_id', array_merge([0 => 'Please Select']), 'default',
+                            {{ Form::select('ca_id', array_merge([0 => 'Please Select']) + $commonarea , $wo_edit_data->ca_id,
                             array('id' => 'commonarea_dropdown', 'class' => 'col-md-4')) }}
                         </div.panel-heading>
 
