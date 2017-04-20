@@ -91,6 +91,7 @@ class WorkOrderController extends Controller
     {
         error_log('WorkOrderController.edit: ' .$wo_id);
         $centers = Center::lists('cntr_name', 'id')->all();
+        $commonarea = Comarea::lists('ca_name','id')->all();
         $issuetypes = Issuetype::lists('issue_typename', 'id')->all();
         $workers = DB::table('users')
             ->join('role_user', 'users.id', '=', 'role_user.user_id')
@@ -120,7 +121,7 @@ class WorkOrderController extends Controller
 
         return view('WorkOrder.edit',
             compact('wo_edit_data','centers','apartments', 'residents', 'issuetypes', 'issue_description','assignto','workers', 'toolsdata',
-                'suppliesdata','toolsdataExisting','supplyDataTable','user'));
+                'suppliesdata','toolsdataExisting','supplyDataTable','user','commonarea'));
     }
 
 
