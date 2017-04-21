@@ -1,4 +1,11 @@
 @extends('layouts.app')
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
 @section('content')
     <div class="container">
         <div class="row">
