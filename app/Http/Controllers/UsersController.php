@@ -83,6 +83,7 @@ class UsersController extends Controller
         Log::info('UsersController.store - Start: ');
         $input = $request->all();
         $this->validate($request, [
+            'rolelist' => 'required',
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
