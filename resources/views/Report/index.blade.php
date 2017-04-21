@@ -1,22 +1,5 @@
 @extends('layouts.app')
-<head xmlns="http://www.w3.org/1999/html">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-</head>
 @section('content')
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
-    </head>
-
     <div class="container">
         <div class="row">
             <div class="col-md-10">
@@ -78,19 +61,18 @@
                         </br> </br>
 
                         {!! Form::label('assigntype', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-6">
+                        <div.panel-heading class="col-md-8">
                             {{ Form::select('assign_user_id', array_merge([0 => 'Please Select']) + $workers, 'default',
-                             array('id' => 'assigntype_dropdown','class' => 'col-md-6')) }}
+                             array('id' => 'assigntype_dropdown','class' => 'col-md-4')) }}
                         </div.panel-heading>
                         </br> </br>
 
                         {!! Form::label('status', 'Status:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-6">
+                        <div.panel-heading class="col-md-8">
                             {!! Form::select('order_status', ['Please Select' => 'Please Select','Open' => 'Open','In Progress' => 'In Progress',
                                'Wait for third party vendor' => 'Wait for third party vendor','Complete' => 'Complete', 'Close' => 'Close'],
-                              'default', array('class' => 'col-md-6')) !!}
+                              'default', array('class' => 'col-md-4')) !!}
                         </div.panel-heading>
-
                         </br> </br>
 
                         {!! Form::label('priority', 'Priority:', ['class' => 'col-md-3 control-label']) !!}
@@ -98,6 +80,7 @@
                             {!! Form::select('order_priority', ['Please Select' => 'Please Select', 'Low' => 'Low', 'Moderate' => 'Moderate', 'High' => 'High'],
                             'default', array('class' => 'col-md-4')) !!}
                         </div.panel-heading>
+                        <br> </br>
 
 
                         <div class="form-group" style="text-align: center">
