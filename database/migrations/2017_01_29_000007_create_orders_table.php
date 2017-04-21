@@ -38,6 +38,9 @@ class CreateOrdersTable extends Migration
 
             /*$table->primary(['order_id']);*/
         });
+
+        //then set autoincrement to 1000
+        DB::update("ALTER TABLE orders AUTO_INCREMENT = 100;");
     }
 
     /**

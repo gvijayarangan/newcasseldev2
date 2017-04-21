@@ -348,11 +348,13 @@ class WorkOrderController extends Controller
 
         $order -> cntr_id = $request -> cntr_name;
         $order -> order_description = $request -> order_description;
-        $order -> order_priority = $request -> order_priority;
 
         $order -> issue_type = $request -> issuetype;
         if(($user->hasRole('admin') || $user->hasRole('engineer')))
         {
+            if($request -> order_priority != 'Please Select') {
+                $order->order_priority = $request->order_priority;
+            }
             $order -> order_status = $request -> order_status;
             $order -> order_total_cost = $request -> order_total_cost;
         }
