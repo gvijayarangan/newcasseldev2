@@ -9,7 +9,7 @@
                         <div class="pull-right">
 
                             {{--<td><a href="{{ URL('downloadExcel/csv/'.urlencode(serialize($reportDatas)))}}"><button class="btn btn-success">Download CSV</button></a></td>--}}
-
+                            {{--Download in excel--}}
                            <td><a href="{{ URL('/excel/download')}}">
                                     <button class="btn btn-success">Download CSV</button>
                                 </a></td>
