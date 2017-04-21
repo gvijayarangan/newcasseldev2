@@ -159,10 +159,14 @@ class WorkOrderController extends Controller
         foreach ($woDetails as $wo) {
             $wo -> created_by =  User::findOrFail($wo -> created_by)->f_name  . ' ' .
                 User::findOrFail($wo -> created_by)->l_name;
+            $wo -> closed_by_id =  User::findOrFail($wo -> closed_by_id)->f_name  . ' ' .
+                    User::findOrFail($wo -> closed_by_id)->l_name;
+
+
         }
 
-        //print_r($woDetails);
-        return view('WorkOrder.history',compact('woDetails'));
+
+   return view('WorkOrder.history',compact('woDetails'));
     }
     public function getAptDetails(Request $request) {
         $input = $request -> input('option');
@@ -275,6 +279,45 @@ class WorkOrderController extends Controller
 
         error_log($post);
         return view('WorkOrder.show', compact('post'));
+    }
+
+    public function getHistoryShow($id) {
+
+        $post = Order::find($id);
+        $user = Auth::user();
+        $post->cntr_id = Center::findOrFail($post->cntr_id)->cntr_name;
+        if ($post->apt_id == 0) {
+            $post->apt_id = 'N/A';
+        } else {
+            $post->apt_id = Apartment::findOrFail($post->apt_id)->apt_number;
+        }
+        if ($post->ca_id == 0) {
+            $post->ca_id = 'N/A';
+        } else {
+            $post->ca_id = Comarea::findOrFail($post->ca_id)->ca_name;
+
+        }
+
+
+        $post -> updated_by =  User::findOrFail($post -> updated_by)->f_name  . ' ' .
+            User::findOrFail($post -> updated_by)->l_name;
+
+        if ($user->hasRole('admin')) {
+           $woDetails = OrderHistory::all();
+        } else {
+            $woDetails = DB::table('order_histories')->where('created_by','=',$user->getUserId())->get();
+        }
+
+        foreach ($woDetails as $wo) {
+            $wo -> created_by =  User::findOrFail($wo -> created_by)->f_name  . ' ' .
+                User::findOrFail($wo -> created_by)->l_name;
+            $wo -> closed_by_id =  User::findOrFail($wo -> closed_by_id)->f_name  . ' ' .
+                User::findOrFail($wo -> closed_by_id)->l_name;
+
+        }
+
+
+        return view('WorkOrder.historyshow',compact('woDetails','post'));
     }
 
     public function storeData(Request $request)

@@ -50,13 +50,15 @@
 
                         {!! Form::label('created_date_time', 'Created Date From:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeFrom" id ="createdDateTime">
+                            <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeFrom"
+                                   id="createdDateTime">
                         </div.panel-heading>
                         </br> </br>
 
                         {!! Form::label('created_date_time_to', 'Created Date To:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8" >
-                             <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeTo" id ="createdDateTime" >
+                        <div.panel-heading class="col-md-8">
+                            <input type="date" class="col-md-4" style="height: 22px" name="createdDateTimeTo"
+                                   id="createdDateTime">
                         </div.panel-heading>
                         </br> </br>
 
@@ -92,10 +94,11 @@
                 </div>
             </div>
         </div>
+        </div>
         {{ Form::close() }}
 
 
-        <table class="table table-bordered table-striped cds-datatable">
+{{--        <table class="table table-bordered table-striped cds-datatable">
             <thead>
             <tr class="bg-info">
                 <th>Created Date</th>
@@ -137,8 +140,71 @@
             </tbody>
         </table>
     </div>
-@endsection
-@section('footer')
+@endsection--}}
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                @if (count($reportDatas) > 0)
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped cds-datatable">
+                                            <thead>
+                                            <tr class="bg-info">
+                                                <th>Created Date</th>
+                                                <th>Center Name</th>
+                                                <th>Comman Area / Apartment</th>
+                                                <th>Assign To</th>
+                                                <th>Status</th>
+                                                <th>Priority</th>
+
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            @foreach($reportDatas as $reportData)
+                                                <tr>
+                                                    <td>
+                                                        {{$reportData->created_date_time}}
+                                                    </td>
+                                                    <td>
+                                                        {{$reportData->center_name}}
+                                                    </td>
+                                                    <td>
+                                                        {{$reportData->common_area_name}}
+                                                        {{$reportData->apartment_number}}
+                                                    </td>
+                                                    <td>
+                                                        {{$reportData->assign_to}}
+                                                    </td>
+                                                    <td>
+                                                        {{$reportData->status}}
+                                                    </td>
+                                                    <td>
+                                                        {{$reportData->priority}}
+                                                    </td>
+
+                                                </tr>
+                                            @endforeach
+
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                @else
+                                    <div class="panel-body"><h4>No Records found</h4></div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        @endsection
+    @section('footer')
     <script>
 
         $.ajaxSetup({
