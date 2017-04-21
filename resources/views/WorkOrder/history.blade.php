@@ -25,6 +25,7 @@
                                         <th>Center Name</th>
                                         <th>Status</th>
                                         <th>Closed Time</th>
+                                        <th colspan="1">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -34,12 +35,13 @@
                                             <td>{{ $order->wo_id }}</td>
                                             <td>{{ $order->requestor }}</td>
                                             <td>{{ $order->created_by}}</td>
-                                            <td>{{ $order->center_name}}</td>
+                                            <td>{{ $order->closed_by_id}}</td>
                                             <td>{{ $order->apt_num}}</td>
                                             <td>{{ $order->common_area}}</td>
                                             <td>{{ $order->center_name}}</td>
                                             <td>{{ $order->status}}</td>
                                             <td>{{ $order->created_timestamp}}</td>
+                                            <td><a href="{{url('readworkorderhistory',$order->wo_id)}}" class="btn btn-primary">View</a></td>
                                         </tr>
 
                                     @endforeach

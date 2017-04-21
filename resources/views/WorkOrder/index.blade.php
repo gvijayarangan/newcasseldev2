@@ -15,8 +15,13 @@
                     </div>
                     <div class="panel-body">
                         @if (count($woDetails) > 0)
-                            <div class="table-responsive col-lg-pull"  >
-                                <table class="table table-striped table-bordered table-hover">
+
+
+                            <div class="table-responsive col-lg-pull "  >
+
+
+                                {{--<table class="table table-striped table-bordered table-hover">--}}
+                                <table class="table  table-bordered table-striped cds-datatable ">
 
 
                                     <thead>
@@ -33,7 +38,7 @@
                                         <th>Status</th>
                                         <th>Changed By</th>
                                         <th>Changed Time</th>
-                                        <th>Priority</th>
+                                        {{--<th>Priority</th>--}}
                                         <th>Total Cost</th>
                                         <th>Assigned To</th>
                                         <th style="width: 200px;">Actions</th>
@@ -55,7 +60,7 @@
                                             <td>{{ $order->status}}</td>
                                             <td>{{ $order->changed_by}}</td>
                                             <td>{{ $order->changed_time}}</td>
-                                            <td>{{ $order->priority}}</td>
+                                            {{--<td>{{ $order->priority}}</td>--}}
                                             <td>${{ $order->total_cost}}</td>
                                             <td>{{ $order->assign_to}}</td>
                                             <td><a href="{{url('workorder/edit', $order->wo_id)}}"
