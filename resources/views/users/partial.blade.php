@@ -1,8 +1,13 @@
-<div class="form-group">
+<div class="form-group{{ $errors->has('rolelist') ? ' has-error' : '' }}">
     <label class="col-md-4 control-label">*Roles</label>
     <div class="col-md-4">
         {!! Form::select('rolelist[]', $list_role, null, ['placeholder' => 'Please select', 'id' => 'roles-select-id',
         'class' => 'form-control col-md-4 roles cds-select', 'required' => 'required']) !!}
+        @if ($errors->has('rolelist'))
+            <span class="help-block">
+                <strong>{{ $errors->first('rolelist') }}</strong>
+            </span>
+        @endif
     </div>
 </div>
 
@@ -122,7 +127,7 @@
                 <div class="form-group{{ $errors->has('cell') ? ' has-error' : '' }}">
                     {!! Form::label('cell', 'Cellphone:',['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
-                        {!! Form::text('cell',null,['class' => 'col-md-6 form-control','required' => 'required']) !!}
+                        {!! Form::text('cell',null,['class' => 'col-md-6 form-control']) !!}
 
                         @if ($errors->has('cell'))
                             <span class="help-block">
@@ -196,9 +201,14 @@
         if ($('#roles-select-id :selected').text() == 'Contact') {
             $("#resident-con-id").prop("disabled", true);
             $("#roles-select-id").prop("disabled", true);
-            //$("#resident-con-id").attr('required', true);
+            $("#f_name").prop("disabled", true);
+            $("#m_name").prop("disabled", true);
+            $("#l_name").prop("disabled", true);
+            $("#email_id").prop("disabled", true);
+            $("#mobile").prop("disabled", true);
         }
     });
+
 
     $("#roles-select-id").change(function () {
         if ($('#roles-select-id :selected').text() == 'Contact') {
