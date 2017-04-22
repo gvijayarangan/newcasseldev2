@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af83d6f-9817-4c40-848b-4a4b2bd2f2b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" afterPath="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/users/partial.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/partial.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,7 +48,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/CreateSupply/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/emailpassword.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResidentsController.php" />
@@ -102,6 +98,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersRolesPermissions.php" />
+        <option value="$PROJECT_DIR$/../newcasselsystemgv/resources/views/CreateRes/index.blade.php" />
       </list>
     </option>
   </component>
@@ -760,12 +757,12 @@
       <workItem from="1491880256640" duration="261000" />
       <workItem from="1491880643718" duration="1828000" />
       <workItem from="1491934278275" duration="382000" />
-      <workItem from="1492898855656" duration="720000" />
+      <workItem from="1492898855656" duration="1384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151511000" />
+    <option name="totallyTimeSpent" value="152175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -811,13 +808,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/CreateComarea/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/CreateComarea/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1156,14 +1146,14 @@
         <state relative-caret-position="363">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding>
-            <marker date="1492899329930" expanded="true" signature="170:366" ph="..." />
-            <marker date="1492899329930" expanded="true" signature="184:364" ph="..." />
-            <marker date="1492899329930" expanded="true" signature="217:363" ph="..." />
-            <marker date="1492899329930" expanded="true" signature="7182:7369" ph="..." />
-            <marker date="1492899329930" expanded="true" signature="7196:7367" ph="..." />
-            <marker date="1492899329930" expanded="true" signature="7207:7322" ph="..." />
-            <marker date="1492899329930" expanded="true" signature="7660:7804" ph="..." />
-            <marker date="1492899329930" expanded="true" signature="7674:7756" ph="..." />
+            <marker date="1492900594177" expanded="true" signature="170:366" ph="..." />
+            <marker date="1492900594177" expanded="true" signature="184:364" ph="..." />
+            <marker date="1492900594177" expanded="true" signature="217:363" ph="..." />
+            <marker date="1492900594177" expanded="true" signature="7182:7369" ph="..." />
+            <marker date="1492900594177" expanded="true" signature="7196:7367" ph="..." />
+            <marker date="1492900594177" expanded="true" signature="7207:7322" ph="..." />
+            <marker date="1492900594177" expanded="true" signature="7660:7804" ph="..." />
+            <marker date="1492900594177" expanded="true" signature="7674:7756" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1180,6 +1170,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../newcasselsystemgv/resources/views/CreateRes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
