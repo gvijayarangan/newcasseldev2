@@ -146,7 +146,7 @@
                         {!! Form::label('toolsused', 'Tools used:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading style="padding-left: 15px">
                             {{ Form::select('toolsused_id[]', $toolsdata, $toolsdataExisting,
-                            array('id' => 'tools_data', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
+                            array('id' => 'tools_data[]', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
                         </div.panel-heading>
 
                         </br> </br>
