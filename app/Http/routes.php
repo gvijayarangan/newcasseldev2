@@ -112,13 +112,14 @@ Route::resource('roles', 'RolesController');
 
 Route::resource('orders', 'WorkOrderController');
 
-Route::resource('/workorder', 'WorkOrderController@index');
-Route::resource('/readworkorder', 'WorkOrderController@show');
-Route::resource('/workorderview', 'WorkOrderController@view');
-Route::post('/workorder/storeData', 'WorkOrderController@storeData');
-Route::post('/workorder/updateData', 'WorkOrderController@updateData');
-Route::get('/workorder/edit/{wo_id}', 'WorkOrderController@edit');
-Route::get('/history', 'WorkOrderController@getHistory');
+    Route::resource('/workorder', 'WorkOrderController@index');
+    Route::resource('/readworkorder', 'WorkOrderController@show');
+    Route::resource('/readworkorderhistory', 'WorkOrderController@getHistoryShow');
+    Route::resource('/workorderview', 'WorkOrderController@view');
+    Route::post('/workorder/storeData', 'WorkOrderController@storeData');
+    Route::post('/workorder/updateData', 'WorkOrderController@updateData');
+    Route::get('/workorder/edit/{wo_id}', 'WorkOrderController@edit');
+    Route::get('/history', 'WorkOrderController@getHistory');
 
 
 

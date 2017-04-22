@@ -29,7 +29,7 @@ class ReportController extends Controller
             ->where('role_id','=','2')
             ->select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, id"))
             ->lists('fullname', 'id');
-        $reportDatas = DB::table('get_order_details')->get();
+        $reportDatas = DB::table('get_wo_report_details')->get();
         $_SESSION['downloadExcel'] = $reportDatas;
         $report_array = [];
         $report_array[] = ['user_id','id','resident_id','apt_id','cntr_id','ca_id','order_description','order_date_created',
@@ -110,7 +110,7 @@ class ReportController extends Controller
             ->lists('fullname', 'id');
 
         error_log("request is " .$request);
-        $query = DB::table('get_order_details');
+        $query = DB::table('get_wo_report_details');
         if ($request->center_name != 0) {
             $center_name = DB::table('centers')->where('id','=',$request->center_name)->pluck('cntr_name');
             $query->where('center_name','=',$center_name);

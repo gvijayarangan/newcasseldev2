@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="pull-right">
@@ -15,8 +15,13 @@
                     </div>
                     <div class="panel-body">
                         @if (count($woDetails) > 0)
-                            <div class="table-responsive col-lg-pull"  >
-                                <table class="table table-striped table-bordered table-hover">
+
+
+                            <div class="table-responsive col-lg-pull "  >
+
+
+                                {{--<table class="table table-striped table-bordered table-hover">--}}
+                                <table class="table  table-bordered table-striped cds-datatable ">
 
 
                                     <thead>
@@ -33,7 +38,7 @@
                                         <th>Status</th>
                                         <th>Changed By</th>
                                         <th>Changed Time</th>
-                                        <th>Priority</th>
+                                       <th>Priority</th>
                                         <th>Total Cost</th>
                                         <th>Assigned To</th>
                                         <th style="width: 200px;">Actions</th>
