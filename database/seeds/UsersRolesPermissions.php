@@ -429,69 +429,69 @@ class ToolsTableSeeder extends Seeder
         DB::table('tools')->insert([
             'tool_name' => 'Electrical Tape', 'tool_comment' => ' ',
         ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Hack Saw', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Hammer', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Hedge Trimmer', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Hose', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Jig Saw', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Ladder - 10’', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Ladder - 8’', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Ladder – Extension', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Ladder – Step', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Leaf Blower', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Leaf Rake', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Monkey Wrench', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Nails', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Paint Brush', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Paint Roller', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Picture Frame Wire', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Picture Nails', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Screwdriver', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Screws', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Shovel', 'tool_comment' => ' ',
-//        ]);
-//        DB::table('tools')->insert([
-//            'tool_name' => 'Snow Blower', 'tool_comment' => ' ',
-//        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Hack Saw', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Hammer', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Hedge Trimmer', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Hose', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Jig Saw', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Ladder - 10’', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Ladder - 8’', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Ladder – Extension', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Ladder – Step', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Leaf Blower', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Leaf Rake', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Monkey Wrench', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Nails', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Paint Brush', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Paint Roller', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Picture Frame Wire', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Picture Nails', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Screwdriver', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Screws', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Shovel', 'tool_comment' => ' ',
+        ]);
+        DB::table('tools')->insert([
+            'tool_name' => 'Snow Blower', 'tool_comment' => ' ',
+        ]);
 
     }
 }
@@ -523,243 +523,243 @@ class SuppliesTableSeeder extends Seeder
         DB::table('supplies')->insert([
             'sup_name' => 'Batteries – 9 volt', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
         ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Batteries - AA', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Batteries - AAA', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Batteries – Arial Disc/Arial Pendent', 'sup_unitprice' => 6.97, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Bi-Fold Door', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Boiler', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Bolts/Nuts', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Cabinetry', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Cabinet Knobs', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Carpet', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Caulking', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Closet Door', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Countertop', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Curtain Rod', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Door', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Door Casing', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Door Closer', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Door Hinges', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Door Knob', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Door Stop', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Door Strike Plate', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Drain Cleaner', 'sup_unitprice' => 10, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => '', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Drain Extension', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Electrical Outlets', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Electrical Panel/Breaker', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Electrical Switches', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Electrical Wiring', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Fan Coil Condensation Drain', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Fan Coil Motor', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Fan Coil Motor Mount', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Fan Coil Unit', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Faucet', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Faucet Aerator', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Flooring Transition', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Garage Door Opener', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Garage Touch-pad', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Grab Bar', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Heat Pump', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Heat Lamp', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Hood Vent', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Hot Water Pumps', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'HVAC Filters', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Kitchen Cook Top', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Light Bulb – Exterior', 'sup_unitprice' => 5.99 , 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Light Fixture', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Medicine Cabinet', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Microwave', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Mirror', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Paint', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Parking Lot Lights', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'P-Trap', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Plumbing Supply', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Quarter Round Trim', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Refrigerator', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Screws', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Shelving', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Shower', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Shower Curtain', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Shower Head', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Shower Hose', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Sink Stopper', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Thermostat', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Threshold', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Toilette Flapper', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Toilette Paper Holder', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Toilette Seat', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Toilette Valve/Float', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Toilette Wax Seal', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'TV Cable', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'TV Mini Box', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Vinyl Flooring', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Window', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Window Blind', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Window Curtain/Rod', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Window Screen', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Wood Filler/Putty', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Wood Lacquer', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Wood Stain', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
-//        ]);
-//        DB::table('supplies')->insert([
-//            'sup_name' => 'Wood', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
-//        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Batteries - AA', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Batteries - AAA', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Batteries – Arial Disc/Arial Pendent', 'sup_unitprice' => 6.97, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Bi-Fold Door', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Boiler', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Bolts/Nuts', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Cabinetry', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Cabinet Knobs', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Carpet', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Caulking', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Closet Door', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Countertop', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Curtain Rod', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Door', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Door Casing', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Door Closer', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Door Hinges', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Door Knob', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Door Stop', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Door Strike Plate', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Drain Cleaner', 'sup_unitprice' => 10, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => '', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Drain Extension', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Electrical Outlets', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Electrical Panel/Breaker', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Electrical Switches', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Electrical Wiring', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Fan Coil Condensation Drain', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Fan Coil Motor', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Fan Coil Motor Mount', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Fan Coil Unit', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Faucet', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Faucet Aerator', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Flooring Transition', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Garage Door Opener', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Garage Touch-pad', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Grab Bar', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Heat Pump', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Heat Lamp', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Hood Vent', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Hot Water Pumps', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'HVAC Filters', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Kitchen Cook Top', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Light Bulb – Exterior', 'sup_unitprice' => 5.99 , 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Light Fixture', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Medicine Cabinet', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Microwave', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Mirror', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Paint', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Parking Lot Lights', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'P-Trap', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Plumbing Supply', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Quarter Round Trim', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Refrigerator', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Screws', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Shelving', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Shower', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Shower Curtain', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Shower Head', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Shower Hose', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Sink Stopper', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Thermostat', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Threshold', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Toilette Flapper', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Toilette Paper Holder', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Toilette Seat', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Toilette Valve/Float', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Toilette Wax Seal', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'TV Cable', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'TV Mini Box', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Vinyl Flooring', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Window', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Window Blind', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Window Curtain/Rod', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Window Screen', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Wood Filler/Putty', 'sup_unitprice' => 3.66, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Wood Lacquer', 'sup_unitprice' => 8.99, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Wood Stain', 'sup_unitprice' => 4.55, 'sup_comment' => 'test',
+        ]);
+        DB::table('supplies')->insert([
+            'sup_name' => 'Wood', 'sup_unitprice' => 5.99, 'sup_comment' => 'test',
+        ]);
 
     }
 }
