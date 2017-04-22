@@ -74,7 +74,7 @@
             {!! Form::label('con_res_id', 'ResidentName:', ['class' => 'col-md-3 control-label']) !!}
             <div.panel-heading style="padding-left: 15px">
                 {{ Form::select('con_res_id[]', $residentscon, $residentscon_existing,
-                array('id' => 'residents', 'multiple'=>'multiple', 'style' =>'width:75%')),['class'=>'col-md-4 form-control','required' => 'required']}}
+                array('id' => 'residents[]', 'multiple'=>'multiple', 'style' =>'width:75%')),['class'=>'col-md-4 form-control','required' => 'required']}}
             </div.panel-heading>
         </div>
     <div class="form-group">
