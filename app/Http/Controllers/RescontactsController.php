@@ -123,6 +123,7 @@ class RescontactsController extends Controller
             'con_cellphone' => 'numeric|digits:10|min:0',
             'con_email' => 'email|max:255',
             'con_gender' => 'required|string',
+            'res_fullname' => 'required',
         ]);
         $rescontact = new Rescontact();
 
@@ -179,6 +180,7 @@ class RescontactsController extends Controller
             'con_cellphone' => 'numeric|digits:10|min:0',
             'con_email' => 'email|max:255',
             'con_gender' => 'required|string',
+            'con_res_id' => 'required',
         ]);
         $CreateRescon = Rescontact::find($id);
         $CreateRescon->con_fname = $request->con_fname;

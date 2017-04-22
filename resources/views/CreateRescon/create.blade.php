@@ -107,7 +107,7 @@
                             {!! Form::label('res_fullname', 'ResidentName:', ['class' => 'col-md-2 control-label']) !!}
                             <div.panel-heading style="padding-left: 15px">
                                 {{ Form::select('res_fullname[]', $residents,
-                                  'default', array('id' => 'residents', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
+                                  'default', array('id' => 'residents', 'multiple'=>'multiple', 'style' =>'width:75%')),['class'=>'col-md-4 form-control','required' => 'required'] }}
                             </div.panel-heading>
 
                         </br> </br>
