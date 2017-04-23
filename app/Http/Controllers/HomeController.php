@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+      //  $this->middleware('auth');
     }
 
     /**
@@ -44,7 +44,7 @@ class HomeController extends Controller
             setcookie('login', $loginUser, time() + (86400 * 30), "/");
             if ($user->hasRole('admin') || $user->hasRole('engineer'))
              return view('carousel', compact('user'));
-            else if ($user->hasRole('contact'))
+            else if ($user->hasRole('contact')|| $user->hasRole('employee'))
                 return view('carousel', compact('user'));
 
         }

@@ -20,6 +20,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\User;
 use App\Role;
+use App\Rescontact;
 use Auth;
 use Session;
 use Input;
@@ -61,12 +62,20 @@ class UsersController extends Controller
         return view('users.show', $this->viewData);
     }
 
-    public function create()
+ /*   public function create()
     {
         Log::info('UsersController.create: ');
         $this->viewData['heading'] = "New User";
 
         return view('users.create', $this->viewData);
+    }*/
+    public function create()
+    {
+        Log::info('UsersController.create: ');
+        $this->viewData['heading'] = "New User";
+        $res_con = Rescontact::select(DB::raw("CONCAT(con_fname, ' ',con_lname) as con_fname, id"))
+            ->lists('con_fname', 'id');
+        return view('users.create', $this->viewData, compact('res_con'));
     }
 
     public function store(UserRequest $request)
@@ -74,18 +83,21 @@ class UsersController extends Controller
         Log::info('UsersController.store - Start: ');
         $input = $request->all();
         $this->validate($request, [
+            'rolelist' => 'required',
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'cell' => 'required|integer|digits:10',
+            'cell' => 'digits:10|numeric|min:0',
+            'res_con_id' => 'unique:users',
         ]);
         $this->populateCreateFields($input);
         $input['password'] = "";
         $input['active'] = $request['active'] == '' ? false : true;
         $input['rec_email'] = $request['rec_email'] == '' ? false : true;
+        $input['res_con_id'] = $request['res_con_id'];
         $object = User::create($input);
         $this->syncRoles($object, $request->input('rolelist'));
-        Session::flash('flash_message', 'User successfully added and an email has been sent for activation!');
+        Session::flash('flash_message', 'User successfully added');
         Log::info('UsersController.store - End: ' . $object->id . '|' . $object->name);
 
         session_start();
@@ -98,16 +110,19 @@ class UsersController extends Controller
             'name' => $request['email'],
         );
 
+        $noti_status = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_status');
+        if ($noti_status == 'Active') {
+            Mail::send('emails.emailpassword', $data, function ($message) {
+                $message->from('newcassel@domain.com', 'New Cassel Work Order System');
+                $message->to($_SESSION['user_email'])
+                    ->subject($noti_email_title = DB::table('notifications')->where('noti_type', 'New Account Setup')->value('noti_email_title'));
+            });
+        }
 
-        Mail::send('emails.emailpassword', $data, function ($message) {
-            $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-            $message->to($_SESSION['user_email'])->subject('New Account Setup');
-
-        });
         return redirect()->back();
     }
 
-    public function edit(User $users)
+/*    public function edit(User $users)
     {
         $object = $users;
         Log::info('UsersController.edit: ' . $object->id . '|' . $object->name);
@@ -115,6 +130,17 @@ class UsersController extends Controller
         $this->viewData['heading'] = "Edit User: " . $object->name;
 
         return view('users.edit', $this->viewData);
+    }*/
+
+    public function edit(User $users)
+    {
+        $object = $users;
+        Log::info('UsersController.edit: ' . $object->id . '|' . $object->name);
+        $this->viewData['user'] = $object;
+        $this->viewData['heading'] = "Edit User: " . $object->name;
+        $res_con = Rescontact::select(DB::raw("CONCAT(con_fname, ' ',con_lname) as con_fname, id"))
+            ->lists('con_fname', 'id');
+        return view('users.edit', $this->viewData,compact('res_con'));
     }
 
     public function update(User $users, UserRequest $request)
@@ -124,13 +150,14 @@ class UsersController extends Controller
         $this->validate($request, [
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
-            'cell' => 'required|integer|digits:10',
+            'cell' => 'required|digits:10|numeric|min:0',
+            //'res_con_id' => 'unique:users',
         ]);
         $this->populateUpdateFields($request);
         //$request['active'] = $request['active'] == '' ? true : false;
 
         $object->update($request->all());
-        $this->syncRoles($object, $request->input('rolelist'));
+        //$this->syncRoles($object, $request->input('rolelist'));
         Session::flash('flash_message', 'User successfully updated!');
         Log::info('UsersController.update - End: ' . $object->id . '|' . $object->name);
         return redirect('users');
@@ -168,5 +195,14 @@ class UsersController extends Controller
         $user->roles()->sync($roles);
 //        $user->roles()->sync([$roles => ['created_by' => Auth::user()->name, 'updated_by' => Auth::user()->name]]);
     }
+
+    public function getContactDetails(Request $request) {
+        $input = $request -> input('option');
+        $contact_data = Rescontact::
+        select(DB::raw("con_fname, con_mname, con_lname,con_cellphone,con_email"))->where('id', '=' , $input )->get();
+
+        return $contact_data;
+    }
+
 
 }

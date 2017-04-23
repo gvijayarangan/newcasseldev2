@@ -25,6 +25,7 @@ class CreateCentersTable extends Migration
             $table->string('cntr_fax')->nullable();
             $table->String('cntr_comments')->nullable();
         });
+
     }
 
     /**

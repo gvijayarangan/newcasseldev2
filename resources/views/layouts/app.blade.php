@@ -18,13 +18,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
-    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.css"
           integrity="sha256-e2JbBawr7mQaQ8GkrYHPfjB0RKyqiP8A0s8R54VnU0A=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../../../resources/assets/css/app.css">
-
+    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <!-- Styles -->
     @yield('styles')
     <link rel="stylesheet"  href="{{ URL::asset('css/jquery-comments.css') }}">
@@ -47,7 +46,7 @@
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js></script>
-<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
         integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
         crossorigin="anonymous"></script>
 <script src="{{ asset('js/all.js') }}"></script>
@@ -75,4 +74,5 @@
 
 </body>
 </html>
+
 

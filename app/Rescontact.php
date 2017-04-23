@@ -17,7 +17,7 @@ class Rescontact extends Model
         'con_comment',
         'con_email',
         'con_gender',
-        'con_res_id'
+        'con_res_id',
     ];
 
     // public function user() {
@@ -26,6 +26,11 @@ class Rescontact extends Model
 
     public function conres() {
         return $this->hasMany('App\conresi');
+    }
+
+    public function getResId()
+    {
+        return $this->id;
     }
 
 }

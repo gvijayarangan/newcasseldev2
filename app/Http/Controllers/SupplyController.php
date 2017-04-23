@@ -58,7 +58,9 @@ class SupplyController extends Controller
         $this->validate($request, [
             //'id' => 'required|integer',
             'sup_name' => 'required',
-            'sup_unitprice' => 'required|numeric',
+
+      'sup_unitprice' => 'required|numeric|min:0',
+
             'sup_comment' => 'string',
         ]);
         //dd($request);
@@ -98,7 +100,14 @@ class SupplyController extends Controller
         $this->validate($request, [
 
             'sup_name' => 'required',
-            'sup_unitprice' => 'required|numeric',
+            'sup_unitprice' => 'required|numeric|min:0',
+       /*     'sup_unitprice'  => [
+        'required',
+        'regex:/^\d{1,2}(\.\d{1,2})?$/',
+        'numeric',
+        'min:1',
+        'max:50'
+    ],*/
             'sup_comment' => 'string',
         ]);
         $CreateSupply = Supply::find($id);

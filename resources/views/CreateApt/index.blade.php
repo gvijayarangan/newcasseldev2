@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="pull-right">
@@ -49,8 +49,8 @@
                                             <td><a href="{{url('apartment',$createapt->id)}}" class="btn btn-primary">View</a>
                                                 <a href="{{url('apartment/update', $createapt->id)}}"
                                                    class="btn btn-warning">Modify</a>
-                                                <a href="{{url('apartment/destroy',$createapt->id)}}"onclick='return confirm("Are you sure?")'
-                                                   class="btn btn-danger">Delete</a>
+                                                {{--<a href="{{url('apartment/destroy',$createapt->id)}}"onclick='return confirm("Are you sure?")'--}}
+                                                   {{--class="btn btn-danger">Delete</a>--}}
 
 
                                                 {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}

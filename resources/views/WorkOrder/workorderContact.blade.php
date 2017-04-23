@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    {{--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">--}}
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">>
     <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
 
@@ -23,33 +24,46 @@
                         <input type="hidden" name="supplyData" id="supplyData" value="">
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-sm-4">
-                            {!! Form::text('requester',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
+                            {!! Form::text('requestor_name',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
                         </div.panel-heading>
 
                         </br> </br>
 
                         {!! Form::label('centername', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            <div class="form-group">
+                            @if($user->hasRole('contact'))
+                                {{ Form::select('cntr_name', $centers, 'default',
+                                 array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
+                             @else
                                 {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
                                  array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
-                            </div>
-                        </div.panel-heading>
+                             @endif
+                         </div.panel-heading>
 
                         </br> </br>
 
                         {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{ Form::select('apt_id', array_merge([0 => 'Please Select']), 'default',
-                            array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
+                            @if($user->hasRole('contact'))
+                                {{ Form::select('apt_id', $apartment_data, 'default',
+                                 array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
+                            @else
+                                {{ Form::select('apt_id', array_merge([0 => 'Please Select']), 'default',
+                                 array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
+                            @endif
                         </div.panel-heading>
 
                         </br> </br>
 
                         {!! Form::label('residentname', 'Resident Name:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
-                            {{ Form::select('residentname', array_merge([0 => 'Please Select']),
-                            'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
+                            @if($user->hasRole('contact'))
+                                {{ Form::select('residentname', $residents,
+                                'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
+                            @else
+                                {{ Form::select('residentname', array_merge([0 => 'Please Select']),
+                                'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
+                            @endif
                         </div.panel-heading>
 
                         </br> </br>
@@ -60,9 +74,13 @@
                         </div.panel-heading>
 
 
+                      {{--  </br> </br>
+                        {!! Form::label('resident_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}--}}
+                        <div.panel-heading class="col-md-6">
+                            {!! Form::text('resident_comments',null,
+                            array('class' => 'form-control hidden','id' => 'resident_comments','readonly' => true,'size'=>70)) !!}
+                        </div.panel-heading>
                         </br> </br>
-
-
                         {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-4">
                             {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default', array('id' => 'issuetype_dropdown')) }}
@@ -108,16 +126,6 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        });
-
-        $(document).ready(function ($) {
-            $('select').select2();
-            $('#datetime').datepicker();
-
-            $("#tools_data").select2({
-                placeholder: "Please Select",
-                tags: true
-            })
         });
 
         function validateOnSave() {
@@ -214,6 +222,15 @@
                 //Disable commonarea dropdown
                 $("#commonarea_dropdown").attr('disabled', false);
             }
+        });
+
+        $('#residentname_dropdown').change(function () {
+            data = {option: $(this).val()};
+
+            $.get("/getresidentComments", data, function (data) {
+                $("#resident_comments").val(data);
+                $('.form-control.hidden').removeclass('hidden');
+            });
         });
 
         $('#issuetype_dropdown').change(function () {

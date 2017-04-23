@@ -1,11 +1,16 @@
 @extends('layouts.app')
 @section('content')
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css"/>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading text-center" > Create Supply Information</div>
+                    <div class="pull-left">
+                        <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                            <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                        </form>
+                    </div>
+                    <div class="panel-heading text-center"> Create Supply Information</div>
                     <div class="panel-body">
 
                         @if (count($errors) > 0)
@@ -30,12 +35,20 @@
 
                         <div class="form-group">
                             <span style="color: red; display:block; float:left">*</span>
-                            {!! Form::label('sup_unitprice', 'Unit Price:',['class' => 'col-md-4 control-label']) !!}
-                            <div class="col-md-4">
-                                {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
+                            <div class="form-group">
+                                {!! Form::label('sup_unitprice', 'Enter Unit Price:',['class' => 'col-md-4 control-label']) !!}
+                                <div class="col-md-4">
+
+                                    <div class="input-group" style="width: 150px">
+                                        <span class="input-group-addon">$</span>
+                                        {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
+                                        {{--  <div class="col-md-4">
+                                              {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
+                                          </div>--}}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        </br> </br>
+                            </br> </br>
                             <div class="form-group">
                                 {!! Form::label('sup_comment', 'Enter Comments:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
@@ -47,13 +60,14 @@
                         </div>
                         </br> </br>
 
+                        <div class="form-group">
+                            {!! Form::submit('Save', ['style'=> 'margin-top: 20px','class' => 'btn btn-primary form-control']) !!}
+                        </div>
 
-                        {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
-
-    {!! Form::close() !!}
-    </div>
-    </div>
-    </div>
-    </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @stop

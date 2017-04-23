@@ -10,6 +10,7 @@
 
 @section('content')
 
+
     {!! Form::open(['url' => '/workorder/storeData']) !!}
 
     <div class="container">
@@ -18,11 +19,20 @@
                 <br> <br>
                 <div class="panel panel-default">
                     <div class="panel-heading"> Work Order Form</div>
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors-> all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <div class="panel-body" style="padding-left: 15%">
                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                         <input type="hidden" name="supplyData" id="supplyData" value="">
-                        <span style="color: red; display:block; float:left">*</span>
+
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-sm-4">
                             {!! Form::text('requestor_name',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
@@ -31,16 +41,17 @@
                         </br> </br>
                         <span style="color: red; display:block; float:left">*</span>
 
-                        {!! Form::label('centername', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
+                        {!! Form::label('cntr_name', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
 
                             <div class="form-group">
                                 {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
-                                 array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
+                                 array('id' => 'center_dropdown', 'class' => 'col-md-4','required' => 'required')) }}
                             </div>
                         </div.panel-heading>
 
                         </br> </br>
+
 
                         {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
@@ -57,6 +68,7 @@
                         </div.panel-heading>
 
                         </br> </br>
+
                         {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
                             {{ Form::select('ca_id', array_merge([0 => 'Please Select']), 'default',
@@ -73,7 +85,7 @@
                           </div.panel-heading>
 
                         </br> </br>
-                        <span style="color: red; display:block; float:left">*</span>
+
 
                         {!! Form::label('status', 'Status:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-6">
@@ -82,7 +94,7 @@
                         </div.panel-heading>
 
                         </br> </br>
-                        <span style="color: red; display:block; float:left">*</span>
+
 
                         {!! Form::label('priority', 'Priority:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
@@ -94,7 +106,7 @@
                         </br> </br>
 
 
-                        <span style="color: red; display:block; float:left">*</span>
+
 
                         {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-4">
@@ -117,7 +129,6 @@
 
                         </br> </br>
 
-                        <span style="color: red; display:block; float:left">*</span>
                         {!! Form::label('assigntype', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-6">
                             {{ Form::select('assign_user_id', array_merge([0 => 'Please Select']) + $workers, 'default',
@@ -130,7 +141,7 @@
                         {!! Form::label('toolsused', 'Tools used:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading style="padding-left: 15px">
                             {{ Form::select('toolsused_id[]', $toolsdata,
-                              'default', array('id' => 'tools_data', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
+                              'default', array('id' => 'tools_data[]', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
                         </div.panel-heading>
 
                         </br> </br>
@@ -149,13 +160,20 @@
                                            'default', array('id' => 'supply_dropdown')) }}
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                 <div class="form-group">
+
                                         <label for="amount" class="col-sm-3 control-label">Unit Price</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control" id="unitprice" name="unitprice"
-                                                   readonly>
-                                        </div>
-                                    </div>
+
+                                         <div class= "col-sm-6 input-group" >
+                                             <span class="input-group-addon">$</span>
+
+                                       <input type="text" class="form-control" placeholder="unitprice" id="unitprice" name="unitprice"
+                                                readonly>
+
+                                       </div>
+
+                                </div>
+
                                     <div class="form-group">
                                         <label for="description" class="col-sm-3 control-label">Unit</label>
                                         <div class="col-sm-6">
@@ -200,7 +218,7 @@
                                     </div>
                                     <br><br><br><br>
                                     {!! Form::label('totalOrderAmountLabel', 'Work Order Total Cost:' ,['class' => 'col-md-4 control-label']) !!}
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6 ">
                                         {!! Form::text('order_total_cost',null, array('id' => 'totalOrderAmount', 'readonly' =>true)) !!}
                                     </div>
                                 </div>
@@ -389,12 +407,12 @@
 
 
         $('#addDetails').click(function () {
-            if ($("#supply_dropdown option:selected").val() != 0) {
+            if ($("#supply_dropdown option:selected").val() != 0 && $("#unit").val() != '' && $("#unit").val() >0 ) {
 
                 var order_data = {};
                 order_data["SupplyName"] = $("#supply_dropdown option:selected").text();
                 order_data["unit"] = $("#unit").val();
-                order_data["unitPrice"] = $("#unitprice").val();
+                order_data["unitPrice"] = "$"+$("#unitprice").val();
                 order_data["total"] = $("#total").val();
                 order_data["remove-row"] = '<span class="glyphicon glyphicon-remove"></span>';
 
@@ -427,9 +445,13 @@
         });
 
         $('#unit').change(function () {
-            var totalAmount = $('#unit').val() * $('#unitprice').val();
-            $('#total').val(totalAmount);
 
+            if($('#unit').val()>0){
+
+            var totalAmount = $('#unit').val() * $('#unitprice').val();
+            totalAmount = totalAmount.toFixed(2);
+            $('#total').val(totalAmount);
+            }
         });
 
         $(document).on('click', '.input-remove-row', function () {
@@ -452,6 +474,7 @@
             $('.input-total').each(function () {
                 totalSum += parseFloat($(this).text());
             });
+            totalSum = totalSum.toFixed(2);
             $("#totalOrderAmount").val(totalSum);
         }
 

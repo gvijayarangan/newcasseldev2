@@ -5,6 +5,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
+                    <div class="pull-left">
+                        <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                            <button type="submit" id="edit-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                        </form>
+                    </div>
                     <div class="panel-heading text-center" > Resident Contact Information</div>
                     <div class="panel-body">
         <table class="table table-striped table-bordered table-hover">
@@ -45,7 +50,7 @@
             </tr>
             <tr>
                 <td>Resident Name:</td>
-                <td><?php echo ($resident_name); ?></td>
+                <td><?php echo ($concatenated_con_res_id); ?></td>
             </tr>
             </tbody>
         </table>

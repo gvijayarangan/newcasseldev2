@@ -61,7 +61,7 @@ return [
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'The :attribute field is required.',
+    'required'             => 'The :attribute is required.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'The :attribute field is required when :values is present.',
@@ -77,7 +77,7 @@ return [
     ],
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
+    'unique'               => 'The :attribute already exists in the system.',
     'url'                  => 'The :attribute format is invalid.',
 
     /*
@@ -123,6 +123,8 @@ return [
         'res_email' => 'Resident Email',
         'res_status'=> 'Resident Status',
         'res_comment' => 'Resident Comment',
+        'con_res_id' => 'Resident Name',
+        'res_fullname' => 'Resident Name',
 
         'con_fname' => 'Resident Contact First Name',
         'con_mname' => 'Resident Contact Middle Name',
@@ -164,6 +166,12 @@ return [
         'requester' => 'Requestor name',
         'resident_comments' => 'Comments',
         'status' => 'Status',
+
+        'noti_type' => 'Email Notification Type',
+        'noti_email_title' => 'Email Notification Title',
+        'noti_alert_content' => 'Email Notification Content',
+        'noti_status' => 'Email Notification Status',
+        'res_con_id' => 'Resident Contact User',
     ),
 
 ];

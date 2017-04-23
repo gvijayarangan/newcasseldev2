@@ -60,14 +60,16 @@ class ResidentsController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'res_pccid' => 'required|integer|digits:4|unique:residents',
+            'res_pccid' => 'required|numeric|digits:4|unique:residents|min:0',
             'res_fname' => 'required|string|Max:50',
             'res_lname' => 'required|string|Max:50',
             'res_gender' => 'required',
             'res_status' => 'required',
-            'res_cellphone' =>'string|digits:10',
-            'res_homephone' =>'string|digits:10',
-            'res_email' => 'email|max:255'
+            'res_cellphone' =>'numeric|digits:10|min:0',
+            'res_homephone' =>'numeric|digits:10|min:0',
+            'res_email' => 'email|max:255',
+            'cntr_name' => 'required|not_in:0',
+            'apt_number' => 'required|not_in:0',
         ]);
         $resident = new Resident();
         $resident->res_pccid = $request -> res_pccid;
@@ -125,14 +127,16 @@ class ResidentsController extends Controller
     public function update(Request $request, $id)
     {
                 $this -> validate ($request, [
-            'res_pccid' => 'required|integer|digits:4',
+            'res_pccid' => 'required|numeric|digits:4|min:0',
             'res_fname' => 'required|string|Max:50',
             'res_lname' => 'required|string|Max:50',
             'res_gender' => 'required',
             'res_status' => 'required',
-            'res_cellphone' =>'string|digits:10',
-            'res_homephone' =>'string|digits:10',
+            'res_cellphone' =>'numeric|digits:10|min:0',
+            'res_homephone' =>'numeric|digits:10|min:0',
             'res_email' => 'email|max:255',
+                    'cntr_name' => 'required|not_in:0',
+                    'apt_number' => 'required|not_in:0',
         ]);
 
         $resident = Resident::find($id);
@@ -165,7 +169,7 @@ class ResidentsController extends Controller
 
             //Delete all comarea for Center
             $conresi = Conresi::where('res_id', '=', $id)->delete();
-            $rescontact = Rescontact::where('con_res_id', '=', $id)->delete();
+            //$rescontact = Rescontact::where('con_res_id', '=', $id)->delete();
             $resident = Resident::where('id', '=', $id)->delete();
 
         }catch(Exception $e) {

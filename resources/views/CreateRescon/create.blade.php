@@ -1,11 +1,22 @@
 @extends('layouts.app')
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
 @section('content')
-    <link href="{!! asset('css/all.css') !!}" media="all" rel="stylesheet" type="text/css"/>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
+                    <div class="pull-left">
+                        <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                            <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                        </form>
+                    </div>
                     <div class="panel-heading text-center"> Create Resident Contact Information</div>
                     <div class="panel-body">
                         @if (count($errors) > 0)
@@ -26,8 +37,9 @@
                             </div>
                         </div>
                         </br> </br>
+
                         <div class="form-group">
-                            {!! Form::label('con_mname', 'Contact Middle Name',['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::label('con_mname', 'Contact Middle Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
                                 {!! Form::text('con_mname',null,['class' => 'col-md-4 form-control']) !!}
                             </div>
@@ -74,33 +86,61 @@
                         </br> </br>
 
 
-                            <div class="form-group">
-                                <span style="color: red; display:block; float:left">*</span>
-                                {!!Form::label('con_gender', 'Gender:',['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-4">
-                                    {{ Form::select('con_gender', [
-                                    'Female' => 'Female',
-                                    'Male' => 'Male'], old('con_gender'), ['class' => 'form-control']) }}
-                                </div>
+                        <div class="form-group">
+                            <span style="color: red; display:block; float:left">*</span>
+                            {!!Form::label('con_gender', 'Gender:',['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-4">
+                                {{ Form::select('con_gender', [
+                                'Male' => 'Male',
+                                'Female' => 'Female'], old('con_gender'), ['class' => 'form-control']) }}
                             </div>
-                            </br> </br>
+                        </div>
+                        </br> </br>
 
-                            <div class="form-group">
-                                <span style="color: red; display:block; float:left">*</span>
-                                {!!Form::label('res_fullname', 'Resident Name:',['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-4">
-                                    {{ Form::select('res_fullname', $residents) }}
-                                </div>
-                            </div>
 
-                            </br> </br>
-                            {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
+                            <span style="color: red; display:block; float:left">*</span>
+                         {{--   {!!Form::label('res_fullname', 'Resident Name:',['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-4">
+                                {{ Form::select('res_fullname', $residents, null, ['placeholder' => 'Please select','class' => 'col-md-4 form-control','required' => 'required']) }}
+                            </div>--}}
 
-                            {!! Form::close() !!}
+                            {!! Form::label('res_fullname', 'ResidentName:', ['class' => 'col-md-2 control-label']) !!}
+                            <div.panel-heading style="padding-left: 15px">
+                                {{ Form::select('res_fullname[]', $residents,
+                                  'default', array('id' => 'residents[]', 'multiple'=>'multiple', 'style' =>'width:75%')),['class'=>'col-md-4 form-control','required' => 'required'] }}
+                            </div.panel-heading>
+
+                        </br> </br>
+                        {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-@stop
+@endsection
+
+@section('footer')
+    <script>
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(document).ready(function ($) {
+            $('select').select2();
+
+
+            $("#residents").select2({
+                placeholder: "Please Select",
+                tags: true
+            })
+        });
+
+
+    </script>
+@endsection

@@ -5,6 +5,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
+                    <div class="pull-left">
+                        <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                            <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                        </form>
+                    </div>
                     <div class="panel-heading text-center" > Create New Common Area</div>
                     <div class="panel-body">
                         @if (count($errors) > 0)
@@ -21,7 +26,7 @@
                             <span style="color: red; display:block; float:left">*</span>
                             {!! Form::label('cntr_id', 'Center Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {{ Form::select('cntr_id', array_merge([0 => 'Please Select']) + $centers, 'default', array('id' => 'center_dropdown')) }}
+                                {{ Form::select('cntr_id', array_merge([0 => 'Please Select']) + $centers, 'default', array('id' => 'center_dropdown','required' => 'required')) }}
                             </div>
                             </br> </br>
                             <span style="color: red; display:block; float:left">*</span>

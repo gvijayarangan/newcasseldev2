@@ -5,6 +5,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
+                    <div class="pull-left">
+                        <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                            <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                        </form>
+                    </div>
                     <div class="panel-heading text-center"> Create Apartment Information</div>
                     <div class="panel-body">
 
@@ -23,7 +28,7 @@
                         <div class="form-group">
                             {!! Form::label('cntr_name', 'Center Name:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::select('cntr_name', $centers ,null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
+                                {!! Form::select('cntr_name', $centers ,null,['placeholder' => 'Please select','class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
                             </br> </br>
                             <span style="color: red; display:block; float:left">*</span>
@@ -40,16 +45,12 @@
                                     {!! Form::text('apt_number',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                                 </div>
                                 </br> </br>
-
-
                                 <div class="form-group">
                                     <div class="form-group">
                                         {!! Form::label('apt_comments', 'Apartment Comments:',['class' => 'col-md-4 control-label']) !!}
                                         <div class="col-md-4">
                                             {!! Form::textarea('apt_comments',null,['class' => 'col-md-4 form-control','rows' => 4, 'cols' => 60]) !!}
                                         </div>
-
-
                                     </div>
                                     </br> </br>
                                     <div class="form-group" style="text-align: center; padding-top: 100px">
@@ -63,4 +64,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 @stop

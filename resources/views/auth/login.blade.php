@@ -1,4 +1,12 @@
 @extends('layouts.app')
+<head>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta http-equiv="cache-control" content="private, max-age=0, no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+</head>
 
 @section('content')
 <div class="container">
@@ -8,8 +16,7 @@
 
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}" input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">E-Mail Address</label>
@@ -67,11 +74,23 @@
 
                         {{--  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp
                         <a class="btn btn-link" href="redirect">Login Using Facebook</a>--}}
-
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+
 @endsection

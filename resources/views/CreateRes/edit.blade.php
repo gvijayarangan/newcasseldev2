@@ -13,6 +13,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
+                    <div class="pull-left">
+                        <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
+                            <button type="submit" id="edit-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                        </form>
+                    </div>
                     <div class="panel-heading text-center" > Update Resident Information</div>
                     <div class="panel-body">
                         @if (count($errors) > 0)
@@ -74,26 +79,25 @@
                                         'Inactive' => 'Inactive',
                                         'Active' => 'Active'], old('res_status'), ['class' => 'form-control']) !!}
                         </div>
-                        <div class="form-group"> 
+                        <div class="form-group">
                             <span style="color: red; display:block; float:left">*</span>
-                            {!! Form::label('cntr_name', 'Center Name:', ['class' => 'col-md-3 control-label']) !!} 
+                            {!! Form::label('cntr_name', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
 
 
-                             
+
                             {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers,$centers_id ,
                                array('id' => 'center_drop', 'class' => 'col-md-4')) }}
                         </div>
-                         
 
-                                                  </br> </br>
+                                            </br> </br>
                         <div class="form-group">
                             <span style="color: red; display:block; float:left">*</span>
-                               {!! Form::label('apt_number', 'Apartment Number:', ['class' => 'col-md-3 control-label']) !!} 
+                             {!! Form::label('apt_number', 'Apartment Number:', ['class' => 'col-md-3 control-label']) !!}
 
                             {{ Form::select('apt_number', array_merge([0 => 'Please Select']) + $apartments,
                             $apartments_id,
                                 array('id' => 'apartment_drop', 'class' => 'col-md-4')) }}
-                             
+                            
                         </div>
 
                         <div class="form-group">

@@ -53,4 +53,8 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 40px;
 }
+.input-group-addon
+{
+  background-color:#FFF;
+}
 

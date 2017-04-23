@@ -36,7 +36,7 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
     protected $redirectPath = '/home';
-    protected $loginPath = '/login';
+    protected $loginPath = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -69,6 +69,8 @@ class AuthController extends Controller
             'role' => 'required',
         ]);
     }
+    protected $maxLoginAttempts = 5; // Amount of bad attempts user can make
+    protected $lockoutTime = 300; // Time for which user is going to be blocked in seconds
 
     /**
      * Create a new user instance after a valid registration.
@@ -94,6 +96,11 @@ class AuthController extends Controller
 
     }
 
+    public function checkSession()
+    {
+        return Response::json(['guest' => Auth::guest()]);
+        $this->middleware('guest', ['except' => ['logout', 'checkSession']]);
+    }
     // Todo: should probably implemeent a trait ChangePassword
     /**
      * Updates the password for the current user.
