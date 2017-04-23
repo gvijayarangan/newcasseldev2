@@ -13,7 +13,7 @@
                                 </button>
                             </form>
                         </div>
-                        <div><h4>{{ $heading }}</h4></div>
+                        <div><h4>Users Information</h4></div>
                     </div>
                     <div class="panel-body">
                         @if (count($users) > 0)
