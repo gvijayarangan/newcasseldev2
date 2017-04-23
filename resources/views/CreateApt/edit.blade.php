@@ -31,12 +31,12 @@
         <span style="color: red; display:block; float:left">*</span>
     <div class="form-group">
         {!! Form::label('apt_floornumber', 'Apartment FloorNumber:') !!}
-        {!! Form::text('apt_floornumber',null,['class'=>'form-control']) !!}
+        {!! Form::number('apt_floornumber',null,['class'=>'form-control']) !!}
     </div>
         <span style="color: red; display:block; float:left">*</span>
     <div class="form-group">
         {!! Form::label('apt_number', 'Apartment Number:') !!}
-        {!! Form::text('apt_number',null,['class'=>'form-control']) !!}
+        {!! Form::number('apt_number',null,['class'=>'form-control']) !!}
     </div>
         <div class="form-group">
             {!! Form::label('apt_comments', 'Apartment Comments:') !!}

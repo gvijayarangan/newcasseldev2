@@ -34,7 +34,7 @@
                             <span style="color: red; display:block; float:left">*</span>
                             {!! Form::label('apt_floornumber', 'Apartment Floor Number:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::text('apt_floornumber',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
+                                {!! Form::number('apt_floornumber',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
                             </br> </br>
 
@@ -42,7 +42,7 @@
                             <div class="form-group">
                                 {!! Form::label('apt_number', 'Apartment Number:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
-                                    {!! Form::text('apt_number',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
+                                    {!! Form::number('apt_number',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                                 </div>
                                 </br> </br>
                                 <div class="form-group">
