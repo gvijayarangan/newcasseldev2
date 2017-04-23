@@ -11,7 +11,7 @@
                                 <button type="submit" id="create-issue" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Create</button>
                             </form>
                         </div>
-                        <div><h4>Issue types Information</h4></div>
+                        <div><h4>Issue Types Information</h4></div>
                     </div>
                     <div class="panel-body">
                         {{--<div class="pull-left">--}}

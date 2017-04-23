@@ -87,7 +87,7 @@ class UsersController extends Controller
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'cell' => 'digits:10|numeric|min:0',
+            'cell' => 'digits:10|integer|min:0',
             'res_con_id' => 'unique:users',
         ]);
         $this->populateCreateFields($input);
@@ -150,7 +150,7 @@ class UsersController extends Controller
         $this->validate($request, [
             'f_name' => 'required|max:255',
             'l_name' => 'required|max:255',
-            'cell' => 'required|digits:10|numeric|min:0',
+            'cell' => 'required|digits:10|integer|min:0',
             //'res_con_id' => 'unique:users',
         ]);
         $this->populateUpdateFields($request);

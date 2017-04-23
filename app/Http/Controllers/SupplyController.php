@@ -57,11 +57,11 @@ class SupplyController extends Controller
     {//dd($request);
         $this->validate($request, [
             //'id' => 'required|integer',
-            'sup_name' => 'required',
+            'sup_name' => 'required|alpha|Max:30',
 
-      'sup_unitprice' => 'required|numeric|min:0',
+            'sup_unitprice' => 'required|numeric|min:0',
 
-            'sup_comment' => 'string',
+            'sup_comment' => 'string|Max:255',
         ]);
         //dd($request);
         $supplydata = new Supply();
@@ -99,7 +99,7 @@ class SupplyController extends Controller
     {
         $this->validate($request, [
 
-            'sup_name' => 'required',
+            'sup_name' => 'required|alpha|Max:30',
             'sup_unitprice' => 'required|numeric|min:0',
        /*     'sup_unitprice'  => [
         'required',
@@ -108,7 +108,7 @@ class SupplyController extends Controller
         'min:1',
         'max:50'
     ],*/
-            'sup_comment' => 'string',
+            'sup_comment' => 'string|Max:255',
         ]);
         $CreateSupply = Supply::find($id);
         $CreateSupply->sup_name = $request->sup_name;
