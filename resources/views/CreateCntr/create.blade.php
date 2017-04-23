@@ -68,7 +68,7 @@
                             <div class="form-group">
                                 {!!Form::label('cntr_zip', 'Center Zip:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
-                                    {!! Form::text('cntr_zip',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
+                                    {!! Form::number('cntr_zip',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
                                 </div>
                             </div>
                             </br> </br>
@@ -76,7 +76,7 @@
                             <div class="form-group">
                                 {!!Form::label('cntr_phone', 'Center Phone:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
-                                    {!! Form::text('cntr_phone',null,['class'=>'col-md-4 form-control']) !!}
+                                    {!! Form::number('cntr_phone',null,['class'=>'col-md-4 form-control']) !!}
                                 </div>
                             </div>
                             </br> </br>
@@ -84,7 +84,7 @@
                             <div class="form-group">
                                 {!!Form::label('cntr_fax', 'Center Fax:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
-                                    {!! Form::text('cntr_fax',null,['class'=>'col-md-4 form-control']) !!}
+                                    {!! Form::number('cntr_fax',null,['class'=>'col-md-4 form-control']) !!}
                                 </div>
                             </div>
 
