@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">--}}
+ {{--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">--}}
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">>
     <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
@@ -144,9 +144,29 @@
             // var selectedCenterIndex;
             data = {option: $(this).val()};
             selectedCenterIndex = data;
+            //Apartment fetch
+            $.get("/getAptDetails", data, function (data) {
+                console.log(data);
+
+                var apartment_data = $('#apartment_dropdown');
+                $("#apartment_dropdown").empty();
+
+                apartment_data.append($("<option></option>")
+                        .attr("value", 0)
+                        .text("Please Select"));
+
+                $.each(data, function (key, value) {
+                    apartment_data.append($("<option></option>")
+                            .attr("value", key)
+                            .text(value));
+                });
+                $('#apartment_dropdown').val(0).change();
+
+            });
             // data = null;
             // data = selectedCenterIndex;
             //Common area fetch
+
             $.get("/getComAreaDetails", data, function (data) {
                 var commonarea_data = $('#commonarea_dropdown');
                 $("#commonarea_dropdown").empty();
@@ -161,7 +181,6 @@
                             .text(value));
                 });
                 $('#commonarea_dropdown').val(0).change();
-                $('#apartment_dropdown').val(0).change();
 
             });
 
@@ -204,15 +223,6 @@
                 //Disable commonarea dropdown
                 $("#commonarea_dropdown").attr('disabled', false);
             }
-        });
-
-        $('#residentname_dropdown').change(function () {
-            data = {option: $(this).val()};
-
-            $.get("/getresidentComments", data, function (data) {
-                $("#resident_comments").val(data);
-                $('.form-control.hidden').removeclass('hidden');
-            });
         });
 
         $('#issuetype_dropdown').change(function () {
