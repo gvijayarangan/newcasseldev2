@@ -53,17 +53,17 @@
     <div class="form-group">
         <span style="color: red; display:block; float:left">*</span>
         {!!Form::label('cntr_zip', 'Center Zip:') !!}
-        {!! Form::text('cntr_zip',null,['class'=>'form-control']) !!}
+        {!! Form::number('cntr_zip',null,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
         {!!Form::label('cntr_phone', 'Center Phone:') !!}
-        {!! Form::text('cntr_phone',null,['class'=>'form-control']) !!}
+        {!! Form::number('cntr_phone',null,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
         {!!Form::label('cntr_fax', 'Center Fax:') !!}
-        {!! Form::text('cntr_fax',null,['class'=>'form-control']) !!}
+        {!! Form::number('cntr_fax',null,['class'=>'form-control']) !!}
     </div>
         <div class="form-group">
             {!!Form::label('cntr_comments', 'Center Comments:') !!}

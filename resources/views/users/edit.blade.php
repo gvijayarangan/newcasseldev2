@@ -11,7 +11,7 @@
                                 <button type="submit" id="delete" class="btn btn-default btn-danger"><i class="fa fa-btn fa-trash"></i>Delete</button>
                             </form>
                         </div>
-                        <div><h4>{{ $heading }}</h4></div>
+                        <div><h4>Edit User Information</h4></div>
                     </div>
 
                     <div class="panel-body">

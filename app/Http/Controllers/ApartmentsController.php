@@ -46,7 +46,7 @@ class ApartmentsController extends Controller
     {//dd($request);
         $this->validate($request, [
             'apt_floornumber' => 'required|numeric|digits_between:1,3|min:0',
-            'apt_number' => 'required|string|digits_between:1,4',
+            'apt_number' => 'required|numeric|digits_between:1,4|min:0',
         ]);
         $apartment = new Apartment();
         $apartment->apt_floornumber = $request->apt_floornumber;
@@ -81,8 +81,8 @@ class ApartmentsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'apt_floornumber' => 'required|numeric|digits_between:1,3|min:0 ',
-            'apt_number' => 'required|string|digits:3',
+            'apt_floornumber' => 'required|numeric|digits_between:1,3|min:0',
+            'apt_number' => 'required|numeric|digits_between:1,4|min:0',
         ]);
 
         $CreateApt = Apartment::find($id);
