@@ -47,19 +47,20 @@ class WorkOrderController extends Controller
         $suppliesdata = Supply::lists('sup_name', 'id')->all();
 
         $user = Auth::user();
+        $centers = Center::lists('cntr_name', 'id')->all();
         if ($user->hasRole('admin') || $user->hasRole('engineer')) {
-            $centers = Center::lists('cntr_name', 'id')->all();
+           // $centers = Center::lists('cntr_name', 'id')->all();
             return view('WorkOrder.workorder', compact('centers', 'issuetypes', 'workers', 'toolsdata', 'suppliesdata'));
         }  else if ($user->hasRole('contact')){
             //Contact or employee location information
-            $centers = DB::table('residents')
+ /*           $centers = DB::table('residents')
                 ->join('conresis', 'conresis.res_id','=','residents.id')
                 ->join('rescontacts', 'conresis.con_id','=','rescontacts.id')
                 ->join('users', 'users.res_con_id','=','rescontacts.id')
                 ->join('centers','centers.id','=','residents.res_cntr_id')
                 ->where('users.id','=',Auth::user()->getUserId())
                 ->select('centers.cntr_name','centers.id')
-                ->lists('cntr_name','id');
+                ->lists('cntr_name','id');*/
 
             $apartment_data = DB::table('residents')
                 ->join('conresis', 'conresis.res_id','=','residents.id')
@@ -82,8 +83,8 @@ class WorkOrderController extends Controller
             return view('WorkOrder.workorderContact', compact('centers', 'issuetypes', 'workers', 'toolsdata',
                 'suppliesdata','apartment_data','residents','user'));
         } else if($user->hasRole('employee')) {
-            $centers = Center::lists('cntr_name', 'id')->all();
-            return view('WorkOrder.workorderContact', compact('centers', 'issuetypes', 'workers', 'toolsdata',
+           // $centers = Center::lists('cntr_name', 'id')->all();
+            return view('WorkOrder.workorderEmployee', compact('centers', 'issuetypes', 'workers', 'toolsdata',
                 'suppliesdata','user'));
         }
     }
