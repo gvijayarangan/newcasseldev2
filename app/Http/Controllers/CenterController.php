@@ -55,10 +55,10 @@ class CenterController extends Controller
     public function store(Request $request)
     {//dd($request);
         $this->validate($request, [
-            'cntr_name' => 'required|string|Max:20',
-            'cntr_add1' => 'required|string|Max:30',
-            'cntr_city' => 'required|string|Max:20',
-            'cntr_state' => 'required|string|Max:20',
+            'cntr_name' => 'required|Alpha|string|Max:20',
+            'cntr_add1' => 'required|Alpha|string|Max:30',
+            'cntr_city' => 'required|Alpha|string|Max:20',
+            'cntr_state' => 'required|Alpha|string|Max:20',
             'cntr_zip' => 'required|numeric|digits:5|min:0',
             'cntr_phone' => 'numeric|digits:10|min:0',
             'cntr_fax' => 'numeric|digits:10|min:0',
@@ -100,10 +100,10 @@ class CenterController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'cntr_name' => 'required|string|Max:20',
-            'cntr_add1' => 'required|string|Max:30',
-            'cntr_city' => 'required|string|Max:20',
-            'cntr_state' => 'required|string|Max:20',
+            'cntr_name' => 'required|Alpha|string|Max:20',
+            'cntr_add1' => 'required|Alpha|string|Max:30',
+            'cntr_city' => 'required|Alpha|string|Max:20',
+            'cntr_state' => 'required|Alpha|string|Max:20',
             'cntr_zip' => 'required|numeric|digits:5|min:0',
             'cntr_phone' => 'numeric|digits:10|min:0',
             'cntr_fax' => 'numeric|digits:10|min:0',

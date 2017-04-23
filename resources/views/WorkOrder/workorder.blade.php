@@ -15,7 +15,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <br> <br>
                 <div class="panel panel-default">
                     <div class="panel-heading"> Work Order Form</div>
@@ -29,166 +29,170 @@
                         </div>
                     @endif
 
-                    <div class="panel-body" style="padding-left: 15%">
+                    <div class="panel-body">
                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                         <input type="hidden" name="supplyData" id="supplyData" value="">
 
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-sm-4">
-                            {!! Form::text('requestor_name',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
-                        </div.panel-heading>
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
+                            {!! Form::text('requestor_name',null,['class'=>'form-control','placeholder' => 'Name'], array('id' => 'requestername')) !!}
+                        </div>
 
                         </br> </br>
-                        <span style="color: red; display:block; float:left">*</span>
+
 
                         {!! Form::label('cntr_name', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
+                            <span style="color: red; display:block; float:left">*</span>
                             <div class="form-group">
-                                {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
-                                 array('id' => 'center_dropdown', 'class' => 'col-md-4','required' => 'required')) }}
+                                {{ Form::select('cntr_name', $centers, 'default',
+                                ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','required' => 'required','placeholder' => 'Please Select'],
+                                 array('id' => 'center_dropdown')) }}
                             </div>
-                        </div.panel-heading>
+                        </div>
 
                         </br> </br>
 
 
                         {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('apt_id', array_merge([0 => 'Please Select']), 'default',
-                            array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
-                        </div.panel-heading>
+                            ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3'],
+                            array('id' => 'apartment_dropdown')) }}
+                        </div>
 
                         </br> </br>
 
                         {!! Form::label('residentname', 'Resident Name:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('residentname', array_merge([0 => 'Please Select']),
-                            'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
-                        </div.panel-heading>
+                            'default',['class' =>'col-md-offset-3 col-md-6 col-md-pull-3'],
+                            array('id' => 'residentname_dropdown')) }}
+                        </div>
 
                         </br> </br>
 
                         {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('ca_id', array_merge([0 => 'Please Select']), 'default',
-                            array('id' => 'commonarea_dropdown', 'class' => 'col-md-4')) }}
-                        </div.panel-heading>
+                            array('id' => 'commonarea_dropdown', 'class' => 'col-md-offset-3 col-md-6 col-md-pull-3')) }}
+                        </div>
 
 
                         </br> </br>
 
                         {!! Form::label('resident_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-6">
+                        <div class="col-md-offset-1 col-md-8 col-md-pull-1">
                             {!! Form::text('resident_comments',null,
-                            array('id' => 'resident_comments','readonly' => true,'size'=>70)) !!}
-                          </div.panel-heading>
+                            ['class'=>'col-md-offset-2 col-md-8 col-md-pull-2 form-control','readonly'],
+                            array('id' => 'resident_comments')) !!}
+                        </div>
 
                         </br> </br>
 
 
                         {!! Form::label('status', 'Status:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-6">
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {!! Form::select('order_status', ['Open' => 'Open'],
-                              'default', array('class' => 'col-md-6')) !!}
-                        </div.panel-heading>
+                              'default', array('class' => 'col-md-offset-3 col-md-6 col-md-pull-3')) !!}
+                        </div>
 
                         </br> </br>
 
 
                         {!! Form::label('priority', 'Priority:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-                            {!! Form::select('order_priority', ['Please Select' => 'Please Select', 'Low' => 'Low', 'Moderate' => 'Moderate', 'High' => 'High'],
-                            'default', array('class' => 'col-md-4')) !!}
-                        </div.panel-heading>
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
+                            {!! Form::select('order_priority', ['Low' => 'Low', 'Moderate' => 'Moderate', 'High' => 'High'],
+                            'default',['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','placeholder' => 'Please Select']) !!}
+                        </div>
 
 
                         </br> </br>
 
 
-
-
                         {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-4">
-                            {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default', array('id' => 'issuetype_dropdown')) }}
-                        </div.panel-heading>
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
+                            {{ Form::select('issuetype', $issuetypes, 'default',
+                            ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3','placeholder' => 'Please Select'],
+                             array('id' => 'issuetype_dropdown')) }}
+                        </div>
 
                         </br> </br>
 
                         {!! Form::label('issuedescription', 'Issue Description:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-                            {!! Form::text('issuedescription',null, array('id' => 'issuedescription', 'readonly' => true,'size'=>70)) !!}
-                        </div.panel-heading>
+                        <div class="col-md-offset-1 col-md-8 col-md-pull-1">
+                            {!! Form::text('issuedescription',null, ['class'=>'col-md-offset-1 col-md-8 col-md-pull-1 form-control','readonly'],
+                            array('id' => 'issuedescription')) !!}
+                        </div>
 
                         </br> </br>
 
                         {!! Form::label('wodescription', 'Work Order Description:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-                            {!! Form::text('order_description',null,['class'=>'form-control']) !!}
-                        </div.panel-heading>
+                        <div class="col-md-offset-1 col-md-8 col-md-pull-1">
+                            {!! Form::text('order_description',null,
+                            ['class'=>'form-control col-md-offset-1 col-md-8 col-md-pull-1','placeholder' => 'Briefly describe your issue']) !!}
+                        </div>
 
                         </br> </br>
 
                         {!! Form::label('assigntype', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-6">
-                            {{ Form::select('assign_user_id', array_merge([0 => 'Please Select']) + $workers, 'default',
-                             array('id' => 'assigntype_dropdown','class' => 'col-md-6')) }}
-                        </div.panel-heading>
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
+                            {{ Form::select('assign_user_id', $workers, 'default',
+                            ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3','placeholder' => 'Please Select'],
+                             array('id' => 'assigntype_dropdown')) }}
+                        </div>
 
                         </br> </br>
 
 
                         {!! Form::label('toolsused', 'Tools used:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading style="padding-left: 15px">
+                        <div class="col-md-offset-1 col-md-8 col-md-pull-1">
                             {{ Form::select('toolsused_id[]', $toolsdata,
-                              'default', array('id' => 'tools_data[]', 'multiple'=>'multiple', 'style' =>'width:75%')) }}
-                        </div.panel-heading>
+                              'default', ['class'=>'col-md-offset-1 col-md-8 col-md-pull-1','placeholder' => 'Please select'],
+                              array('id' => 'tools_data[]', 'multiple'=>'multiple')) }}
+                        </div>
 
                         </br> </br>
                     </div>
 
                     <div class="row">
                         <!-- panel preview -->
-                        <div class="col-sm-4" style="padding-left: 50px">
-                            <h4 class="text-info" style="padding-left: 25px">Supply Information:</h4>
+                        <div class="col-md-6">
                             <div class="panel panel-default">
+                                <div class="panel-heading">Supply Information</div>
                                 <div class="panel-body form-horizontal payment-form">
                                     <div class="form-group">
-                                        <label for="concept" class="col-sm-3 control-label">Supply Name</label>
-                                        <div class="col-sm-6">
+                                        <label for="concept" class="col-md-4 control-label">Supply Name</label>
+                                        <div class="col-md-6">
                                             {{ Form::select('supply', array_merge([0 => 'Please Select']) + $suppliesdata,
-                                           'default', array('id' => 'supply_dropdown')) }}
+                                           'default', ['class'=>'col-md-6 form-control'],array('id' => 'supply_dropdown')) }}
                                         </div>
                                     </div>
-                                 <div class="form-group">
-
-                                        <label for="amount" class="col-sm-3 control-label">Unit Price</label>
-
-                                         <div class= "col-sm-6 input-group" >
-                                             <span class="input-group-addon">$</span>
-
-                                       <input type="text" class="form-control" placeholder="unitprice" id="unitprice" name="unitprice"
-                                                readonly>
-
-                                       </div>
-
-                                </div>
+                                    <div class="form-group">
+                                        <label for="amount" class="col-md-4 control-label">Unit Price</label>
+                                        <div class="col-md-6 input-group">
+                                            <span class="input-group-addon">$</span>
+                                            <input type="text" class="form-control" placeholder="unitprice"
+                                                   id="unitprice" name="unitprice"
+                                                   readonly>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group">
-                                        <label for="description" class="col-sm-3 control-label">Unit</label>
-                                        <div class="col-sm-6">
+                                        <label for="description" class="col-md-4 control-label">Unit</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="unit" name="unit" disabled>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="status" class="col-sm-3 control-label">Total</label>
-                                        <div class="col-sm-6">
+                                        <label for="status" class="col-md-4 control-label">Total</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="total" name="total" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-sm-12 text-left">
+                                        <div class="col-md-12 text-left">
                                             <button id="addDetails" type="button"
                                                     class="btn btn-default preview-add-button">
                                                 <span class="glyphicon glyphicon-plus"></span> Add
@@ -199,10 +203,10 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-7">
-                            <h4 class="text-info">Supply Summary:</h4>
-                            <div class="row">
-                                <div class="col-xs-12 panel panel-default">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supply Summary</div>
+                                <div class="panel-body">
                                     <div class="table-responsive">
                                         <table id="dataSupplyTable" class="table preview-table">
                                             <thead>
@@ -218,12 +222,11 @@
                                     </div>
                                     <br><br><br><br>
                                     {!! Form::label('totalOrderAmountLabel', 'Work Order Total Cost:' ,['class' => 'col-md-4 control-label']) !!}
-                                    <div class="col-sm-6 ">
+                                    <div class="col-md-6">
                                         {!! Form::text('order_total_cost',null, array('id' => 'totalOrderAmount', 'readonly' =>true)) !!}
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="form-group" style="text-align: center">
