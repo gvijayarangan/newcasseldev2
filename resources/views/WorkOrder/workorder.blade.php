@@ -286,13 +286,13 @@
                 $("#apartment_dropdown").empty();
 
                 apartment_data.append($("<option></option>")
-                    .attr("value", 0)
-                    .text("Please Select"));
+                        .attr("value", 0)
+                        .text("Please Select"));
 
                 $.each(data, function (key, value) {
                     apartment_data.append($("<option></option>")
-                        .attr("value", key)
-                        .text(value));
+                            .attr("value", key)
+                            .text(value));
                 });
                 $('#apartment_dropdown').val(0).change();
 
@@ -305,13 +305,13 @@
                 $("#commonarea_dropdown").empty();
 
                 commonarea_data.append($("<option></option>")
-                    .attr("value", 0)
-                    .text("Please Select"));
+                        .attr("value", 0)
+                        .text("Please Select"));
 
                 $.each(data, function (key, value) {
                     commonarea_data.append($("<option></option>")
-                        .attr("value", key)
-                        .text(value));
+                            .attr("value", key)
+                            .text(value));
                 });
                 $('#commonarea_dropdown').val(0).change();
 
@@ -333,15 +333,15 @@
                     if (data.length != 0) {
                         $.each(data, function (key, value) {
                             resident_data.append($("<option></option>")
-                                .attr("value", key)
-                                .text(value));
+                                    .attr("value", key)
+                                    .text(value));
                         });
                         //Show the first index upon change
                         $('#residentname_dropdown').val(Object.entries(data)[0][0]).change();
                     } else {
                         resident_data.append($("<option></option>")
-                            .attr("value", 0)
-                            .text("Resident not occupied"));
+                                .attr("value", 0)
+                                .text("Resident not occupied"));
                         $('#residentname_dropdown').val(0).change();
                     }
                 });
@@ -349,8 +349,8 @@
                 //Empty resident information
                 $("#residentname_dropdown").empty();
                 $("#residentname_dropdown").append($("<option></option>")
-                    .attr("value", 0)
-                    .text("Please Select"));
+                        .attr("value", 0)
+                        .text("Please Select"));
                 $('#residentname_dropdown').val(0).change();
 
                 //Disable commonarea dropdown
@@ -410,12 +410,12 @@
 
 
         $('#addDetails').click(function () {
-            if ($("#supply_dropdown option:selected").val() != 0 && $("#unit").val() != '' && $("#unit").val() > 0) {
+            if ($("#supply_dropdown option:selected").val() != 0 && $("#unit").val() != '' && $("#unit").val() >0 ) {
 
                 var order_data = {};
                 order_data["SupplyName"] = $("#supply_dropdown option:selected").text();
                 order_data["unit"] = $("#unit").val();
-                order_data["unitPrice"] = "$" + $("#unitprice").val();
+                order_data["unitPrice"] = "$"+$("#unitprice").val();
                 order_data["total"] = $("#total").val();
                 order_data["remove-row"] = '<span class="glyphicon glyphicon-remove"></span>';
 
@@ -435,25 +435,25 @@
                 $("#supply_dropdown option:eq(0)").prop("selected", true).change();
 
 
-                var tableData = $.param($('#dataSupplyTable td').map(function () {
+                var tableData = $.param($('#dataSupplyTable td').map(function() {
                     return {
                         name: $(this).attr('name'),
                         value: $(this).text().trim()
                     };
                 }));
 
-                $("#supplyData").val("" + tableData + "");
+                $("#supplyData").val(""+tableData+"");
                 console.log(tableData);
             }
         });
 
         $('#unit').change(function () {
 
-            if ($('#unit').val() > 0) {
+            if($('#unit').val()>0){
 
-                var totalAmount = $('#unit').val() * $('#unitprice').val();
-                totalAmount = totalAmount.toFixed(2);
-                $('#total').val(totalAmount);
+            var totalAmount = $('#unit').val() * $('#unitprice').val();
+            totalAmount = totalAmount.toFixed(2);
+            $('#total').val(totalAmount);
             }
         });
 
@@ -461,14 +461,14 @@
             var tr = $(this).closest('tr');
             tr.remove();
             calculateTotalAmount();
-            var tableData = $.param($('#dataSupplyTable td').map(function () {
+            var tableData = $.param($('#dataSupplyTable td').map(function() {
                 return {
                     name: $(this).attr('name'),
                     value: $(this).text().trim()
                 };
             }));
 
-            $("#supplyData").val("" + tableData + "");
+            $("#supplyData").val(""+tableData+"");
             console.log(tableData);
         });
 
