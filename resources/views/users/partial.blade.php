@@ -100,34 +100,11 @@
                     </div>
                 </div>
 
-                {{--
-                <div class="form-group{{ $errors->has('cell') ? ' has-error' : '' }}">
-                    {!! Form::label('cell', '*Cell Phone:', ['class' => 'col-md-4 control-label']) !!}
-                    <div class="col-md-4">
-                        {!! Form::text('cell', null, ['class' => 'col-md-4 form-control', 'required' => 'required']) !!}
-                        @if ($errors->has('cell'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('cell') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div>
-                --}}
-              {{--   <div class="form-group{{ $errors->has('cell') ? ' has-error' : '' }}">
-                    {!! Form::label('cell', '*Cell Phone:', ['class' => 'col-md-4 control-label']) !!}
-                    <div class="col-md-4">
-                        {!! Form::number('cell', null, ['id' => 'mobile', 'class' => 'col-md-4 form-control', 'required' => 'required']) !!}
-                        @if ($errors->has('cell'))
-                            <span class="help-block">
-                <strong>{{ $errors->first('cell') }}</strong>
-            </span>
-                        @endif
-                    </div>
-                </div> --}}
+
                 <div class="form-group{{ $errors->has('cell') ? ' has-error' : '' }}">
                     {!! Form::label('cell', 'Cellphone:',['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
-                        {!! Form::text('cell',null,['class' => 'col-md-6 form-control']) !!}
+                        {!! Form::text('cell',null,['id' => 'mobile','class' => 'col-md-6 form-control']) !!}
 
                         @if ($errors->has('cell'))
                             <span class="help-block">
@@ -161,7 +138,7 @@
                     @if($CRUD_Action == 'Create')
                         {!! Form::button('<i class="fa fa-btn fa-save"></i>Register', ['type' => 'submit', 'class' => 'btn btn-success']) !!}
 
-                        {!! Form::reset('Reset', ['type' => 'reset','value'=>'Clear form', 'class' => 'btn btn-default']) !!}
+                        {{-- {!! Form::reset('Reset', ['type' => 'reset','value'=>'Clear form', 'class' => 'btn btn-default']) !!}--}}
 
                         <a class="btn btn-primary"
                            href="{{ route('users.index') }}">
@@ -170,7 +147,7 @@
                     @else
                         {!! Form::button('<i class="fa fa-btn fa-save"></i>Update', ['type' => 'submit', 'class' => 'btn btn-warning']) !!}
 
-                        {!! Form::button('Cancel', ['type' => 'submit', 'class' => 'btn btn-default', 'onClick' => 'users']) !!}
+                        {{-- {!! Form::button('Cancel', ['type' => 'submit', 'class' => 'btn btn-default', 'onClick' => 'users']) !!}--}}
 
                         <a class="btn btn-primary"
                            href="{{ route('users.index') }}">
@@ -179,11 +156,15 @@
                 </div>
         </div>
 </div>
-</div>
-</div>
+
 
 
 <script>
+
+    $(document).ready(function() {
+        $('#mobile').mask('(000) 000-0000');
+    });
+
     $(document).ready(function ($) {
         if ($('#roles-select-id :selected').text() == 'Administrator') {
             $("#resident-con-id").prop("disabled", true);
@@ -232,9 +213,8 @@
                 $("#l_name").val(data[0].con_lname);
                 $("#email_id").val(data[0].con_email);
                 $("#mobile").val(data[0].con_cellphone);
-             });
+            });
         }
-
     });
 
 </script>
