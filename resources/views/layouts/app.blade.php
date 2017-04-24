@@ -51,6 +51,7 @@
         crossorigin="anonymous"></script>
 <script src="{{ asset('js/all.js') }}"></script>
 <script src="{{ URL::asset('js/jquery-comments.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>
 
 <!-- Navigation Bar -->
 @include('common.nav')
