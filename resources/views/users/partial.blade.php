@@ -19,7 +19,7 @@
             @else
                 {!! Form::label('res_con_id', '*Resident Contact:', ['class' => 'col-md-4 control-label']) !!}
                 <div class="col-md-6">
-                    {!! Form::select('res_con_id',$res_con, old('res_con_id'), ['placeholder' => 'Please select','id' => 'resident-con-id', 'class' => 'col-md-6 form-control']) !!}
+                    {!! Form::select('res_con_id',$res_con, null, ['placeholder' => 'Please select','id' => 'resident-con-id', 'class' => 'col-md-6 form-control']) !!}
 
                     @endif
                     @if ($errors->has('res_con_id'))
@@ -48,7 +48,7 @@
                 {!! Form::text('m_name', null, ['id' => 'm_name', 'class' => 'col-md-6 form-control']) !!}
                 @if ($errors->has('m_name'))
                     <span class="help-block">
-                <strong>{{ $errors->middle('m_name') }}</strong>
+                <strong>{{ $errors->first('m_name') }}</strong>
             </span>
                 @endif
             </div>
@@ -60,7 +60,7 @@
                 {!! Form::text('l_name', null, ['id' => 'l_name', 'class' => 'col-md-6 form-control', 'required' => 'required']) !!}
                 @if ($errors->has('l_name'))
                     <span class="help-block">
-                <strong>{{ $errors->last('l_name') }}</strong>
+                <strong>{{ $errors->first('l_name') }}</strong>
             </span>
                 @endif
             </div>
@@ -158,14 +158,50 @@
 </div>
 
 
-
 <script>
 
-    $(document).ready(function() {
-        $('#mobile').mask('(000) 000-0000');
+    $(document).ready(function () {
+        $('#mobile').mask('(000) 000-0000', {placeholder: "(___) ___-____"});
+    });
+
+    $('#mobile').blur(function () {
+        var input = $(this);
+        if (input.val().length > 0 && input.val().length < 14) {
+            alert('Please enter correct phone number, else leave blank');
+            setTimeout(function () {
+                $(input).focus();
+            }, 1);
+        }
+    });
+
+    $('#f_name').blur(function(){
+        var input = $(this);
+        if(input.val()==' ') {
+            alert('Enter proper first name (just spaces are not allowed).');
+            setTimeout(function(){
+                $(input).focus();
+            }, 1);
+        }
+    });
+
+
+    $('#l_name').blur(function(){
+        var input = $(this);
+        if(input.val()==' ') {
+            alert('Enter proper last name (just spaces are not allowed).');
+            setTimeout(function(){
+                $(input).focus();
+            }, 1);
+        }
     });
 
     $(document).ready(function ($) {
+
+        if ($('#roles-select-id :selected').text() == 'Please select') {
+            $("#resident-con-id").prop("disabled", true);
+            $("#roles-select-id").prop("disabled", false);
+        }
+
         if ($('#roles-select-id :selected').text() == 'Administrator') {
             $("#resident-con-id").prop("disabled", true);
             $("#roles-select-id").prop("disabled", true);
@@ -179,6 +215,7 @@
             $("#resident-con-id").prop("disabled", true);
             $("#roles-select-id").prop("disabled", true);
         }
+
         if ($('#roles-select-id :selected').text() == 'Contact') {
             $("#resident-con-id").prop("disabled", true);
             $("#roles-select-id").prop("disabled", true);
@@ -214,6 +251,11 @@
                 $("#email_id").val(data[0].con_email);
                 $("#mobile").val(data[0].con_cellphone);
             });
+            $("#f_name").prop("disabled", true);
+            $("#m_name").prop("disabled", true);
+            $("#l_name").prop("disabled", true);
+            $("#email_id").prop("disabled", true);
+            $("#mobile").prop("disabled", true);
         }
     });
 

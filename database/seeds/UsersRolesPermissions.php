@@ -30,15 +30,6 @@ class UsersTableSeeder extends Seeder {
         User::create([ 'f_name' => 'Gopinath','m_name' => 'test', 'l_name' => 'Vijayarangan', 'password' => bcrypt('secret'), 'email' => 'gvijayarangan@unomaha.edu', 'active' => true,
             'comment' => 'test', 'cell' => '9876789879', 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create()]);
 
-        /*User::create([ 'f_name' => 'Walter','m_name' => 'test', 'l_name' => 'White', 'password' => bcrypt('secret'), 'email' => 'walter@unomaha.edu', 'active' => true,
-            'comment' => 'test', 'cell' => '9876789879', 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create()]);*/
-
-       /* User::create([ 'f_name' => 'Flynn','m_name' => 'test', 'l_name' => 'Jr', 'password' => bcrypt('secret'), 'email' => 'flynn@unomaha.edu', 'active' => true,
-            'comment' => 'test', 'cell' => '9876789879', 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create()]);*/
-
-        User::create([ 'f_name' => 'Korvah','m_name' => 'test', 'l_name' => ' ', 'password' => bcrypt('secret'), 'email' => 'tkorvah@unomaha.edu', 'active' => true,
-            'comment' => 'test', 'cell' => '9876789879', 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create()]);
-
         User::create([ 'f_name' => 'Anjani','m_name' => 'test', 'l_name' => 'Danthuluri', 'password' => bcrypt('secret'), 'email' => 'anjani@unomaha.edu', 'active' => true,
             'comment' => 'test', 'cell' => '9876789879', 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create()]);
 
@@ -104,26 +95,10 @@ class RoleUserTableSeeder extends Seeder {
         $role_user = [ ['role_id' => $role, 'user_id' => $user, 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create() ] ];
         DB::table('role_user')->insert($role_user);
 
-
-        $user = User::where('f_name', '=', 'Korvah')->first()->id;
-        $role = Role::where('name', '=', 'admin')->first()->id;
-        $role_user = [ ['role_id' => $role, 'user_id' => $user, 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create() ] ];
-        DB::table('role_user')->insert($role_user);
-
         $user = User::where('f_name', '=', 'Anjani')->first()->id;
         $role = Role::where('name', '=', 'admin')->first()->id;
         $role_user = [ ['role_id' => $role, 'user_id' => $user, 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create() ] ];
         DB::table('role_user')->insert($role_user);
-
-        /*$user = User::where('f_name', '=', 'Walter')->first()->id;
-        $role = Role::where('name', '=', 'contact')->first()->id;
-        $role_user = [ ['role_id' => $role, 'user_id' => $user, 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create() ] ];
-        DB::table('role_user')->insert($role_user);
-
-        $user = User::where('f_name', '=', 'Flynn')->first()->id;
-        $role = Role::where('name', '=', 'contact')->first()->id;
-        $role_user = [ ['role_id' => $role, 'user_id' => $user, 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create() ] ];
-        DB::table('role_user')->insert($role_user);*/
 
     }
 }
