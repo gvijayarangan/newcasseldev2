@@ -58,7 +58,7 @@ class CommonareaController extends Controller
     {
         $this -> validate($request, [
             'ca_name' => 'required|string|Max:50',
-            'cntr_name' => 'required|not_in:0',
+            //'cntr_name' => 'required|not_in:0',
             //'ca_comments' => 'required|string:Max:255',
 
         ]);

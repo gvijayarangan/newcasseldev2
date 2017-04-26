@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('res_con_id')->references('id')->on('rescontacts')->onDelete('cascade');
         });
     }
     /**
