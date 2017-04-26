@@ -64,7 +64,7 @@
                         <div class="form-group">
                             {!!Form::label('con_cellphone', 'Cellphone:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::text('con_cellphone',null,['class'=>'col-md-4 form-control']) !!}
+                                {!! Form::text('con_cellphone',null,['id' => 'mobile','class'=>'col-md-4 form-control']) !!}
                             </div>
                         </div>
                         </br> </br>
@@ -141,6 +141,19 @@
             })
         });
 
+        $(document).ready(function() {
+            $('#mobile').mask('(000) 000-0000',{placeholder: "(___) ___-____"});
+        });
+
+        $('#mobile').blur(function(){
+            var input = $(this);
+            if(input.val().length > 0 && input.val().length < 14) {
+                alert('Please enter correct phone number, else leave blank');
+                setTimeout(function(){
+                    $(input).focus();
+                }, 1);
+            }
+        });
 
     </script>
 @endsection

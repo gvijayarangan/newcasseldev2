@@ -86,7 +86,7 @@
                     <div class="form-group">
                         {!! Form::label('res_homephone', 'Home Phone:',['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-4">
-                            {!! Form::text('res_homephone',null,['class'=>'form-control']) !!}
+                            {!! Form::text('res_homephone',null,['id' => 'home','class'=>'form-control']) !!}
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@
                     <div class="form-group">
                         {!! Form::label('res_cellphone', 'Cellphone:',['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-4">
-                            {!! Form::text('res_cellphone',null,['class'=>'form-control']) !!}
+                            {!! Form::text('res_cellphone',null,['id' => 'mobile','class'=>'form-control']) !!}
                         </div>
                     </div>
 
@@ -175,6 +175,34 @@
 
     $(document).ready(function ($) {
 
+    });
+
+    $(document).ready(function() {
+        $('#mobile').mask('(000) 000-0000',{placeholder: "(___) ___-____"});
+    });
+
+    $('#mobile').blur(function(){
+        var input = $(this);
+        if(input.val().length > 0 && input.val().length < 14) {
+            alert('Please enter correct phone number, else leave blank');
+            setTimeout(function(){
+                $(input).focus();
+            }, 1);
+        }
+    });
+
+    $(document).ready(function() {
+        $('#home').mask('(000) 000-0000',{placeholder: "(___) ___-____"});
+    });
+
+    $('#home').blur(function(){
+        var input = $(this);
+        if(input.val().length > 0 && input.val().length < 14) {
+            alert('Please enter correct phone number, else leave blank');
+            setTimeout(function(){
+                $(input).focus();
+            }, 1);
+        }
     });
 
     $('#center_drop').change(function () {
