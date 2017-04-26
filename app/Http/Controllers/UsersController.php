@@ -84,8 +84,8 @@ class UsersController extends Controller
         $input = $request->all();
         $this->validate($request, [
             'rolelist' => 'required',
-            'f_name' => 'required|max:255',
-            'l_name' => 'required|max:255',
+            'f_name' => 'required|string|Max:50',
+            'l_name' => 'required|string|Max:50',
             'email' => 'required|email|max:255|unique:users',
             //'cell' => 'digits:10|min:0',
             'res_con_id' => 'unique:users',
@@ -148,8 +148,8 @@ class UsersController extends Controller
         $object = $users;
         Log::info('UsersController.update - Start: ' . $object->id . '|' . $object->name);
         $this->validate($request, [
-            'f_name' => 'required|max:255',
-            'l_name' => 'required|max:255',
+            'f_name' => 'required|string|Max:50',
+            'l_name' => 'required|string|Max:50',
             //'cell' => 'digits:10|min:0',
             //'res_con_id' => 'unique:users',
         ]);
