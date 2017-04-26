@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Rescontact;
 use App\Conresi;
 use App\Resident;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
 
@@ -218,7 +219,19 @@ class RescontactsController extends Controller
      */
     public function destroy($id)
     {
-        Rescontact::find($id)->delete();
+        //Rescontact::find($id)->delete();
+        try {
+            /*DB::connection()->pdo->beginTransaction();*/
+
+            //Delete all comarea for Center
+            $users = User::where('res_con_id', '=', $id)->delete();
+            //$rescontact = Rescontact::where('con_res_id', '=', $id)->delete();
+            $rescontact = Rescontact::where('id', '=', $id)->delete();
+
+        }catch(Exception $e) {
+            /*DB::connection()->pdo->rollBack();*/
+            Log::exception($e);
+        }
         return redirect('rescontact');
     }
 }
