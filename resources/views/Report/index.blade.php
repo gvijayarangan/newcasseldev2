@@ -79,7 +79,7 @@
                         {!! Form::label('status', 'Status:', ['class' => 'col-md-3 control-label']) !!}
                         <div.panel-heading class="col-md-8">
                             {!! Form::select('order_status', ['Please Select' => 'Please Select','Open' => 'Open','In Progress' => 'In Progress',
-                               'Wait for third party vendor' => 'Wait for third party vendor','Complete' => 'Complete', 'Close' => 'Close'],
+                               'Wait for third party vendor' => 'Wait for third party vendor','Complete' => 'Complete', 'closed' => 'closed'],
                               'default', array('class' => 'col-md-4')) !!}
                         </div.panel-heading>
                         </br> </br>

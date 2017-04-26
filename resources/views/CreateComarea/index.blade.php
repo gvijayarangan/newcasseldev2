@@ -48,10 +48,10 @@
 
                                             <td class="table-text"><div><a href="{{url('commonarea',$createcomarea->id)}}" class="btn btn-primary ">View</a>
                                                     <a href="{{url('commonarea/update',$createcomarea->id)}}"class="btn btn-warning">Modify</a>
-                                                    <a href="{{url('commonarea/destroy',$createcomarea->id)}}" onclick='return confirm("Are you sure?")' class="btn btn-danger">Delete</a>
-                                                </div></td>
+                                        {{--  <a href="{{url('commonarea/destroy',$createcomarea->id)}}" onclick='return confirm("Are you sure?")' class="btn btn-danger">Delete</a>
+                                      </div></td> --}}
 
-                                        </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
+                              </tr>                                                {{--{!! Form::open(['method' => 'DELETE', 'route'=>['apartment.destroy', $createapt->id],'onsubmit' => 'return ConfirmDelete()']) !!}--}}
                                         {{--{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}--}}
                                         {{--{!! Form::close() !!}--}}
 
