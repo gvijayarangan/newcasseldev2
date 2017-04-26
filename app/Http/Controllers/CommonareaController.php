@@ -103,10 +103,10 @@ class CommonareaController extends Controller
     }
 
 
-    public function destroy($id)
-    {
-        Comarea::find($id)->delete();
-        return redirect('commonarea');
-    }
+//    public function destroy($id)
+//    {
+//        Comarea::find($id)->delete();
+//        return redirect('commonarea');
+//    }
 
 }

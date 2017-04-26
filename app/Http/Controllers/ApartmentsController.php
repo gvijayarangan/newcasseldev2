@@ -100,22 +100,22 @@ class ApartmentsController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
-    {
-        try {
-            /*DB::connection()->pdo->beginTransaction();*/
-
-            //Delete all comarea for Center
-            $aptresi = Aptresi::where('apt_id', '=', $id)->delete();
-            $resident = Resident::where('res_apt_id', '=', $id)->delete();
-            $apartment = Apartment::where('id', '=', $id)->delete();
-
-        }catch(Exception $e) {
-            /*DB::connection()->pdo->rollBack();*/
-            Log::exception($e);
-        }
-        return redirect('apartment');
-    }
+//    public function destroy($id)
+//    {
+//        try {
+//            /*DB::connection()->pdo->beginTransaction();*/
+//
+//            //Delete all comarea for Center
+//            $aptresi = Aptresi::where('apt_id', '=', $id)->delete();
+//            $resident = Resident::where('res_apt_id', '=', $id)->delete();
+//            $apartment = Apartment::where('id', '=', $id)->delete();
+//
+//        }catch(Exception $e) {
+//            /*DB::connection()->pdo->rollBack();*/
+//            Log::exception($e);
+//        }
+//        return redirect('apartment');
+//    }
 
 //    public function search(Request $request)
 //    {
