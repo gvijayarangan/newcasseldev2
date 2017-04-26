@@ -42,25 +42,24 @@ class WorkOrderController extends Controller
             ->where('roles.name','=','engineer')
             ->select(DB::raw("CONCAT(f_name, ' ',l_name) as fullname, users.id"))
             ->lists('fullname', 'id');
-
         $toolsdata = Tool::lists('tool_name', 'id')->all();
         $suppliesdata = Supply::lists('sup_name', 'id')->all();
 
         $user = Auth::user();
         $centers = Center::lists('cntr_name', 'id')->all();
         if ($user->hasRole('admin') || $user->hasRole('engineer')) {
-           // $centers = Center::lists('cntr_name', 'id')->all();
+            // $centers = Center::lists('cntr_name', 'id')->all();
             return view('WorkOrder.workorder', compact('centers', 'issuetypes', 'workers', 'toolsdata', 'suppliesdata'));
         }  else if ($user->hasRole('contact')){
             //Contact or employee location information
- /*           $centers = DB::table('residents')
-                ->join('conresis', 'conresis.res_id','=','residents.id')
-                ->join('rescontacts', 'conresis.con_id','=','rescontacts.id')
-                ->join('users', 'users.res_con_id','=','rescontacts.id')
-                ->join('centers','centers.id','=','residents.res_cntr_id')
-                ->where('users.id','=',Auth::user()->getUserId())
-                ->select('centers.cntr_name','centers.id')
-                ->lists('cntr_name','id');*/
+            /*           $centers = DB::table('residents')
+                           ->join('conresis', 'conresis.res_id','=','residents.id')
+                           ->join('rescontacts', 'conresis.con_id','=','rescontacts.id')
+                           ->join('users', 'users.res_con_id','=','rescontacts.id')
+                           ->join('centers','centers.id','=','residents.res_cntr_id')
+                           ->where('users.id','=',Auth::user()->getUserId())
+                           ->select('centers.cntr_name','centers.id')
+                           ->lists('cntr_name','id');*/
 
             $apartment_data = DB::table('residents')
                 ->join('conresis', 'conresis.res_id','=','residents.id')
@@ -83,7 +82,7 @@ class WorkOrderController extends Controller
             return view('WorkOrder.workorderContact', compact('centers', 'issuetypes', 'workers', 'toolsdata',
                 'suppliesdata','apartment_data','residents','user'));
         } else if($user->hasRole('employee')) {
-           // $centers = Center::lists('cntr_name', 'id')->all();
+            // $centers = Center::lists('cntr_name', 'id')->all();
             return view('WorkOrder.workorderEmployee', compact('centers', 'issuetypes', 'workers', 'toolsdata',
                 'suppliesdata','user'));
         }
@@ -113,13 +112,14 @@ class WorkOrderController extends Controller
         $suppliesdata = Supply::lists('sup_name', 'id')->all();
         $assignto = Assignorder::select(DB::raw("user_id"))->where('order_id','=',$wo_id)->value("user_id");
 
+
         //Get the supplies data for table
         $supplyDataTable = DB::table('supplyorders')->join('supplies', 'supplyorders.sup_id', '=', 'supplies.id')
             ->where('order_id','=',$wo_id)
             ->select('supplies.sup_name','supplyorders.supord_units','supplies.sup_unitprice','supplyorders.supord_total')->get();
 
-     //   print_r($supplyDataTable);
-     //   error_log('WorkOrderController.Data : ' .$wo_edit_data);
+        //   print_r($supplyDataTable);
+        //   error_log('WorkOrderController.Data : ' .$wo_edit_data);
         $user = Auth::user();
 
         return view('WorkOrder.edit',
@@ -132,8 +132,6 @@ class WorkOrderController extends Controller
     {
         // Navigate to different views based on user role
         $user = Auth::user();
-
-
         if ($user->hasRole('admin')) {
             $woDetails = DB::table('get_order_details')->get();
             return view('WorkOrder.index',compact('woDetails'));
@@ -163,14 +161,15 @@ class WorkOrderController extends Controller
             $wo -> created_by =  User::findOrFail($wo -> created_by)->f_name  . ' ' .
                 User::findOrFail($wo -> created_by)->l_name;
             $wo -> closed_by_id =  User::findOrFail($wo -> closed_by_id)->f_name  . ' ' .
-                    User::findOrFail($wo -> closed_by_id)->l_name;
+                User::findOrFail($wo -> closed_by_id)->l_name;
 
 
         }
 
 
-   return view('WorkOrder.history',compact('woDetails'));
+        return view('WorkOrder.history',compact('woDetails'));
     }
+
     public function getAptDetails(Request $request) {
         $input = $request -> input('option');
         $apartment_data = Apartment::
@@ -222,7 +221,7 @@ class WorkOrderController extends Controller
 
         $sup_unitprice = Supply::select(DB::raw("sup_unitprice"))->where('id', '=' , $input)
             ->lists('sup_unitprice');
-        return $sup_unitprice;
+        return  $sup_unitprice;
     }
 
     public function getComments(Request $request) {
@@ -243,7 +242,7 @@ class WorkOrderController extends Controller
 
     public function addComment(Request $request) {
 
- 
+
         $comment = new Comment();
         $comment -> user_id = Auth::user()->getUserId();
         $comment -> text = $request -> text;
@@ -302,11 +301,12 @@ class WorkOrderController extends Controller
         }
 
 
+
         $post -> updated_by =  User::findOrFail($post -> updated_by)->f_name  . ' ' .
             User::findOrFail($post -> updated_by)->l_name;
 
         if ($user->hasRole('admin')) {
-           $woDetails = OrderHistory::all();
+            $woDetails = OrderHistory::all();
         } else {
             $woDetails = DB::table('order_histories')->where('created_by','=',$user->getUserId())->get();
         }
@@ -316,7 +316,6 @@ class WorkOrderController extends Controller
                 User::findOrFail($wo -> created_by)->l_name;
             $wo -> closed_by_id =  User::findOrFail($wo -> closed_by_id)->f_name  . ' ' .
                 User::findOrFail($wo -> closed_by_id)->l_name;
-
         }
 
         if(($user->hasRole('admin') || $user->hasRole('engineer'))) {
@@ -365,9 +364,10 @@ class WorkOrderController extends Controller
     {
         // Validation depends on type of the user
 
-          //Admin validation
+        //Admin validation
         $this -> validate($request, [
             'cntr_name' => 'required|not_in:0',
+
         ]);
         $user = Auth::user();
         error_log("Request is " . $request);
@@ -396,6 +396,7 @@ class WorkOrderController extends Controller
             if($request -> order_priority != 'Please Select') {
                 $order->order_priority = $request->order_priority;
             }
+
             $order -> order_status = $request -> order_status;
             $order -> order_total_cost = $request -> order_total_cost;
         }
@@ -496,7 +497,7 @@ class WorkOrderController extends Controller
     {
         // Validation depends on type of the user
 
-            //Admin validation
+        //Admin validation
         $this -> validate($request, [
             'cntr_name' => 'required|not_in:0',
         ]);
@@ -526,7 +527,7 @@ class WorkOrderController extends Controller
                 $order->order_priority = $request->order_priority;
             }
         }
-      //  $order -> order_priority = $request -> order_priority;
+        //  $order -> order_priority = $request -> order_priority;
         $order -> order_status = $request -> order_status;
         $order -> issue_type = $request -> issuetype;
         $order -> order_total_cost = $request -> order_total_cost;
