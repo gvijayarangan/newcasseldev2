@@ -219,11 +219,11 @@
         if ($('#roles-select-id :selected').text() == 'Contact') {
             $("#resident-con-id").prop("disabled", true);
             $("#roles-select-id").prop("disabled", true);
-            $("#f_name").prop("disabled", true);
-            $("#m_name").prop("disabled", true);
-            $("#l_name").prop("disabled", true);
-            $("#email_id").prop("disabled", true);
-            $("#mobile").prop("disabled", true);
+            $("#f_name").attr('readonly','readonly');
+            $("#m_name").attr('readonly','readonly');
+            $("#l_name").attr('readonly','readonly');
+            $("#email_id").attr('readonly','readonly');
+            $("#mobile").attr('readonly','readonly');
         }
     });
 
