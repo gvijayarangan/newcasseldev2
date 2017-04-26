@@ -619,7 +619,7 @@ class WorkOrderController extends Controller
 
             //Log information to order history after close status
 
-            if($order -> order_status == 'Close') {
+            if($order -> order_status == 'closed') {
                 $order_history = new OrderHistory();
                 $order_history -> wo_id = $request -> wo_id;
                 $order_history -> requestor = $request -> requestor_name;
