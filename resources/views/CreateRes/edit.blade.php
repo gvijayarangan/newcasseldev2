@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <span style="color: red; display:block; float:left">*</span>
                             {!! Form::label('res_pccid', 'PCCID:') !!}
-                            {!! Form::text('res_pccid',null,['class'=>'form-control']) !!}
+                            {!! Form::text('res_pccid',null,['class'=>'form-control','readonly']) !!}
                         </div>
                         <div class="form-group">
                             <span style="color: red; display:block; float:left">*</span>
