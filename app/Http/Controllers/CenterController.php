@@ -55,10 +55,10 @@ class CenterController extends Controller
     public function store(Request $request)
     {//dd($request);
         $this->validate($request, [
-            'cntr_name' => 'required|Alpha|string|Max:20',
-            'cntr_add1' => 'required|Alpha|string|Max:30',
-            'cntr_city' => 'required|Alpha|string|Max:20',
-            'cntr_state' => 'required|Alpha|string|Max:20',
+            'cntr_name' => 'required|string|string|Max:20',
+            'cntr_add1' => 'required|string|string|Max:30',
+            'cntr_city' => 'required|string|string|Max:20',
+            'cntr_state' => 'required|string|string|Max:20',
             'cntr_zip' => 'required|numeric|digits:5|min:0',
             'cntr_phone' => 'numeric|digits:10|min:0',
             'cntr_fax' => 'numeric|digits:10|min:0',
@@ -128,24 +128,24 @@ class CenterController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
-    {
-        try {
-            /*DB::connection()->pdo->beginTransaction();*/
-
-            //Delete all comarea for Center
-            $comarea = Comarea::where('cntr_id', '=', $id)->delete();
-            $apartment = Apartment::where('cntr_id', '=', $id)->delete();
-            $resident = Resident::where('res_cntr_id', '=', $id)->delete();
-            $center = Center::where('id', '=', $id)->delete();
-
-        }catch(Exception $e) {
-            /*DB::connection()->pdo->rollBack();*/
-            Log::exception($e);
-        }
-        //Center::find($id)->delete();
-        return redirect('center');
-    }
+//    public function destroy($id)
+//    {
+//        try {
+//            /*DB::connection()->pdo->beginTransaction();*/
+//
+//            //Delete all comarea for Center
+//            $comarea = Comarea::where('cntr_id', '=', $id)->delete();
+//            $apartment = Apartment::where('cntr_id', '=', $id)->delete();
+//            $resident = Resident::where('res_cntr_id', '=', $id)->delete();
+//            $center = Center::where('id', '=', $id)->delete();
+//
+//        }catch(Exception $e) {
+//            /*DB::connection()->pdo->rollBack();*/
+//            Log::exception($e);
+//        }
+//        //Center::find($id)->delete();
+//        return redirect('center');
+//    }
 
 
 }
