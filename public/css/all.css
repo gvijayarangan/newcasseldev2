@@ -120,7 +120,7 @@ img.img-responsive {
 
 .navbar-default .navbar-nav .home>a:hover {
   color: #FFFFFF;
-  background-color: #B22222;
+  background-color: #191970;
   border-radius: 5px;
 }
 
@@ -134,7 +134,7 @@ img.img-responsive {
 
 .navbar-default .navbar-right>li>a:hover {
   color: #FFFFFF;
-  background-color: black;
+  background-color: #191970;
 }
 
 /*regarding dropdown*/

@@ -85,7 +85,7 @@
                         <div.panel-heading class="col-md-6">
                             @if($user->hasRole('admin'))
                                 {!! Form::select('order_status', ['' => '','Open' => 'Open','In Progress' => 'In Progress',
-                                   'Wait for third party vendor' => 'Wait for third party vendor','Complete' => 'Complete', 'Closed' => 'Closed'],
+                                   'Wait for third party vendor' => 'Wait for third party vendor','Complete' => 'Complete', 'closed' => 'closed'],
                                   $wo_edit_data->order_status, array('class' => 'col-md-6','disabled' => 'true')) !!}
                             @else
                                 {!! Form::select('order_status', ['' => 'Please Select','Open' => 'Open','In Progress' => 'In Progress',

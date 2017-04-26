@@ -52,8 +52,8 @@ class ToolsController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'tool_name' => 'required',
-            'tool_comment' => 'string',
+            'tool_name' => 'required|Max:100',
+            'tool_comment' => 'string|Max:255',
         ]);
         $tool = new Tool();
         $tool->tool_name = $request -> tool_name;
@@ -78,8 +78,8 @@ class ToolsController extends Controller
     public function update(Request $request, $id)
     {
         $this -> validate ($request, [
-            'tool_name' => 'required',
-            'tool_comment' => 'string'
+            'tool_name' => 'required|Max:100',
+            'tool_comment' => 'string|Max:255',
         ]);
 
 
