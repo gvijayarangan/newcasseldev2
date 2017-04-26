@@ -251,11 +251,11 @@
                 $("#email_id").val(data[0].con_email);
                 $("#mobile").val(data[0].con_cellphone);
             });
-            $("#f_name").prop("disabled", true);
-            $("#m_name").prop("disabled", true);
-            $("#l_name").prop("disabled", true);
-            $("#email_id").prop("disabled", true);
-            $("#mobile").prop("disabled", true);
+            $("#f_name").attr('readonly','readonly');
+            $("#m_name").attr('readonly','readonly');
+            $("#l_name").attr('readonly','readonly');
+            $("#email_id").attr('readonly','readonly');
+            $("#mobile").attr('readonly','readonly');
         }
     });
 
