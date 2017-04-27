@@ -33,9 +33,6 @@ class UsersTableSeeder extends Seeder {
         User::create([ 'f_name' => 'Gopinath','m_name' => ' ', 'l_name' => 'Vijayarangan', 'password' => bcrypt('secret'), 'email' => 'gvijayarangan@unomaha.edu', 'active' => true,
             'comment' => 'test', 'cell' => '9876789879', 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create()]);
 
-        User::create([ 'f_name' => 'Chris','m_name' => ' ', 'l_name' => 'Taylor', 'password' => bcrypt('secret'), 'email' => 'chris@gmail.com', 'active' => true,
-            'comment' => 'test', 'cell' => '9876789879', 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create()]);
-
         User::create([ 'f_name' => 'Eric','m_name' => ' ', 'l_name' => 'Johnson', 'password' => bcrypt('secret'), 'email' => 'eric@gmail.com', 'active' => true,
             'comment' => 'test', 'cell' => '9876789879', 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create()]);
 
@@ -108,11 +105,6 @@ class RoleUserTableSeeder extends Seeder {
 
         $user = User::where('f_name', '=', 'Eddie')->first()->id;
         $role = Role::where('name', '=', 'employee')->first()->id;
-        $role_user = [ ['role_id' => $role, 'user_id' => $user, 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create() ] ];
-        DB::table('role_user')->insert($role_user);
-
-        $user = User::where('f_name', '=', 'Chris')->first()->id;
-        $role = Role::where('name', '=', 'contact')->first()->id;
         $role_user = [ ['role_id' => $role, 'user_id' => $user, 'created_by' => 'System', 'updated_by' => 'System', 'created_at' => date_create(), 'updated_at' => date_create() ] ];
         DB::table('role_user')->insert($role_user);
 

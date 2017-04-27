@@ -7,7 +7,9 @@
                 <div class="panel panel-default">
                     <div class="pull-left">
                         <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
-                            <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                            <button type="submit" id="create-resident" class="btn btn-primary"><i
+                                        class="fa fa-btn fa-file-o"></i>Back
+                            </button>
                         </form>
                     </div>
                     <div class="panel-heading text-center"> Create Supply Information</div>
@@ -25,8 +27,7 @@
 
                         {!! Form::open(['url' => 'Supply']) !!}
                         <div class="form-group">
-                            <span style="color: red; display:block; float:left">*</span>
-                            {!! Form::label('sup_name', 'Supply Name:',['class' => 'col-md-4 control-label']) !!}
+                            {!! Html::decode(Form::label('sup_name', '<span style="color: red;">*</span>Supply Name:',['class' => 'col-md-4 control-label'])) !!}
                             <div class="col-md-4">
                                 {!! Form::text('sup_name',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
@@ -34,17 +35,14 @@
                         </br> </br>
 
                         <div class="form-group">
-                            <span style="color: red; display:block; float:left">*</span>
+
                             <div class="form-group">
-                                {!! Form::label('sup_unitprice', 'Enter Unit Price:',['class' => 'col-md-4 control-label']) !!}
+                                {!! Html::decode(Form::label('sup_unitprice', '<span style="color: red;">*</span>Enter Unit Price:',['class' => 'col-md-4 control-label'])) !!}
                                 <div class="col-md-4">
 
                                     <div class="input-group" style="width: 150px">
                                         <span class="input-group-addon">$</span>
                                         {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
-                                        {{--  <div class="col-md-4">
-                                              {!! Form::text('sup_unitprice',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
-                                          </div>--}}
                                     </div>
                                 </div>
                             </div>

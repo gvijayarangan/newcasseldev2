@@ -24,7 +24,7 @@
 
                         {!! Form::open(array('route' => 'notifications.store','method'=>'POST')) !!}
                         <div class="form-group">
-                            {!! Form::Label('noti_type', '*Email Notification Type:', ['class' => 'col-md-4 control-label input-label']) !!}
+                            {!! Html::decode(Form::Label('noti_type', '<span style="color: red;">*</span>Email Notification Type:', ['class' => 'col-md-4 control-label input-label'])) !!}
                             <div class="col-md-6 input-field">
                                 {!! Form::select('noti_type', [
                                                 'New Account Setup' => 'New Account Setup',
@@ -36,7 +36,7 @@
 
                         </br> </br>
                         <div class="form-group">
-                            {!! Form::Label('noti_email_title', '*Email Notification Title:',['class' => 'col-md-4 control-label input-label']) !!}
+                            {!! Html::decode(Form::Label('noti_email_title', '<span style="color: red;">*</span>Email Notification Title:',['class' => 'col-md-4 control-label input-label'])) !!}
                             <div class="col-md-6 input-field">
                                 {!! Form::text('noti_email_title',null,['class' => 'col-md-6 form-control','required' => 'required']) !!}
                             </div>
@@ -44,14 +44,14 @@
 
                         </br> </br>
                         <div class="form-group">
-                            {!! Form::label('noti_alert_content', '*Email Notification Content:',['class' => 'col-md-4 control-label input-label']) !!}
+                            {!! Html::decode(Form::label('noti_alert_content', '<span style="color: red;">*</span>Email Notification Content:',['class' => 'col-md-4 control-label input-label'])) !!}
                             <div class="col-md-6 input-field">
                                 {!! Form::textarea('noti_alert_content',null,['class'=>'col-md-6 form-control','required' => 'required']) !!}
                             </div>
                         </div>
                         </br> </br>
                         <div class="form-group">
-                            {!!Form::label('noti_status', '*Email Notification Status:',['class' => 'col-md-4 control-label input-label']) !!}
+                            {!! Html::decode(Form::label('noti_status', '<span style="color: red;">*</span>Email Notification Status:',['class' => 'col-md-4 control-label input-label'])) !!}
                             <div class="col-md-2 input-field">
                                 {!! Form::select('noti_status', [
                                                 'Active' => 'Active',
