@@ -72,7 +72,7 @@
                 <div class="col-md-6">
                     {!! Form::text('email', null, ['id' => 'email_id','class' => 'col-md-6 form-control', 'required' => 'required']) !!}
                     @else
-                        {!! Form::label('email', '<span style="color: red;">*</span>E-Mail Address:', ['class' => 'col-md-4 control-label']) !!}
+                        {!! Html::decode(Form::label('email', '<span style="color: red;">*</span>E-Mail Address:', ['class' => 'col-md-4 control-label'])) !!}
                         <div class="col-md-6">
                             {!! Form::text('email', null, ['id' => 'email_id', 'class' => 'col-md-6 form-control', 'required' => 'required', 'readonly']) !!}
                             @endif
