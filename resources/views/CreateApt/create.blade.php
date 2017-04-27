@@ -7,7 +7,9 @@
                 <div class="panel panel-default">
                     <div class="pull-left">
                         <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
-                            <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                            <button type="submit" id="create-resident" class="btn btn-primary"><i
+                                        class="fa fa-btn fa-file-o"></i>Back
+                            </button>
                         </form>
                     </div>
                     <div class="panel-heading text-center"> Create Apartment Information</div>
@@ -24,23 +26,23 @@
                             </div>
                         @endif
                         {!! Form::open(['url' => 'apartment']) !!}
-                        <span style="color: red; display:block; float:left">*</span>
+
                         <div class="form-group">
-                            {!! Form::label('cntr_name', 'Center Name:',['class' => 'col-md-4 control-label']) !!}
+                            {!! Html::decode(Form::label('cntr_name', '<span style="color: red;">*</span>Center Name:',['class' => 'col-md-4 control-label'])) !!}
                             <div class="col-md-4">
                                 {!! Form::select('cntr_name', $centers ,null,['placeholder' => 'Please select','class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
                             </br> </br>
-                            <span style="color: red; display:block; float:left">*</span>
-                            {!! Form::label('apt_floornumber', 'Apartment Floor Number:',['class' => 'col-md-4 control-label']) !!}
+
+                            {!! Html::decode(Form::label('apt_floornumber', '<span style="color: red;">*</span>Apartment Floor Number:',['class' => 'col-md-4 control-label'])) !!}
                             <div class="col-md-4">
                                 {!! Form::number('apt_floornumber',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
                             </br> </br>
 
-                            <span style="color: red; display:block; float:left">*</span>
+
                             <div class="form-group">
-                                {!! Form::label('apt_number', 'Apartment Number:',['class' => 'col-md-4 control-label']) !!}
+                                {!! Html::decode(Form::label('apt_number', '<span style="color: red;">*</span>Apartment Number:',['class' => 'col-md-4 control-label'])) !!}
                                 <div class="col-md-4">
                                     {!! Form::number('apt_number',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                                 </div>

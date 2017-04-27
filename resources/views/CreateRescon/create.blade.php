@@ -14,7 +14,9 @@
                 <div class="panel panel-default">
                     <div class="pull-left">
                         <form action="{{ URL::previous() }}" method="GET">{{ csrf_field() }}
-                            <button type="submit" id="create-resident" class="btn btn-primary"><i class="fa fa-btn fa-file-o"></i>Back</button>
+                            <button type="submit" id="create-resident" class="btn btn-primary"><i
+                                        class="fa fa-btn fa-file-o"></i>Back
+                            </button>
                         </form>
                     </div>
                     <div class="panel-heading text-center"> Create Resident Contact Information</div>
@@ -30,8 +32,8 @@
                         @endif
                         {!! Form::open(['url' => 'rescontact']) !!}
                         <div class="form-group">
-                            <span style="color: red; display:block; float:left">*</span>
-                            {!! Form::label('con_fname', 'Contact First Name:',['class' => 'col-md-4 control-label']) !!}
+
+                            {!! Html::decode(Form::label('con_fname', '<span style="color: red;">*</span>Contact First Name:',['class' => 'col-md-4 control-label'])) !!}
                             <div class="col-md-4">
                                 {!! Form::text('con_fname',null,['class' => 'col-md-4 form-control','required' => 'required']) !!}
                             </div>
@@ -46,16 +48,16 @@
                         </div>
                         </br> </br>
                         <div class="form-group">
-                            <span style="color: red; display:block; float:left">*</span>
-                            {!! Form::label('con_lname', 'Contact Last Name:',['class' => 'col-md-4 control-label']) !!}
+
+                            {!! Html::decode(Form::label('con_lname', '<span style="color: red;">*</span>Contact Last Name:',['class' => 'col-md-4 control-label'])) !!}
                             <div class="col-md-4">
-                                {!! Form::text('con_lname',null,['class'=>'col-md-4 form-control']) !!}
+                                {!! Form::text('con_lname',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
                             </div>
                         </div>
                         </br> </br>
                         <div class="form-group">
-                            <span style="color: red; display:block; float:left">*</span>
-                            {!!Form::label('con_relationship', 'Relationship:',['class' => 'col-md-4 control-label']) !!}
+
+                            {!! Html::decode(Form::label('con_relationship', '<span style="color: red;">*</span>Relationship:',['class' => 'col-md-4 control-label'])) !!}
                             <div class="col-md-4">
                                 {!! Form::text('con_relationship',null,['class'=>'col-md-4 form-control','required' => 'required']) !!}
                             </div>
@@ -87,8 +89,8 @@
 
 
                         <div class="form-group">
-                            <span style="color: red; display:block; float:left">*</span>
-                            {!!Form::label('con_gender', 'Gender:',['class' => 'col-md-4 control-label']) !!}
+
+                            {!! Html::decode(Form::label('con_gender', '<span style="color: red;">*</span>Gender:',['class' => 'col-md-4 control-label'])) !!}
                             <div class="col-md-4">
                                 {{ Form::select('con_gender', [
                                 'Male' => 'Male',
@@ -97,18 +99,11 @@
                         </div>
                         </br> </br>
 
-
-                            <span style="color: red; display:block; float:left">*</span>
-                         {{--   {!!Form::label('res_fullname', 'Resident Name:',['class' => 'col-md-4 control-label']) !!}
-                            <div class="col-md-4">
-                                {{ Form::select('res_fullname', $residents, null, ['placeholder' => 'Please select','class' => 'col-md-4 form-control','required' => 'required']) }}
-                            </div>--}}
-
-                            {!! Form::label('res_fullname', 'ResidentName:', ['class' => 'col-md-2 control-label']) !!}
-                            <div.panel-heading style="padding-left: 15px">
-                                {{ Form::select('res_fullname[]', $residents,
-                                  'default', array('id' => 'residents[]', 'multiple'=>'multiple', 'style' =>'width:75%')),['class'=>'col-md-4 form-control','required' => 'required'] }}
-                            </div.panel-heading>
+                        {!! Html::decode(Form::label('res_fullname', '<span style="color: red;">*</span>ResidentName:', ['class' => 'col-md-2 control-label'])) !!}
+                        <div style="padding-left: 15px">
+                            {{ Form::select('res_fullname[]', $residents,
+                              'default', array('id' => 'residents[]', 'multiple'=>'multiple', 'style' =>'width:75%')),['class'=>'col-md-4 form-control','required' => 'required'] }}
+                        </div>
 
                         </br> </br>
                         {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
@@ -141,15 +136,15 @@
             })
         });
 
-        $(document).ready(function() {
-            $('#mobile').mask('(000) 000-0000',{placeholder: "(___) ___-____"});
+        $(document).ready(function () {
+            $('#mobile').mask('(000) 000-0000', {placeholder: "(___) ___-____"});
         });
 
-        $('#mobile').blur(function(){
+        $('#mobile').blur(function () {
             var input = $(this);
-            if(input.val().length > 0 && input.val().length < 14) {
+            if (input.val().length > 0 && input.val().length < 14) {
                 alert('Please enter correct phone number, else leave blank');
-                setTimeout(function(){
+                setTimeout(function () {
                     $(input).focus();
                 }, 1);
             }
