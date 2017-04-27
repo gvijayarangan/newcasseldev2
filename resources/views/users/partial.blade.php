@@ -1,5 +1,5 @@
 <div class="form-group{{ $errors->has('rolelist') ? ' has-error' : '' }}">
-    <label class="col-md-4 control-label">*Roles</label>
+    <label class="col-md-4 control-label"><span style="color: red;">*</span>Roles</label>
     <div class="col-md-4">
         {!! Form::select('rolelist[]', $list_role, null, ['placeholder' => 'Please select', 'id' => 'roles-select-id',
         'class' => 'form-control col-md-4 roles cds-select', 'required' => 'required']) !!}
@@ -13,11 +13,11 @@
 
 <div class="form-group{{ $errors->has('res_con_id') ? ' has-error' : '' }}">
     @if($CRUD_Action == 'Create')
-        {!! Form::label('res_con_id', '*Resident Contact:', ['class' => 'col-md-4 control-label']) !!}
+        {!! Html::decode(Form::label('res_con_id', '<span style="color: red;">*</span>Resident Contact:', ['class' => 'col-md-4 control-label'])) !!}
         <div class="col-md-6">
             {!! Form::select('res_con_id', $res_con, null, ['placeholder' => 'Please select','id' => 'resident-con-id', 'class' => 'col-md-6 form-control']) !!}
             @else
-                {!! Form::label('res_con_id', '*Resident Contact:', ['class' => 'col-md-4 control-label']) !!}
+                {!! Html::decode(Form::label('res_con_id', '<span style="color: red;">*</span>Resident Contact:', ['class' => 'col-md-4 control-label'])) !!}
                 <div class="col-md-6">
                     {!! Form::select('res_con_id',$res_con, null, ['placeholder' => 'Please select','id' => 'resident-con-id', 'class' => 'col-md-6 form-control']) !!}
 
@@ -31,7 +31,7 @@
         </div>
 
         <div class="form-group{{ $errors->has('f_name') ? ' has-error' : '' }}">
-            {!! Form::label('f_name', '*First Name:', ['class' => 'col-md-4 control-label']) !!}
+            {!! Html::decode(Form::label('f_name', '<span style="color: red;">*</span>First Name:', ['class' => 'col-md-4 control-label'])) !!}
             <div class="col-md-6">
                 {!! Form::text('f_name', null, ['id' => 'f_name','class' => 'col-md-6 form-control', 'required' => 'required']) !!}
                 @if ($errors->has('f_name'))
@@ -55,7 +55,7 @@
         </div>
 
         <div class="form-group{{ $errors->has('l_name') ? ' has-error' : '' }}">
-            {!! Form::label('l_name', '*Last Name:', ['class' => 'col-md-4 control-label']) !!}
+           {!! Html::decode(Form::label('l_name', '<span style="color: red;">*</span>Last Name:', ['class' => 'col-md-4 control-label'])) !!}
             <div class="col-md-6">
                 {!! Form::text('l_name', null, ['id' => 'l_name', 'class' => 'col-md-6 form-control', 'required' => 'required']) !!}
                 @if ($errors->has('l_name'))
@@ -68,11 +68,11 @@
 
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             @if($CRUD_Action == 'Create')
-                {!! Form::label('email', '*E-Mail Address:', ['class' => 'col-md-4 control-label']) !!}
+             {!! Html::decode(Form::label('email', '<span style="color: red;">*</span>E-Mail Address:', ['class' => 'col-md-4 control-label'])) !!}
                 <div class="col-md-6">
                     {!! Form::text('email', null, ['id' => 'email_id','class' => 'col-md-6 form-control', 'required' => 'required']) !!}
                     @else
-                        {!! Form::label('email', '*E-Mail Address:', ['class' => 'col-md-4 control-label']) !!}
+                        {!! Form::label('email', '<span style="color: red;">*</span>E-Mail Address:', ['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('email', null, ['id' => 'email_id', 'class' => 'col-md-6 form-control', 'required' => 'required', 'readonly']) !!}
                             @endif
@@ -115,7 +115,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::Label('active', '*Status:', ['class' => 'col-md-4 control-label']) !!}
+                   {!! Html::decode(Form::Label('active', '<span style="color: red;">*</span>Status:', ['class' => 'col-md-4 control-label'])) !!}
                     <div class="col-md-2">
                         {!! Form::select('active', [
                                         '1' => 'Active',
@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::Label('rec_email', '*Receive Emails:', ['class' => 'col-md-4 control-label']) !!}
+                   {!! Html::decode(Form::Label('rec_email', '<span style="color: red;">*</span>Receive Emails:', ['class' => 'col-md-4 control-label'])) !!}
                     <div class="col-md-2">
                         {{ Form::select('rec_email', [
                             '1' => 'Yes',

@@ -24,19 +24,19 @@
                         @endif
                         {!! Form::model($notification,['method' => 'PATCH','route'=>['notifications.update',$notification->id]]) !!}
                         <div class="form-group">
-                            {!! Form::label('noti_type', '*Email Notification Type:') !!}
+                            {!! Html::decode(Form::label('noti_type', '<span style="color: red;">*</span>Email Notification Type:')) !!}
                             {!! Form::text('noti_type',null,['class'=>'form-control','required' => 'required', 'readonly']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('noti_email_title', '*Email Notificationl Title:') !!}
+                            {!! Html::decode(Form::label('noti_email_title', '<span style="color: red;">*</span>Email Notificationl Title:')) !!}
                             {!! Form::text('noti_email_title',null,['class'=>'form-control','required' => 'required']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('noti_alert_content', '*Email Notification Content:') !!}
+                            {!! Html::decode(Form::label('noti_alert_content', '<span style="color: red;">*</span>Email Notification Content:')) !!}
                             {!! Form::textarea('noti_alert_content',null,['class'=>'form-control','required' => 'required']) !!}
                         </div>
                         <div class="form-group">
-                            {!!Form::label('noti_status', '*Email Notification Status:') !!}
+                            {!! Html::decode(Form::label('noti_status', '<span style="color: red;">*</span>Email Notification Status:')) !!}
                             {!! Form::select('noti_status', [
                                             'Active' => 'Active',
                                             'Inactive' => 'Inactive'], old('noti_status'), ['class' => 'form-control','required' => 'required']) !!}

@@ -60,8 +60,8 @@ class CenterController extends Controller
             'cntr_city' => 'required|string|string|Max:20',
             'cntr_state' => 'required|string|string|Max:20',
             'cntr_zip' => 'required|numeric|digits:5|min:0',
-            'cntr_phone' => 'numeric|digits:10|min:0',
-            'cntr_fax' => 'numeric|digits:10|min:0',
+            //'cntr_phone' => 'numeric|digits:10|min:0',
+            //'cntr_fax' => 'numeric|digits:10|min:0',
         ]);
         $center = new Center();
         $center->cntr_name = $request->cntr_name;
@@ -105,8 +105,8 @@ class CenterController extends Controller
             'cntr_city' => 'required|Alpha|string|Max:20',
             'cntr_state' => 'required|Alpha|string|Max:20',
             'cntr_zip' => 'required|numeric|digits:5|min:0',
-            'cntr_phone' => 'numeric|digits:10|min:0',
-            'cntr_fax' => 'numeric|digits:10|min:0',
+            //'cntr_phone' => 'numeric|digits:10|min:0',
+            //'cntr_fax' => 'numeric|digits:10|min:0',
         ]);
 
         $UpdateCntr = Center::find($id);

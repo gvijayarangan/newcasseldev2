@@ -1,5 +1,5 @@
 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-    {!! Form::label('name', 'Name:', ['class' => 'col-md-4 control-label']) !!}
+    {!! Html::decode(Form::label('name', '<span style="color: red;">*</span>Name:', ['class' => 'col-md-4 control-label'])) !!}
     <div class="col-md-6">
         {!! Form::text('name', null, ['class' => 'col-md-6 form-control', 'required' => 'required']) !!}
         @if ($errors->has('name'))
