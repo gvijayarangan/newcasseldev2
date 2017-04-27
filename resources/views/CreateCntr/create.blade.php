@@ -77,7 +77,7 @@
                         <div class="form-group">
                             {!!Form::label('cntr_phone', 'Center Phone:',['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-4">
-                                {!! Form::number('cntr_phone',null,['id' => 'mobile','class'=>'col-md-4 form-control']) !!}
+                                {!! Form::text('cntr_phone',null,['id' => 'mobile','class'=>'col-md-4 form-control']) !!}
                             </div>
                         </div>
                         </br> </br>
@@ -85,7 +85,7 @@
                             <div class="form-group">
                                 {!!Form::label('cntr_fax', 'Center Fax:',['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
-                                    {!! Form::number('cntr_fax',null,['id' => 'fax','class'=>'col-md-4 form-control']) !!}
+                                    {!! Form::text('cntr_fax',null,['id' => 'fax','class'=>'col-md-4 form-control']) !!}
                                 </div>
                             </div>
 

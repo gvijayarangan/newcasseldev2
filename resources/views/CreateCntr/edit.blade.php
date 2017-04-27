@@ -55,12 +55,12 @@
 
                         <div class="form-group">
                             {!!Form::label('cntr_phone', 'Center Phone:') !!}
-                            {!! Form::number('cntr_phone',null,['id' => 'mobile','class'=>'form-control']) !!}
+                            {!! Form::text('cntr_phone',null,['id' => 'mobile','class'=>'form-control']) !!}
                         </div>
 
                         <div class="form-group">
                             {!!Form::label('cntr_fax', 'Center Fax:') !!}
-                            {!! Form::number('cntr_fax',null,['id' => 'fax','class'=>'form-control']) !!}
+                            {!! Form::text('cntr_fax',null,['id' => 'fax','class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('cntr_comments', 'Center Comments:') !!}
