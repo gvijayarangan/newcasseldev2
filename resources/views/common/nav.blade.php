@@ -26,14 +26,14 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-expanded="false"><i class="fa fa-btn"></i><i class="fa fa-btn fa-fw fa-wrench"></i>Work Order<i class="fa fa-btn"></i><span class="caret"></span><i class="fa fa-btn"></i></a>
                         <ul class="dropdown-menu multi level" role="menu">
-                            <li><a href="{{ url('/workorder') }}"><i class="fa fa-btn fa-fw fa-file-text-o" aria-hidden="true"></i>Create New </a></li>
-                            <li><a href="{{ url('/workorderview') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>List</a></li>
+                            <li><a href="{{ url('/workorder') }}"><i class="fa fa-btn fa-fw fa-plus-circle" aria-hidden="true"></i>Create New </a></li>
+                            <li><a href="{{ url('/workorderview') }}"><i class="fa fa-btn fa-fw fa-list-ul" aria-hidden="true"></i>List</a></li>
 
                             @role('admin')
-                                <li><a href="{{ url('/report') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>Report</a></li>
+                                <li><a href="{{ url('/report') }}"><i class="fa fa-btn fa-fw fa-file-excel-o" aria-hidden="true"></i>Report</a></li>
                             @endrole
 
-                                <li><a href="{{ url('/history') }}"><i class="fa fa-btn fa-fw fa-list-ol" aria-hidden="true"></i>History</a></li>
+                                <li><a href="{{ url('/history') }}"><i class="fa fa-btn fa-fw fa-history" aria-hidden="true"></i>History</a></li>
 
                         </ul>
                     </li>
@@ -41,16 +41,16 @@
                     @role('admin')
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Manage Application<span
+                           aria-expanded="false"><i class="fa fa-cogs"></i>&nbsp;&nbsp;Manage Application<span
                                     class="caret"></span></a>
                         <ul class="dropdown-menu multi level" role="menu">
                             <li><a href="{{ url('/center') }}"><span><i class="fa fa-btn fa-fw fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Center</span></a></li>
 
                             <li><a href="{{ url('/apartment') }}"><span><i class="fa fa-btn fa-fw fa-building" aria-hidden="true"></i>&nbsp;&nbsp;Apartment</span></a></li>
 
-                            <li><a href="{{ url('/resident') }}"><span><i class="fa fa-btn fa-fw fa-street-view" aria-hidden="true"></i>&nbsp;&nbsp;Resident</span></a></li>
+                            <li><a href="{{ url('/resident') }}"><span><i class="fa fa-btn fa-fw fa-user-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Resident</span></a></li>
 
-                            <li><a href="{{ url('/rescontact') }}"><span><i class="fa fa-btn fa-fw fa-phone-square" aria-hidden="true"></i>&nbsp;&nbsp;Resident Contact</span></a></li>
+                            <li><a href="{{ url('/rescontact') }}"><span><i class="fa fa-btn fa-fw fa-address-book" aria-hidden="true"></i>&nbsp;&nbsp;Resident Contact</span></a></li>
 
                             <li><a href="{{ url('/tool') }}"><span><i class="fa fa-btn fa-fw fa-gavel" aria-hidden="true"></i>&nbsp;&nbsp;Tool</span></a></li>
 
@@ -59,7 +59,7 @@
                             <li><a href="{{ url('/commonarea') }}"><span><i class="fa fa-btn fa-fw fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;Common Area/<br>
                                         <i class="fa fa-btn fa-fw" aria-hidden="true"></i><span> &nbsp;</span>System Name</span></a></li>
 
-                            <li><a href="{{ url('/issuetype') }}"><span><i class="fa fa-btn fa-fw fa-exclamation-circle" aria-hidden="true"></i></i>&nbsp;&nbsp;Issue Type</span></a></li>
+                            <li><a href="{{ url('/issuetype') }}"><span><i class="fa fa-btn fa-fw fa-exclamation-triangle" aria-hidden="true"></i></i>&nbsp;&nbsp;Issue Type</span></a></li>
 
                             <li><a href="{{ url('/notifications') }}"><span><i class="fa fa-btn fa-fw fa-envelope" aria-hidden="true"></i>&nbsp; Email Notification</span></a></li>
                         </ul>
