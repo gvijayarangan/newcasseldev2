@@ -9,18 +9,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img alt="Brand" src="/images/New_Cassel.png" class="img-responsive img-brand">
             </a>
-            <a class="navbar-brand navtext" href="#">New Cassel Center's <br>Work Order System</a>
+            <a class="navbar-brand navtext" href="{{ url('/') }}">New Cassel Center's <br>Work Order System</a>
         </div>
 
+    @if (Auth::check())
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-list">
-
-                @if (Auth::check())
-
                     <li class="home"><a href="{{ url('/home') }}"><i class="fa fa-btn fa-fw fa-home" aria-hidden="true"></i>&nbsp;Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
