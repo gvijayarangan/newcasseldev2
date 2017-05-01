@@ -9,10 +9,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/home') }}">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img alt="Brand" src="/images/New_Cassel.png" class="img-responsive img-brand">
             </a>
-            <a class="navbar-brand navtext" href="{{ url('/home') }}">New Cassel Center's <br>Work Order System</a>
+            <a class="navbar-brand navtext" href="{{ url('/') }}">New Cassel Center's <br>Work Order System</a>
         </div>
 
     @if (Auth::check())
