@@ -35,8 +35,7 @@
 
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-offset-3 col-md-6 col-md-pull-3">
-                            {!! Form::text('requestor_name',null,['class'=>'form-control input-sm','placeholder' => 'Name'],
-                            array('id' => 'requestername')) !!}
+                            {!! Form::text('requestor_name',null,['class'=>'form-control input-sm','placeholder' => 'Name','id' => 'requestername']) !!}
                         </div>
 
                         </br> </br>
@@ -46,8 +45,7 @@
                         <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             <div class="form-group">
                                 {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
-                                ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','required' => 'required'],
-                                 array('id' => 'center_dropdown')) }}
+                                ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','required' => 'required','id' => 'center_dropdown']) }}
                             </div>
                         </div>
 
@@ -57,8 +55,7 @@
                         {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('apt_id', array_merge([0 => 'Please Select']), 'default',
-                            ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3'],
-                            array('id' => 'apartment_dropdown')) }}
+                            ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'apartment_dropdown']) }}
                         </div>
 
                         </br> </br>
@@ -66,8 +63,7 @@
                         {!! Form::label('residentname', 'Resident Name:', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('residentname', array_merge([0 => 'Please Select']),
-                            'default', ['class' =>'col-md-offset-3 col-md-6 col-md-pull-3'],
-                            array('id' => 'residentname_dropdown')) }}
+                            'default', ['class' =>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'residentname_dropdown']) }}
                         </div>
 
                         </br> </br>
@@ -75,8 +71,7 @@
                         {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('ca_id', array_merge([0 => 'Please Select']), 'default',
-                            ['class' =>'col-md-offset-3 col-md-6 col-md-pull-3'],
-                            array('id' => 'commonarea_dropdown')) }}
+                            ['class' =>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'commonarea_dropdown']) }}
                         </div>
 
 
@@ -85,8 +80,7 @@
                         {!! Form::label('resident_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-offset-1 col-md-8 col-md-pull-1">
                             {!! Form::text('resident_comments',null,
-                            ['class'=>'col-md-offset-1 col-md-8 col-md-pull-1 form-control','readonly'],
-                            array('id' => 'resident_comments')) !!}
+                            ['class'=>'col-md-offset-1 col-md-8 col-md-pull-1 form-control','readonly','id' => 'resident_comments']) !!}
                         </div>
 
                         </br> </br>
@@ -111,11 +105,10 @@
                         </br> </br>
 
 
-                        {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
+                        {!!  Html::decode(Form::label('issuetype', '<span style="color: red;">*</span>Issue Type:', ['class' => 'col-md-3 control-label'])) !!}
                         <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default',
-                            ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3'],
-                            array('id' => 'issuetype_dropdown')) }}
+                            ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'issuetype_dropdown','required' => 'required']) }}
                         </div>
 
                         </br> </br>
@@ -123,8 +116,7 @@
                         {!! Form::label('issuedescription', 'Issue Description:', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-offset-1 col-md-8 col-md-pull-1">
                             {!! Form::text('issuedescription',null,
-                            ['class'=>'col-md-offset-1 col-md-8 col-md-pull-1 form-control','readonly'],
-                            array('id' => 'issuedescription')) !!}
+                            ['class'=>'col-md-offset-1 col-md-8 col-md-pull-1 form-control','readonly','id' => 'issuedescription']) !!}
                         </div>
 
                         </br> </br>
@@ -140,8 +132,7 @@
                         {!! Form::label('assigntype', 'Assign To:', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('assign_user_id', array_merge([0 => 'Please Select']) + $workers, 'default',
-                             ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3'],
-                             array('id' => 'assigntype_dropdown')) }}
+                             ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'assigntype_dropdown']) }}
                         </div>
 
                         </br> </br>
@@ -168,7 +159,7 @@
                                         <label for="concept" class="col-md-4 control-label">Supply Name</label>
                                         <div class="col-md-8">
                                             {{ Form::select('supply', array_merge([0 => 'Please Select']) + $suppliesdata,
-                                           'default', ['class'=>'col-md-8 form-control'],array('id' => 'supply_dropdown')) }}
+                                           'default', ['class'=>'col-md-8 form-control','id' => 'supply_dropdown']) }}
                                         </div>
                                     </div>
 
@@ -228,8 +219,7 @@
                                     {!! Form::label('totalOrderAmountLabel', 'Work Order Total Cost:' ,['class' => 'col-md-4 control-label']) !!}
                                     <div class="col-md-8">
                                         {!! Form::text('order_total_cost',null,
-                                         ['class' => 'col-md-8 form-control','readonly'],
-                                        array('id' => 'totalOrderAmount')) !!}
+                                         ['class' => 'col-md-8 form-control','readonly','id' => 'totalOrderAmount']) !!}
                                     </div>
                                 </div>
                             </div>
