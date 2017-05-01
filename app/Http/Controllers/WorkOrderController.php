@@ -267,7 +267,12 @@ class WorkOrderController extends Controller
         } else {
             $post->apt_id = Apartment::findOrFail($post->apt_id)->apt_number;
         }
-        $post->issue_type = Issuetype::findOrFail($post->issue_type)->issue_typename;
+
+        if ($post->issue_type == 0) {
+            $post->issue_type = 'N/A';
+        } else {
+            $post->issue_type = Issuetype::findOrFail($post->issue_type)->issue_typename;
+        }
         if ($post->resident_id == 0) {
             $post->resident_id = 'N/A';
         } else {
