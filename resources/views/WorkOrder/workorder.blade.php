@@ -105,10 +105,10 @@
                         </br> </br>
 
 
-                        {!!  Html::decode(Form::label('issuetype', '<span style="color: red;">*</span>Issue Type:', ['class' => 'col-md-3 control-label'])) !!}
+                        {!!  Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default',
-                            ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'issuetype_dropdown','required' => 'required']) }}
+                            ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'issuetype_dropdown']) }}
                         </div>
 
                         </br> </br>
@@ -228,7 +228,7 @@
                     </div>
                     <div class="form-group" style="text-align: center">
                         {{ Form::submit('Save', array('class' => 'btn btn-success')) }}
-                        {!! Form::button('Reset', ['type' => 'reset', 'class' => 'btn btn-default']) !!}
+                        {{--{!! Form::button('Reset', ['type' => 'reset', 'class' => 'btn btn-default']) !!}--}}
                     </div>
 
                 </div>

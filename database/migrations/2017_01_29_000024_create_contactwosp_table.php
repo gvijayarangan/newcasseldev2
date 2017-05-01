@@ -26,7 +26,7 @@ class CreatecontactwospTable extends Migration
                          left join `centers` on((`orders`.`cntr_id` = `centers`.`id`))) left join `assignorders` on((`orders`.`id` = `assignorders`.`order_id`))) 
                          left join `users` on((`orders`.`user_id` = `users`.`id`))) left join `issuetypes` on((`orders`.`issue_type` = `issuetypes`.`id`))) 
                          left join `residents` on((`orders`.`resident_id` = `residents`.`id`))) left join `comareas` on((`orders`.`ca_id` = `comareas`.`id`)))
-                         WHERE `orders`.`order_status` != \'closed\' AND `orders`.`user_id`=contact_resident_id ORDER BY `created_date_time` DESC;
+                         WHERE `orders`.`order_status` != \'closed\' AND `orders`.`user_id`=contact_resident_id ORDER BY `orders`.`id` DESC;
                          END');
     }
 

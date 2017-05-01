@@ -14,91 +14,97 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-sm-12 col-md-10 col-md-offset-2">
                 <br> <br>
                 <div class="panel panel-default">
                     <div class="panel-heading"> Work Order Form</div>
 
-                    <div class="panel-body" style="padding-left: 15%">
+                    <div class="panel-body">
                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                         <input type="hidden" name="supplyData" id="supplyData" value="">
                         {!! Form::label('requester', 'Requestor:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-sm-4">
+                        <div class="col-sm-4">
                             {!! Form::text('requestor_name',null,['class'=>'form-control input-sm'], array('id' => 'requestername')) !!}
-                        </div.panel-heading>
+                        </div>
 
                         </br> </br>
 
-                        {!! Form::label('centername', 'Center Name:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
+                        {!! Html::decode(Form::label('centername', '<span style="color: red;">*</span>Center Name:', ['class' => 'col-md-3 control-label'])) !!}
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             @if($user->hasRole('contact'))
                                 {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
-                                 array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
+                                ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','required' => 'required','id' => 'center_dropdown']) }}
                              @else
                                 {{ Form::select('cntr_name', array_merge([0 => 'Please Select']) + $centers, 'default',
-                                 array('id' => 'center_dropdown', 'class' => 'col-md-4')) }}
+                                ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','required' => 'required','id' => 'center_dropdown']) }}
                              @endif
-                         </div.panel-heading>
+                         </div>
 
                         </br> </br>
 
                         {!! Form::label('apartment no', 'Apartment No:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             @if($user->hasRole('contact'))
                                 {{ Form::select('apt_id',array_merge([0 => 'Please Select']) + $apartment_data, 'default',
-                                 array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
+                                ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'apartment_dropdown']) }}
                             @else
                                 {{ Form::select('apt_id', array_merge([0 => 'Please Select']), 'default',
-                                 array('id' => 'apartment_dropdown', 'class' => 'col-md-4')) }}
+                                ['class' => 'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'apartment_dropdown']) }}
                             @endif
-                        </div.panel-heading>
+                        </div>
 
                         </br> </br>
 
                         {!! Form::label('residentname', 'Resident Name:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             @if($user->hasRole('contact'))
                                 {{ Form::select('residentname', $residents,
-                                'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
+                                'default',
+                                ['class' =>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'residentname_dropdown']) }}
                             @else
                                 {{ Form::select('residentname', array_merge([0 => 'Please Select']),
-                                'default', array('id' => 'residentname_dropdown', 'class' => 'col-md-4')) }}
+                                'default',
+                                ['class' =>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'residentname_dropdown']) }}
                             @endif
-                        </div.panel-heading>
+                        </div>
 
                         </br> </br>
                         {!! Form::label('commonarea', 'Common Area/System:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
                             {{ Form::select('ca_id', array_merge([0 => 'Please Select']), 'default',
-                            array('id' => 'commonarea_dropdown', 'class' => 'col-md-4')) }}
-                        </div.panel-heading>
+                            ['class' =>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'commonarea_dropdown']) }}
+                        </div>
 
 
                       {{--  </br> </br>
                         {!! Form::label('resident_comments', 'Resident Comments:' ,['class' => 'col-md-3 control-label']) !!}--}}
-                        <div.panel-heading class="col-md-6">
+                        <div class="col-md-offset-1 col-md-8 col-md-pull-1">
                             {!! Form::text('resident_comments',null,
-                            array('class' => 'form-control hidden','id' => 'resident_comments','readonly' => true,'size'=>70)) !!}
-                        </div.panel-heading>
+                            ['class'=>'form-control hidden col-md-offset-1 col-md-8 col-md-pull-1 form-control','readonly','id' => 'resident_comments']) !!}
+                        </div>
                         </br> </br>
+
                         {!! Form::label('issuetype', 'Issue Type:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-4">
-                            {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default', array('id' => 'issuetype_dropdown')) }}
-                        </div.panel-heading>
+                        <div class="col-md-offset-3 col-md-6 col-md-pull-3">
+                            {{ Form::select('issuetype', array_merge([0 => 'Please Select']) + $issuetypes, 'default',
+                             ['class'=>'col-md-offset-3 col-md-6 col-md-pull-3','id' => 'issuetype_dropdown','required' => 'required']) }}
+                        </div>
 
                         </br> </br>
 
                         {!! Form::label('issuedescription', 'Issue Description:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-2">
-                            {!! Form::text('issuedescription',null, array('id' => 'issuedescription', 'readonly' => true,'size'=>70)) !!}
-                        </div.panel-heading>
+                        <div class="col-md-offset-1 col-md-8 col-md-pull-1">
+                            {!! Form::text('issuedescription',null,
+                             ['class'=>'col-md-offset-1 col-md-8 col-md-pull-1 form-control','readonly','id' => 'issuedescription']) !!}
+                        </div>
 
                         </br> </br>
 
                         {!! Form::label('wodescription', 'Work Order Description:', ['class' => 'col-md-3 control-label']) !!}
-                        <div.panel-heading class="col-md-8">
-                            {!! Form::text('order_description',null,['class'=>'form-control']) !!}
-                        </div.panel-heading>
+                        <div class="col-md-offset-1 col-md-8 col-md-pull-1">
+                            {!! Form::text('order_description',null,
+                            ['class'=>'form-control col-md-offset-1 col-md-8 col-md-pull-1','placeholder' => 'Briefly describe your issue']) !!}
+                        </div>
 
                         </br> </br>
                      </div>
